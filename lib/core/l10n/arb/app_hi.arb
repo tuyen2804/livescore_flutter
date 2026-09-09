@@ -1,0 +1,669 @@
+{
+  "@@locale": "hi",
+  "age": "आयु:",
+  "aiMainPick": "एआई मुख्य चयन",
+  "allLeagues": "सभी लीग",
+  "allTeams": "सभी टीमें",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "क्या आप वाकई ऐप से बाहर निकलना चाहते हैं?",
+  "away": "दूर",
+  "awayText": "दूर",
+  "awayWin": "दूर जीत",
+  "bestPrice": "सबसे अच्छी कीमत",
+  "blockedShots": "अवरुद्ध शॉट्स",
+  "bothTeamsToScore": "दोनों टीमें स्कोर करने के लिए",
+  "bottomsheetActionCollapse": "नीचे की शीट को संक्षिप्त करें",
+  "bottomsheetActionExpand": "नीचे की शीट का विस्तार करें",
+  "bottomsheetActionExpandHalfway": "आधे रास्ते में विस्तार करें",
+  "bottomsheetDragHandleContentDescription": "हैंडल खींचें",
+  "cancel": "रद्द करना",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "अपने पक्ष के लिए जयकार करें - क्या वे जीत जाएंगे, उखड़ जाएंगे या लाइन पकड़ लेंगे?",
+  "chooseYourLeague": "अपनी लीग चुनें",
+  "chooseYourLeagues": "अपनी लीग चुनें",
+  "chooseYourPreferredLanguage": "अपनी पसंदीदा भाषा चुनें",
+  "chooseYourTeam": "अपनी टीम चुनें",
+  "chooseYourTeams": "अपनी टीमें चुनें",
+  "clearAll": "सभी साफ़ करें",
+  "closeDrawer": "नेविगेशन मेनू बंद करें",
+  "closeSheet": "शीट बंद करें",
+  "club": "क्लब:",
+  "confidenceFormat": "{arg1}%% विश्वास",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "आगे बढ़ना",
+  "cornerPredictions": "कॉर्नर भविष्यवाणियां",
+  "dateFormatDay": "ई",
+  "dateFormatValue": "एमएमएम डी",
+  "defaultAwayTeam": "टीम दूर",
+  "defaultHomeTeam": "टीम होम",
+  "defaultLeague": "लीग",
+  "details": "विवरण",
+  "done": "हो गया",
+  "drawText": "आकर्षित",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "पहली छमाही का अंत",
+  "explore": "पता लगाना",
+  "favorite": "पसंदीदा",
+  "favoriteLeagues": "पसंदीदा लीग",
+  "favoriteTeams": "पसंदीदा टीमें",
+  "feedback": "प्रतिपुष्टि",
+  "finished": "पूर्ण",
+  "firstGoalPredictions": "पहला लक्ष्य भविष्यवाणियां",
+  "fixture": "स्थिरता #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "फिक्स्चर",
+  "followFavoriteTeams": "पसंदीदा टीमों का अनुसरण करें",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "बेईमानी",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "नीचे दी गई भाषाओं में से, कृपया अपनी मूल भाषा चुनें। बाद में आप सेटिंग्स से भाषा बदल सकते हैं।",
+  "fullTime": "पूरा समय",
+  "getReadyMatchStartsSoon": "तैयार हो जाओ! मैच जल्द शुरू होगा",
+  "getStarted": "शुरू हो जाओ",
+  "goProVersion": "गो प्रो संस्करण",
+  "goToSetting": "सेटिंग पर जाएं",
+  "goallessAtTheBreakSeeMatchStats": "ब्रेक पर गोलरहित। मैच के आँकड़े देखें।",
+  "goalsInTheFirstHalf": "पहले हाफ में गोल।",
+  "h2h": "एच 2 एच",
+  "halftimeScore": "हाफटाइम स्कोर",
+  "height": "पराकाष्‍ठा:",
+  "highlight": "मुख्य आकर्षण",
+  "highlights": "मुख्य आकर्षण",
+  "home": "घर",
+  "homeText": "घर",
+  "homeWin": "होम विन",
+  "hour": "{arg1} घंटा{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} घंटा{arg2} {arg3} मिनट",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ HT: {arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "गहन एआई विश्लेषण",
+  "inProgress": "प्रगति पर है",
+  "indeterminate": "आंशिक रूप से जाँच की गई",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "मेंके लिए",
+  "internationalTournaments": "अंतर्राष्ट्रीय टूर्नामेंट",
+  "introTitle1": "लाइव स्कोर, वीडियो हाइलाइट्स और ब्रेकिंग न्यूज।",
+  "introTitle2": "लक्ष्यों, कार्डों और किक-ऑफ़ के लिए लाइव अलर्ट प्राप्त करें",
+  "kickOff": "किक-ऑफ!",
+  "language": "भाषा",
+  "languageScreenNotReachable": "भाषा स्क्रीन यहां से उपलब्ध नहीं है",
+  "languages": "भाषाओं",
+  "last5Games": "पिछले 5 खेल",
+  "league": "लीग",
+  "leagues": "लीग",
+  "lifetime": "आजीवन",
+  "lineup": "पंक्ति बनायें",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "रहना",
+  "liveMatches": "लाइव मैच",
+  "liveS": "रूप",
+  "liveScore": "लाइव स्कोर",
+  "lives": "रूप",
+  "loading": "लोड हो रहा है...",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "ऐसा लगता है कि आपने अभी तक कुछ भी नहीं जोड़ा है।",
+  "makeSureToTurnOnTheInternetToUseFeatures": "सुविधाओं का उपयोग करने के लिए इंटरनेट चालू करना सुनिश्चित करें",
+  "matchAlarmBeforeMatch": "मैच अलार्म (मैच से पहले)",
+  "matchHighlights": "मैच हाइलाइट्स",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "मैच भविष्यवाणी",
+  "matchResultPredictions": "मैच परिणाम भविष्यवाणियां",
+  "matchScore": "मैच स्कोर",
+  "matchScorePredictions": "मैच स्कोर भविष्यवाणियां",
+  "matchStart": "मैच की शुरुआत",
+  "matchTimeline": "मैच टाइमलाइन",
+  "matchUpdate": "मैच अपडेट",
+  "nationalLeagues": "राष्ट्रीय लीग",
+  "nationality": "राष्ट्रीयता:",
+  "nativeBody": "द्रव्‍य",
+  "nativeHeadline": "शीर्षक",
+  "nativeMediaView": "मीडिया दृश्य",
+  "navRailCollapsedA11yLabel": "ढह गया",
+  "navRailExpandedA11yLabel": "विस्तारित",
+  "navigationMenu": "नेविगेशन मेनू",
+  "next": "अगला",
+  "no": "नहीं",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "इस मैच के लिए कोई तुलना डेटा उपलब्ध नहीं है। अगली बार परिणाम देखने के लिए मैच समाप्त होने से पहले अपनी भविष्यवाणी करें।",
+  "noData": "कोई डेटा नहीं है",
+  "noFavoriteLeague": "कोई पसंदीदा लीग नहीं।",
+  "noFavoriteTeam": "कोई पसंदीदा टीम नहीं।",
+  "noGoal": "कोई लक्ष्य नहीं",
+  "noGoalsScored": "कोई गोल नहीं हुआ",
+  "noInternet": "कोई इंटरनेट नहीं",
+  "noInternetConnection": "कोई इंटरनेट कनेक्शन नहीं",
+  "noPredictionAvailable": "कोई भविष्यवाणी उपलब्ध नहीं है",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "अभी तक कोई प्रतिस्थापन नहीं",
+  "noText": "नहीं",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "चयनित नहीं",
+  "notificationChannelDesc": "आगामी फुटबॉल मैचों के लिए सूचनाएं",
+  "notificationChannelName": "सूचनाओं का मिलान करें",
+  "notificationFailedMaybeTooManyPendingNotification": "अधिसूचना विफल (शायद बहुत अधिक लंबित अधिसूचना)",
+  "notificationMatchReminder": "मैच रिमाइंडर",
+  "notificationMatchStarting": "{arg1} बनाम {arg2} अब {arg3} में प्रारंभ हो रहा है!",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} बनाम {arg2} {arg3} मिनट ({arg4}) में प्रारंभ होता है",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "अलर्ट सेट करने के लिए अधिसूचना अनुमति आवश्यक है।",
+  "notifications": "सूचनाएं",
+  "notificationsAccess": "सूचनाएं एक्सेस",
+  "notificationsAreBeingSynchronized": "सूचनाओं को सिंक्रनाइज़ किया जा रहा है।",
+  "notificationsPermissionConfirm": "अनुमति दें",
+  "notificationsPermissionDecline": "अनुमति न दें",
+  "notificationsPermissionTitle": "ऐप को आपको सूचनाएं भेजने की अनुमति दें?",
+  "ob1Des": "से रीयल-टाइम अपडेट प्राप्त करें\nसभी प्रमुख लीग\nऔर आसपास के टूर्नामेंट\nदुनिया",
+  "ob1Title": "लाइव फ़ुटबॉल",
+  "ob3Title": "कभी भी एक पल भी न चूकें",
+  "offlineDialogImageDescription": "चिह्न",
+  "offlineDialogText": "आपकी रुचि के लिए धन्यवाद।\nआपके ऑनलाइन वापस आने के बाद हम और अधिक साझा करेंगे।",
+  "offlineOptInConfirm": "ठीक है",
+  "offlineOptInDecline": "नहीं धन्यवाद",
+  "offlineOptInMessage": "हम आपको विज्ञापनदाता साइट के लिंक के साथ एक सूचना भेजेंगे.",
+  "offlineOptInTitle": "जब आप वापस ऑनलाइन हों तो विज्ञापन खोलें.",
+  "offsides": "ऑफसाइड्स",
+  "ok": "ठीक है",
+  "okay": "ठीक",
+  "only": "केवल",
+  "other": "अन्य",
+  "overall": "कुल मिलाकर",
+  "popular": "लोकप्रिय",
+  "position": "पद:",
+  "possession": "कब्ज़ा (%)",
+  "prediction": "पूर्वानुमान",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "पैर पसंद करें:",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "प्रीमियम संस्करण",
+  "preparingYourMatchNotification": "अपनी मैच अधिसूचना तैयार करना",
+  "priceLaterFormat": "बाद में {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "बाद में {arg1}",
+  "@priceLaterLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyFormat": "केवल {arg1}/{arg2}",
+  "@priceOnlyFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyLifetime": "केवल {arg1}",
+  "@priceOnlyLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicy": "गोपनीयता नीति",
+  "quit": "छोड़ना",
+  "rate": "दर",
+  "rateAppTitleBad": "अरे नहीं! हम बेहतर करने की कोशिश करेंगे।",
+  "rateAppTitleDefault": "हमारे ऐप को रेट करें",
+  "rateAppTitleGood": "हमें खुशी है कि आपको यह पसंद आया!",
+  "rateAppTitleMid": "हम सुधार करने के लिए कड़ी मेहनत कर रहे हैं!",
+  "rateOnGooglePlay": "Google Play पर रेट करें",
+  "ratePlaceholder": "कृपया अपने अनुभव को बढ़ाने के लिए हमें रेट करें। धन्यवाद!",
+  "rateStars": "दर सितारे:",
+  "rateUs": "हमें रेट करें",
+  "redCardInTheFirstHalf": "पहले हाफ में लाल कार्ड।",
+  "redCards": "लाल कार्ड",
+  "removeAllAds": "सभी विज्ञापन हटाएं",
+  "restorePurchase": "खरीद पुनर्स्थापित करें",
+  "result": "परिणाम",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "इनाम विज्ञापन उपलब्ध नहीं है",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "{arg1} आत्मविश्वास",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "{arg1} सही भविष्यवाणियां",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "{arg1} लक्ष्य",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sSaleOff": "{arg1}\nबंद",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "स्कोर ({arg1}1 - {arg2}2)",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "लीग या टीमों के लिए खोजें ...",
+  "searchHistory": "खोज इतिहास",
+  "searchLeague": "खोज लीग",
+  "searchTeam": "खोज दल",
+  "searchTeamOrLeague": "खोज टीम या लीग",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
+  "secondHalfIsUnderway": "दूसरा हाफ चल रहा है। {arg1} {arg2} - {arg3} {arg4}.",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ दूसरा हाफ शुरू हुआ",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "सभी देखें",
+  "selectLeaguesSubtitle": "उन लीगों का चयन करें जिनका आप बारीकी से पालन करना चाहते हैं।",
+  "selectTeamsSubtitle": "तत्काल अलर्ट प्राप्त करने के लिए अपनी पसंदीदा टीमों का चयन करें।",
+  "selected": "चयनित",
+  "sentOff": "{arg1} भेज दिया गया ({arg2}')",
+  "@sentOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "सेटिंग",
+  "share": "पत्ती",
+  "shareAppText": "इस अद्भुत फुटबॉल ऐप को देखें: https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "के माध्यम से साझा करें",
+  "shirt": "कमीज़:",
+  "shotsOffTarget": "लक्ष्य से शॉट",
+  "shotsOnTarget": "लक्ष्य पर शॉट्स",
+  "showAllPicks": "सभी पिक्स दिखाएं",
+  "skip": "छोड़ें",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "दस्‍ता",
+  "startOfSecondHalf": "दूसरे हाफ की शुरुआत",
+  "stateEmpty": "खाली",
+  "stateOff": "बंद",
+  "stateOn": "पर",
+  "stats": "आँकड़े",
+  "statusAet": "एईटी",
+  "statusCancl": "सीएएनसीएल",
+  "statusEnded": "Ended",
+  "statusFt": "लगभग से.मी",
+  "statusHt": "एचटी",
+  "statusLive": "रहना",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "न.श",
+  "statusPen": "बाड़ा",
+  "statusPostp": "पोस्टपी",
+  "statusTbd": "टीबीडी",
+  "stay": "रहना",
+  "substitutions": "प्रतिस्थापन",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "एसवीआईपी सदस्य को कई विशेषाधिकार प्राप्त हैं",
+  "switchRole": "स्विच",
+  "tab": "बिल",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "सारणी",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "टीम",
+  "teams": "टीमें",
+  "templatePercent": "{arg1} प्रतिशत।",
+  "@templatePercent": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "termOfService": "सेवा की अवधि",
+  "textRate1": "कृपया अपने अनुभव को बढ़ाने के लिए हमें रेट करें। धन्यवाद!",
+  "textRate2": "हम आपकी प्रतिक्रिया को महत्व देते हैं।",
+  "textRate3": "हम आपके अनुभव को बेहतर बनाएंगे",
+  "textRate4": "हम इसे और भी बेहतर बनाने के लिए प्रतिबद्ध हैं।",
+  "textRate5": "हमें खुशी है कि आप हमारे ऐप का उपयोग करने का आनंद ले रहे हैं",
+  "textRate6": "हम यह सुनकर रोमांचित हैं कि आप हमारे ऐप से प्यार करते हैं।",
+  "thanksForRating": "आपकी प्रतिक्रिया के लिए धन्यवाद!",
+  "theAnalysesBelowAreForReferencePurposesOnly": "नीचे दिए गए विश्लेषण केवल संदर्भ उद्देश्यों के लिए हैं।",
+  "theBest": "सबसे अच्छा हम प्राप्त कर सकते हैं :\">",
+  "theBestWeCanGet": "सबसे अच्छा हम :) प्राप्त कर सकते हैं",
+  "theFieldIsQuiet": "मैदान शांत है",
+  "theFieldIsQuiteEmpty": "मैदान काफी खाली है।",
+  "theMatchBetweenAndKicksOffIn": "{arg1} और {arg2} के बीच मैच {arg3} में शुरू होता है.",
+  "@theMatchBetweenAndKicksOffIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "मैच खत्म हो चुका है। भविष्यवाणियां केवल आगामी या लाइव मैचों के लिए उपलब्ध हैं।",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "कोई इंटरनेट कनेक्शन नहीं है! कृपया अपना इंटरनेट कनेक्शन जांचें!",
+  "thisActionMayContainAds": "इस कार्रवाई में विज्ञापन हो सकते हैं",
+  "thisActionMayContainAdvertising": "इस कार्रवाई में विज्ञापन शामिल हो सकते हैं",
+  "throwIns": "थ्रो-इन",
+  "timeLine": "समय रेखा: {arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "आजीवन",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "मासिक पत्रिका",
+  "titleMonthlyTrial": "मासिक - सीटीए = नि: शुल्क परीक्षण शुरू करें",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "साप्ताहिक",
+  "titleWeeklyTrial": "साप्ताहिक - सीटीए = नि: शुल्क परीक्षण शुरू करें",
+  "titleYearly": "सालाना",
+  "titleYearlyTrial": "वार्षिक - CTA = नि: शुल्क परीक्षण शुरू करें",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "आजकल",
+  "tomorrow": "भविष्‍य",
+  "tooltipDescription": "टूलटिप",
+  "tooltipLabel": "टूलटिप दिखाएं",
+  "topLeague": "शीर्ष लीग",
+  "topTeam": "शीर्ष टीमें",
+  "totalGoals": "कुल लक्ष्य",
+  "totalGoalsPredictions": "कुल लक्ष्य भविष्यवाणियां",
+  "totalVotesFormat": "{arg1} कुल वोट",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "सूचनाएं बंद करें?",
+  "unitMonth": "महीना",
+  "unitWeek": "कार्य-सप्‍ताह",
+  "unitYear": "सालों",
+  "unknown": "अप्रसिद्घ व्यक्ति",
+  "unlimitedAccessToAllFeature": "सभी सुविधाओं तक असीमित पहुंच",
+  "unlockDrawPrediction": "ड्रा भविष्यवाणी अनलॉक करें",
+  "unlockForecast": "पूर्वानुमान अनलॉक करें",
+  "unlockMatchHighlights": "मैच हाइलाइट्स अनलॉक करें",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "ऊपर आ रहा है",
+  "updating": "मैच अपडेट हो रहा है...",
+  "updatingMatchInfo": "मैच की जानकारी अपडेट की जा रही है...",
+  "upgrade": "अपग्रेड करें",
+  "upgradeForUnlimitedAccessNoAds": "असीमित पहुंच और बिना विज्ञापनों के लिए अपग्रेड करें",
+  "viewAll": "सभी देखें",
+  "viewDetailsMatch": "विवरण देखें मिलान।",
+  "vs": "वी.एस.",
+  "vsHasStartedFollowTheMatchLive": "{arg1} बनाम {arg2} प्रारंभ हो गया है. मैच का लाइव अनुसरण करें!",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "अपने ड्रा की भविष्यवाणी सबमिट करने के लिए एक छोटा विज्ञापन देखें.",
+  "watchNow": "अभी देखें",
+  "watermarkLabelPrefix": "एडमॉब -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "हमें खुशी है कि आप हमारे ऐप का उपयोग करने का आनंद ले रहे हैं",
+  "weekly": "साप्ताहिक",
+  "weight": "वजन:",
+  "whatAHalf": "क्या आधा! {arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "कौन जीतेगा?",
+  "yearly": "सालाना",
+  "years": "वर्षों",
+  "yellowCards": "पीले कार्ड",
+  "yes": "हाँ",
+  "yesText": "हाँ",
+  "yesterday": "कल",
+  "youRePremiumUser": "आप प्रीमियम उपयोगकर्ता हैं",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "जब तक आप उन्हें वापस चालू नहीं कर देते, तब तक आपको कोई अलर्ट या अपडेट नहीं मिलेगा.",
+  "yourFilesIsEmpty": "आपकी फ़ाइलें खाली हैं"
+}

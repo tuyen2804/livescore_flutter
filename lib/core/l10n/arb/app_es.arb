@@ -1,0 +1,662 @@
+{
+  "@@locale": "es",
+  "age": "Edad:",
+  "aiMainPick": "Elección principal de IA",
+  "allLeagues": "Todas las ligas",
+  "allTeams": "Todos los equipos",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "¿Estás seguro de que quieres salir de la app?",
+  "away": "Fuera",
+  "awayText": "Fuera",
+  "awayWin": "Victoria fuera de casa",
+  "bestPrice": "Mejor precio",
+  "blockedShots": "Tiros bloqueados",
+  "bothTeamsToScore": "Ambos equipos en anotar",
+  "bottomsheetActionCollapse": "Colabre la lámina inferior",
+  "bottomsheetActionExpand": "Expande la lámina inferior",
+  "bottomsheetActionExpandHalfway": "Expande hasta la mitad",
+  "bottomsheetDragHandleContentDescription": "Maneta de arrastre",
+  "cancel": "Cancelar",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "Anima a tu bando — ¿conquistarán, se derrumbarán o mantendrán la línea?",
+  "chooseYourLeague": "Elige tu liga",
+  "chooseYourLeagues": "Elige tus ligas",
+  "chooseYourPreferredLanguage": "Elige tu idioma preferido",
+  "chooseYourTeam": "Elige tu equipo",
+  "chooseYourTeams": "Elige tus equipos",
+  "clearAll": "Limpiar todo",
+  "closeDrawer": "Cerrar menú de navegación",
+  "closeSheet": "Hoja cerrada",
+  "club": "Club:",
+  "confidenceFormat": "{arg1}%% Confianza",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "Continúa",
+  "cornerPredictions": "Predicciones de Corner",
+  "dateFormatDay": "EEE",
+  "dateFormatValue": "MMM d",
+  "defaultAwayTeam": "Equipo Fuera",
+  "defaultHomeTeam": "Equipo Inicio",
+  "defaultLeague": "Liga",
+  "details": "Detalles",
+  "done": "Hecho",
+  "drawText": "Empate",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "Fin de la primera mitad",
+  "explore": "Explorar",
+  "favorite": "Favoritos",
+  "favoriteLeagues": "Ligas favoritas",
+  "favoriteTeams": "Equipos favoritos",
+  "feedback": "Retroalimentación",
+  "finished": "Terminado",
+  "firstGoalPredictions": "Predicciones de primer gol",
+  "fixture": "Calendario #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "Partidos",
+  "followFavoriteTeams": "Sigue a los equipos favoritos",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "Faltas",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "De los idiomas que aparecen a continuación, por favor elige tu lengua materna. Más adelante puedes cambiar el idioma desde la configuración.",
+  "fullTime": "A tiempo completo",
+  "getReadyMatchStartsSoon": "¡Prepárate! El partido comienza pronto",
+  "getStarted": "Empieza",
+  "goProVersion": "VERSIÓN GO PRO",
+  "goToSetting": "Ir a la configuración",
+  "goallessAtTheBreakSeeMatchStats": "Sin goles al descanso. Consulta las estadísticas del partido.",
+  "goalsInTheFirstHalf": "Goles en la primera mitad.",
+  "h2h": "H2H",
+  "halftimeScore": "Marcador al descanso",
+  "height": "Altura:",
+  "highlight": "Aspectos destacados",
+  "highlights": "Aspectos destacados",
+  "home": "Inicio",
+  "homeText": "Inicio",
+  "homeWin": "Victoria en casa",
+  "hour": "{arg1} hour{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} hora{arg2} {arg3} mins",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ HT: {arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "Análisis profundo de IA",
+  "inProgress": "En progreso",
+  "indeterminate": "Parcialmente revisado",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "Infor",
+  "internationalTournaments": "Torneos internacionales",
+  "introTitle1": "Marcadores en directo, resúmenes de vídeo y noticias de última hora.",
+  "introTitle2": "Recibe alertas en directo de goles, tarjetas y saques iniciales",
+  "kickOff": "¡Salida!",
+  "language": "Idioma",
+  "languageScreenNotReachable": "La pantalla de idioma no es accesible desde aquí",
+  "languages": "Idiomas",
+  "last5Games": "Últimos 5 partidos",
+  "league": "Liga",
+  "leagues": "Ligas",
+  "lifetime": "Vida",
+  "lineup": "Formación",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "En directo",
+  "liveMatches": "PARTIDOS EN DIRECTO",
+  "liveS": "Vidas",
+  "liveScore": "MARCADOR EN DIRECTO",
+  "lives": "Vidas",
+  "loading": "Cargando...",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "Parece que aún no has añadido nada.",
+  "makeSureToTurnOnTheInternetToUseFeatures": "Asegúrate de activar internet para usar funciones",
+  "matchAlarmBeforeMatch": "Alarma de partido (antes del partido)",
+  "matchHighlights": "Momentos destacados del partido",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "Predicción del partido",
+  "matchResultPredictions": "Predicciones de resultados del partido",
+  "matchScore": "Marcador del partido",
+  "matchScorePredictions": "Predicciones de marcador del partido",
+  "matchStart": "Inicio del partido",
+  "matchTimeline": "Cronología del partido",
+  "matchUpdate": "Actualización del partido",
+  "nationalLeagues": "Ligas Nacionales",
+  "nationality": "Nacionalidad:",
+  "nativeBody": "Carrocería",
+  "nativeHeadline": "Titulares",
+  "nativeMediaView": "Vista de medios",
+  "navRailCollapsedA11yLabel": "Colapso",
+  "navRailExpandedA11yLabel": "Ampliado",
+  "navigationMenu": "Menú de navegación",
+  "next": "Siguiente",
+  "no": "No",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "No hay datos comparativos disponibles para este partido. Haz tu predicción antes de que termine el partido para ver los resultados la próxima vez.",
+  "noData": "Sin datos",
+  "noFavoriteLeague": "No hay liga favorita.",
+  "noFavoriteTeam": "No hay equipo favorito.",
+  "noGoal": "Sin gol",
+  "noGoalsScored": "Sin goles marcados",
+  "noInternet": "No hay internet",
+  "noInternetConnection": "Sin conexión a Internet",
+  "noPredictionAvailable": "No hay predicción disponible",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "Aún no hay sustituciones",
+  "noText": "No",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "No seleccionado",
+  "notificationChannelDesc": "Notificaciones de próximos partidos de fútbol",
+  "notificationChannelName": "Notificaciones de partidos",
+  "notificationFailedMaybeTooManyPendingNotification": "Notificación FALLIDA (quizá demasiadas notificaciones pendientes)",
+  "notificationMatchReminder": "Recordatorio de partidos",
+  "notificationMatchStarting": "¡{arg1} vs {arg2} empieza AHORA en {arg3}!",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} vs {arg2} empieza en {arg3} minutos ({arg4})",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "Se requiere permiso de notificación para configurar alertas.",
+  "notifications": "Notificaciones",
+  "notificationsAccess": "Acceso a notificaciones",
+  "notificationsAreBeingSynchronized": "Las notificaciones se están sincronizando...",
+  "notificationsPermissionConfirm": "Permitir",
+  "notificationsPermissionDecline": "No lo permitas",
+  "notificationsPermissionTitle": "¿Permitir que la app te envíe notificaciones?",
+  "ob1Des": "Recibe actualizaciones en tiempo real desde\nTodas las Grandes Ligas\ny torneos alrededor de\nMundo",
+  "ob1Title": "Fútbol en directo",
+  "ob3Title": "No te pierdas ni un momento",
+  "offlineDialogImageDescription": "Icono",
+  "offlineDialogText": "Gracias por tu interés.\nCompartiremos más información cuando vuelvas a estar en línea.",
+  "offlineOptInConfirm": "Vale",
+  "offlineOptInDecline": "No, gracias",
+  "offlineOptInMessage": "Te enviaremos una notificación con un enlace al sitio del anunciante.",
+  "offlineOptInTitle": "Abre el anuncio cuando vuelvas a estar en línea.",
+  "offsides": "Fuera de juego",
+  "ok": "Vale",
+  "okay": "Vale",
+  "only": "Solo",
+  "other": "Otros",
+  "overall": "En general",
+  "popular": "Populares",
+  "position": "Posición:",
+  "possession": "Posesión (%)",
+  "prediction": "Predicción",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "Prefiere el pie:",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "VERSIÓN PREMIUM",
+  "preparingYourMatchNotification": "Preparando tu notificación de partido",
+  "priceLaterFormat": "Más tarde {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "Posteriores {arg1}",
+  "@priceLaterLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyFormat": "Solo {arg1}/{arg2}",
+  "@priceOnlyFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyLifetime": "Solo {arg1}",
+  "@priceOnlyLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicy": "Política de privacidad",
+  "quit": "Dejarlo",
+  "rate": "Tarifa",
+  "rateAppTitleBad": "¡Oh, no! Intentaremos hacerlo mejor.",
+  "rateAppTitleDefault": "Valora nuestra app",
+  "rateAppTitleGood": "¡Nos alegra que te guste!",
+  "rateAppTitleMid": "¡Estamos trabajando duro para mejorar!",
+  "rateOnGooglePlay": "Tarifa en Google Play",
+  "ratePlaceholder": "Por favor, valoranos para mejorar tu experiencia. ¡Gracias!",
+  "rateStars": "Valora las estrellas:",
+  "rateUs": "Valora",
+  "redCardInTheFirstHalf": "Tarjeta roja en la primera mitad.",
+  "redCards": "Tarjetas rojas",
+  "removeAllAds": "Eliminar todos los anuncios",
+  "restorePurchase": "Restaurar Compra",
+  "result": "Resultado",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "Anuncio de recompensas no disponible",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "Confianza en {arg1}",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "Predicciones correctas en {arg1}",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "Objetivo de {arg1}",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sSaleOff": "{arg1}\nFuera",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "Puntuación ({arg1}1 - {arg2}2)",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "Busca ligas o equipos...",
+  "searchHistory": "Historial de búsquedas",
+  "searchLeague": "Liga de búsqueda",
+  "searchTeam": "Equipo de búsqueda",
+  "searchTeamOrLeague": "Buscar equipo o liga",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
+  "secondHalfIsUnderway": "La segunda mitad está en marcha. {arg1} {arg2} - {arg3} {arg4}.",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ Comenzó la segunda parte",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "Ver todo",
+  "selectLeaguesSubtitle": "Selecciona cuidadosamente las ligas que quieres seguir.",
+  "selectTeamsSubtitle": "Selecciona tus equipos favoritos para recibir alertas instantáneas.",
+  "selected": "Seleccionados",
+  "sentOff": "{arg1} expulsados ({arg2}')",
+  "@sentOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "Escenarios",
+  "share": "Compartir",
+  "shareAppText": "Echa un vistazo a esta increíble app de fútbol: https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "Compartir vía",
+  "shirt": "Camiseta:",
+  "shotsOffTarget": "Disparos desviados",
+  "shotsOnTarget": "Disparos a puerta",
+  "showAllPicks": "Mostrar todas las selecciones",
+  "skip": "Skip",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "Plantilla",
+  "startOfSecondHalf": "Inicio de la segunda mitad",
+  "stateEmpty": "Vacío",
+  "stateOff": "Fuera",
+  "stateOn": "On",
+  "stats": "Estadísticas",
+  "statusAet": "AET",
+  "statusCancl": "CANCL",
+  "statusEnded": "Ended",
+  "statusFt": "FT",
+  "statusHt": "HT",
+  "statusLive": "EN DIRECTO",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "NS",
+  "statusPen": "PEN",
+  "statusPostp": "POSTP",
+  "statusTbd": "Por determinar",
+  "stay": "Quédate",
+  "substitutions": "Sustituciones",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "El miembro SVIP disfruta de muchos privilegios",
+  "switchRole": "Cambio",
+  "tab": "Pestaña",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "Tabla",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "Equipo",
+  "teams": "Equipos",
+  "templatePercent": "1$d por ciento.",
+  "termOfService": "Periodo de servicio",
+  "textRate1": "Por favor, valoranos para mejorar tu experiencia. ¡Gracias!",
+  "textRate2": "Valoramos mucho tus comentarios.",
+  "textRate3": "Mejoraremos tu experiencia",
+  "textRate4": "Estamos comprometidos a hacerlo aún mejor.",
+  "textRate5": "Nos alegra que disfrutes usando nuestra app",
+  "textRate6": "Nos alegra saber que te encanta nuestra app.",
+  "thanksForRating": "¡Gracias por tu comentario!",
+  "theAnalysesBelowAreForReferencePurposesOnly": "Los análisis que aparecen a continuación son solo para fines de referencia.",
+  "theBest": "Lo mejor que podemos conseguir :\">",
+  "theBestWeCanGet": "Lo mejor que podemos conseguir :)",
+  "theFieldIsQuiet": "El campo está tranquilo",
+  "theFieldIsQuiteEmpty": "El campo está bastante vacío.",
+  "theMatchBetweenAndKicksOffIn": "El emparejamiento entre {arg1} y {arg2} comienza en {arg3}.",
+  "@theMatchBetweenAndKicksOffIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "El partido ha terminado. Las predicciones solo están disponibles para partidos próximos o en directo.",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "¡No hay conexión a internet! ¡Por favor, revisa tu conexión a internet!",
+  "thisActionMayContainAds": "Esta acción puede contener anuncios",
+  "thisActionMayContainAdvertising": "Esta acción puede contener publicidad",
+  "throwIns": "Saques de banda",
+  "timeLine": "Línea temporal: {arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "Vida",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "Mensual",
+  "titleMonthlyTrial": "Mensual - CTA = INICIO DE PRUEBA GRATUITA",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "Semanal",
+  "titleWeeklyTrial": "Semanal - CTA = INICIO DE PRUEBA GRATUITA",
+  "titleYearly": "Anualmente",
+  "titleYearlyTrial": "Anual - CTA = INICIO DE PRUEBA GRATUITA",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "Hoy",
+  "tomorrow": "Mañana",
+  "tooltipDescription": "Descripción emergente",
+  "tooltipLabel": "mostrar descripción emergente",
+  "topLeague": "Liga principal",
+  "topTeam": "Equipos destacados",
+  "totalGoals": "Total de goles",
+  "totalGoalsPredictions": "Predicciones de goles totales",
+  "totalVotesFormat": "{arg1} Total de votos",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "¿Desactivar las notificaciones?",
+  "unitMonth": "mes",
+  "unitWeek": "semana",
+  "unitYear": "Año",
+  "unknown": "Desconocido",
+  "unlimitedAccessToAllFeature": "Acceso ilimitado a todas las funciones",
+  "unlockDrawPrediction": "Predicción de sorteo de desbloqueo",
+  "unlockForecast": "Desbloquear previsión",
+  "unlockMatchHighlights": "Desbloquear los mejores momentos de los partidos",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "Próximamente",
+  "updating": "El Match se está actualizando...",
+  "updatingMatchInfo": "Actualizando la información del partido...",
+  "upgrade": "Actualización",
+  "upgradeForUnlimitedAccessNoAds": "MEJORA PARA ACCESO ILIMITADO Y SIN ANUNCIOS",
+  "viewAll": "Ver todo",
+  "viewDetailsMatch": "Ver los detalles coinciden.",
+  "vs": "VS",
+  "vsHasStartedFollowTheMatchLive": "{arg1} vs {arg2} ha comenzado. ¡Sigue el partido en directo!",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "Mira un anuncio corto para enviar tu predicción de sorteo.",
+  "watchNow": "Mira ahora",
+  "watermarkLabelPrefix": "AdMob -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "Nos alegra que disfrutes usando nuestra app",
+  "weekly": "Semanal",
+  "weight": "Peso:",
+  "whatAHalf": "¡Qué mitad! {arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "¿Quién ganará?",
+  "yearly": "Anualmente",
+  "years": "Años",
+  "yellowCards": "Tarjetas amarillas",
+  "yes": "Sí",
+  "yesText": "Sí",
+  "yesterday": "Ayer",
+  "youRePremiumUser": "Eres Usuario Premium",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "No recibirás alertas ni actualizaciones hasta que las vuelvas a activar.",
+  "yourFilesIsEmpty": "Tus archivos están vacíos"
+}

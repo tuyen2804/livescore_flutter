@@ -1,0 +1,669 @@
+{
+  "@@locale": "th",
+  "age": "อายุ:",
+  "aiMainPick": "AI เลือกหลัก",
+  "allLeagues": "ทุกลีก",
+  "allTeams": "ทีมทั้งหมด",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "คุณแน่ใจหรือไม่ว่าต้องการออกจากแอป?",
+  "away": "ทีมเยือน",
+  "awayText": "ทีมเยือน",
+  "awayWin": "ทีมเยือนชนะ",
+  "bestPrice": "ราคาดีที่สุด",
+  "blockedShots": "การยิงที่ถูกบล็อก",
+  "bothTeamsToScore": "ทั้งสองทีมทําคะแนน",
+  "bottomsheetActionCollapse": "ยุบแผ่นด้านล่าง",
+  "bottomsheetActionExpand": "ขยายแผ่นด้านล่าง",
+  "bottomsheetActionExpandHalfway": "ขยายครึ่งทาง",
+  "bottomsheetDragHandleContentDescription": "ที่จับลาก",
+  "cancel": "ยกเลิก",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "เชียร์ฝ่ายของคุณ — พวกเขาจะพิชิต พังทลาย หรือยึดแนวไว้?",
+  "chooseYourLeague": "เลือกลีกของคุณ",
+  "chooseYourLeagues": "เลือกลีกของคุณ",
+  "chooseYourPreferredLanguage": "เลือกภาษาที่คุณต้องการ",
+  "chooseYourTeam": "เลือกทีมของคุณ",
+  "chooseYourTeams": "เลือกทีมของคุณ",
+  "clearAll": "ล้างทั้งหมด",
+  "closeDrawer": "ปิดเมนูการนําทาง",
+  "closeSheet": "ปิดแผ่นงาน",
+  "club": "สโมสร:",
+  "confidenceFormat": "{arg1}%% ความเชื่อมั่น",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "ดําเนินการต่อ",
+  "cornerPredictions": "การทํานายลูกเตะมุม",
+  "dateFormatDay": "อีอี",
+  "dateFormatValue": "เอ็ม ดี",
+  "defaultAwayTeam": "ทีมเยือน",
+  "defaultHomeTeam": "ทีมเหย้า",
+  "defaultLeague": "ลีก",
+  "details": "รายละเอียด",
+  "done": "เสร็จสิ้น",
+  "drawText": "วาด",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "จบครึ่งแรก",
+  "explore": "สํารวจ",
+  "favorite": "รายการโปรด",
+  "favoriteLeagues": "ลีกที่ชื่นชอบ",
+  "favoriteTeams": "ทีมโปรด",
+  "feedback": "ข้อเสนอแนะ",
+  "finished": "เสร็จแล้ว",
+  "firstGoalPredictions": "การทํานายประตูแรก",
+  "fixture": "การแข่งขัน #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "การแข่งขัน",
+  "followFavoriteTeams": "ติดตามทีมโปรด",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "ฟาวล์",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "จากภาษาด้านล่าง โปรดเลือกภาษาแม่ของคุณ หลังจากนั้นคุณสามารถเปลี่ยนภาษาได้จากการตั้งค่า",
+  "fullTime": "เต็มเวลา",
+  "getReadyMatchStartsSoon": "เตรียมตัวให้พร้อม! การแข่งขันจะเริ่มเร็ว ๆ นี้",
+  "getStarted": "เริ่มต้นใช้งาน",
+  "goProVersion": "รุ่น GO PRO",
+  "goToSetting": "ไปที่การตั้งค่า",
+  "goallessAtTheBreakSeeMatchStats": "ไร้สกอร์ในช่วงพักครึ่ง ดูสถิติการแข่งขัน",
+  "goalsInTheFirstHalf": "ประตูในครึ่งแรก",
+  "h2h": "เอชทูเอช",
+  "halftimeScore": "คะแนนพักครึ่ง",
+  "height": "ความสูง:",
+  "highlight": "ไฮไลท์",
+  "highlights": "ไฮไลท์",
+  "home": "หน้าแรก",
+  "homeText": "หน้าแรก",
+  "homeWin": "เจ้าบ้านชนะ",
+  "hour": "{arg1} ชั่วโมง{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} ชั่วโมง{arg2} {arg3} นาที",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ HT: {arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "การวิเคราะห์ AI เชิงลึก",
+  "inProgress": "กําลังดําเนินการ",
+  "indeterminate": "ตรวจสอบบางส่วนแล้ว",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "อินฟอร์",
+  "internationalTournaments": "ทัวร์นาเมนต์ระดับนานาชาติ",
+  "introTitle1": "คะแนนสด ไฮไลท์วิดีโอ และข่าวด่วน",
+  "introTitle2": "รับการแจ้งเตือนสดสําหรับเป้าหมาย การ์ด และการคิกออฟ",
+  "kickOff": "คิกออฟ!",
+  "language": "ภาษา",
+  "languageScreenNotReachable": "ไม่สามารถเข้าถึงหน้าจอภาษาได้จากที่นี่",
+  "languages": "ภาษา",
+  "last5Games": "5 เกมล่าสุด",
+  "league": "ลีก",
+  "leagues": "ลีก",
+  "lifetime": "อายุการใช้งาน",
+  "lineup": "ผู้เล่นตัวจริง",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "สด",
+  "liveMatches": "การแข่งขันสด",
+  "liveS": "ชีวิต",
+  "liveScore": "ผลบอลสด",
+  "lives": "ชีวิต",
+  "loading": "กําลังโหลด...",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "ดูเหมือนว่าคุณยังไม่ได้เพิ่มอะไรเลย",
+  "makeSureToTurnOnTheInternetToUseFeatures": "ตรวจสอบให้แน่ใจว่าได้เปิดอินเทอร์เน็ตเพื่อใช้คุณสมบัติ",
+  "matchAlarmBeforeMatch": "นาฬิกาปลุกแมตช์ (ก่อนการแข่งขัน)",
+  "matchHighlights": "ไฮไลท์การแข่งขัน",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "การทํานายผลการแข่งขัน",
+  "matchResultPredictions": "การทํานายผลการแข่งขัน",
+  "matchScore": "คะแนนการแข่งขัน",
+  "matchScorePredictions": "การทํานายคะแนนการแข่งขัน",
+  "matchStart": "เริ่มการแข่งขัน",
+  "matchTimeline": "ไทม์ไลน์การแข่งขัน",
+  "matchUpdate": "อัพเดทแมตช์",
+  "nationalLeagues": "ลีกแห่งชาติ",
+  "nationality": "สัญชาติ:",
+  "nativeBody": "ร่างกาย",
+  "nativeHeadline": "พาดหัวข่าว",
+  "nativeMediaView": "มุมมองสื่อ",
+  "navRailCollapsedA11yLabel": "ยุบ",
+  "navRailExpandedA11yLabel": "ขยาย",
+  "navigationMenu": "เมนูการนําทาง",
+  "next": "ต่อไป",
+  "no": "ไม่",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "ไม่มีข้อมูลเปรียบเทียบสําหรับการแข่งขันนี้ ทํานายผลของคุณก่อนการแข่งขันจะจบลงเพื่อดูผลการแข่งขันในครั้งต่อไป",
+  "noData": "ไม่มีข้อมูล",
+  "noFavoriteLeague": "ไม่มีลีกที่ชื่นชอบ",
+  "noFavoriteTeam": "ไม่มีทีมโปรด",
+  "noGoal": "ไม่มีเป้าหมาย",
+  "noGoalsScored": "ไม่มีประตู",
+  "noInternet": "ไม่มีอินเทอร์เน็ต",
+  "noInternetConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
+  "noPredictionAvailable": "No Prediction Available",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "ยังไม่มีการเปลี่ยนตัว",
+  "noText": "ไม่",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "ไม่ได้เลือก",
+  "notificationChannelDesc": "การแจ้งเตือนสําหรับการแข่งขันฟุตบอลที่กําลังจะมาถึง",
+  "notificationChannelName": "การแจ้งเตือนการแข่งขัน",
+  "notificationFailedMaybeTooManyPendingNotification": "การแจ้งเตือนล้มเหลว (อาจมีการแจ้งเตือนที่รอดําเนินการมากเกินไป)",
+  "notificationMatchReminder": "ตัวเตือนการแข่งขัน",
+  "notificationMatchStarting": "{arg1} vs {arg2} กําลังเริ่มต้นตอนนี้ใน {arg3}!",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} เทียบกับ {arg2} เริ่มต้นใน {arg3} นาที ({arg4})",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "ต้องได้รับอนุญาตการแจ้งเตือนเพื่อตั้งค่าการแจ้งเตือน",
+  "notifications": "การแจ้งเตือน",
+  "notificationsAccess": "การเข้าถึงการแจ้งเตือน",
+  "notificationsAreBeingSynchronized": "การแจ้งเตือนกําลังถูกซิงโครไนซ์...",
+  "notificationsPermissionConfirm": "อนุญาต",
+  "notificationsPermissionDecline": "ไม่อนุญาต",
+  "notificationsPermissionTitle": "อนุญาตให้แอปส่งการแจ้งเตือนถึงคุณ?",
+  "ob1Des": "รับการอัปเดตแบบเรียลไทม์จาก\nเมเจอร์ลีกทั้งหมด\nและทัวร์นาเมนต์รอบ ๆ\nโลก",
+  "ob1Title": "ฟุตบอลสด",
+  "ob3Title": "ไม่พลาดทุกช่วงเวลา",
+  "offlineDialogImageDescription": "ไอคอน",
+  "offlineDialogText": "ขอบคุณที่ให้ความสนใจ\nเราจะแบ่งปันเพิ่มเติมเมื่อคุณกลับมาออนไลน์",
+  "offlineOptInConfirm": "ตกลง",
+  "offlineOptInDecline": "ไม่ขอบคุณ",
+  "offlineOptInMessage": "เราจะส่งการแจ้งเตือนพร้อมลิงก์ไปยังเว็บไซต์ของผู้ลงโฆษณา",
+  "offlineOptInTitle": "เปิดโฆษณาเมื่อคุณกลับมาออนไลน์",
+  "offsides": "ล้ําหน้า",
+  "ok": "ตกลง",
+  "okay": "โอเค",
+  "only": "เท่านั้น",
+  "other": "อื่น ๆ",
+  "overall": "โดยรวม",
+  "popular": "ยอดนิยม",
+  "position": "ตําแหน่ง:",
+  "possession": "การครอบครองบอล (%)",
+  "prediction": "การคาดการณ์",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "ชอบเท้า:",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "รุ่นพรีเมี่ยม",
+  "preparingYourMatchNotification": "การเตรียมการแจ้งเตือนการแข่งขันของคุณ",
+  "priceLaterFormat": "ต่อมา {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "ต่อมา {arg1}",
+  "@priceLaterLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyFormat": "เพียง {arg1}/{arg2}",
+  "@priceOnlyFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyLifetime": "เพียง {arg1}",
+  "@priceOnlyLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+  "quit": "ออก",
+  "rate": "ราคา",
+  "rateAppTitleBad": "โอ้ไม่! เราจะพยายามทําให้ดีขึ้น",
+  "rateAppTitleDefault": "ให้คะแนนแอปของเรา",
+  "rateAppTitleGood": "เราดีใจที่คุณชอบมัน!",
+  "rateAppTitleMid": "เรากําลังทํางานอย่างหนักเพื่อปรับปรุง!",
+  "rateOnGooglePlay": "ให้คะแนนบน Google Play",
+  "ratePlaceholder": "โปรดให้คะแนนเราเพื่อยกระดับประสบการณ์ของคุณ ขอบคุณ!",
+  "rateStars": "ให้คะแนนดาว:",
+  "rateUs": "ให้คะแนนเรา",
+  "redCardInTheFirstHalf": "ใบแดงในครึ่งแรก",
+  "redCards": "ใบแดง",
+  "removeAllAds": "ลบโฆษณาทั้งหมด",
+  "restorePurchase": "กู้คืนการซื้อ",
+  "result": "ผลลัพธ์",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "Reward ad not available",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "{arg1} ความเชื่อมั่น",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "{arg1} การคาดคะเนที่ถูกต้อง",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "{arg1} เป้าหมาย",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sSaleOff": "{arg1}\nปิด",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "คะแนน ({arg1}1 - {arg2}2)",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "ค้นหาลีกหรือทีม...",
+  "searchHistory": "ประวัติการค้นหา",
+  "searchLeague": "ค้นหาลีก",
+  "searchTeam": "ทีมค้นหา",
+  "searchTeamOrLeague": "ค้นหาทีมหรือลีก",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingView พฤติกรรม",
+  "secondHalfIsUnderway": "ครึ่งหลังกําลังดําเนินอยู่ {arg1} {arg2} - {arg3} {arg4}",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ เริ่มครึ่งหลัง",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "ดูทั้งหมด",
+  "selectLeaguesSubtitle": "เลือกลีกที่คุณต้องการติดตามอย่างใกล้ชิด",
+  "selectTeamsSubtitle": "เลือกทีมโปรดของคุณเพื่อรับการแจ้งเตือนทันที",
+  "selected": "เลือกแล้ว",
+  "sentOff": "{arg1} ถูกส่งออก ({arg2}')",
+  "@sentOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "การตั้งค่า",
+  "share": "ใช้ร่วมกัน",
+  "shareAppText": "ลองดูแอพฟุตบอลที่น่าทึ่งนี้: https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "แชร์ผ่าน",
+  "shirt": "เสื้อเชิ้ต:",
+  "shotsOffTarget": "ยิงไม่ตรงกรอบ",
+  "shotsOnTarget": "ยิงเข้ากรอบ",
+  "showAllPicks": "แสดงตัวเลือกทั้งหมด",
+  "skip": "ข้าม",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "ทีม",
+  "startOfSecondHalf": "เริ่มครึ่งหลัง",
+  "stateEmpty": "ว่างเปล่า",
+  "stateOff": "ปิด",
+  "stateOn": "เปิด",
+  "stats": "สถิติ",
+  "statusAet": "เออีที",
+  "statusCancl": "CANCL",
+  "statusEnded": "Ended",
+  "statusFt": "ฟุต",
+  "statusHt": "เอชที",
+  "statusLive": "สด",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "เอ็นเอส",
+  "statusPen": "ปากกา",
+  "statusPostp": "โพสต์",
+  "statusTbd": "TBD",
+  "stay": "อยู่",
+  "substitutions": "การเปลี่ยนตัว",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "สมาชิก SVIP รับสิทธิพิเศษมากมาย",
+  "switchRole": "สวิตซ์",
+  "tab": "แท็บ",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "ตาราง",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "ทีมงาน",
+  "teams": "ทีม",
+  "templatePercent": "เปอร์เซ็นต์ {arg1}",
+  "@templatePercent": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "termOfService": "เงื่อนไขการให้บริการ",
+  "textRate1": "โปรดให้คะแนนเราเพื่อยกระดับประสบการณ์ของคุณ ขอบคุณ!",
+  "textRate2": "เราให้ความสําคัญกับความคิดเห็นของคุณ",
+  "textRate3": "เราจะปรับปรุงประสบการณ์ของคุณ",
+  "textRate4": "เรามุ่งมั่นที่จะทําให้ดียิ่งขึ้นไปอีก",
+  "textRate5": "เรายินดีที่คุณสนุกกับการใช้แอพของเรา",
+  "textRate6": "เรารู้สึกตื่นเต้นที่ได้ยินว่าคุณรักแอพของเรา",
+  "thanksForRating": "ขอบคุณสําหรับความคิดเห็นของคุณ!",
+  "theAnalysesBelowAreForReferencePurposesOnly": "การวิเคราะห์ด้านล่างมีวัตถุประสงค์เพื่อการอ้างอิงเท่านั้น",
+  "theBest": "สิ่งที่ดีที่สุดที่เราจะได้ :\">",
+  "theBestWeCanGet": "สิ่งที่ดีที่สุดที่เราจะได้:)",
+  "theFieldIsQuiet": "สนามเงียบสงบ",
+  "theFieldIsQuiteEmpty": "สนามค่อนข้างว่างเปล่า",
+  "theMatchBetweenAndKicksOffIn": "การจับคู่ระหว่าง {arg1} และ {arg2} จะเริ่มใน {arg3}",
+  "@theMatchBetweenAndKicksOffIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "The match has ended. Predictions are only available for upcoming or live matches.",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต! โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ!",
+  "thisActionMayContainAds": "การดําเนินการนี้อาจมีโฆษณา",
+  "thisActionMayContainAdvertising": "การดําเนินการนี้อาจมีการโฆษณา",
+  "throwIns": "ทุ่มบอล",
+  "timeLine": "ไทม์ไลน์: {arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "อายุการใช้งาน",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "รายเดือน",
+  "titleMonthlyTrial": "รายเดือน - CTA = เริ่มทดลองใช้ฟรี",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "รายสัปดาห์",
+  "titleWeeklyTrial": "รายสัปดาห์ - CTA = เริ่มทดลองใช้ฟรี",
+  "titleYearly": "รายปี",
+  "titleYearlyTrial": "รายปี - CTA = เริ่มทดลองใช้ฟรี",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "วันนี้",
+  "tomorrow": "พรุ่งนี้",
+  "tooltipDescription": "คําแนะนําเครื่องมือ",
+  "tooltipLabel": "แสดงคําแนะนําเครื่องมือ",
+  "topLeague": "ลีกสูงสุด",
+  "topTeam": "ทีมชั้นนํา",
+  "totalGoals": "ประตูทั้งหมด",
+  "totalGoalsPredictions": "การทํานายประตูรวม",
+  "totalVotesFormat": "{arg1} คะแนนโหวตทั้งหมด",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "ปิดการแจ้งเตือนใช่ไหม",
+  "unitMonth": "เดือน",
+  "unitWeek": "สัปดาห์",
+  "unitYear": "ปี",
+  "unknown": "ไม่ทราบ",
+  "unlimitedAccessToAllFeature": "เข้าถึงคุณสมบัติทั้งหมดได้ไม่จํากัด",
+  "unlockDrawPrediction": "ปลดล็อกการทํานายผลการจับฉลาก",
+  "unlockForecast": "Unlock Forecast",
+  "unlockMatchHighlights": "ปลดล็อกไฮไลท์การแข่งขัน",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "กําลังจะมาถึง",
+  "updating": "The Match กําลังอัปเดต...",
+  "updatingMatchInfo": "กําลังอัปเดตข้อมูลการแข่งขัน...",
+  "upgrade": "อัปเกรด",
+  "upgradeForUnlimitedAccessNoAds": "อัปเกรดเพื่อการเข้าถึงแบบไม่จํากัดและไม่มีโฆษณา",
+  "viewAll": "ดูทั้งหมด",
+  "viewDetailsMatch": "ดูรายละเอียดที่ตรงกัน",
+  "vs": "ปะทะ",
+  "vsHasStartedFollowTheMatchLive": "{arg1} เทียบกับ {arg2} ได้เริ่มขึ้นแล้ว ติดตามการแข่งขันสด!",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "ดูโฆษณาสั้น ๆ เพื่อส่งการทายผลการจับฉลากของคุณ",
+  "watchNow": "ดูตอนนี้",
+  "watermarkLabelPrefix": "แอดม็อบ -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "เรายินดีที่คุณสนุกกับการใช้แอพของเรา",
+  "weekly": "รายสัปดาห์",
+  "weight": "น้ําหนัก:",
+  "whatAHalf": "ช่างเป็นครึ่งหนึ่ง! {arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "ใครจะเป็นผู้ชนะ?",
+  "yearly": "รายปี",
+  "years": "ปี",
+  "yellowCards": "ใบเหลือง",
+  "yes": "ใช่",
+  "yesText": "ใช่",
+  "yesterday": "เมื่อวาน",
+  "youRePremiumUser": "คุณเป็นผู้ใช้ระดับพรีเมียม",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "คุณจะไม่ได้รับการแจ้งเตือนหรือการอัปเดตใดๆ จนกว่าจะเปิดอีกครั้ง",
+  "yourFilesIsEmpty": "ไฟล์ของคุณว่างเปล่า"
+}

@@ -1,0 +1,639 @@
+{
+  "@@locale": "ru",
+  "age": "Возраст:",
+  "aiMainPick": "Основной выбор ИИ",
+  "allLeagues": "Все лиги",
+  "allTeams": "Все команды",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "Ты уверен, что хочешь выйти из приложения?",
+  "away": "Вдали",
+  "awayText": "Вдали",
+  "awayWin": "Выездная победа",
+  "bestPrice": "Лучшая цена",
+  "blockedShots": "Блок-шоты",
+  "bothTeamsToScore": "Обе команды забивали",
+  "bottomsheetActionCollapse": "Скрутите нижнюю часть",
+  "bottomsheetActionExpand": "Расширите нижний лист",
+  "bottomsheetActionExpandHalfway": "Расширяйтесь на полпути",
+  "bottomsheetDragHandleContentDescription": "Ручка перетягивания",
+  "cancel": "Отмена",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "Болейте за свою команду — смогут ли они победить, сломаться или удержать линию?",
+  "chooseYourLeague": "Выберите свою лигу",
+  "chooseYourLeagues": "Выбирайте свои лиги",
+  "chooseYourPreferredLanguage": "Выберите предпочитаемый язык",
+  "chooseYourTeam": "Выбирайте свою команду",
+  "chooseYourTeams": "Выбирайте свои команды",
+  "clearAll": "Очистить всё",
+  "closeDrawer": "Закрыть меню навигации",
+  "closeSheet": "Закрыть лист",
+  "club": "Клуб:",
+  "confidenceFormat": "{arg1}%% Уверенность",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "Продолжайте",
+  "cornerPredictions": "Прогнозы по углам",
+  "dateFormatDay": "ЭЭЭ",
+  "dateFormatValue": "MMM d",
+  "defaultAwayTeam": "Команда в гостях",
+  "defaultHomeTeam": "Главная команда",
+  "defaultLeague": "Лига",
+  "details": "Подробности",
+  "done": "Готово",
+  "drawText": "Жеребьёвка",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "Конец первой половины",
+  "explore": "Исследуйте",
+  "favorite": "Любимый",
+  "favoriteLeagues": "Любимые лиги",
+  "favoriteTeams": "Любимые команды",
+  "feedback": "Обратная связь",
+  "finished": "Завершено",
+  "firstGoalPredictions": "Прогнозы первого гола",
+  "fixture": "Матч #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "Матчи",
+  "followFavoriteTeams": "Следите за любимыми командами",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "Фолы",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "Из перечисленных ниже языков выберите свой родной язык. Позже можно сменить язык в настройках.",
+  "fullTime": "Полный рабочий день",
+  "getReadyMatchStartsSoon": "Приготовьтесь! Матч начнётся скоро",
+  "getStarted": "Начинайте",
+  "goProVersion": "ВЕРСИЯ GO PRO",
+  "goToSetting": "Перейти к сеттингу",
+  "goallessAtTheBreakSeeMatchStats": "На перерыв — 0 голов. Смотрите статистику матчей.",
+  "goalsInTheFirstHalf": "Голы в первом тайме.",
+  "h2h": "H2H",
+  "halftimeScore": "Счёт к перерыву",
+  "height": "Высота:",
+  "highlight": "Основные моменты",
+  "highlights": "Основные моменты",
+  "home": "Дом",
+  "homeText": "Дом",
+  "homeWin": "Домашняя победа",
+  "hour": "{arg1} час{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} час{arg2} {arg3} минуты",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ HT: {arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "Глубокий анализ ИИ",
+  "inProgress": "В процессе",
+  "indeterminate": "Частично проверено",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "Infor",
+  "internationalTournaments": "Международные турниры",
+  "introTitle1": "Живые результаты, видеообзоры и срочные новости.",
+  "introTitle2": "Получайте живые оповещения о голах, карточках и начальных ударах",
+  "kickOff": "Старт!",
+  "language": "Язык",
+  "languageScreenNotReachable": "Языковой экран недоступен отсюда",
+  "languages": "Языки",
+  "last5Games": "Последние 5 игр",
+  "league": "Лига",
+  "leagues": "Лиги",
+  "lifetime": "Жизнь",
+  "lineup": "Состав",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "Живой эфир",
+  "liveMatches": "ЖИВЫЕ МАТЧИ",
+  "liveS": "Биографии",
+  "liveScore": "ЖИВОЙ САУНДТРЕК",
+  "lives": "Биография",
+  "loading": "Загрузка...",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "Похоже, ты ещё ничего не добавил.",
+  "makeSureToTurnOnTheInternetToUseFeatures": "Обязательно включите интернет, чтобы использовать функции",
+  "matchAlarmBeforeMatch": "Тревога матча (перед матчем)",
+  "matchHighlights": "Основные моменты матча",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "Прогноз матча",
+  "matchResultPredictions": "Прогнозы результатов матчей",
+  "matchScore": "Счёт матча",
+  "matchScorePredictions": "Прогнозы счёта матчей",
+  "matchStart": "Начало матча",
+  "matchTimeline": "Хронология матчей",
+  "matchUpdate": "Обновление матча",
+  "nationalLeagues": "Национальные лиги",
+  "nationality": "Национальность:",
+  "nativeBody": "Кузов",
+  "nativeHeadline": "Заголовок",
+  "nativeMediaView": "Медиа-обзор",
+  "navRailCollapsedA11yLabel": "Обрушился",
+  "navRailExpandedA11yLabel": "Расширение",
+  "navigationMenu": "Навигационное меню",
+  "next": "Далее",
+  "no": "Нет",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "Сравнительных данных для этого матча нет. Сделайте прогноз до конца матча, чтобы увидеть результаты в следующий раз.",
+  "noData": "Нет данных",
+  "noFavoriteLeague": "Нет любимой лиги.",
+  "noFavoriteTeam": "Нет любимой команды.",
+  "noGoal": "Нет гола",
+  "noGoalsScored": "Нет забитых голов",
+  "noInternet": "Нет интернета",
+  "noInternetConnection": "Нет подключения к Интернету",
+  "noPredictionAvailable": "No Prediction Available",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "Пока нет замен",
+  "noText": "Нет",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "Не выбран",
+  "notificationChannelDesc": "Уведомления о предстоящих футбольных матчах",
+  "notificationChannelName": "Уведомления о матчах",
+  "notificationFailedMaybeTooManyPendingNotification": "Уведомление НЕ получилось (возможно, слишком много ожидающих уведомлений)",
+  "notificationMatchReminder": "Напоминание о матче",
+  "notificationMatchStarting": "{arg1} vs {arg2} начинается СЕЙЧАС в {arg3}!",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} vs {arg2} начинается через {arg3} минуты ({arg4})",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "Для установки оповещений требуется разрешение на уведомления.",
+  "notifications": "Уведомления",
+  "notificationsAccess": "Доступ к уведомлениям",
+  "notificationsAreBeingSynchronized": "Уведомления синхронизируются....",
+  "notificationsPermissionConfirm": "Разрешить",
+  "notificationsPermissionDecline": "Не позволяйте",
+  "notificationsPermissionTitle": "Разрешить приложению отправлять уведомления?",
+  "ob1Des": "Получайте обновления в реальном времени от\nВсе главные лиги\nи турниры вокруг\nМир",
+  "ob1Title": "Прямой эфир футбола",
+  "ob3Title": "Никогда не пропускай ни минуты",
+  "offlineDialogImageDescription": "Икона",
+  "offlineDialogText": "Спасибо за ваш интерес.\nМы поделимся больше, когда вы снова будете онлайн.",
+  "offlineOptInConfirm": "Ладно",
+  "offlineOptInDecline": "Нет, спасибо",
+  "offlineOptInMessage": "Мы отправим вам уведомление со ссылкой на сайт рекламодателя.",
+  "offlineOptInTitle": "Откройте объявление, когда снова будете онлайн.",
+  "offsides": "Офсайды",
+  "ok": "Ладно",
+  "okay": "Ладно",
+  "only": "Только",
+  "other": "Прочее",
+  "overall": "В целом",
+  "popular": "Популярные",
+  "position": "Позиция:",
+  "possession": "Владение (%)",
+  "prediction": "Прогноз",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "Предпочитайте ногу:",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "ПРЕМИУМ-ВЕРСИЯ",
+  "preparingYourMatchNotification": "Подготовка уведомления о матче",
+  "priceLaterFormat": "Позже {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "Поздние %1$",
+  "priceOnlyFormat": "Только {arg1}/{arg2}",
+  "@priceOnlyFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyLifetime": "Всего 1$",
+  "privacyPolicy": "Политика конфиденциальности",
+  "quit": "Уйди",
+  "rate": "Ставка",
+  "rateAppTitleBad": "О нет! Мы постараемся стать лучше.",
+  "rateAppTitleDefault": "Оцените наше приложение",
+  "rateAppTitleGood": "Мы рады, что вам понравилось!",
+  "rateAppTitleMid": "Мы усердно работаем, чтобы стать лучше!",
+  "rateOnGooglePlay": "Ставка в Google Play",
+  "ratePlaceholder": "Пожалуйста, оцените нас, чтобы улучшить ваш опыт. Спасибо!",
+  "rateStars": "Рейтинговые звёзды:",
+  "rateUs": "Оцените нас",
+  "redCardInTheFirstHalf": "Красная карточка в первом тайме.",
+  "redCards": "Красные карточки",
+  "removeAllAds": "Удалить все объявления",
+  "restorePurchase": "Восстановление покупки",
+  "result": "Результат",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "Reward ad not available",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "{arg1} уверенность",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "{arg1} правильных прогнозов",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "{arg1} цель",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sSaleOff": "{arg1}\nВыключение",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "Оценка ({arg1}1 - {arg2}2)",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "Ищите лиги или команды...",
+  "searchHistory": "История поиска",
+  "searchLeague": "Поисковая лига",
+  "searchTeam": "Поисковая команда",
+  "searchTeamOrLeague": "Поисковая команда или лига",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
+  "secondHalfIsUnderway": "Вторая половина уже в начале. {arg1} {arg2} - {arg3} {arg4}.",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ Начался второй тайм",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "Смотреть все",
+  "selectLeaguesSubtitle": "Выбирайте лиги, за которыми хотите следить внимательно.",
+  "selectTeamsSubtitle": "Выберите любимые команды, чтобы получать мгновенные оповещения.",
+  "selected": "Избранные",
+  "sentOff": "%1$ удалено ({arg2}')",
+  "@sentOff": {
+    "placeholders": {
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "Места действия",
+  "share": "Поделиться",
+  "shareAppText": "Посмотрите это потрясающее футбольное приложение: https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "Поделиться через",
+  "shirt": "Футболка:",
+  "shotsOffTarget": "Выстрелы с точки зрения",
+  "shotsOnTarget": "Удары в створ",
+  "showAllPicks": "Показать все выборы",
+  "skip": "Пропустить",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "Состав",
+  "startOfSecondHalf": "Начало второй половины",
+  "stateEmpty": "Пусто",
+  "stateOff": "Выключение",
+  "stateOn": "На",
+  "stats": "Статистика",
+  "statusAet": "AET",
+  "statusCancl": "CANCL",
+  "statusEnded": "Ended",
+  "statusFt": "FT",
+  "statusHt": "HT",
+  "statusLive": "ЖИВОЙ КОНЦЕРТ",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "NS",
+  "statusPen": "РУЧКА",
+  "statusPostp": "ОТЛОЖИТЬ",
+  "statusTbd": "Пока не будет",
+  "stay": "Останься",
+  "substitutions": "Замены",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "Член SVIP пользуется множеством привилегий",
+  "switchRole": "Переключатель",
+  "tab": "Tab",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "Таблица",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "Команда",
+  "teams": "Команды",
+  "templatePercent": "1$d процент.",
+  "termOfService": "Срок службы",
+  "textRate1": "Пожалуйста, оцените нас, чтобы улучшить ваш опыт. Спасибо!",
+  "textRate2": "Мы ценим ваши отзывы.",
+  "textRate3": "Мы улучшим ваш опыт",
+  "textRate4": "Мы стремимся сделать его ещё лучше.",
+  "textRate5": "Мы рады, что вам нравится пользоваться нашим приложением",
+  "textRate6": "Мы рады слышать, что вам очень нравится наше приложение.",
+  "thanksForRating": "Спасибо за ваш отзыв!",
+  "theAnalysesBelowAreForReferencePurposesOnly": "Ниже приведены анализы исключительно для справки.",
+  "theBest": "Лучшее, что мы можем получить :\">",
+  "theBestWeCanGet": "Лучшее, что мы можем :)",
+  "theFieldIsQuiet": "Поле тихое",
+  "theFieldIsQuiteEmpty": "Поле довольно пусто.",
+  "theMatchBetweenAndKicksOffIn": "Матч между %1$ и %2$ начинается в {arg3}.",
+  "@theMatchBetweenAndKicksOffIn": {
+    "placeholders": {
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "The match has ended. Predictions are only available for upcoming or live matches.",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "Нет подключения к интернету! Пожалуйста, проверьте своё интернет-соединение!",
+  "thisActionMayContainAds": "Это действие может содержать рекламу",
+  "thisActionMayContainAdvertising": "Это действие может содержать рекламу",
+  "throwIns": "Вброски",
+  "timeLine": "Хронология: {arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "Жизнь",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "Ежемесячно",
+  "titleMonthlyTrial": "Ежемесячно - CTA = НАЧАТЬ БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "Еженедельник",
+  "titleWeeklyTrial": "Еженедельно - CTA = НАЧАТЬ БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД",
+  "titleYearly": "Ежегодно",
+  "titleYearlyTrial": "Ежегодно - CTA = НАЧАТЬ БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "Сегодня",
+  "tomorrow": "Завтра",
+  "tooltipDescription": "подсказка",
+  "tooltipLabel": "Показать подсказку",
+  "topLeague": "Высшая лига",
+  "topTeam": "Лучшие команды",
+  "totalGoals": "Общее количество голов",
+  "totalGoalsPredictions": "Прогнозы по общему числу голов",
+  "totalVotesFormat": "{arg1} всего голосов",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "Отключить уведомления?",
+  "unitMonth": "месяц",
+  "unitWeek": "неделя",
+  "unitYear": "год",
+  "unknown": "Неизвестно",
+  "unlimitedAccessToAllFeature": "Неограниченный доступ ко всем функциям",
+  "unlockDrawPrediction": "Разблокировать прогноз ничьей",
+  "unlockForecast": "Unlock Forecast",
+  "unlockMatchHighlights": "Основные моменты матча для разблокировки",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "Впереди",
+  "updating": "Матч обновляется...",
+  "updatingMatchInfo": "Обновляю информацию о матче...",
+  "upgrade": "Модернизация",
+  "upgradeForUnlimitedAccessNoAds": "ОБНОВЛЕНИЕ ДЛЯ НЕОГРАНИЧЕННОГО ДОСТУПА И ОТСУТСТВИЯ РЕКЛАМЫ",
+  "viewAll": "Посмотреть всё",
+  "viewDetailsMatch": "Посмотреть совпадение деталей.",
+  "vs": "VS",
+  "vsHasStartedFollowTheMatchLive": "{arg1} vs {arg2} началось. Следите за матчем в прямом эфире!",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "Посмотрите короткую рекламу, чтобы отправить прогноз ничьей.",
+  "watchNow": "Смотрите сейчас",
+  "watermarkLabelPrefix": "AdMob -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "Мы рады, что вам нравится пользоваться нашим приложением",
+  "weekly": "Еженедельник",
+  "weight": "Вес:",
+  "whatAHalf": "Вот это половина! {arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "Кто победит?",
+  "yearly": "Ежегодно",
+  "years": "Годы",
+  "yellowCards": "Жёлтые карточки",
+  "yes": "Да",
+  "yesText": "Да",
+  "yesterday": "Вчера",
+  "youRePremiumUser": "Вы — премиум-пользователь",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Вы не получите никаких оповещений или обновлений, пока не включите их снова.",
+  "yourFilesIsEmpty": "Ваши файлы пусты"
+}

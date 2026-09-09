@@ -1,0 +1,645 @@
+{
+  "@@locale": "zh_Hant",
+  "age": "年齡：",
+  "aiMainPick": "AI 主選",
+  "allLeagues": "所有聯盟",
+  "allTeams": "所有隊伍",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "你確定要退出應用程式嗎？",
+  "away": "走開",
+  "awayText": "走開",
+  "awayWin": "客場勝利",
+  "bestPrice": "最佳價格",
+  "blockedShots": "阻攻",
+  "bothTeamsToScore": "雙方都得分",
+  "bottomsheetActionCollapse": "摺疊底板",
+  "bottomsheetActionExpand": "展開底頁",
+  "bottomsheetActionExpandHalfway": "擴展到一半",
+  "bottomsheetDragHandleContentDescription": "拖把",
+  "cancel": "取消",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "為你的隊伍加油——他們會征服、崩潰，還是堅守陣線？",
+  "chooseYourLeague": "選擇你的聯盟",
+  "chooseYourLeagues": "選擇你的聯賽",
+  "chooseYourPreferredLanguage": "選擇你偏好的語言",
+  "chooseYourTeam": "選擇你的隊伍",
+  "chooseYourTeams": "選擇你的隊伍",
+  "clearAll": "全部清空",
+  "closeDrawer": "關閉導覽選單",
+  "closeSheet": "關閉表",
+  "club": "俱樂部：",
+  "confidenceFormat": "{arg1}%% 信心",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "繼續",
+  "cornerPredictions": "轉角預測",
+  "dateFormatDay": "EEE",
+  "dateFormatValue": "嗯",
+  "defaultAwayTeam": "客場隊",
+  "defaultHomeTeam": "主場團隊",
+  "defaultLeague": "聯賽",
+  "details": "詳情",
+  "done": "完成",
+  "drawText": "抽籤",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "上半場結束",
+  "explore": "探索",
+  "favorite": "最愛",
+  "favoriteLeagues": "喜愛的聯賽",
+  "favoriteTeams": "喜愛球隊",
+  "feedback": "回饋",
+  "finished": "完成了",
+  "firstGoalPredictions": "首球預測",
+  "fixture": "固定位置 #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "設施",
+  "followFavoriteTeams": "追蹤最愛球隊",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "犯規",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "請從以下語言中選擇您的母語。之後你可以從設定中更改語言。",
+  "fullTime": "全職",
+  "getReadyMatchStartsSoon": "準備好！比賽即將開始",
+  "getStarted": "開始吧",
+  "goProVersion": "GO PRO 版本",
+  "goToSetting": "前往設定",
+  "goallessAtTheBreakSeeMatchStats": "半場結束時雙方零比零。請參閱比賽數據。",
+  "goalsInTheFirstHalf": "上半場進球。",
+  "h2h": "對面",
+  "halftimeScore": "半場比分",
+  "height": "身高：",
+  "highlight": "重點",
+  "highlights": "亮點",
+  "home": "首頁",
+  "homeText": "首頁",
+  "homeWin": "主場勝利",
+  "hour": "{arg1} 小時{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} 小時{arg2} {arg3} 分鐘",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ 半場：{arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "深入的人工智慧分析",
+  "inProgress": "進行中",
+  "indeterminate": "部分檢查",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "Infor",
+  "internationalTournaments": "國際賽事",
+  "introTitle1": "現場比分、影片精華與最新消息。",
+  "introTitle2": "即時收到進球、卡牌和開球提醒",
+  "kickOff": "開球！",
+  "language": "語言",
+  "languageScreenNotReachable": "語言畫面無法從這裡進入",
+  "languages": "語言",
+  "last5Games": "最近五場比賽",
+  "league": "聯賽",
+  "leagues": "聯賽",
+  "lifetime": "生平",
+  "lineup": "成員陣容",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "現場演出",
+  "liveMatches": "現場比賽",
+  "liveS": "生平",
+  "liveScore": "現場比分",
+  "lives": "生平",
+  "loading": "載入中......",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "看起來你還沒加什麼東西。",
+  "makeSureToTurnOnTheInternetToUseFeatures": "務必開啟網路以使用功能",
+  "matchAlarmBeforeMatch": "比賽警報（賽前）",
+  "matchHighlights": "比賽亮點",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "比賽預測",
+  "matchResultPredictions": "比賽結果預測",
+  "matchScore": "比賽比分",
+  "matchScorePredictions": "比賽比分預測",
+  "matchStart": "比賽開始",
+  "matchTimeline": "比賽時間軸",
+  "matchUpdate": "比賽更新",
+  "nationalLeagues": "國家聯盟",
+  "nationality": "國籍：",
+  "nativeBody": "車身",
+  "nativeHeadline": "頭條新聞",
+  "nativeMediaView": "媒體視角",
+  "navRailCollapsedA11yLabel": "倒塌",
+  "navRailExpandedA11yLabel": "擴展版",
+  "navigationMenu": "導航選單",
+  "next": "下一篇",
+  "no": "不",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "此場比賽無可比擬數據。在比賽結束前做出預測，下次就能看到結果。",
+  "noData": "沒有資料",
+  "noFavoriteLeague": "沒有我最喜歡的聯盟。",
+  "noFavoriteTeam": "沒有偏愛的隊伍。",
+  "noGoal": "沒有進球",
+  "noGoalsScored": "無進球",
+  "noInternet": "沒有網路",
+  "noInternetConnection": "沒有網路連線",
+  "noPredictionAvailable": "無法預測",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "目前還沒有替換",
+  "noText": "不",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "未被選中",
+  "notificationChannelDesc": "即將舉行的足球比賽通知",
+  "notificationChannelName": "比賽通知",
+  "notificationFailedMaybeTooManyPendingNotification": "通知失敗（可能是太多待處理通知）",
+  "notificationMatchReminder": "比賽提醒",
+  "notificationMatchStarting": "{arg1} 對 {arg2} 現在就從 {arg3} 開始！",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} 與 {arg2} 在 {arg3} 分鐘內開始 （{arg4}）",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "設定警示需取得通知權限。",
+  "notifications": "通知",
+  "notificationsAccess": "通知存取",
+  "notificationsAreBeingSynchronized": "通知正在同步中......",
+  "notificationsPermissionConfirm": "允許",
+  "notificationsPermissionDecline": "不要允許",
+  "notificationsPermissionTitle": "允許應用程式發送通知給你？",
+  "ob1Des": "即時更新來自\n所有大聯盟\n以及\n世界觀",
+  "ob1Title": "現場足球",
+  "ob3Title": "絕不錯過任何一刻",
+  "offlineDialogImageDescription": "聖像",
+  "offlineDialogText": "感謝你的關注。\n等你恢復線上後，我們會分享更多內容。",
+  "offlineOptInConfirm": "好",
+  "offlineOptInDecline": "不用了，謝謝",
+  "offlineOptInMessage": "我們會寄送通知給您，並附上廣告主網站的連結。",
+  "offlineOptInTitle": "等你重新上線時再開啟廣告。",
+  "offsides": "越位",
+  "ok": "好",
+  "okay": "好",
+  "only": "只有",
+  "other": "其他",
+  "overall": "整體",
+  "popular": "受歡迎",
+  "position": "職位：",
+  "possession": "持有權（%）",
+  "prediction": "預測",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "偏好腳部：",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "高級版",
+  "preparingYourMatchNotification": "準備你的配對通知",
+  "priceLaterFormat": "後期 {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "後期 {arg1}",
+  "@priceLaterLifetime": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "priceOnlyFormat": "只有%1美元/%2美元",
+  "priceOnlyLifetime": "只有 %1 美元",
+  "privacyPolicy": "隱私政策",
+  "quit": "辭職",
+  "rate": "速率",
+  "rateAppTitleBad": "喔不！我們會努力做得更好。",
+  "rateAppTitleDefault": "評分我們的應用程式",
+  "rateAppTitleGood": "很高興你喜歡！",
+  "rateAppTitleMid": "我們正在努力改進！",
+  "rateOnGooglePlay": "Google Play 上的費率",
+  "ratePlaceholder": "請給我們評分，以提升你的體驗。謝謝你！",
+  "rateStars": "星級評分：",
+  "rateUs": "給我們評分",
+  "redCardInTheFirstHalf": "上半場就被紅牌罰下。",
+  "redCards": "紅牌",
+  "removeAllAds": "移除所有廣告",
+  "restorePurchase": "恢復購買",
+  "result": "結果",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "獎勵廣告無法提供",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "{arg1} 信心",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "{arg1} 正確預測",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "{arg1} 目標",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sSaleOff": "{arg1}\n關掉",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "分數（{arg1}1 - {arg2}2）",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "搜尋聯盟或球隊......",
+  "searchHistory": "搜尋歷史",
+  "searchLeague": "搜尋聯盟",
+  "searchTeam": "搜尋隊",
+  "searchTeamOrLeague": "搜尋隊或聯盟",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
+  "secondHalfIsUnderway": "下半場已經開始。{arg1} {arg2} - {arg3} {arg4}。",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ 下半場開始",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "全部查看",
+  "selectLeaguesSubtitle": "選擇你想密切關注的聯盟。",
+  "selectTeamsSubtitle": "選擇你最喜愛的球隊，即可即時收到通知。",
+  "selected": "精選",
+  "sentOff": "{arg1} 送出 （{arg2}'）",
+  "@sentOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "場景設定",
+  "share": "分享",
+  "shareAppText": "看看這個超棒的足球應用程式：https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "分享至以下網址",
+  "shirt": "襯衫：",
+  "shotsOffTarget": "射門偏離目標",
+  "shotsOnTarget": "射正",
+  "showAllPicks": "顯示所有推薦",
+  "skip": "跳過",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "陣容",
+  "startOfSecondHalf": "下半場開始",
+  "stateEmpty": "空的",
+  "stateOff": "關掉",
+  "stateOn": "關於",
+  "stats": "數據",
+  "statusAet": "AET",
+  "statusCancl": "坎克爾",
+  "statusEnded": "Ended",
+  "statusFt": "金融時報",
+  "statusHt": "HT",
+  "statusLive": "現場演出",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "NS",
+  "statusPen": "筆會",
+  "statusPostp": "POSTP",
+  "statusTbd": "待定",
+  "stay": "留下來",
+  "substitutions": "替換",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "SVIP會員享有多項特權",
+  "switchRole": "切換",
+  "tab": "分頁",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "表格",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "球隊",
+  "teams": "球隊",
+  "templatePercent": "1%%%。",
+  "termOfService": "服役期間",
+  "textRate1": "請給我們評分，以提升你的體驗。謝謝你！",
+  "textRate2": "我們重視您的回饋。",
+  "textRate3": "我們會提升你的體驗",
+  "textRate4": "我們致力於讓它變得更好。",
+  "textRate5": "我們很高興您喜歡使用我們的應用程式",
+  "textRate6": "我們很高興聽到您喜歡我們的應用程式。",
+  "thanksForRating": "謝謝你的回饋！",
+  "theAnalysesBelowAreForReferencePurposesOnly": "以下分析僅供參考參考。",
+  "theBest": "我們能做到的最好：「>",
+  "theBestWeCanGet": "我們能找到的最好:)",
+  "theFieldIsQuiet": "田野很安靜",
+  "theFieldIsQuiteEmpty": "田野相當空蕩。",
+  "theMatchBetweenAndKicksOffIn": "{arg1}與{arg2}的比賽於{arg3}開始。",
+  "@theMatchBetweenAndKicksOffIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "比賽結束了。預測僅針對即將到來或現場比賽提供。",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "根本沒有網路連線！請檢查您的網路連線！",
+  "thisActionMayContainAds": "此行動可能包含廣告",
+  "thisActionMayContainAdvertising": "此行為可能包含廣告",
+  "throwIns": "界外球",
+  "timeLine": "時間軸：{arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "生平",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "月刊",
+  "titleMonthlyTrial": "每月 - CTA = 免費試用開始",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "每週刊",
+  "titleWeeklyTrial": "每週 - CTA = 免費試用開始",
+  "titleYearly": "每年",
+  "titleYearlyTrial": "年度 - CTA = 免費試用開始",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "現況",
+  "tomorrow": "明天",
+  "tooltipDescription": "提示",
+  "tooltipLabel": "顯示提示",
+  "topLeague": "頂級聯賽",
+  "topTeam": "頂尖球隊",
+  "totalGoals": "總進球數",
+  "totalGoalsPredictions": "總進球預測",
+  "totalVotesFormat": "總票數 {arg1}",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "關閉通知？",
+  "unitMonth": "月份",
+  "unitWeek": "週",
+  "unitYear": "年份",
+  "unknown": "未知",
+  "unlimitedAccessToAllFeature": "無限制地使用所有功能",
+  "unlockDrawPrediction": "解鎖抽籤預測",
+  "unlockForecast": "解鎖預報",
+  "unlockMatchHighlights": "解鎖比賽精華",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "即將登場",
+  "updating": "《The Match》正在更新......",
+  "updatingMatchInfo": "更新比賽資訊......",
+  "upgrade": "升級",
+  "upgradeForUnlimitedAccessNoAds": "升級後可享有無限存取權且無廣告",
+  "viewAll": "全部查看",
+  "viewDetailsMatch": "查看詳情。",
+  "vs": "VS",
+  "vsHasStartedFollowTheMatchLive": "{arg1} 對 {arg2} 已經開始了。請持續追蹤比賽直播！",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "觀看一則短廣告，提交你的抽籤預測。",
+  "watchNow": "立即觀看",
+  "watermarkLabelPrefix": "AdMob -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "我們很高興您喜歡使用我們的應用程式",
+  "weekly": "每週刊",
+  "weight": "重量：",
+  "whatAHalf": "真是半場！{arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "誰會贏？",
+  "yearly": "每年",
+  "years": "歲月",
+  "yellowCards": "黃牌",
+  "yes": "是的",
+  "yesText": "是的",
+  "yesterday": "昨天",
+  "youRePremiumUser": "你是高級用戶",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "在你重新開啟這些通知之前，你不會收到任何通知或更新。",
+  "yourFilesIsEmpty": "你的檔案是空的"
+}

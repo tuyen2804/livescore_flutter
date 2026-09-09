@@ -1,0 +1,615 @@
+{
+  "@@locale": "ja",
+  "age": "年齢:",
+  "aiMainPick": "AIメインピック",
+  "allLeagues": "全リーグ",
+  "allTeams": "全チーム",
+  "appName": "Football Track: Live Match",
+  "areYouSureYouWantToExitApp": "本当にアプリを終了したいですか?",
+  "away": "離れろ",
+  "awayText": "離れろ",
+  "awayWin": "アウェイ勝利",
+  "bestPrice": "ベストプライス",
+  "blockedShots": "ブロックショット",
+  "bothTeamsToScore": "両チーム 得点",
+  "bottomsheetActionCollapse": "底のシートを折りたたむ",
+  "bottomsheetActionExpand": "下のシートを展開してください",
+  "bottomsheetActionExpandHalfway": "半分まで拡大する",
+  "bottomsheetDragHandleContentDescription": "ドラッグハンドル",
+  "cancel": "キャンセル",
+  "cheerForYourSideWillTheyConquerCrumbleOrHoldTheLine": "あなたのチームを応援してください — 彼らは勝利するのか、崩壊するのか、それとも守り抜くのか?",
+  "chooseYourLeague": "リーグを選んでください",
+  "chooseYourLeagues": "リーグを選ぶ",
+  "chooseYourPreferredLanguage": "お好みの言語を選ぶ",
+  "chooseYourTeam": "チームを選べ",
+  "chooseYourTeams": "チームを選んでください",
+  "clearAll": "すべてクリア",
+  "closeDrawer": "ナビゲーションメニューを閉じる",
+  "closeSheet": "シートを閉じる",
+  "club": "クラブ:",
+  "confidenceFormat": "{arg1}%% 信頼度",
+  "@confidenceFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "continueText": "続けてください",
+  "cornerPredictions": "コーナー予測",
+  "dateFormatDay": "EEE",
+  "dateFormatValue": "うーん",
+  "defaultAwayTeam": "チーム・アウェイ",
+  "defaultHomeTeam": "チームホーム",
+  "defaultLeague": "リーグ",
+  "details": "詳細",
+  "done": "終わった",
+  "drawText": "引き分け",
+  "eliminateFullScreenInterstitialAds": "Eliminate full-screen interstitial ads",
+  "endOfFirstHalf": "前半終了",
+  "explore": "探索",
+  "favorite": "お気に入り",
+  "favoriteLeagues": "お気に入りのリーグ",
+  "favoriteTeams": "お気に入りのチーム",
+  "feedback": "フィードバック",
+  "finished": "終わり",
+  "firstGoalPredictions": "ファーストゴール予想",
+  "fixture": "固定時間 #{arg1} - {arg2}",
+  "@fixture": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "fixtures": "備品",
+  "followFavoriteTeams": "お気に入りのチームをフォロー",
+  "followersCount": "{arg1} Người theo dõi",
+  "@followersCount": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "fouls": "ファウル",
+  "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "以下の言語の中から、母語を選択してください。後で設定から言語を変更できます。",
+  "fullTime": "フルタイム",
+  "getReadyMatchStartsSoon": "準備しろ!試合開始間もなく",
+  "getStarted": "始めましょう",
+  "goProVersion": "GO PROバージョン",
+  "goToSetting": "設定へ",
+  "goallessAtTheBreakSeeMatchStats": "ハーフタイムは無得点だった。試合統計をご覧ください。",
+  "goalsInTheFirstHalf": "前半のゴール。",
+  "h2h": "H2H",
+  "halftimeScore": "ハーフタイムスコア",
+  "height": "身長:",
+  "highlight": "ハイライト",
+  "highlights": "ハイライト",
+  "home": "ホーム",
+  "homeText": "ホーム",
+  "homeWin": "ホームでの勝利",
+  "hour": "{arg1} hour{arg2}",
+  "@hour": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "hourMins": "{arg1} hour{arg2} {arg3} mins",
+  "@hourMins": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      }
+    }
+  },
+  "ht": "⏸️ HT: {arg1} {arg2} - {arg3} {arg4}",
+  "@ht": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "inDepthAiAnalysis": "詳細なAI分析",
+  "inProgress": "進行中",
+  "indeterminate": "部分的にチェック済み",
+  "infoAwayManager": "Away Manager",
+  "infoChairman": "Chủ tịch hiện tại",
+  "infoChannel": "Channel",
+  "infoCompetitorsCount": "Số lượng võ sĩ",
+  "infoCountry": "Quốc gia",
+  "infoHomeManager": "Home Manager",
+  "infoLeague": "League",
+  "infoOwner": "Chủ sở hữu",
+  "infoReferee": "Referee",
+  "infoRound": "Round",
+  "infoTime": "Time",
+  "infoVenue": "Venue",
+  "infoWeightDivisions": "Hạng cân",
+  "infoYearFoundation": "Thành lập",
+  "infor": "インフォー",
+  "internationalTournaments": "国際大会",
+  "introTitle1": "ライブスコア、動画ハイライト、速報ニュース。",
+  "introTitle2": "ゴール、カード、キックオフのライブアラートを受け取れます",
+  "kickOff": "キックオフ!",
+  "language": "言語",
+  "languageScreenNotReachable": "ここから言語画面にアクセスできません",
+  "languages": "言語",
+  "last5Games": "直近5試合",
+  "league": "リーグ",
+  "leagues": "リーグ",
+  "lifetime": "生涯",
+  "lineup": "メンバー構成",
+  "lineupsTitle": "MATCH LINEUPS",
+  "live": "ライブ",
+  "liveMatches": "ライブマッチ",
+  "liveS": "生涯",
+  "liveScore": "ライブスコア",
+  "lives": "生涯",
+  "loading": "読み込み中...",
+  "loadingRewardAd": "Loading reward ad",
+  "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "looksLikeYouHavenTAddedAnythingYet": "まだ何も追加していないようですね。",
+  "makeSureToTurnOnTheInternetToUseFeatures": "機能を利用するには必ずインターネットをオンにしてください",
+  "matchAlarmBeforeMatch": "試合アラーム(試合前)",
+  "matchHighlights": "試合ハイライト",
+  "matchInfoTitle": "MATCH INFORMATION",
+  "matchPrediction": "試合予想",
+  "matchResultPredictions": "試合結果予想",
+  "matchScore": "マッチスコア",
+  "matchScorePredictions": "試合スコア予想",
+  "matchStart": "試合開始",
+  "matchTimeline": "試合タイムライン",
+  "matchUpdate": "試合の最新情報",
+  "nationalLeagues": "ナショナルリーグ",
+  "nationality": "国籍:",
+  "nativeBody": "本文",
+  "nativeHeadline": "見出し",
+  "nativeMediaView": "メディア",
+  "navRailCollapsedA11yLabel": "崩壊",
+  "navRailExpandedA11yLabel": "拡張版",
+  "navigationMenu": "ナビゲーションメニュー",
+  "next": "次",
+  "no": "いいえ",
+  "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "この試合の比較データは存在しません。試合終了前に予想をして、次回の結果を見ましょう。",
+  "noData": "データなし",
+  "noFavoriteLeague": "お気に入りのリーグはいません。",
+  "noFavoriteTeam": "お気に入りのチームもいない。",
+  "noGoal": "ゴールなし",
+  "noGoalsScored": "ゴールなし",
+  "noInternet": "インターネットもありません",
+  "noInternetConnection": "インターネット接続なし",
+  "noPredictionAvailable": "予測なし",
+  "noRecentMatches": "No recent matches",
+  "noSubstitutionsYet": "まだ交代はなし",
+  "noText": "いいえ",
+  "noUpcomingMatches": "No upcoming matches",
+  "notSelected": "選ばれませんでした",
+  "notificationChannelDesc": "今後のサッカー試合の通知",
+  "notificationChannelName": "試合通知",
+  "notificationFailedMaybeTooManyPendingNotification": "通知失敗(おそらく保留中の通知が多すぎる)",
+  "notificationMatchReminder": "試合リマインダー",
+  "notificationMatchStarting": "{arg1} 対 {arg2} は今から {arg3} から始まります!",
+  "@notificationMatchStarting": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationMatchStartingIn": "{arg1} vs {arg2} は {arg3} 分({arg4})で開始",
+  "@notificationMatchStartingIn": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionDenied": "アラートを設定するには通知許可が必要です。",
+  "notifications": "通知",
+  "notificationsAccess": "通知アクセス",
+  "notificationsAreBeingSynchronized": "通知が同期されています......",
+  "notificationsPermissionConfirm": "許可して",
+  "notificationsPermissionDecline": "許可しないでください",
+  "notificationsPermissionTitle": "アプリに通知を送らせる?",
+  "ob1Des": "リアルタイムの更新を受け取る\n全メジャーリーグ\nおよび\n世界",
+  "ob1Title": "ライブサッカー",
+  "ob3Title": "絶対に見逃さない",
+  "offlineDialogImageDescription": "アイコン",
+  "offlineDialogText": "ご関心ありがとうございます。\nオンライン復帰次第、さらに詳しくお伝えします。",
+  "offlineOptInConfirm": "わかった",
+  "offlineOptInDecline": "結構です",
+  "offlineOptInMessage": "広告主サイトへのリンク付きの通知を送ります。",
+  "offlineOptInTitle": "オンラインに戻ったら広告を開けてください。",
+  "offsides": "オフサイド",
+  "ok": "わかった",
+  "okay": "わかった",
+  "only": "ただ",
+  "other": "その他",
+  "overall": "総じて",
+  "popular": "人気者",
+  "position": "ポジション:",
+  "possession": "所持率(%)",
+  "prediction": "予想",
+  "predictionWhoWillWin": "PREDICTION WINNER",
+  "preferFoot": "足を好む:",
+  "premiumAdFreeUpgrade": "PREMIUM AD-FREE UPGRADE",
+  "premiumBannerDesc": "Unlock full feature, No ads & More",
+  "premiumBannerTitle": "Premium",
+  "premiumBuy": "BUY NOW - {arg1}",
+  "@premiumBuy": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumClose": "Close",
+  "premiumFeatureFaster": "Faster, lighter app",
+  "premiumFeatureLive": "Uninterrupted live match tracking",
+  "premiumFeatureNoAds": "No banners, no interstitials",
+  "premiumFeatureSupport": "Support future updates",
+  "premiumGo": "BUY NOW",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
+  "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumSubtitle": "Enjoy live scores without interruptions",
+  "premiumThanks": "Thank you! Ads are now removed.",
+  "premiumTitle": "Remove all ads",
+  "premiumVersion": "プレミアム版",
+  "preparingYourMatchNotification": "マッチ通知の準備",
+  "priceLaterFormat": "後で {arg1}/{arg2}",
+  "@priceLaterFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "priceLaterLifetime": "後で %1ドル",
+  "priceOnlyFormat": "%1ドル/%2ドルだけです",
+  "priceOnlyLifetime": "1%だけです",
+  "privacyPolicy": "プライバシーポリシー",
+  "quit": "やめて",
+  "rate": "レート",
+  "rateAppTitleBad": "ああ、いやだ!もっと頑張ろう。",
+  "rateAppTitleDefault": "私たちのアプリを評価してください",
+  "rateAppTitleGood": "気に入ってもらえて嬉しいです!",
+  "rateAppTitleMid": "私たちは一生懸命改善に取り組んでいます!",
+  "rateOnGooglePlay": "Google Playでのレート",
+  "ratePlaceholder": "ぜひ評価していただき、体験を深めてください。ありがとうございます!",
+  "rateStars": "星の評価:",
+  "rateUs": "評価してください",
+  "redCardInTheFirstHalf": "前半にレッドカード。",
+  "redCards": "レッドカード",
+  "removeAllAds": "すべての広告を削除してください",
+  "restorePurchase": "購入の回復",
+  "result": "結果",
+  "retry": "Retry",
+  "rewardAdNotAvailable": "リワード広告は利用できません",
+  "rewardAdNotAvailableMessage": "The reward ad could not be loaded. Please try again.",
+  "roundFormat": "Round {arg1}",
+  "@roundFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "sConfidence": "{arg1}信頼度",
+  "@sConfidence": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sCorrectPredictions": "{arg1}の正確予測",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "sGoal": "%の目標",
+  "sSaleOff": "{arg1}\n消えろ",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreS1S2": "スコア({arg1}1 - {arg2}2)",
+  "@scoreS1S2": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHintPick": "リーグやチームを検索してください...",
+  "searchHistory": "検索履歴",
+  "searchLeague": "サーチリーグ",
+  "searchTeam": "捜索チーム",
+  "searchTeamOrLeague": "サーチチームまたはリーグ",
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
+  "secondHalfIsUnderway": "後半戦が始まった。{arg1} {arg2} - {arg3} {arg4}",
+  "@secondHalfIsUnderway": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "secondHalfStarted": "▶️ 後半開始",
+  "sectionFeatured": "Tiêu biểu",
+  "sectionInfo": "Thông tin",
+  "seeAll": "全てを見る",
+  "selectLeaguesSubtitle": "フォローしたいリーグを選びましょう。",
+  "selectTeamsSubtitle": "お気に入りのチームを選択して即時通知を受け取りましょう。",
+  "selected": "選ばれました",
+  "sentOff": "%1ドル送り出された({arg2}')",
+  "@sentOff": {
+    "placeholders": {
+      "arg2": {
+        "type": "int"
+      }
+    }
+  },
+  "settings": "舞台設定",
+  "share": "シェア",
+  "shareAppText": "この素晴らしいサッカーアプリをチェックしてみてください:https://play.google.com/store/apps/details?id={arg1}",
+  "@shareAppText": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVia": "共有",
+  "shirt": "シャツ:",
+  "shotsOffTarget": "外れたショット",
+  "shotsOnTarget": "シュート・オン・ターゲット",
+  "showAllPicks": "すべての選択を表示",
+  "skip": "スキップ",
+  "sportAmericanFootball": "American Football",
+  "sportAussieRules": "Aussie Rules",
+  "sportBadminton": "Badminton",
+  "sportBandy": "Bandy",
+  "sportBaseball": "Baseball",
+  "sportBasketball": "Basketball",
+  "sportBoxing": "Boxing",
+  "sportCricket": "Cricket",
+  "sportCycling": "Cycling",
+  "sportDarts": "Darts",
+  "sportEsports": "eSports",
+  "sportFloorball": "Floorball",
+  "sportFootball": "Football",
+  "sportFutsal": "Futsal",
+  "sportHandball": "Handball",
+  "sportIceHockey": "Ice Hockey",
+  "sportMma": "MMA",
+  "sportMotorsport": "Motorsport",
+  "sportPickerAll": "ALL SPORTS",
+  "sportPickerRecent": "RECENT",
+  "sportPickerSearchHint": "Find sports",
+  "sportRugby": "Rugby",
+  "sportSnooker": "Snooker",
+  "sportTableTennis": "Table Tennis",
+  "sportTennis": "Tennis",
+  "sportVolleyball": "Volleyball",
+  "sportWaterpolo": "Water Polo",
+  "squad": "選手団",
+  "startOfSecondHalf": "後半開始",
+  "stateEmpty": "空っぽ",
+  "stateOff": "消えろ",
+  "stateOn": "オン",
+  "stats": "統計",
+  "statusAet": "AET",
+  "statusCancl": "キャンクル",
+  "statusEnded": "Ended",
+  "statusFt": "FT",
+  "statusHt": "HT",
+  "statusLive": "ライブ",
+  "statusMainCard": "Trận chính thức",
+  "statusNs": "NS",
+  "statusPen": "ペン",
+  "statusPostp": "ポストプ",
+  "statusTbd": "未定",
+  "stay": "待て",
+  "substitutions": "交代",
+  "subtabFinished": "Kết thúc",
+  "subtabUpcoming": "Sắp tới",
+  "svipMemberEnjoysManyPrivileges": "SVIPメンバーは多くの特権を享受します",
+  "switchRole": "スイッチ",
+  "tab": "タブ",
+  "tabDetails": "Chi Tiết",
+  "tabEvents": "Các sự kiện",
+  "tabH2h": "H2H",
+  "tabInfo": "INFO",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
+  "table": "表",
+  "tableMatchesPlayed": "P",
+  "tablePoints": "Pts",
+  "tableTeamHeader": "# Team",
+  "team": "チーム",
+  "teams": "チーム",
+  "templatePercent": "%1%%です。",
+  "termOfService": "勤務期間",
+  "textRate1": "ぜひ評価していただき、体験を深めてください。ありがとうございます!",
+  "textRate2": "皆様のご意見を大切にしています。",
+  "textRate3": "お客様の体験を向上させます",
+  "textRate4": "さらに良くすることに全力を尽くします。",
+  "textRate5": "私たちのアプリを楽しんでいただけていただけていただけることを嬉しく思います",
+  "textRate6": "私たちのアプリを気に入っていただけると聞いて、とても嬉しく思います。",
+  "thanksForRating": "ご意見ありがとうございます!",
+  "theAnalysesBelowAreForReferencePurposesOnly": "以下の分析はあくまで参考資料として提供しています。",
+  "theBest": "できる限りの最善を尽くすのです:「>",
+  "theBestWeCanGet": "できる限りのもの:)",
+  "theFieldIsQuiet": "フィールドは静かだ",
+  "theFieldIsQuiteEmpty": "その野原はかなり空っぽです。",
+  "theMatchBetweenAndKicksOffIn": "%1ドルと%2ドルの対決は%3ドルで始まります。",
+  "theMatchHasEndedPredictionsAreOnlyAvailableForUpcomingOrLiveMatches": "試合は終了した。予想は今後の試合またはライブマッチのみが利用可能です。",
+  "thereIsNoInternetConnectionPleaseCheckYourInternetConnection": "インターネット接続がない!インターネット接続を確認してください!",
+  "thisActionMayContainAds": "このアクションには広告が含まれている場合があります",
+  "thisActionMayContainAdvertising": "この行動には広告が含まれている場合があります",
+  "throwIns": "スローイン",
+  "timeLine": "タイムライン:{arg1}'",
+  "@timeLine": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "titleEsportsGames": "ESPORTS GAMES / MAPS",
+  "titleLifetime": "生涯",
+  "titleMatchIncidents": "MATCH EVENTS",
+  "titleMonthly": "月刊",
+  "titleMonthlyTrial": "月額 - CTA = 無料トライアル開始",
+  "titlePeriodScores": "PERIOD / SET SCORES",
+  "titlePointByPoint": "POINT BY POINT",
+  "titleTvChannels": "BROADCAST CHANNELS",
+  "titleWeekly": "週刊",
+  "titleWeeklyTrial": "週間 - CTA = 無料トライアル開始",
+  "titleYearly": "年間",
+  "titleYearlyTrial": "年間 - CTA = 無料トライアル開始",
+  "toastNotificationOff": "Notifications disabled",
+  "toastNotificationOn": "Notifications enabled",
+  "today": "現在",
+  "tomorrow": "明日",
+  "tooltipDescription": "ツールチップ",
+  "tooltipLabel": "ツールチップ表示",
+  "topLeague": "トップリーグ",
+  "topTeam": "トップチーム",
+  "totalGoals": "総得点",
+  "totalGoalsPredictions": "総得点予想",
+  "totalVotesFormat": "合計票数:{arg1}",
+  "@totalVotesFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "int"
+      }
+    }
+  },
+  "turnOffNotifications": "通知をオフにする?",
+  "unitMonth": "月",
+  "unitWeek": "週",
+  "unitYear": "年",
+  "unknown": "不明",
+  "unlimitedAccessToAllFeature": "すべての機能に無制限にアクセス可能です",
+  "unlockDrawPrediction": "ドロー予測のアンロック",
+  "unlockForecast": "アンロック予報",
+  "unlockMatchHighlights": "試合ハイライトをアンロック",
+  "unlocksAllFutureAdFreeFeatures": "Unlocks all future ad-free features",
+  "upComing": "これから",
+  "updating": "マッチは更新中です...",
+  "updatingMatchInfo": "試合情報の更新中...",
+  "upgrade": "アップグレード",
+  "upgradeForUnlimitedAccessNoAds": "アップグレードすれば無制限アクセスと広告なし",
+  "viewAll": "全てを見る",
+  "viewDetailsMatch": "詳細を見る。",
+  "vs": "VS",
+  "vsHasStartedFollowTheMatchLive": "{arg1}対{arg2}が始まっています。試合をライブでフォローしてください!",
+  "@vsHasStartedFollowTheMatchLive": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "String"
+      }
+    }
+  },
+  "watchAShortAdToSubmitYourDrawPrediction": "短い広告を見て、ドロー予想を投稿してください。",
+  "watchNow": "今すぐ視聴",
+  "watermarkLabelPrefix": "AdMob -",
+  "weReDelightedThatYouEnjoyUsingOurApp": "私たちのアプリを楽しんでいただけていただけていただけることを嬉しく思います",
+  "weekly": "週刊",
+  "weight": "重量:",
+  "whatAHalf": "なんてハーフだ!{arg1} {arg2} - {arg3} {arg4}",
+  "@whatAHalf": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      },
+      "arg2": {
+        "type": "int"
+      },
+      "arg3": {
+        "type": "int"
+      },
+      "arg4": {
+        "type": "String"
+      }
+    }
+  },
+  "whoWillWins": "どちらが勝つのか?",
+  "yearly": "年間",
+  "years": "年代",
+  "yellowCards": "イエローカード",
+  "yes": "はい",
+  "yesText": "はい",
+  "yesterday": "昨日",
+  "youRePremiumUser": "あなたはプレミアムユーザーです",
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "再度オンにするまでは、アラートやアップデートは一切届きません。",
+  "yourFilesIsEmpty": "あなたのファイルは空です"
+}

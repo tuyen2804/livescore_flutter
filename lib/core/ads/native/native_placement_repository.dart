@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:developer' as dev;
+import 'dart:io' show Platform;
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../../../data/datasources/local/app_prefs.dart';
@@ -12,17 +14,32 @@ import 'native_placement.dart';
 ///
 /// 1. Firebase Remote Config — hạn [_timeout] (5 giây).
 /// 2. Bản cache trong SharedPreferences của lần chạy trước.
-/// 3. `assets/config/native_placements.json` đóng gói trong app.
+/// 3. Asset đóng gói trong app, **tách riêng theo nền tảng**:
+///    `native_placements.json` (Android) / `native_placements_ios.json` (iOS).
 ///
 /// Đây là chỗ cố ý khác bản Kotlin: SDK native bản Android chờ vô hạn nên
-/// splash treo mãi khi Firebase không trả lời.
+/// splash treo mãi khi Firebase không trả lời. Ở đây quá 5 giây, hoặc fetch
+/// lỗi, hoặc JSON hỏng — đều rơi xuống tầng dưới và **ads vẫn chạy**.
 class NativePlacementRepository {
   NativePlacementRepository(this._prefs, this._remoteConfig);
 
   static const Duration _timeout = Duration(seconds: 5);
   static const String _cacheKey = 'native_placement_config_cache';
-  static const String _assetPath = 'assets/config/native_placements.json';
   static const String _tag = 'NativePlacement';
+
+  /// Hai nền tảng có **bộ ad unit id hoàn toàn khác nhau** (app id Android
+  /// `~4860453709`, iOS `~1935875064`), nên bản dự phòng cũng phải tách.
+  /// Dùng nhầm file thì AdMob trả `No ad config` và không bao giờ có quảng cáo.
+  static const String _assetAndroid = 'assets/config/native_placements.json';
+  static const String _assetIos = 'assets/config/native_placements_ios.json';
+
+  static String get _assetPath =>
+      (!kIsWeb && Platform.isIOS) ? _assetIos : _assetAndroid;
+
+  /// Cache cũng tách theo nền tảng cho chắc — cùng một máy chạy cả hai bản
+  /// (ví dụ simulator + emulator dùng chung tài khoản) thì không lẫn.
+  static String get _cacheKeyForPlatform =>
+      (!kIsWeb && Platform.isIOS) ? '${_cacheKey}_ios' : _cacheKey;
 
   final AppPrefs _prefs;
   final RemoteConfigService _remoteConfig;
@@ -67,12 +84,12 @@ class NativePlacementRepository {
     final parsed = _parse(raw, 'remote');
     if (parsed == null || parsed.isEmpty) return null;
     // Chỉ cache khi parse được, tránh ghi đè bản tốt bằng bản hỏng.
-    await _prefs.setString(_cacheKey, raw);
+    await _prefs.setString(_cacheKeyForPlatform, raw);
     return parsed;
   }
 
   NativePlacementConfig? _fromCache() {
-    final raw = _prefs.getString(_cacheKey);
+    final raw = _prefs.getString(_cacheKeyForPlatform);
     if (raw == null || raw.isEmpty) return null;
     final parsed = _parse(raw, 'cache');
     return (parsed == null || parsed.isEmpty) ? null : parsed;

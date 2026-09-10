@@ -12,6 +12,10 @@ class NativeLayouts {
 
   static const String fullsizeCtaMediaInfo = 'FULLSIZE_CTA_MEDIA_INFO';
   static const String fullsizeInfoMediaCta = 'FULLSIZE_INFO_MEDIA_CTA';
+
+  /// Bảng monetization của iOS ghi "Media - Info - CTA" cho OB và Choose —
+  /// bố cục thứ ba, khác cả hai cái trên.
+  static const String fullsizeMediaInfoCta = 'FULLSIZE_MEDIA_INFO_CTA';
   static const String smallBannerInfo2Cta = 'SMALL_BANNER_INFO2CTA';
   static const String smallBannerIcon2Media2Info =
       'SMALL_BANNER_ICON2MEDIA2INFO';
@@ -24,6 +28,7 @@ class NativeLayouts {
   static const Map<String, String> _factoryIds = {
     fullsizeCtaMediaInfo: 'ctaMediaInfo',
     fullsizeInfoMediaCta: 'infoMediaCta',
+    fullsizeMediaInfoCta: 'mediaInfoCta',
     smallBannerInfo2Cta: 'bannerInfoCta',
     smallBannerIcon2Media2Info: 'bannerIconMediaInfo',
     fullscreenPortMediaInfoCta: 'fullscreenMediaInfoCta',
@@ -64,7 +69,10 @@ class NativeLayouts {
   static double? preferredHeight(String layout) => switch (layout) {
         smallBannerIcon2Media2Info => 56,
         smallBannerInfo2Cta => 90,
-        fullsizeCtaMediaInfo || fullsizeInfoMediaCta => 330,
+        fullsizeCtaMediaInfo ||
+        fullsizeInfoMediaCta ||
+        fullsizeMediaInfoCta =>
+          330,
         _ => null,
       };
 }

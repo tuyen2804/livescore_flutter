@@ -22,6 +22,7 @@ import google_mobile_ads
     let factories: [String: LiveScoreNativeAdFactory.Layout] = [
       "ctaMediaInfo": .ctaMediaInfo,
       "infoMediaCta": .infoMediaCta,
+      "mediaInfoCta": .mediaInfoCta,
       "bannerInfoCta": .bannerInfoCta,
       "bannerIconMediaInfo": .bannerIconMediaInfo,
       "fullscreenMediaInfoCta": .fullscreenMediaInfoCta,

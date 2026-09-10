@@ -603,3 +603,56 @@ cửa hàng thì user phải chạm vào chính quảng cáo.
   cũ có tiền tố `GAD`.
 - **Fullscreen 2 quảng cáo + chuỗi nút** và **collapsible ở đáy Main**: đã viết
   nhưng chưa bấm thử tới nơi trên máy ảo.
+
+---
+
+## 17. Ad unit iOS (10/09/2026)
+
+Bảng monetization của iOS dùng **bộ id hoàn toàn khác Android**, kể cả app id.
+Dùng nhầm bộ thì AdMob trả `No ad config` và không bao giờ có quảng cáo.
+
+| | Android | iOS |
+|---|---|---|
+| **App id** | `~4860453709` | `~1935875064` |
+| Inter splash | `/7120775219` · HF `/6929203526` | `/6859180059` · HF `/5055495442` |
+| Inter in-app | `/8714872570` · HF `/6319914573` | `/4141517375` · HF `/3849873330` |
+| Inter No-ads | `/8193194050` · HF `/5813377067` | `/5985433731` · HF `/5322737104` |
+| Reward | `/5717279348` | `/1654954838` |
+| App Open | `/5525707654` | `/4869838782` |
+
+Tách trong `lib/core/ads/ads_constants.dart` bằng `Platform.isIOS`.
+App id iOS đã ghi vào `ios/Runner/Info.plist` (`GADApplicationIdentifier`).
+
+### 17.1 Config mặc định cho iOS
+
+`assets/config/native_placements_ios.json` — dùng khi Remote Config **quá 5
+giây**, **fetch lỗi**, hoặc **JSON hỏng**. Cache prefs cũng tách khoá
+(`..._ios`) để hai nền tảng không đọc nhầm của nhau.
+
+| Placement | Layout | id (HF trước, thường sau) |
+|---|---|---|
+| `LGF_1` | CTA–Media–Info | `9645125497` · `4584370507` |
+| `LGF_2` | CTA–Media–Info | `5496524748` · `2237760418` |
+| `OB` / `OB2` / `OB3` | Media–Info–CTA | `3800299690` · `1365708040` — bảng ghi *"gộp ID, dùng ID của OB1"* |
+| `fullscreen` | Dual mirror | `3582280025` (trên) · `2888145458` (dưới) |
+| `Choose1` / `Choose2` | Media–Info–CTA | `9102200016` · `9956116680` — gộp theo bảng |
+| `collap_home` | Info–Media–CTA + banner nhỏ | `9038620831` · `1846526529` · `9776987432`, reload **10s** |
+| `Inapp` | Banner nhỏ | `9776987432`, reload 30s |
+
+**Không khai** (bảng không cấp id): `native_splash`, `native_Loading` (bảng ghi
+rõ *"Không ads"*), `native_Inapp_New`, `native_noads`.
+
+### 17.2 Hai điểm bảng iOS yêu cầu khác Android
+
+**Native fullscreen giữa OB1 và OB2 — 2 quảng cáo, không đếm ngược.** Bảng ghi:
+gọi cả id high-floor lẫn id thường; **đủ cả hai** thì hiện layout 2 quảng cáo
+trên/dưới, **không đủ** thì hiện fullscreen 1 quảng cáo như thường; ad của
+high-floor **luôn ở nửa trên**. Vì vậy trong config iOS hai id nằm ở **hai slot
+riêng** (high-floor là `slots[0]`), không phải một chuỗi dự phòng như Android.
+`button_sequence` chỉ có `CLOSE` — bảng ghi *"không đếm ngược, user có thể lướt
+qua ngay"*.
+
+**Layout thứ ba.** Bảng dùng *"Media - Info - CTA"* cho OB và Choose — khác cả
+`FULLSIZE_CTA_MEDIA_INFO` lẫn `FULLSIZE_INFO_MEDIA_CTA`. Đã thêm
+`FULLSIZE_MEDIA_INFO_CTA` (`native_media_info_cta.xml` + case `mediaInfoCta`
+bên Swift), nâng tổng số layout lên **6**.

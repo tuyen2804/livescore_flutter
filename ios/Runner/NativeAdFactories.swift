@@ -29,6 +29,8 @@ class LiveScoreNativeAdFactory: NSObject, FLTNativeAdFactory {
         case ctaMediaInfo
         /// Thông tin trên → media → CTA dưới
         case infoMediaCta
+        /// Media trên → thông tin → CTA dưới (bảng iOS: "Media - Info - CTA")
+        case mediaInfoCta
         /// Icon + 2 dòng chữ, CTA bên phải (~80pt)
         case bannerInfoCta
         /// Icon → media nhỏ → chữ (~50pt)
@@ -168,6 +170,19 @@ class LiveScoreNativeAdFactory: NSObject, FLTNativeAdFactory {
                     vStack([leadingWrap(adLabel), headline, body], spacing: 2),
                 ], spacing: 8),
                 media,
+                cta,
+            ], spacing: 8)
+
+        case .mediaInfoCta:
+            media.setContentHuggingPriority(.defaultLow, for: .vertical)
+            media.setContentCompressionResistancePriority(
+                .defaultLow, for: .vertical)
+            constrainIcon(icon, size: 40)
+            constrainCta(cta, height: 48)
+            return vStack([
+                leadingWrap(adLabel),
+                media,
+                hStack([icon, vStack([headline, body], spacing: 2)], spacing: 8),
                 cta,
             ], spacing: 8)
 

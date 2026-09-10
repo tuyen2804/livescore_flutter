@@ -1,0 +1,284 @@
+{
+  "placements": {
+    "LiveScore_native_LGF_1": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9645125497",
+                "ca-app-pub-6884037586522683/4584370507"
+              ],
+              "layout": "FULLSIZE_CTA_MEDIA_INFO"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_LGF_2": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/5496524748",
+                "ca-app-pub-6884037586522683/2237760418"
+              ],
+              "layout": "FULLSIZE_CTA_MEDIA_INFO"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_OB": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3800299690",
+                "ca-app-pub-6884037586522683/1365708040"
+              ],
+              "layout": "FULLSIZE_MEDIA_INFO_CTA"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_OB2": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3800299690",
+                "ca-app-pub-6884037586522683/1365708040"
+              ],
+              "layout": "FULLSIZE_MEDIA_INFO_CTA"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_OB3": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3800299690",
+                "ca-app-pub-6884037586522683/1365708040"
+              ],
+              "layout": "FULLSIZE_MEDIA_INFO_CTA"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_fullscreen": {
+      "type": "FULLSCREEN",
+      "display_mode": "OVERLAY",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3582280025"
+              ],
+              "layout": "FULLSCREEN_PORT_DUAL_MIRROR"
+            },
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/2888145458"
+              ],
+              "layout": "FULLSCREEN_PORT_DUAL_MIRROR"
+            }
+          ],
+          "button_sequence": [
+            {
+              "type": "CLOSE",
+              "position": "TOP_END",
+              "style": {
+                "shape": "CIRCLE",
+                "size_dp": 28
+              }
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_Choose1": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9102200016",
+                "ca-app-pub-6884037586522683/9956116680"
+              ],
+              "layout": "FULLSIZE_MEDIA_INFO_CTA"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_Choose2": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9102200016",
+                "ca-app-pub-6884037586522683/9956116680"
+              ],
+              "layout": "FULLSIZE_MEDIA_INFO_CTA"
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "collap_home": {
+      "type": "INLINE",
+      "gravity": "BOTTOM|CENTER_HORIZONTAL",
+      "bg_alpha": 0.85,
+      "load_policy": {
+        "reload_mode": "AUTO_ON_CLOSE|AUTO_INTERVAL",
+        "reload_interval_sec": 10
+      },
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9038620831",
+                "ca-app-pub-6884037586522683/1846526529"
+              ],
+              "layout": "FULLSIZE_INFO_MEDIA_CTA",
+              "style": {
+                "bg_color": "#1F1E23",
+                "headline_color": "#FFFFFF",
+                "body_color": "#CCCCCC",
+                "cta_shape": "PILL"
+              }
+            },
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9776987432"
+              ],
+              "layout": "SMALL_BANNER_INFO2CTA",
+              "style": {
+                "bg_color": "#1F1E23",
+                "headline_color": "#FFFFFF",
+                "body_color": "#CCCCCC",
+                "cta_shape": "PILL"
+              }
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "PILL"
+          },
+          "button_sequence": [
+            {
+              "type": "COLLAPSE",
+              "symbol": "CHEVRON_DOWN",
+              "position": "TOP_END",
+              "style": {
+                "size_dp": 22
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "LiveScore_native_Inapp": {
+      "type": "INLINE",
+      "gravity": "TOP|CENTER_HORIZONTAL",
+      "load_policy": {
+        "reload_mode": "AUTO_ON_CLOSE|AUTO_INTERVAL",
+        "reload_interval_sec": 30
+      },
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9776987432"
+              ],
+              "layout": "SMALL_BANNER_INFO2CTA",
+              "style": {
+                "bg_color": "#1F1E23",
+                "headline_color": "#FFFFFF",
+                "body_color": "#CCCCCC",
+                "cta_shape": "PILL"
+              }
+            }
+          ],
+          "style": {
+            "bg_color": "#1F1E23",
+            "headline_color": "#FFFFFF",
+            "body_color": "#CCCCCC",
+            "cta_shape": "PILL"
+          }
+        }
+      ]
+    }
+  }
+}

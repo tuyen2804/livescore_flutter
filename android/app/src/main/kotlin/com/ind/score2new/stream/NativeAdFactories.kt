@@ -121,6 +121,7 @@ class LiveScoreNativeAdFactory(
         private val FACTORIES = mapOf(
             "ctaMediaInfo" to R.layout.native_cta_media_info,
             "infoMediaCta" to R.layout.native_info_media_cta,
+            "mediaInfoCta" to R.layout.native_media_info_cta,
             "bannerInfoCta" to R.layout.native_banner_info_cta,
             "bannerIconMediaInfo" to R.layout.native_banner_icon_media_info,
             "fullscreenMediaInfoCta" to R.layout.native_fullscreen_media_info_cta,

@@ -1269,6 +1269,15 @@ class SZh extends S {
 
   @override
   String get yourFilesIsEmpty => '你的档案是空的';
+
+  @override
+  String get restorePurchases => '恢复购买';
+
+  @override
+  String get restorePurchasesSuccess => '您的购买已恢复。';
+
+  @override
+  String get restorePurchasesEmpty => '未找到该账号的历史购买记录。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2535,4 +2544,13 @@ class SZhHant extends SZh {
 
   @override
   String get yourFilesIsEmpty => '你的檔案是空的';
+
+  @override
+  String get restorePurchases => '恢復購買';
+
+  @override
+  String get restorePurchasesSuccess => '您的購買已恢復。';
+
+  @override
+  String get restorePurchasesEmpty => '找不到此帳號的歷史購買紀錄。';
 }

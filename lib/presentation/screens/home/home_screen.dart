@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
+import '../../../core/billing/premium_manager.dart';
 import '../../../core/router/app_router.dart';
 import '../../../core/services/notification_service.dart';
 import '../../../core/theme/app_colors.dart';
@@ -23,6 +25,7 @@ import 'widgets/event_feed_list.dart';
 import 'widgets/home_league_card.dart';
 import 'widgets/live_match_card.dart';
 import 'widgets/sport_picker_sheet.dart';
+import '../../widgets/native/native_ad_view.dart';
 
 /// Port `presentation/home/HomeFragment.kt` + `fragment_home.xml`.
 /// Bỏ hai khung native ad (`flAdContainer`) và nút Premium trên toolbar.
@@ -88,6 +91,12 @@ class HomeScreen extends StatelessWidget {
               selected: provider.selectedDate,
               onSelect: provider.setDate,
               onPickDate: () => _pickDate(context, provider),
+            ),
+            // `LiveScore_native_Inapp` — banner nhỏ, tự nạp lại 30 giây
+            // một lần khi đang hiện.
+            NativeAdView(
+              placement: NativePlacements.inApp,
+              margin: EdgeInsets.symmetric(horizontal: AppDimens.sdp(12)),
             ),
             Expanded(
               child: RefreshIndicator(
@@ -442,6 +451,19 @@ class _Toolbar extends StatelessWidget {
               size: AppDimens.sdp(24),
               onTap: () => Navigator.of(context).pushNamed(AppRoutes.settings),
             ),
+            // `ivPremium` 22sdp — chỉ hiện khi bật tính năng và chưa mua gói.
+            if (PremiumManager.featureEnabled)
+              ValueListenableBuilder<bool>(
+                valueListenable: sl<PremiumManager>().isPremiumNotifier,
+                builder: (context, premium, _) => premium
+                    ? const SizedBox.shrink()
+                    : _ToolbarIcon(
+                        asset: 'assets/icons/ic_premium_no_ads.svg',
+                        size: AppDimens.sdp(22),
+                        onTap: () =>
+                            Navigator.of(context).pushNamed(AppRoutes.premium),
+                      ),
+              ),
           ],
         ),
       );

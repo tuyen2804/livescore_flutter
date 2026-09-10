@@ -611,5 +611,8 @@
   "yesterday": "昨日",
   "youRePremiumUser": "あなたはプレミアムユーザーです",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "再度オンにするまでは、アラートやアップデートは一切届きません。",
-  "yourFilesIsEmpty": "あなたのファイルは空です"
+  "yourFilesIsEmpty": "あなたのファイルは空です",
+  "restorePurchases": "購入を復元",
+  "restorePurchasesSuccess": "購入が復元されました。",
+  "restorePurchasesEmpty": "このアカウントで過去の購入は見つかりませんでした。"
 }

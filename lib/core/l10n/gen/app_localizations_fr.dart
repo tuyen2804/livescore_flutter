@@ -1301,4 +1301,14 @@ class SFr extends S {
 
   @override
   String get yourFilesIsEmpty => 'Vos fichiers sont vides';
+
+  @override
+  String get restorePurchases => 'Restaurer les achats';
+
+  @override
+  String get restorePurchasesSuccess => 'Votre achat a été restauré.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Aucun achat antérieur trouvé pour ce compte.';
 }

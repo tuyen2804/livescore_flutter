@@ -635,5 +635,8 @@
   "yesterday": "Вчера",
   "youRePremiumUser": "Вы — премиум-пользователь",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Вы не получите никаких оповещений или обновлений, пока не включите их снова.",
-  "yourFilesIsEmpty": "Ваши файлы пусты"
+  "yourFilesIsEmpty": "Ваши файлы пусты",
+  "restorePurchases": "Восстановить покупки",
+  "restorePurchasesSuccess": "Ваша покупка восстановлена.",
+  "restorePurchasesEmpty": "Для этого аккаунта прошлых покупок не найдено."
 }

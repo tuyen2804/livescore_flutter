@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/l10n/gen/app_localizations.dart';
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_dimens.dart';
@@ -13,6 +14,7 @@ import '../../../core/widgets/state_views.dart';
 import '../../widgets/settings_toolbar.dart';
 import '../../../domain/entities/match_entities.dart';
 import '../../providers/home_provider.dart';
+import '../../widgets/native/native_ad_view.dart';
 
 /// Port `presentation/live/LiveMatchesFragment.kt` +
 /// `VerticalLiveMatchAdapter` (`item_live_match_vertical.xml`).
@@ -39,6 +41,12 @@ class LiveMatchesScreen extends StatelessWidget {
                 height: AppDimens.sdp(22),
               ),
             ),
+          ),
+          // `LiveScore_native_Inapp` — bản gốc dùng chung placement này cho
+          // Home, chi tiết trận và danh sách trận live.
+          NativeAdView(
+            placement: NativePlacements.inApp,
+            margin: EdgeInsets.symmetric(horizontal: AppDimens.sdp(12)),
           ),
           Expanded(
             child: RefreshIndicator(

@@ -5,6 +5,8 @@ import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/l10n/gen/app_localizations.dart';
+import '../../../core/billing/premium_manager.dart';
+import '../../../core/di/injection.dart';
 import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_dimens.dart';
@@ -45,6 +47,14 @@ class SettingsScreen extends StatelessWidget {
       body: Column(
         children: [
           SettingsToolbar(title: s.settings),
+          // `btnPremium` — banner gradient #A855F7 → #1D4ED8, bo 12sdp,
+          // chỉ hiện khi bật tính năng và chưa mua gói.
+          if (PremiumManager.featureEnabled)
+            ValueListenableBuilder<bool>(
+              valueListenable: sl<PremiumManager>().isPremiumNotifier,
+              builder: (context, premium, _) =>
+                  premium ? const SizedBox.shrink() : const _PremiumBanner(),
+            ),
           Padding(
             padding: EdgeInsets.only(
               left: AppDimens.sdp(16),
@@ -153,4 +163,71 @@ class _Row extends StatelessWidget {
           ),
         ),
       );
+}
+
+
+/// Port `btnPremium` trong `fragment_settings.xml`: nền `bg_premium_banner`
+/// (gradient ngang #A855F7 → #1D4ED8, bo 12sdp), lề ngang 16sdp, padding
+/// 14sdp, icon 30sdp, tiêu đề 16ssp bold `text500`, mô tả 11ssp `text100`.
+class _PremiumBanner extends StatelessWidget {
+  const _PremiumBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return Padding(
+      padding: EdgeInsets.only(
+        left: AppDimens.sdp(16),
+        right: AppDimens.sdp(16),
+        top: AppDimens.sdp(16),
+      ),
+      child: GestureDetector(
+        onTap: () => Navigator.of(context).pushNamed(AppRoutes.premium),
+        behavior: HitTestBehavior.opaque,
+        child: Container(
+          padding: EdgeInsets.all(AppDimens.sdp(14)),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Color(0xFFA855F7), Color(0xFF1D4ED8)],
+            ),
+            borderRadius: BorderRadius.circular(AppDimens.sdp(12)),
+          ),
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                'assets/icons/ic_premium_no_ads.svg',
+                width: AppDimens.sdp(30),
+                height: AppDimens.sdp(30),
+              ),
+              SizedBox(width: AppDimens.sdp(12)),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      s.premiumBannerTitle,
+                      style: AppTextStyles.bold(
+                        size: AppDimens.ssp(16),
+                        color: AppColors.text500,
+                      ),
+                    ),
+                    SizedBox(height: AppDimens.sdp(2)),
+                    Text(
+                      s.premiumBannerDesc,
+                      style: AppTextStyles.regular(
+                        size: AppDimens.ssp(11),
+                        color: AppColors.text100,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }

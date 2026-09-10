@@ -665,5 +665,8 @@
   "yesterday": "เมื่อวาน",
   "youRePremiumUser": "คุณเป็นผู้ใช้ระดับพรีเมียม",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "คุณจะไม่ได้รับการแจ้งเตือนหรือการอัปเดตใดๆ จนกว่าจะเปิดอีกครั้ง",
-  "yourFilesIsEmpty": "ไฟล์ของคุณว่างเปล่า"
+  "yourFilesIsEmpty": "ไฟล์ของคุณว่างเปล่า",
+  "restorePurchases": "กู้คืนการซื้อ",
+  "restorePurchasesSuccess": "กู้คืนการซื้อของคุณแล้ว",
+  "restorePurchasesEmpty": "ไม่พบการซื้อก่อนหน้านี้สำหรับบัญชีนี้"
 }

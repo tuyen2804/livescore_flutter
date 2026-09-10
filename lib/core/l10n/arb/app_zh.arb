@@ -608,5 +608,8 @@
   "yesterday": "昨天",
   "youRePremiumUser": "你是高级用户",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "在重新开启之前，你不会收到任何提醒或更新。",
-  "yourFilesIsEmpty": "你的档案是空的"
+  "yourFilesIsEmpty": "你的档案是空的",
+  "restorePurchases": "恢复购买",
+  "restorePurchasesSuccess": "您的购买已恢复。",
+  "restorePurchasesEmpty": "未找到该账号的历史购买记录。"
 }

@@ -2497,6 +2497,24 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Your files is empty'**
   String get yourFilesIsEmpty;
+
+  /// No description provided for @restorePurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore Purchases'**
+  String get restorePurchases;
+
+  /// No description provided for @restorePurchasesSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase has been restored.'**
+  String get restorePurchasesSuccess;
+
+  /// No description provided for @restorePurchasesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No previous purchase found for this account.'**
+  String get restorePurchasesEmpty;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

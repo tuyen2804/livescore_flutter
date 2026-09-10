@@ -1273,4 +1273,13 @@ class SKo extends S {
 
   @override
   String get yourFilesIsEmpty => '네 파일은 비어 있어';
+
+  @override
+  String get restorePurchases => '구매 복원';
+
+  @override
+  String get restorePurchasesSuccess => '구매가 복원되었습니다.';
+
+  @override
+  String get restorePurchasesEmpty => '이 계정에서 이전 구매를 찾을 수 없습니다.';
 }

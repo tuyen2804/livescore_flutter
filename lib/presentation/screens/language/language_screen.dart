@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/ads/native/native_ad_manager.dart';
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/router/app_router.dart';
@@ -12,24 +16,56 @@ import '../../../core/widgets/app_image.dart';
 import '../../../domain/entities/language_model.dart';
 import '../../providers/app_provider.dart';
 import '../../providers/language_provider.dart';
+import '../../widgets/native/native_ad_view.dart';
 
 /// Port `presentation/language/LanguageFragment.kt` (bỏ native ads).
-class LanguageScreen extends StatelessWidget {
+class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key, this.fromSettings = false});
 
   final bool fromSettings;
 
   @override
+  State<LanguageScreen> createState() => _LanguageScreenState();
+}
+
+class _LanguageScreenState extends State<LanguageScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Nạp trước cho hai màn kế tiếp: Loading rồi Onboarding trang 1.
+    unawaited(sl<NativeAdManager>().preloadAll([
+      NativePlacements.loading,
+      NativePlacements.onboarding1,
+    ]));
+  }
+
+  @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (_) => LanguageProvider(sl()),
-        child: _LanguageView(fromSettings: fromSettings),
+        child: _LanguageView(fromSettings: widget.fromSettings),
       );
 }
 
-class _LanguageView extends StatelessWidget {
+class _LanguageView extends StatefulWidget {
   const _LanguageView({required this.fromSettings});
 
   final bool fromSettings;
+
+  @override
+  State<_LanguageView> createState() => _LanguageViewState();
+}
+
+class _LanguageViewState extends State<_LanguageView> {
+  /// Port `LanguageFragment`: vào từ onboarding thì hiện `LGF_1`; **chạm chọn
+  /// một ngôn ngữ** thì đổi sang `LGF_2` (`observeLanguageAdSlot2`); còn vào
+  /// từ Settings thì `LGF_2` ngay từ đầu (`observeLanguageSetting`).
+  bool _useSlot2 = false;
+
+  bool get _fromSettings => widget.fromSettings;
+
+  String get _placement => (_fromSettings || _useSlot2)
+      ? NativePlacements.language2
+      : NativePlacements.language1;
 
   Future<void> _confirm(BuildContext context) async {
     final provider = context.read<LanguageProvider>();
@@ -40,7 +76,7 @@ class _LanguageView extends StatelessWidget {
     if (code != null) {
       await app.setLocale(_toLocale(code));
     }
-    if (fromSettings) {
+    if (_fromSettings) {
       navigator.pop(true);
     } else {
       navigator.pushReplacementNamed(AppRoutes.loading);
@@ -68,7 +104,7 @@ class _LanguageView extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (fromSettings)
+                  if (_fromSettings)
                     Padding(
                       padding: EdgeInsets.only(left: AppDimens.sdp(12)),
                       child: GestureDetector(
@@ -127,10 +163,20 @@ class _LanguageView extends StatelessWidget {
                   final item = provider.languages[index];
                   return _LanguageTile(
                     item: item,
-                    onTap: () => provider.selectLanguage(item),
+                    onTap: () {
+                      provider.selectLanguage(item);
+                      if (!_fromSettings && !_useSlot2) {
+                        setState(() => _useSlot2 = true);
+                      }
+                    },
                   );
                 },
               ),
+            ),
+            // `LiveScore_native_LGF_1` — không shimmer, tải xong mới chèn.
+            NativeAdView(
+              placement: _placement,
+              margin: EdgeInsets.only(bottom: AppDimens.sdp(8)),
             ),
           ],
         ),

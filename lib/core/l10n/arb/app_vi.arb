@@ -665,5 +665,8 @@
   "yesterday": "Hôm qua",
   "youRePremiumUser": "Bạn là người dùng cao cấp",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Bạn sẽ không nhận được bất kỳ cảnh báo hoặc cập nhật nào cho đến khi bật lại.",
-  "yourFilesIsEmpty": "Tệp của bạn trống"
+  "yourFilesIsEmpty": "Tệp của bạn trống",
+  "restorePurchases": "Khôi phục giao dịch",
+  "restorePurchasesSuccess": "Đã khôi phục gói bạn đã mua.",
+  "restorePurchasesEmpty": "Không tìm thấy giao dịch nào trước đây cho tài khoản này."
 }

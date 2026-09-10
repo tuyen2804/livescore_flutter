@@ -18,6 +18,7 @@ import '../../presentation/screens/onboarding/pick_favorite_leagues_screen.dart'
 import '../../presentation/screens/onboarding/pick_favorite_teams_screen.dart';
 import '../../presentation/screens/search/search_league_screen.dart';
 import '../../presentation/screens/search/search_screen.dart';
+import '../../presentation/screens/premium/premium_screen.dart';
 import '../../presentation/screens/settings/settings_screen.dart';
 import '../../presentation/screens/sofascore/mma_tournament_screen.dart';
 import '../../presentation/screens/sofascore/motorsport_series_screen.dart';
@@ -40,6 +41,7 @@ class AppRoutes {
   static const String main = '/main';
 
   static const String settings = '/settings';
+  static const String premium = '/premium';
   static const String notification = '/notification';
   static const String notificationSettings = '/notification-settings';
   static const String search = '/search';
@@ -85,6 +87,10 @@ class AppRouter {
               initialTab: (args as Map?)?['tab'] as int? ?? 0,
             ),
           AppRoutes.settings => const SettingsScreen(),
+          AppRoutes.premium => PremiumScreen(
+              fromOnboarding:
+                  _arg<bool>(args, 'fromOnboarding') ?? false,
+            ),
           AppRoutes.notification => const NotificationScreen(),
           AppRoutes.notificationSettings => const NotificationSettingsScreen(),
           AppRoutes.search => const SearchScreen(),

@@ -658,5 +658,8 @@
   "yesterday": "Ontem",
   "youRePremiumUser": "Você é Usuário Premium",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Você não receberá nenhum alerta ou atualização até religá-los.",
-  "yourFilesIsEmpty": "Seus arquivos estão vazios"
+  "yourFilesIsEmpty": "Seus arquivos estão vazios",
+  "restorePurchases": "Restaurar compras",
+  "restorePurchasesSuccess": "Sua compra foi restaurada.",
+  "restorePurchasesEmpty": "Nenhuma compra anterior encontrada para esta conta."
 }

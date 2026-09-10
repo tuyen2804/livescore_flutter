@@ -31,6 +31,22 @@ target 'Runner' do
   use_frameworks!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  # ---- Mediation ----
+  # Cùng 10 mạng với Android. Tên pod đã đối chiếu với CocoaPods trunk.
+  # Nhớ: mỗi mạng còn phải bật trong AdMob Console mới có request thật, và
+  # Info.plist cần bổ sung SKAdNetworkItems của từng mạng.
+  pod 'GoogleMobileAdsMediationAppLovin'
+  pod 'GoogleMobileAdsMediationIronSource'
+  pod 'GoogleMobileAdsMediationVungle'
+  pod 'GoogleMobileAdsMediationFacebook'
+  pod 'GoogleMobileAdsMediationMintegral'
+  pod 'GoogleMobileAdsMediationPangle'
+  pod 'GoogleMobileAdsMediationUnity'
+  pod 'GoogleMobileAdsMediationMoloco'
+  pod 'GoogleMobileAdsMediationFyber'
+  pod 'GoogleMobileAdsMediationBigo'
+
   target 'RunnerTests' do
     inherit! :search_paths
   end

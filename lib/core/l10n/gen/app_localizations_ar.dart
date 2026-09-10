@@ -1286,4 +1286,14 @@ class SAr extends S {
 
   @override
   String get yourFilesIsEmpty => 'ملفاتك فارغة';
+
+  @override
+  String get restorePurchases => 'استعادة المشتريات';
+
+  @override
+  String get restorePurchasesSuccess => 'تمت استعادة عملية الشراء.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'لم يتم العثور على عملية شراء سابقة لهذا الحساب.';
 }

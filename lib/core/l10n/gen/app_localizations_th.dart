@@ -1292,4 +1292,13 @@ class STh extends S {
 
   @override
   String get yourFilesIsEmpty => 'ไฟล์ของคุณว่างเปล่า';
+
+  @override
+  String get restorePurchases => 'กู้คืนการซื้อ';
+
+  @override
+  String get restorePurchasesSuccess => 'กู้คืนการซื้อของคุณแล้ว';
+
+  @override
+  String get restorePurchasesEmpty => 'ไม่พบการซื้อก่อนหน้านี้สำหรับบัญชีนี้';
 }

@@ -641,5 +641,8 @@
   "yesterday": "昨天",
   "youRePremiumUser": "你是高級用戶",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "在你重新開啟這些通知之前，你不會收到任何通知或更新。",
-  "yourFilesIsEmpty": "你的檔案是空的"
+  "yourFilesIsEmpty": "你的檔案是空的",
+  "restorePurchases": "恢復購買",
+  "restorePurchasesSuccess": "您的購買已恢復。",
+  "restorePurchasesEmpty": "找不到此帳號的歷史購買紀錄。"
 }

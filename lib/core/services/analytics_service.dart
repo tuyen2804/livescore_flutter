@@ -2,7 +2,7 @@ import 'dart:developer' as dev;
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-/// Port của `data/firebase/Analytics.kt` (đã bỏ các event quảng cáo).
+/// Port của `data/firebase/Analytics.kt`.
 class AnalyticsService {
   FirebaseAnalytics? _analytics;
 

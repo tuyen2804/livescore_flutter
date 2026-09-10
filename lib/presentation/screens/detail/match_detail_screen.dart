@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
@@ -17,6 +18,7 @@ import 'tabs/match_info_tab.dart';
 import 'tabs/match_lineup_tab.dart';
 import 'tabs/match_stats_tab.dart';
 import 'tabs/match_table_tab.dart';
+import '../../widgets/native/native_ad_view.dart';
 
 /// Port `presentation/detail/MatchDetailFragment.kt` + `fragment_match_detail.xml`:
 /// toolbar 74sdp (back – tiêu đề – refresh) → thẻ trận nền `iv_bg_live_match`
@@ -68,6 +70,12 @@ class _MatchDetailViewState extends State<_MatchDetailView> {
             title: s.liveScore,
             onBack: () => Navigator.of(context).maybePop(),
             onRefresh: () => provider.loadMatchDetail(widget.matchId),
+          ),
+          // `LiveScore_native_Inapp` — bản gốc dùng chung placement này cho
+          // Home, chi tiết trận và danh sách trận live.
+          NativeAdView(
+            placement: NativePlacements.inApp,
+            margin: EdgeInsets.symmetric(horizontal: AppDimens.sdp(12)),
           ),
           Expanded(
             child: provider.isLoading && provider.match == null

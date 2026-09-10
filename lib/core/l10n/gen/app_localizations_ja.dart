@@ -1273,4 +1273,13 @@ class SJa extends S {
 
   @override
   String get yourFilesIsEmpty => 'あなたのファイルは空です';
+
+  @override
+  String get restorePurchases => '購入を復元';
+
+  @override
+  String get restorePurchasesSuccess => '購入が復元されました。';
+
+  @override
+  String get restorePurchasesEmpty => 'このアカウントで過去の購入は見つかりませんでした。';
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,6 +12,10 @@ import '../../data/repositories/football_repository_impl.dart';
 import '../../data/repositories/sofascore_repository_impl.dart';
 import '../../domain/repositories/football_repository.dart';
 import '../../domain/repositories/sofascore_repository.dart';
+import '../ads/ads_config_repository.dart';
+import '../ads/native/native_ad_manager.dart';
+import '../ads/native/native_placement_repository.dart';
+import '../billing/premium_manager.dart';
 import '../network/dio_client.dart';
 import '../network/network_info.dart';
 import '../services/analytics_service.dart';
@@ -39,6 +45,19 @@ Future<void> initDependencies() async {
   final notifications = NotificationService();
   await notifications.init();
   sl.registerSingleton<NotificationService>(notifications);
+
+  // ---- Quảng cáo + in-app purchase ----
+  sl.registerLazySingleton<AdsConfigRepository>(() => AdsConfigRepository(sl()));
+  sl.registerLazySingleton<NativePlacementRepository>(
+    () => NativePlacementRepository(sl(), sl()),
+  );
+  sl.registerLazySingleton<NativeAdManager>(
+    () => NativeAdManager(sl(), sl()),
+  );
+  final premium = PremiumManager(prefs);
+  sl.registerSingleton<PremiumManager>(premium);
+  // Không await: hỏi cửa hàng có thể mất vài giây, đừng chặn splash.
+  unawaited(premium.init());
 
   // ---- Mạng ----
   // Base URL bóng đá lấy từ Remote Config, giống `ApiClient.BASE_URL`.

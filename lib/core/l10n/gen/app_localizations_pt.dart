@@ -1298,4 +1298,14 @@ class SPt extends S {
 
   @override
   String get yourFilesIsEmpty => 'Seus arquivos estão vazios';
+
+  @override
+  String get restorePurchases => 'Restaurar compras';
+
+  @override
+  String get restorePurchasesSuccess => 'Sua compra foi restaurada.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Nenhuma compra anterior encontrada para esta conta.';
 }

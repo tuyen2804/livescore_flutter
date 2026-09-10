@@ -9,7 +9,10 @@ import '../../../core/theme/app_dimens.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/state_views.dart';
 import '../../../domain/entities/match_entities.dart';
+import '../../../core/di/injection.dart';
+import '../../../core/services/analytics_service.dart';
 import '../../providers/prediction_provider.dart';
+import '../../widgets/reward_flow.dart';
 import '../home/widgets/date_strip.dart';
 import 'widgets/prediction_widgets.dart';
 
@@ -44,6 +47,35 @@ class _PredictionScreenState extends State<PredictionScreen> {
             ))
         .where((s) => s.fixtures.isNotEmpty)
         .toList(growable: false);
+  }
+
+  /// Port `PredictionFragment`: tab Finished vào thẳng, còn Live / Up coming
+  /// phải xem hết quảng cáo reward mới mở được kết quả dự đoán.
+  void _openForecast(BuildContext context, dynamic fixture) {
+    void go() {
+      sl<AnalyticsService>().logEvent('prediction_submit', {
+        'match_id': '${fixture.id}',
+        'league_name': '${fixture.leagueName}',
+        'home_team': '${fixture.teamHome}',
+        'away_team': '${fixture.teamAway}',
+      });
+      Navigator.of(context).pushNamed(
+        AppRoutes.matchForecast,
+        arguments: {
+          'matchId': int.tryParse('${fixture.id}') ?? 0,
+          'homeTeamName': fixture.teamHome,
+          'awayTeamName': fixture.teamAway,
+          'homeTeamLogo': fixture.homeLogoUrl,
+          'awayTeamLogo': fixture.awayLogoUrl,
+        },
+      );
+    }
+
+    if (_tab == 2) {
+      go();
+      return;
+    }
+    RewardFlow.start(context, onGranted: go);
   }
 
   @override
@@ -164,16 +196,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                                 PredictionLeagueGroup(
                               section: sections[index],
                               onMatchTap: (fixture) =>
-                                  Navigator.of(context).pushNamed(
-                                AppRoutes.matchForecast,
-                                arguments: {
-                                  'matchId': int.tryParse(fixture.id) ?? 0,
-                                  'homeTeamName': fixture.teamHome,
-                                  'awayTeamName': fixture.teamAway,
-                                  'homeTeamLogo': fixture.homeLogoUrl,
-                                  'awayTeamLogo': fixture.awayLogoUrl,
-                                },
-                              ),
+                                  _openForecast(context, fixture),
                             ),
                           ),
               ),

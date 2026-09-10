@@ -27,6 +27,9 @@ class AppPrefs {
   static const String keyDisabledNotifications = 'disabled_notifications';
   static const String keySearchHistory = 'search_history';
 
+  /// `AppPrefs.KEY_ADS_PLAYOUT` — số lần mở app, dùng để chọn bộ cấu hình ads.
+  static const String keyAdsPlayout = 'playout';
+
   static const String _keySelectedSport = 'selected_sport_prefs.key_selected_sport';
   static const String _pinnedPrefix = 'pinned_tournaments.sport_';
   static const String _pinnedInitialized = 'pinned_tournaments.initialized_v1';
@@ -72,6 +75,9 @@ class AppPrefs {
   Future<void> setFirstTimeOpenApp(bool v) => setBool(keyFirstTimeOpenApp, v);
 
   /// 0: Light, 1: Dark — mặc định Dark như bản gốc.
+  int get adsPlayout => getInt(keyAdsPlayout, defaultValue: 0);
+  Future<void> setAdsPlayout(int v) => setInt(keyAdsPlayout, v);
+
   int get themeMode => getInt(keyThemeMode, defaultValue: 1);
   Future<void> setThemeMode(int v) => setInt(keyThemeMode, v);
 

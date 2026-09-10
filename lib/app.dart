@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
+import 'core/ads/consent_manager.dart';
 import 'core/di/injection.dart';
 import 'core/l10n/gen/app_localizations.dart';
 import 'core/router/app_router.dart';
@@ -15,8 +16,24 @@ import 'presentation/providers/notification_provider.dart';
 import 'presentation/providers/prediction_provider.dart';
 import 'presentation/providers/teams_provider.dart';
 
-class LiveScoreApp extends StatelessWidget {
+/// Port `MainActivity` — nơi bản gốc chạy consent một lần cho cả phiên
+/// (`MainActivity.setupViews`), trước khi SplashFragment bắt đầu chờ kết quả.
+class LiveScoreApp extends StatefulWidget {
   const LiveScoreApp({super.key});
+
+  @override
+  State<LiveScoreApp> createState() => _LiveScoreAppState();
+}
+
+class _LiveScoreAppState extends State<LiveScoreApp> {
+  @override
+  void initState() {
+    super.initState();
+    if (!ConsentState.initialized) {
+      ConsentState.initialized = true;
+      ConsentManager.requestConsent(ConsentState.setResult);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        // Mintegral và Pangle không đẩy SDK lên Google Maven / Maven Central,
+        // phải lấy từ repo riêng của họ — giống `settings.gradle.kts` bản Kotlin.
+        maven { url = uri("https://artifact.bytedance.com/repository/pangle") }
+        maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
     }
 }
 

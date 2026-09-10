@@ -46,3 +46,57 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+# Flutter / Dart generated
+.dart_tool/
+.pub-cache/
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Build
+build/
+**/build/
+
+# Coverage
+coverage/
+
+# Flutter generated
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/ephemeral/
+
+# Android generated
+.gradle/
+**/.gradle/
+**/outputs/
+**/intermediates/
+**/generated/
+**/cxx/
+
+# iOS generated
+ios/Pods/
+ios/.symlinks/
+
+# Xcode generated
+DerivedData/
+
+# Temporary files
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+
+# IDE cache
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Flutter widget preview
+.widget_preview/
+
+# Obfuscation / symbol files
+app.*.symbols
+app.*.map.json

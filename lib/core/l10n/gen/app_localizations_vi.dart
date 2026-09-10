@@ -1300,4 +1300,14 @@ class SVi extends S {
 
   @override
   String get yourFilesIsEmpty => 'Tệp của bạn trống';
+
+  @override
+  String get restorePurchases => 'Khôi phục giao dịch';
+
+  @override
+  String get restorePurchasesSuccess => 'Đã khôi phục gói bạn đã mua.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Không tìm thấy giao dịch nào trước đây cho tài khoản này.';
 }

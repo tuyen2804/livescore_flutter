@@ -618,5 +618,8 @@
   "yesterday": "Gestern",
   "youRePremiumUser": "Du bist Premium-Nutzer",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Du bekommst keine Benachrichtigungen oder Updates, bis du sie wieder einschaltest.",
-  "yourFilesIsEmpty": "Deine Dateien sind leer"
+  "yourFilesIsEmpty": "Deine Dateien sind leer",
+  "restorePurchases": "Käufe wiederherstellen",
+  "restorePurchasesSuccess": "Dein Kauf wurde wiederhergestellt.",
+  "restorePurchasesEmpty": "Für dieses Konto wurde kein früherer Kauf gefunden."
 }

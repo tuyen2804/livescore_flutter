@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/router/app_router.dart';
@@ -12,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_dimens.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../data/datasources/local/app_prefs.dart';
+import '../../widgets/native/native_ad_view.dart';
 
 /// Port `presentation/language/LoadingFragment.kt` — màn chờ giữa
 /// Language và Onboarding/Main (bản gốc dùng để nạp native ads).
@@ -106,6 +108,16 @@ class _LoadingScreenState extends State<LoadingScreen> {
                     ),
                   ),
                 ),
+              ),
+            ),
+          ),
+          // `LiveScore_native_Loading` neo ở đáy màn.
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SafeArea(
+              child: NativeAdView(
+                placement: NativePlacements.loading,
+                margin: EdgeInsets.all(AppDimens.sdp(12)),
               ),
             ),
           ),

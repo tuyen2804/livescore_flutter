@@ -465,5 +465,8 @@
   "yesterday": "أمس",
   "youRePremiumUser": "أنت مستخدم بريميوم",
   "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "لن تتلقى أي تنبيهات أو تحديثات حتى تعيد تشغيلها.",
-  "yourFilesIsEmpty": "ملفاتك فارغة"
+  "yourFilesIsEmpty": "ملفاتك فارغة",
+  "restorePurchases": "استعادة المشتريات",
+  "restorePurchasesSuccess": "تمت استعادة عملية الشراء.",
+  "restorePurchasesEmpty": "لم يتم العثور على عملية شراء سابقة لهذا الحساب."
 }

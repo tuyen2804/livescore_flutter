@@ -40,6 +40,10 @@ dependencies:
   smooth_page_indicator: ^1.2.0
   pull_to_refresh_flutter3: ^2.0.2
 
+  # Quảng cáo — bọc com.google.android.gms.ads / GADMobileAds, đúng SDK mà
+  # bản Kotlin dùng cho interstitial, app-open, reward và banner.
+  google_mobile_ads: ^9.1.0
+
   # Firebase (giữ theo yêu cầu)
   firebase_core: ^3.8.0
   firebase_analytics: ^11.3.5
@@ -60,6 +64,7 @@ dependencies:
   webview_flutter: ^4.10.0
   collection: ^1.18.0
   cupertino_icons: ^1.0.8
+  in_app_purchase: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +80,7 @@ flutter:
     - assets/lottie/
     - assets/icons/
     - assets/db/
+    - assets/config/
 
   fonts:
     - family: Gilroy

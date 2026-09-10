@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +13,13 @@ import '../home/home_screen.dart';
 import '../leagues/leagues_screen.dart';
 import '../prediction/prediction_screen.dart';
 import '../teams/teams_screen.dart';
+import '../../../core/ads/ads_constants.dart';
+import '../../../core/ads/native/native_ad_manager.dart';
+import '../../../core/ads/native/native_placements.dart';
+import '../../../core/di/injection.dart';
+import '../../../core/ads/interstitial_ad_manager.dart';
 import '../../providers/teams_provider.dart';
+import '../../widgets/native/native_collapsible.dart';
 
 /// Port `presentation/main/MainFragment.kt` + `fragment_main.xml`:
 /// thanh dưới nền `color_item_bg`, padding dọc 8dp / ngang 10sdp,
@@ -40,9 +48,24 @@ class _MainScreenState extends State<MainScreen> {
 
   static const int _teamsTab = 3;
 
+  @override
+  void initState() {
+    super.initState();
+    // Vào Main thì nạp trước hai placement dùng trong app.
+    unawaited(sl<NativeAdManager>().preloadAll([
+      NativePlacements.inApp,
+      NativePlacements.collapHome,
+    ]));
+  }
+
   /// `TeamsFragment.onResume` gọi `viewModel.loadData()` mỗi lần tab hiện lên;
   /// `IndexedStack` giữ tab sống nên phải nạp lại thủ công khi chuyển sang.
   void _select(int i) {
+    if (i == _index) return;
+    // `setupBottomNavigation` của bản gốc: mỗi lần đổi tab đều gọi
+    // showIfReady(LiveScore_inter_Inapp) — chính manager tự lọc theo
+    // firstDelay / interval nên bấm liên tục cũng không spam.
+    unawaited(InterstitialAdManager.showIfReady(InterPlacement.inApp));
     setState(() => _index = i);
     if (i == _teamsTab) {
       context.read<TeamsProvider>().loadData();
@@ -66,7 +89,20 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: AppColors.bgApp,
       body: IndexedStack(index: _index, children: _pages),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // `containerCollapExpand` của bản gốc — native thu gọn được, nằm
+          // ngay trên thanh điều hướng.
+          const NativeCollapsible(placement: NativePlacements.collapHome),
+          _buildBottomNav(context, items),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBottomNav(BuildContext context, List<_NavItem> items) {
+    return Container(
         color: AppColors.itemBg,
         child: SafeArea(
           top: false,
@@ -89,8 +125,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 

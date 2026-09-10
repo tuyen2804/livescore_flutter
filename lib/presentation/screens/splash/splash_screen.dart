@@ -1,8 +1,19 @@
 import 'dart:async';
+import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../core/ads/ads_config.dart';
+import '../../../core/ads/ads_config_manager.dart';
+import '../../../core/ads/ads_config_repository.dart';
+import '../../../core/ads/ads_constants.dart';
+import '../../../core/ads/app_open_ad_manager.dart';
+import '../../../core/ads/consent_manager.dart';
+import '../../../core/ads/interstitial_ad_manager.dart';
+import '../../../core/ads/native/native_ad_manager.dart';
+import '../../../core/ads/native/native_placements.dart';
+import '../../widgets/native/native_ad_view.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/router/app_router.dart';
@@ -14,8 +25,13 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../data/datasources/local/app_prefs.dart';
 import '../../../data/repositories/sofascore_repository_impl.dart';
 
-/// Port `presentation/splash/SplashFragment.kt` — đã bỏ toàn bộ phần
-/// nạp quảng cáo (native splash / interstitial) và consent.
+/// Port `presentation/splash/SplashFragment.kt`.
+///
+/// Luồng quảng cáo giữ đúng bản gốc: tắt AOA và đánh dấu `isSplash`, mốc
+/// `initAppStart` cho firstDelay, chờ kết quả consent rồi mới nạp cấu hình ads
+/// và preload inter splash, cuối cùng chờ inter sẵn sàng để show trước khi đi
+/// tiếp. Có hàng rào 30 giây: quá lâu mà chưa show được thì đi luôn.
+/// Native splash đã bỏ theo yêu cầu.
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -24,14 +40,118 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  /// Bản gốc chờ Remote Config + ads tối đa vài giây; ở đây chỉ còn
-  /// Remote Config nên giữ một khoảng tối thiểu cho mượt.
+  /// Bản gốc chờ Remote Config + ads tối đa vài giây.
   static const Duration _minSplash = Duration(milliseconds: 1500);
+
+  /// `launch { delay(30000); if (!isShowInter) goNext() }` của bản gốc.
+  static const Duration _hardTimeout = Duration(seconds: 30);
+
+  /// `launch { delay(20000); collectSplashInter() }`.
+  static const Duration _interWait = Duration(seconds: 20);
+
+  bool _isShowInter = false;
+  bool _navigated = false;
+  StreamSubscription<bool>? _consentSub;
+  Timer? _hardTimeoutTimer;
 
   @override
   void initState() {
     super.initState();
+    AppOpenAdManager.isSplash = true;
+    AppOpenAdManager.disable('splash');
+    InterstitialAdManager.initAppStart();
+    _hardTimeoutTimer = Timer(_hardTimeout, () {
+      if (!_isShowInter) _goNext();
+    });
+    _consentSub = ConsentState.stream.listen(_onConsent);
+    // Nạp cấu hình native SONG SONG với consent, không nối tiếp — hạn 5 giây,
+    // hết giờ thì rơi về cache/asset (xem NativePlacementRepository).
+    unawaited(sl<NativeAdManager>().loadConfig());
     unawaited(_bootstrap());
+  }
+
+  @override
+  void dispose() {
+    _consentSub?.cancel();
+    _hardTimeoutTimer?.cancel();
+    super.dispose();
+  }
+
+  /// `ConsentState.flow.collect { ... }` — từ chối consent thì bỏ qua ads.
+  Future<void> _onConsent(bool canRequestAds) async {
+    await _consentSub?.cancel();
+    _consentSub = null;
+
+    if (!canRequestAds) {
+      dev.log('Consent denied → skip ads', name: 'Splash');
+      _goNext();
+      return;
+    }
+
+    await _initAdsConfigAndPreload();
+    if (!mounted) return;
+
+    AppOpenAdManager.preload();
+    // Splash nạp trước cho chính nó và cho màn Language kế tiếp.
+    unawaited(sl<NativeAdManager>().preloadAfterConfig([
+      NativePlacements.splash,
+      NativePlacements.language1,
+      NativePlacements.language2,
+    ]));
+    unawaited(_collectSplashInter());
+  }
+
+  /// Port `initAdsConfigAndPreload()`.
+  Future<void> _initAdsConfigAndPreload() async {
+    InterstitialAdManager.preload(InterPlacement.splash);
+
+    final prefs = sl<AppPrefs>();
+    final playout = prefs.adsPlayout;
+    final repo = sl<AdsConfigRepository>();
+
+    var config = await repo.fetchAndCache().catchError((Object e) {
+      dev.log('fetch ads config lỗi: $e', name: 'Splash');
+      return repo.getCached() ?? AdsConfig.empty;
+    });
+    if (config.adsSet.isEmpty) {
+      config = repo.getCached() ?? AdsConfig.empty;
+    }
+    if (config.adsSet.isEmpty) return;
+
+    AdsConfigManager.init(config, playout);
+    await prefs.setAdsPlayout(playout + 1);
+  }
+
+  /// Port `collectSplashInter()` — chờ inter sẵn sàng rồi show, xong mới đi.
+  Future<void> _collectSplashInter() async {
+    if (_isShowInter) return;
+    final ready = await InterstitialAdManager.waitReady(
+      InterPlacement.splash,
+      timeout: _interWait,
+    );
+    if (!mounted) return;
+    if (!ready) {
+      _goNext();
+      return;
+    }
+    _isShowInter = true;
+    await InterstitialAdManager.showIfReady(
+      InterPlacement.splash,
+      enable: false,
+      onDismiss: () {
+        dev.log('Inter done -> go next', name: 'Splash');
+        AppOpenAdManager.enable('splash inter dismissed');
+        _goNext();
+      },
+    );
+  }
+
+  void _goNext() {
+    if (_navigated || !mounted) return;
+    _navigated = true;
+    AppOpenAdManager.isSplash = false;
+    _hardTimeoutTimer?.cancel();
+    _navigateNext();
   }
 
   Future<void> _bootstrap() async {
@@ -43,8 +163,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
     final elapsed = DateTime.now().difference(started);
     if (elapsed < _minSplash) await Future<void>.delayed(_minSplash - elapsed);
-    if (!mounted) return;
-    _navigateNext();
+    // Không tự đi tiếp ở đây: quyền quyết định thuộc về luồng consent → ads,
+    // hoặc hàng rào 30 giây, đúng như bản gốc.
   }
 
   /// Port `MainActivity.navigateFromSplash`:
@@ -124,7 +244,17 @@ class _SplashScreenState extends State<SplashScreen> {
                     backgroundColor: Colors.transparent,
                   ),
                 ),
-                SizedBox(height: AppDimens.sdp(32)),
+                SizedBox(height: AppDimens.sdp(16)),
+                // `adsNative` — placement DUY NHẤT có shimmer, đúng như bản
+                // gốc chỉ inflate layout_shimmer_native_* ở SplashFragment.
+                NativeAdView(
+                  placement: NativePlacements.splash,
+                  showShimmer: true,
+                  margin: EdgeInsets.symmetric(
+                    horizontal: AppDimens.sdp(12),
+                  ),
+                ),
+                SizedBox(height: AppDimens.sdp(16)),
               ],
             ),
           ),

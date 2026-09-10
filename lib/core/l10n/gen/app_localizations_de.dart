@@ -1303,4 +1303,14 @@ class SDe extends S {
 
   @override
   String get yourFilesIsEmpty => 'Deine Dateien sind leer';
+
+  @override
+  String get restorePurchases => 'Käufe wiederherstellen';
+
+  @override
+  String get restorePurchasesSuccess => 'Dein Kauf wurde wiederhergestellt.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Für dieses Konto wurde kein früherer Kauf gefunden.';
 }

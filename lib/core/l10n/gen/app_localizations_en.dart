@@ -1291,4 +1291,14 @@ class SEn extends S {
 
   @override
   String get yourFilesIsEmpty => 'Your files is empty';
+
+  @override
+  String get restorePurchases => 'Restore Purchases';
+
+  @override
+  String get restorePurchasesSuccess => 'Your purchase has been restored.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'No previous purchase found for this account.';
 }

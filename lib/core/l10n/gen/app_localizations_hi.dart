@@ -1294,4 +1294,15 @@ class SHi extends S {
 
   @override
   String get yourFilesIsEmpty => 'आपकी फ़ाइलें खाली हैं';
+
+  @override
+  String get restorePurchases => 'खरीदारी पुनर्स्थापित करें';
+
+  @override
+  String get restorePurchasesSuccess =>
+      'आपकी खरीदारी पुनर्स्थापित कर दी गई है।';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'इस खाते के लिए कोई पिछली खरीदारी नहीं मिली।';
 }

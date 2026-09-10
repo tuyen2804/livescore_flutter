@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../../core/ads/native/native_ad_manager.dart';
+import '../../../core/ads/native/native_placements.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/router/app_router.dart';
@@ -9,6 +13,8 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_dimens.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../data/datasources/local/app_prefs.dart';
+import '../../widgets/native/native_ad_view.dart';
+import '../../widgets/native/native_fullscreen_overlay.dart';
 
 /// Port `OnboardingLargeFragment.kt` + `fragment_on_boarding_1/2/3.xml`.
 /// Ba trang đều là ảnh nền tràn viền, dưới cùng là chỉ báo 50x6sdp và nút
@@ -29,6 +35,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void initState() {
     super.initState();
     sl<AnalyticsService>().logEvent('onboarding_show');
+    // Native fullscreen bật ngay khi rời trang 1 nên phải có sẵn từ đầu.
+    unawaited(sl<NativeAdManager>().preload(NativePlacements.fullscreen));
   }
 
   @override
@@ -37,9 +45,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.dispose();
   }
 
-  void _next(int pageCount) {
+  Future<void> _next(int pageCount) async {
     sl<AnalyticsService>()
         .logEvent('onboarding_step_view', {'step_index': '${_page + 1}'});
+
+    // `OnBoardingFragment1.btnNext`: rời trang 1 thì bật native fullscreen
+    // (1 slot — một quảng cáo chiếm cả màn). Không có sẵn thì đi tiếp luôn.
+    if (_page == 0) {
+      await NativeFullscreenOverlay.show(
+        context,
+        NativePlacements.fullscreen,
+      );
+      if (!mounted) return;
+    }
+
     if (_page < pageCount - 1) {
       _controller.nextPage(
         duration: const Duration(milliseconds: 280),
@@ -47,7 +66,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       );
       return;
     }
-    _finish();
+    await _finish();
+  }
+
+  static String _placementForPage(int page) => switch (page) {
+        0 => NativePlacements.onboarding1,
+        1 => NativePlacements.onboarding2,
+        _ => NativePlacements.onboarding3,
+      };
+
+  /// Mỗi trang nạp trước cho trang kế; trang cuối nạp cho màn chọn giải và
+  /// cho native fullscreen bật sau khi chọn xong đội.
+  void _preloadForNextPage(int page, int total) {
+    final manager = sl<NativeAdManager>();
+    if (page + 1 < total) {
+      unawaited(manager.preload(_placementForPage(page + 1)));
+    } else {
+      unawaited(manager.preloadAll([
+        NativePlacements.choose1,
+        NativePlacements.fullscreenInter,
+      ]));
+    }
   }
 
   Future<void> _finish() async {
@@ -94,7 +133,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           PageView.builder(
             controller: _controller,
             itemCount: pages.length,
-            onPageChanged: (i) => setState(() => _page = i),
+            onPageChanged: (i) {
+              setState(() => _page = i);
+              _preloadForNextPage(i, pages.length);
+            },
             itemBuilder: (_, i) => Image.asset(
               pages[i].background,
               fit: BoxFit.cover,
@@ -153,6 +195,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Padding(
                       padding: EdgeInsets.all(AppDimens.sdp(6)),
                       child: _Indicator(count: pages.length, index: _page),
+                    ),
+                  ),
+                  // Native riêng cho từng trang onboarding.
+                  NativeAdView(
+                    placement: _placementForPage(_page),
+                    margin: EdgeInsets.symmetric(
+                      horizontal: AppDimens.sdp(12),
                     ),
                   ),
                   // `btnNext`: 44dp, marginH 20sdp, marginV 6sdp,

@@ -11,6 +11,7 @@ import '../../../../core/widgets/state_views.dart';
 import '../../../../data/models/football/football_models.dart';
 import '../../../providers/match_detail_provider.dart';
 import '../../../widgets/detail_widgets.dart';
+import '../../../widgets/reward_flow.dart';
 
 /// Port `presentation/detail/MatchInfoFragment.kt` + `fragment_match_info.xml`:
 /// khối bình chọn (hai trạng thái) rồi tới dải "Match timeline" và danh sách
@@ -64,7 +65,12 @@ class MatchInfoTab extends StatelessWidget {
                     homeLogo: match.homeTeamLogoUrl,
                     awayLogo: match.awayTeamLogoUrl,
                     enabled: provider.isPredictionAvailable,
-                    onVote: (choice) => provider.voteTeam(matchId, choice),
+                    // `MatchInfoFragment.setupVoteListeners`: mỗi lựa chọn
+                    // đều phải xem hết quảng cáo reward mới gửi phiếu.
+                    onVote: (choice) => RewardFlow.start(
+                      context,
+                      onGranted: () => provider.voteTeam(matchId, choice),
+                    ),
                   ),
           ),
         if (events.isNotEmpty) ...[

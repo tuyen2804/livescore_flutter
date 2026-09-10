@@ -1299,4 +1299,14 @@ class SRu extends S {
 
   @override
   String get yourFilesIsEmpty => 'Ваши файлы пусты';
+
+  @override
+  String get restorePurchases => 'Восстановить покупки';
+
+  @override
+  String get restorePurchasesSuccess => 'Ваша покупка восстановлена.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Для этого аккаунта прошлых покупок не найдено.';
 }

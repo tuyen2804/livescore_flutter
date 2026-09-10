@@ -1298,4 +1298,14 @@ class SEs extends S {
 
   @override
   String get yourFilesIsEmpty => 'Tus archivos están vacíos';
+
+  @override
+  String get restorePurchases => 'Restaurar compras';
+
+  @override
+  String get restorePurchasesSuccess => 'Se ha restaurado tu compra.';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'No se encontró ninguna compra anterior para esta cuenta.';
 }

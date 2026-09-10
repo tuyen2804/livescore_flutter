@@ -50,6 +50,11 @@
             android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
             android:exported="false"/>
 
+        <!-- AdMob app id — lấy đúng từ AndroidManifest của bản Kotlin. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6884037586522683~4860453709" />
+
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

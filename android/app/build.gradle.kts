@@ -53,4 +53,21 @@ flutter {
 dependencies {
     // flutter_local_notifications cần desugar cho java.time khi minSdk < 34.
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+
+    // ---- Mediation ----
+    // Đúng 10 mạng của bản Kotlin (`libs.versions.toml`). Phiên bản lấy bản mới
+    // nhất trên Google Maven vì `google_mobile_ads` 9.1.0 kéo
+    // play-services-ads 25.4.0 — ghép adapter cũ với SDK mới rủi ro hơn.
+    // Adapter chỉ là cầu nối: mỗi mạng vẫn phải bật trong AdMob Console
+    // (Mediation group → Ad sources) thì mới thật sự có request.
+    implementation("com.google.ads.mediation:applovin:13.6.4.1")
+    implementation("com.google.ads.mediation:ironsource:9.6.0.0")
+    implementation("com.google.ads.mediation:vungle:7.7.8.0")
+    implementation("com.google.ads.mediation:facebook:6.22.0.1")
+    implementation("com.google.ads.mediation:mintegral:17.1.81.0")
+    implementation("com.google.ads.mediation:pangle:8.3.0.3.0")
+    implementation("com.google.ads.mediation:unity:4.20.0.2")
+    implementation("com.google.ads.mediation:moloco:4.12.0.0")
+    implementation("com.google.ads.mediation:fyber:8.4.7.0")
+    implementation("com.google.ads.mediation:bigo:6.0.0.0")
 }

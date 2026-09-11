@@ -196,11 +196,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   ),
                 ),
                 _BuyButton(premium: _premium, onTap: _buy),
-                // `LiveScore_native_noads` — bản gốc đặt dưới cùng màn này.
-                NativeAdView(
-                  placement: NativePlacements.noAds,
-                  margin: EdgeInsets.only(top: AppDimens.sdp(8)),
-                ),
                 // Nút khôi phục — bắt buộc với gói non-consumable trên iOS.
                 Padding(
                   padding: EdgeInsets.only(
@@ -223,6 +218,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     ),
                   ),
                 ),
+                // `layoutNative` trong `fragment_premium.xml` ghim **đáy**
+                // parent, `btnBuy` constraint `bottom_toTopOf` nó và không có
+                // lề. Nút Restore là phần thêm của bản Flutter (gói
+                // non-consumable) nên xếp trên quảng cáo để không đẩy nó khỏi
+                // đáy màn.
+                const NativeAdView(placement: NativePlacements.noAds),
               ],
             ),
           ),

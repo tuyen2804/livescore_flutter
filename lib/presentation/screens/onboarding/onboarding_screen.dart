@@ -198,7 +198,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   // Native riêng cho từng trang onboarding.
-                  NativeAdView(placement: _placementForPage(_page)),
+                  //
+                  // Thứ tự đảo ở trang 3: `fragment_on_boarding_1/2.xml` cho
+                  // `layoutNative` nằm **trên** `btnNext` (lề dưới 6sdp), còn
+                  // `fragment_on_boarding_3.xml` thì `btnNext` mới ở trên,
+                  // `layoutNative` ghim đáy parent và không có lề.
+                  if (_page != 2)
+                    NativeAdView(
+                      placement: _placementForPage(_page),
+                      margin: EdgeInsets.only(bottom: AppDimens.sdp(6)),
+                    ),
                   // `btnNext`: 44dp, marginH 20sdp, marginV 6sdp,
                   // `bg_btn_12sdp_ff783e`, chữ 15ssp semi_bold trắng.
                   Padding(
@@ -226,6 +235,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                   ),
+                  if (_page == 2)
+                    NativeAdView(placement: _placementForPage(_page)),
                 ],
               ),
             ),

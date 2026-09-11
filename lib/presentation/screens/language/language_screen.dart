@@ -173,11 +173,9 @@ class _LanguageViewState extends State<_LanguageView> {
                 },
               ),
             ),
-            // `LiveScore_native_LGF_1` — không shimmer, tải xong mới chèn.
-            NativeAdView(
-              placement: _placement,
-              margin: EdgeInsets.only(bottom: AppDimens.sdp(8)),
-            ),
+            // `layoutAds` nằm trong `layoutBotttom` ghim đáy parent, **không
+            // lề** — xem `fragment_language.xml`.
+            NativeAdView(placement: _placement),
           ],
         ),
       ),

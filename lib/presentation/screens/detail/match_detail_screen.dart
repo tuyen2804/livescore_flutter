@@ -71,11 +71,6 @@ class _MatchDetailViewState extends State<_MatchDetailView> {
             onBack: () => Navigator.of(context).maybePop(),
             onRefresh: () => provider.loadMatchDetail(widget.matchId),
           ),
-          // `LiveScore_native_Inapp` — bản gốc dùng chung placement này cho
-          // Home, chi tiết trận và danh sách trận live.
-          NativeAdView(
-            placement: NativePlacements.inApp,
-          ),
           Expanded(
             child: provider.isLoading && provider.match == null
                 ? const EarthLoadingOverlay(label: 'Loading')
@@ -92,6 +87,12 @@ class _MatchDetailViewState extends State<_MatchDetailView> {
                             tabs: tabs,
                             selected: _tab,
                             onSelect: (i) => setState(() => _tab = i),
+                          ),
+                          // `adsNative` trong `fragment_match_detail.xml` nằm
+                          // **giữa** TabLayout và `tabContainer`, lề trên 6sdp.
+                          NativeAdView(
+                            placement: NativePlacements.inApp,
+                            margin: EdgeInsets.only(top: AppDimens.sdp(6)),
                           ),
                           SizedBox(height: AppDimens.sdp(6)),
                           Expanded(

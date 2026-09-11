@@ -110,9 +110,11 @@ class _PickTeamsView extends StatelessWidget {
                           },
                         ),
             ),
+            // Ngược với màn chọn giải: ở đây `btnContinue` mới ghim đáy,
+            // `layoutNative` nằm trên nó, lề dưới 6sdp.
             NativeAdView(
               placement: NativePlacements.choose2,
-              margin: EdgeInsets.only(bottom: AppDimens.sdp(8)),
+              margin: EdgeInsets.only(bottom: AppDimens.sdp(6)),
             ),
             PickBottomButton(
               label: s.getStarted,

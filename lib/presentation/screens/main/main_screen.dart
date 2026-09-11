@@ -86,18 +86,37 @@ class _MainScreenState extends State<MainScreen> {
       _NavItem(asset: 'assets/icons/ic_prediction.svg', label: s.prediction),
     ];
 
-    return Scaffold(
-      backgroundColor: AppColors.bgApp,
-      body: IndexedStack(index: _index, children: _pages),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // `containerCollapExpand` của bản gốc — native thu gọn được, nằm
-          // ngay trên thanh điều hướng.
-          const NativeCollapsible(placement: NativePlacements.collapHome),
-          _buildBottomNav(context, items),
-        ],
-      ),
+    // `collap_home` có hai nửa nằm ở hai chỗ khác nhau:
+    // - **small**: dưới thanh điều hướng, chiếm chỗ thật → đặt trong
+    //   `bottomNavigationBar`, SAU thanh nav;
+    // - **expanded**: đè lên nội dung và cả thanh nav → phải nằm ngoài
+    //   `Scaffold`, trong một `Stack` bọc ngoài, mới vẽ đè được.
+    return Stack(
+      children: [
+        Scaffold(
+          backgroundColor: AppColors.bgApp,
+          body: IndexedStack(index: _index, children: _pages),
+          bottomNavigationBar: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildBottomNav(context, items),
+              const NativeCollapsible(
+                placement: NativePlacements.collapHome,
+                slot: CollapsibleSlot.small,
+              ),
+            ],
+          ),
+        ),
+        const Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: NativeCollapsible(
+            placement: NativePlacements.collapHome,
+            slot: CollapsibleSlot.expanded,
+          ),
+        ),
+      ],
     );
   }
 

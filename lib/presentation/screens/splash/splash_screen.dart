@@ -251,7 +251,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   placement: NativePlacements.splash,
                   showShimmer: true,
                 ),
-                SizedBox(height: AppDimens.sdp(16)),
+                // `adsNative`: `layout_marginBottom="@dimen/_8sdp"`.
+                SizedBox(height: AppDimens.sdp(8)),
               ],
             ),
           ),

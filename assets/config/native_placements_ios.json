@@ -1,5 +1,26 @@
 {
   "placements": {
+    "LiveScore_native_splash": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3800299690"
+              ],
+              "layout": "FULLSIZE_CTA_MEDIA_INFO"
+            }
+          ],
+          "style": {
+            "headline_text_size_sp": 17,
+            "body_color": "#FFFF00",
+            "bg_color": "#1F1E23",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
     "LiveScore_native_LGF_1": {
       "type": "INLINE",
       "unions": [
@@ -39,6 +60,27 @@
             "bg_color": "#1F1E23",
             "headline_color": "#FFFFFF",
             "body_color": "#CCCCCC",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_Loading": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3800299690"
+              ],
+              "layout": "FULLSIZE_CTA_MEDIA_INFO"
+            }
+          ],
+          "style": {
+            "headline_text_size_sp": 17,
+            "body_color": "#FFFF00",
+            "bg_color": "#1F1E23",
             "cta_shape": "ROUNDED_RECT"
           }
         }
@@ -201,6 +243,27 @@
         }
       ]
     },
+    "LiveScore_native_noads": {
+      "type": "INLINE",
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9776987432"
+              ],
+              "layout": "FULLSIZE_INFO_MEDIA_CTA"
+            }
+          ],
+          "style": {
+            "headline_text_size_sp": 17,
+            "body_color": "#FFFF00",
+            "bg_color": "#1F1E23",
+            "cta_shape": "ROUNDED_RECT"
+          }
+        }
+      ]
+    },
     "collap_home": {
       "type": "INLINE",
       "gravity": "BOTTOM|CENTER_HORIZONTAL",
@@ -294,6 +357,85 @@
             "body_color": "#CCCCCC",
             "cta_shape": "PILL"
           }
+        }
+      ]
+    },
+    "LiveScore_native_Inapp_New": {
+      "type": "INLINE",
+      "gravity": "TOP|CENTER_HORIZONTAL",
+      "load_policy": {
+        "reload_mode": "AUTO_ON_CLOSE|AUTO_INTERVAL",
+        "reload_interval_sec": 30
+      },
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/9776987432"
+              ],
+              "layout": "SMALL_BANNER_ICON2MEDIA2INFO"
+            }
+          ],
+          "style": {
+            "headline_color": "#FFFFFF",
+            "headline_text_size_sp": 19,
+            "body_color": "#CCCCCC",
+            "bg_color": "#1F1E23",
+            "cta_shape": "PILL"
+          }
+        }
+      ]
+    },
+    "LiveScore_native_fullscreen_2": {
+      "type": "FULLSCREEN",
+      "load_policy": {
+        "reload_mode": "AUTO_ON_CLOSE"
+      },
+      "unions": [
+        {
+          "slots": [
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/3582280025"
+              ],
+              "layout": "FULLSCREEN_PORT_DUAL_MIRROR"
+            },
+            {
+              "ids": [
+                "ca-app-pub-6884037586522683/2888145458"
+              ],
+              "layout": "FULLSCREEN_PORT_DUAL_MIRROR"
+            }
+          ],
+          "button_sequence": [
+            {
+              "type": "COUNTDOWN",
+              "position": "TOP_END",
+              "duration_ms": 3000,
+              "style": {
+                "sizeDp": 25
+              }
+            },
+            {
+              "type": "REDIRECT",
+              "position": "TOP_END",
+              "symbol": "NEXT_RIGHT",
+              "text": "Open store",
+              "duration_ms": 2000,
+              "style": {
+                "shape": "ROUNDED_RECT",
+                "sizeDp": 25
+              }
+            },
+            {
+              "type": "CLOSE",
+              "position": "TOP_END",
+              "style": {
+                "sizeDp": 25
+              }
+            }
+          ]
         }
       ]
     }

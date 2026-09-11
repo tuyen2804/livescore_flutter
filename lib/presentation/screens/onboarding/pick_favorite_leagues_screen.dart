@@ -72,15 +72,14 @@ class _PickLeaguesView extends StatelessWidget {
                           },
                         ),
             ),
-            NativeAdView(
-              placement: NativePlacements.choose1,
-              margin: EdgeInsets.only(bottom: AppDimens.sdp(8)),
-            ),
+            // `fragment_pick_favorite_leagues.xml`: `layoutNative` ghim đáy
+            // parent, `btnNext` nằm **trên** nó (`bottom_toTopOf layoutNative`).
             PickBottomButton(
               label: s.next,
               onTap: () => Navigator.of(context)
                   .pushNamed(AppRoutes.pickFavoriteTeams),
             ),
+            const NativeAdView(placement: NativePlacements.choose1),
           ],
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/ads/native/native_ad_controller.dart';
 import '../../../core/ads/native/native_ad_manager.dart';
-import '../../../core/ads/native/native_layouts.dart';
 import '../../../core/di/injection.dart';
 import 'button_sequence.dart';
 
@@ -113,25 +112,21 @@ class _NativeFullscreenOverlayState extends State<NativeFullscreenOverlay> {
     );
   }
 
-  /// Một quảng cáo thì chiếm cả màn; hai quảng cáo thì chia đôi theo chiều
-  /// dọc — `FULLSCREEN_PORT_DUAL_MIRROR` lật ngược nửa dưới cho đối xứng.
+  /// Một quảng cáo thì chiếm cả màn; hai quảng cáo thì chia đôi theo chiều dọc.
+  ///
+  /// **Không lật ngược nửa dưới.** Ban đầu tôi hiểu `_MIRROR` là lật cả view,
+  /// nhưng quảng cáo lộn ngược thì không đọc được và vi phạm chính sách hiển
+  /// thị của AdMob. "Mirror" ở đây là **bố cục bên trong đảo chiều** — thứ đã
+  /// do `slots[].layout` trong config quyết định, mỗi slot tự chọn layout của
+  /// nó (ví dụ nửa trên CTA–Media–Info, nửa dưới Info–Media–CTA).
+  ///
+  /// Theo bảng monetization: id **high-floor luôn ở nửa trên**, tức `slots[0]`.
   Widget _buildAds(List<LoadedNativeAd> loaded) {
-    if (loaded.length == 1) {
-      return loaded.first.widget;
-    }
-
-    final mirrored =
-        NativeLayouts.isDual(loaded.first.layout) &&
-        loaded.first.layout.contains('MIRROR');
+    if (loaded.length == 1) return loaded.first.widget;
 
     return Column(
       children: [
-        for (var i = 0; i < loaded.length; i++)
-          Expanded(
-            child: mirrored && i.isOdd
-                ? Transform.flip(flipY: true, child: loaded[i].widget)
-                : loaded[i].widget,
-          ),
+        for (final ad in loaded) Expanded(child: ad.widget),
       ],
     );
   }

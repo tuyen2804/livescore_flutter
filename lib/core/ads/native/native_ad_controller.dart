@@ -92,6 +92,11 @@ class NativeAdController {
   final ValueNotifier<List<LoadedNativeAd?>> ads =
       ValueNotifier<List<LoadedNativeAd?>>(const []);
 
+  /// Chỉ dùng cho `collap_home`. Hai nửa của nó nằm ở hai chỗ khác nhau trong
+  /// cây widget (nhỏ thì dưới thanh điều hướng, mở thì đè lên tất cả) nên
+  /// trạng thái phải nằm ở controller, không nằm trong State của widget.
+  final ValueNotifier<bool> collapsed = ValueNotifier<bool>(false);
+
   bool _loading = false;
   bool _disposed = false;
 
@@ -410,5 +415,6 @@ class NativeAdController {
     _disposeAds();
     state.dispose();
     ads.dispose();
+    collapsed.dispose();
   }
 }

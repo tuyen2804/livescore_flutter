@@ -92,11 +92,6 @@ class HomeScreen extends StatelessWidget {
               onSelect: provider.setDate,
               onPickDate: () => _pickDate(context, provider),
             ),
-            // `LiveScore_native_Inapp` — banner nhỏ, tự nạp lại 30 giây
-            // một lần khi đang hiện.
-            NativeAdView(
-              placement: NativePlacements.inApp,
-            ),
             Expanded(
               child: RefreshIndicator(
                 color: AppColors.brandAccent,
@@ -181,13 +176,22 @@ class HomeScreen extends StatelessWidget {
       );
     }
 
+    // `flAdContainer` trong `fragment_home.xml` nằm **bên trong** vùng cuộn
+    // của SwipeRefreshLayout, giữa `rcvLiveMatchesHeader` và `rcvFixture` —
+    // tức cuộn theo nội dung, không ghim dưới thanh ngày.
     return ListView.builder(
       padding: EdgeInsets.only(bottom: AppDimens.sdp(16)),
-      itemCount: provider.leagueSections.length + 1,
+      itemCount: provider.leagueSections.length + 2,
       itemBuilder: (context, index) {
         if (index == 0) return liveHeader;
+        if (index == 1) {
+          return NativeAdView(
+            placement: NativePlacements.inApp,
+            margin: EdgeInsets.symmetric(vertical: AppDimens.sdp(6)),
+          );
+        }
 
-        final section = provider.leagueSections[index - 1];
+        final section = provider.leagueSections[index - 2];
         return HomeLeagueCard(
           section: section,
           onMatchTap: (fixture) => _openMatch(context, fixture),

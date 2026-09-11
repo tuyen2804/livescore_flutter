@@ -42,11 +42,6 @@ class LiveMatchesScreen extends StatelessWidget {
               ),
             ),
           ),
-          // `LiveScore_native_Inapp` — bản gốc dùng chung placement này cho
-          // Home, chi tiết trận và danh sách trận live.
-          NativeAdView(
-            placement: NativePlacements.inApp,
-          ),
           Expanded(
             child: RefreshIndicator(
               color: AppColors.brandAccent,
@@ -89,6 +84,11 @@ class LiveMatchesScreen extends StatelessWidget {
                         ),
             ),
           ),
+          // `ads_native` trong `fragment_live_matches.xml` ghim **đáy** parent,
+          // nội dung constraint `bottom_toTopOf` nó. Placement là
+          // `LiveScore_native_Inapp_New` (LiveMatchesFragment.kt:100), **không
+          // phải** `Inapp` như Home.
+          const NativeAdView(placement: NativePlacements.inAppNew),
         ],
       ),
     );

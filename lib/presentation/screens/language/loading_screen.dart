@@ -111,14 +111,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
               ),
             ),
           ),
-          // `LiveScore_native_Loading` neo ở đáy màn.
-          Align(
+          // `ads_native` trong `fragment_loading.xml`: `match_parent` ×
+          // `wrap_content`, neo đáy parent, **không lề**. Nó đè lên khối anim
+          // đang canh giữa — ConstraintLayout xếp sau nên nằm trên.
+          const Align(
             alignment: Alignment.bottomCenter,
             child: SafeArea(
-              child: NativeAdView(
-                placement: NativePlacements.loading,
-                margin: EdgeInsets.symmetric(vertical: AppDimens.sdp(12)),
-              ),
+              top: false,
+              child: NativeAdView(placement: NativePlacements.loading),
             ),
           ),
         ],

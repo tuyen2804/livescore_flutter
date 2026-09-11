@@ -131,6 +131,15 @@
           ],
           "button_sequence": [
             {
+              "type": "COUNTDOWN",
+              "duration_ms": 5000,
+              "position": "TOP_END",
+              "style": {
+                "shape": "CIRCLE",
+                "size_dp": 28
+              }
+            },
+            {
               "type": "CLOSE",
               "position": "TOP_END",
               "style": {
@@ -236,6 +245,14 @@
             "cta_shape": "PILL"
           },
           "button_sequence": [
+            {
+              "type": "COUNTDOWN",
+              "duration_ms": 2000,
+              "position": "TOP_END",
+              "style": {
+                "size_dp": 22
+              }
+            },
             {
               "type": "COLLAPSE",
               "symbol": "CHEVRON_DOWN",

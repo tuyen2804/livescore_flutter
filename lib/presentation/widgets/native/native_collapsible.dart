@@ -24,8 +24,8 @@ class NativeCollapsible extends StatefulWidget {
 }
 
 class _NativeCollapsibleState extends State<NativeCollapsible> {
-  late final NativeAdController? _controller =
-      sl<NativeAdManager>().controllerOf(widget.placement);
+  late final NativeAdController? _controller = sl<NativeAdManager>()
+      .controllerOf(widget.placement);
 
   bool _collapsed = false;
 
@@ -68,46 +68,27 @@ class _NativeCollapsibleState extends State<NativeCollapsible> {
           if (mounted) controller.notifyShown();
         });
 
-        return Opacity(
-          opacity: alpha,
-          child: SizedBox(
-            height: height,
-            child: Stack(
-              children: [
-                Positioned.fill(child: current.widget),
-                // Chuỗi nút chỉ chạy ở trạng thái mở; thu gọn rồi thì thôi.
-                if (steps.isNotEmpty && !_collapsed && small != null)
-                  Positioned.fill(
-                    child: ButtonSequenceRunner(
-                      steps: steps,
-                      onClose: () => setState(() => _collapsed = true),
-                      onCollapse: () => setState(() => _collapsed = true),
-                    ),
+        return ValueListenableBuilder<double?>(
+          // Chiều cao native đo được (wrap content); chưa có thì mặc định.
+          valueListenable: current.measuredHeight,
+          builder: (context, measured, stack) => Opacity(
+            opacity: alpha,
+            child: SizedBox(height: measured ?? height, child: stack),
+          ),
+          child: Stack(
+            children: [
+              Positioned.fill(child: current.widget),
+              // Chuỗi nút chỉ ở dạng mở để thu về dạng nhỏ. Dạng nhỏ không có
+              // nút nào, cũng không mở lại được.
+              if (steps.isNotEmpty && !_collapsed && small != null)
+                Positioned.fill(
+                  child: ButtonSequenceRunner(
+                    steps: steps,
+                    onClose: () => setState(() => _collapsed = true),
+                    onCollapse: () => setState(() => _collapsed = true),
                   ),
-                // Thu gọn rồi thì cho mở lại bằng một nút nhỏ.
-                if (_collapsed && expanded != null)
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: GestureDetector(
-                      onTap: () => setState(() => _collapsed = false),
-                      behavior: HitTestBehavior.opaque,
-                      child: Container(
-                        margin: const EdgeInsets.all(4),
-                        padding: const EdgeInsets.all(2),
-                        decoration: const BoxDecoration(
-                          color: Color(0xB3000000),
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.keyboard_arrow_up,
-                          size: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
+                ),
+            ],
           ),
         );
       },

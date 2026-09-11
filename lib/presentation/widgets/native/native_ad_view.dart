@@ -105,9 +105,6 @@ class _NativeAdViewState extends State<NativeAdView> {
         // INLINE chỉ hiện quảng cáo đầu tiên; nhiều slot là chuyện của
         // fullscreen và collapsible.
         final first = loaded.first;
-        final height = widget.height ??
-            NativeLayouts.preferredHeight(first.layout) ??
-            330;
 
         // Báo cho controller biết ad đã lên màn hình để bắt đầu đếm
         // AUTO_INTERVAL — tài liệu v12 yêu cầu chỉ đếm khi đang hiển thị.
@@ -115,13 +112,25 @@ class _NativeAdViewState extends State<NativeAdView> {
           if (mounted) controller.notifyShown();
         });
 
-        return Padding(
-          padding: widget.margin ?? EdgeInsets.zero,
-          child: SizedBox(
-            height: height,
-            width: double.infinity,
-            child: first.widget,
-          ),
+        return ValueListenableBuilder<double?>(
+          valueListenable: first.measuredHeight,
+          builder: (context, measured, _) {
+            // Ưu tiên chiều cao native đo được (wrap content thật); chưa có
+            // thì dùng chiều cao mặc định của layout.
+            final height =
+                widget.height ??
+                measured ??
+                NativeLayouts.preferredHeight(first.layout) ??
+                330;
+            return Padding(
+              padding: widget.margin ?? EdgeInsets.zero,
+              child: SizedBox(
+                height: height,
+                width: double.infinity,
+                child: first.widget,
+              ),
+            );
+          },
         );
       },
     );

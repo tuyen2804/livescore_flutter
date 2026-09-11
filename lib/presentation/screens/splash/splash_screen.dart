@@ -250,9 +250,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 NativeAdView(
                   placement: NativePlacements.splash,
                   showShimmer: true,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: AppDimens.sdp(12),
-                  ),
                 ),
                 SizedBox(height: AppDimens.sdp(16)),
               ],

@@ -1,2 +1,7 @@
 #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
 #include "Generated.xcconfig"
+
+// google_mobile_ads (pod) để lộ FLTAd_Internal.h, file này import
+// GoogleMobileAds_Beta.h nằm ngoài module công khai của SDK → Runner import
+// module google_mobile_ads sẽ báo "non-modular header" nếu không bật cờ này.
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES

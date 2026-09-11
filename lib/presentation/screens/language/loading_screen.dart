@@ -117,7 +117,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             child: SafeArea(
               child: NativeAdView(
                 placement: NativePlacements.loading,
-                margin: EdgeInsets.all(AppDimens.sdp(12)),
+                margin: EdgeInsets.symmetric(vertical: AppDimens.sdp(12)),
               ),
             ),
           ),

@@ -45,8 +45,8 @@ class NativeFullscreenOverlay extends StatefulWidget {
 }
 
 class _NativeFullscreenOverlayState extends State<NativeFullscreenOverlay> {
-  late final NativeAdController? _controller =
-      sl<NativeAdManager>().controllerOf(widget.placement);
+  late final NativeAdController? _controller = sl<NativeAdManager>()
+      .controllerOf(widget.placement);
 
   @override
   void initState() {
@@ -56,9 +56,18 @@ class _NativeFullscreenOverlayState extends State<NativeFullscreenOverlay> {
     });
   }
 
+  bool _closed = false;
+
   void _close() {
+    // Chỉ đóng một lần: nhánh "quảng cáo biến mất" có thể gọi lại sau khi đã
+    // đóng, pop thêm lần nữa sẽ đóng luôn màn bên dưới.
+    if (_closed || !mounted) return;
+    _closed = true;
     _controller?.notifyDismissed();
-    if (mounted) Navigator.of(context).maybePop();
+    // pop() chứ không phải maybePop(): route này tự chặn back bằng
+    // PopScope(canPop: false), mà maybePop() tôn trọng PopScope nên không
+    // bao giờ đóng được.
+    Navigator.of(context).pop();
   }
 
   @override
@@ -81,8 +90,7 @@ class _NativeFullscreenOverlayState extends State<NativeFullscreenOverlay> {
               final loaded = ads.whereType<LoadedNativeAd>().toList();
               if (loaded.isEmpty) {
                 // Quảng cáo biến mất giữa chừng — đóng cho khỏi treo màn.
-                WidgetsBinding.instance
-                    .addPostFrameCallback((_) => _close());
+                WidgetsBinding.instance.addPostFrameCallback((_) => _close());
                 return const SizedBox.shrink();
               }
 
@@ -112,7 +120,8 @@ class _NativeFullscreenOverlayState extends State<NativeFullscreenOverlay> {
       return loaded.first.widget;
     }
 
-    final mirrored = NativeLayouts.isDual(loaded.first.layout) &&
+    final mirrored =
+        NativeLayouts.isDual(loaded.first.layout) &&
         loaded.first.layout.contains('MIRROR');
 
     return Column(

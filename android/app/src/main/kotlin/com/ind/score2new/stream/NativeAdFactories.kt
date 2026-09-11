@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
+import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.googlemobileads.GoogleMobileAdsPlugin
 import io.flutter.plugins.googlemobileads.NativeAdFactory
 
@@ -25,6 +26,10 @@ import io.flutter.plugins.googlemobileads.NativeAdFactory
 class LiveScoreNativeAdFactory(
     private val context: Context,
     private val layoutRes: Int,
+    /** Kênh báo chiều cao thật lên Dart (`NativeAdHeights`). */
+    private val heightChannel: MethodChannel?,
+    /** Ad inline cao đúng bằng nội dung; fullscreen thì lấp cả khung. */
+    private val wrapsContent: Boolean,
 ) : NativeAdFactory {
 
     override fun createNativeAd(
@@ -77,7 +82,46 @@ class LiveScoreNativeAdFactory(
         applyStyle(adView, headline, body, cta, customOptions)
 
         adView.setNativeAd(nativeAd)
+        reportHeight(adView, customOptions)
         return adView
+    }
+
+    /**
+     * Đo chiều cao nội dung rồi báo lên Dart để ô Flutter co đúng bằng nó.
+     *
+     * Plugin gọi factory **trước** khi báo `onAdLoaded`, nên Dart có chiều
+     * cao trước khi ad hiện. Ad luôn full chiều rộng nên đo theo chiều rộng
+     * màn hình; khung thật khác (xoay màn, tablet…) thì đo lại khi view đổi
+     * chiều rộng.
+     */
+    private fun reportHeight(adView: NativeAdView, customOptions: MutableMap<String, Any>?) {
+        val channel = heightChannel ?: return
+        val slotId = customOptions?.get("slot_id") as? String ?: return
+        if (!wrapsContent) return
+
+        var measuredWidth = context.resources.displayMetrics.widthPixels
+        sendHeight(channel, adView, slotId, measuredWidth)
+        adView.addOnLayoutChangeListener { view, left, _, right, _, _, _, _, _ ->
+            val width = right - left
+            if (width > 0 && width != measuredWidth) {
+                measuredWidth = width
+                view.post { sendHeight(channel, view, slotId, width) }
+            }
+        }
+    }
+
+    private fun sendHeight(channel: MethodChannel, view: View, slotId: String, widthPx: Int) {
+        view.measure(
+            View.MeasureSpec.makeMeasureSpec(widthPx, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+        )
+        val heightDp = view.measuredHeight / context.resources.displayMetrics.density
+        channel.invokeMethod(
+            "height",
+            mapOf("slot_id" to slotId, "height" to heightDp.toDouble()),
+        )
+        // measure() vừa ghi đè kích thước đo; xin layout lại theo khung thật.
+        if (view.isAttachedToWindow) view.requestLayout()
     }
 
     private fun applyStyle(
@@ -127,10 +171,21 @@ class LiveScoreNativeAdFactory(
             "fullscreenMediaInfoCta" to R.layout.native_fullscreen_media_info_cta,
         )
 
+        /** Phải khớp `NativeAdHeights._channel` bên Dart. */
+        private const val HEIGHT_CHANNEL = "live_score/native_ad_height"
+
         fun registerAll(engine: io.flutter.embedding.engine.FlutterEngine, context: Context) {
+            val heightChannel = MethodChannel(engine.dartExecutor.binaryMessenger, HEIGHT_CHANNEL)
             FACTORIES.forEach { (id, layoutRes) ->
                 GoogleMobileAdsPlugin.registerNativeAdFactory(
-                    engine, id, LiveScoreNativeAdFactory(context, layoutRes)
+                    engine,
+                    id,
+                    LiveScoreNativeAdFactory(
+                        context,
+                        layoutRes,
+                        heightChannel,
+                        wrapsContent = id != "fullscreenMediaInfoCta",
+                    ),
                 )
             }
         }

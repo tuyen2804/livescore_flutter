@@ -55,5 +55,18 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+
+    # Podspec BigoADS còn sót các khoá EXCLUDED_ARCHS__…XCODE_1200… (workaround
+    # Xcode 12 beta, không còn tác dụng) mang giá trị "arm64". Flutter dò regex
+    # `EXCLUDED_ARCHS.*\barm64\b` nên tưởng Bigo không chạy được simulator arm64,
+    # rồi loại arm64 khỏi cả app → Xcode build x86_64 và báo
+    # "unsupported Swift architecture". Bigo có slice arm64 thật nên gỡ các khoá đó.
+    next unless target.name.start_with?('BigoADS')
+    target.build_configurations.each do |config|
+      path = config.base_configuration_reference&.real_path
+      next unless path && File.exist?(path)
+      lines = File.readlines(path).reject { |line| line.start_with?('EXCLUDED_ARCHS') }
+      File.write(path, lines.join)
+    end
   end
 end

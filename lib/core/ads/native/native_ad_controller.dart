@@ -2,12 +2,14 @@ import 'dart:async';
 import 'dart:developer' as dev;
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../ads_analytics.dart';
 import '../ads_constants.dart';
 import '../ads_gate.dart';
+import 'native_ad_heights.dart';
 import 'native_layouts.dart';
 import 'native_placement.dart';
 
@@ -15,11 +17,28 @@ enum NativeAdState { idle, loading, loaded, failed }
 
 /// Một quảng cáo native đã nạp xong, kèm style để widget dựng lại.
 class LoadedNativeAd {
-  LoadedNativeAd({required this.ad, required this.layout, required this.style});
+  LoadedNativeAd({
+    required this.ad,
+    required this.layout,
+    required this.style,
+    required this.slotId,
+  });
 
   final NativeAd ad;
   final String layout;
   final AdStyle style;
+
+  /// Khớp với chiều cao factory native đo được — xem [NativeAdHeights].
+  final String slotId;
+
+  /// Chiều cao thật do native báo lên; null = chưa có.
+  ValueListenable<double?> get measuredHeight =>
+      NativeAdHeights.listenable(slotId);
+
+  void dispose() {
+    ad.dispose();
+    NativeAdHeights.remove(slotId);
+  }
 
   /// **Mỗi `NativeAd` chỉ được bọc bằng đúng một `AdWidget`.** Dựng lại
   /// `AdWidget` ở mỗi lần rebuild sẽ tạo platform view mới trên cùng một ad
@@ -30,8 +49,10 @@ class LoadedNativeAd {
   /// và mới cùng là `AdWidget` nên Flutter sẽ tái dùng Element và platform
   /// view vẫn trỏ vào ad đã bị huỷ — kết quả là một vùng đen chết. Có key thì
   /// Element cũ bị bỏ hẳn và view mới được dựng lại.
-  late final Widget widget =
-      AdWidget(key: ValueKey<int>(identityHashCode(ad)), ad: ad);
+  late final Widget widget = AdWidget(
+    key: ValueKey<int>(identityHashCode(ad)),
+    ad: ad,
+  );
 }
 
 /// Quản lý vòng đời native của **một placement**.
@@ -63,8 +84,9 @@ class NativeAdController {
 
   final NativePlacement placement;
 
-  final ValueNotifier<NativeAdState> state =
-      ValueNotifier<NativeAdState>(NativeAdState.idle);
+  final ValueNotifier<NativeAdState> state = ValueNotifier<NativeAdState>(
+    NativeAdState.idle,
+  );
 
   /// Theo đúng thứ tự slot; phần tử null = slot đó chưa/không nạp được.
   final ValueNotifier<List<LoadedNativeAd?>> ads =
@@ -138,7 +160,7 @@ class NativeAdController {
 
     if (_disposed) {
       for (final r in results) {
-        r?.ad.dispose();
+        r?.dispose();
       }
       return;
     }
@@ -155,15 +177,18 @@ class NativeAdController {
         final stale = previous;
         WidgetsBinding.instance.addPostFrameCallback((_) {
           for (final old in stale) {
-            old?.ad.dispose();
+            old?.dispose();
           }
         });
       }
       _failCount = 0;
       _loadedAt = DateTime.now();
       state.value = NativeAdState.loaded;
-      dev.log('[$name] nạp xong ${results.where((e) => e != null).length}/'
-          '${results.length} slot', name: _tag);
+      dev.log(
+        '[$name] nạp xong ${results.where((e) => e != null).length}/'
+        '${results.length} slot',
+        name: _tag,
+      );
       _restartIntervalTimer();
     } else if (previous != null) {
       // Nạp lại hỏng: giữ nguyên quảng cáo cũ, chỉ giãn lịch thử lại.
@@ -178,8 +203,17 @@ class NativeAdController {
   Future<LoadedNativeAd?> _loadSlot(AdSlot slot, AdStyle style) async {
     final layout = NativeLayouts.resolve(slot.layout, placement.type);
     for (final adUnitId in slot.ids) {
-      final ad = await _loadOne(adUnitId, layout, style);
-      if (ad != null) return LoadedNativeAd(ad: ad, layout: layout, style: style);
+      final slotId = NativeAdHeights.newSlotId();
+      final ad = await _loadOne(adUnitId, layout, style, slotId);
+      if (ad != null) {
+        return LoadedNativeAd(
+          ad: ad,
+          layout: layout,
+          style: style,
+          slotId: slotId,
+        );
+      }
+      NativeAdHeights.remove(slotId);
     }
     return null;
   }
@@ -188,6 +222,7 @@ class NativeAdController {
     String adUnitId,
     String layout,
     AdStyle style,
+    String slotId,
   ) async {
     final completer = Completer<NativeAd?>();
     NativeAd? pending;
@@ -201,13 +236,16 @@ class NativeAdController {
     pending = NativeAd(
       adUnitId: adUnitId,
       factoryId: NativeLayouts.factoryIdOf(layout),
-      customOptions: style.toCustomOptions(),
+      customOptions: {
+        ...style.toCustomOptions(),
+        NativeAdHeights.slotIdKey: slotId,
+      },
       request: const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (ad) {
           final source =
               ad.responseInfo?.loadedAdapterResponseInfo?.adSourceName ??
-                  'unknown';
+              'unknown';
           AdsAnalytics.logLoaded(adUnitId, AdFormat.native, source);
           finish(ad as NativeAd);
         },
@@ -240,7 +278,10 @@ class NativeAdController {
     final result = await completer.future.timeout(
       _perIdTimeout,
       onTimeout: () {
-        dev.log('[$name] $adUnitId quá ${_perIdTimeout.inSeconds}s', name: _tag);
+        dev.log(
+          '[$name] $adUnitId quá ${_perIdTimeout.inSeconds}s',
+          name: _tag,
+        );
         return null;
       },
     );
@@ -276,7 +317,10 @@ class NativeAdController {
 
     _failCount++;
     final wait = Duration(seconds: _backoffSeconds);
-    dev.log('[$name] hỏng lần $_failCount → chờ ${wait.inSeconds}s', name: _tag);
+    dev.log(
+      '[$name] hỏng lần $_failCount → chờ ${wait.inSeconds}s',
+      name: _tag,
+    );
     _backoffTimer?.cancel();
     _backoffTimer = Timer(wait, () {
       if (!_disposed) unawaited(preload());
@@ -353,7 +397,7 @@ class NativeAdController {
 
   void _disposeAds() {
     for (final e in ads.value) {
-      e?.ad.dispose();
+      e?.dispose();
     }
     ads.value = const [];
     state.value = NativeAdState.idle;

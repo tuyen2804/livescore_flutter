@@ -75,6 +75,12 @@ flutter:
   uses-material-design: true
   generate: true
 
+  # Tắt Swift Package Manager: mediation pod kéo Google-Mobile-Ads-SDK qua
+  # CocoaPods, nếu google_mobile_ads đi SPM thì app nhúng 2 bản SDK và adapter
+  # mediation có thể không gắn được. Để mọi plugin iOS đi chung CocoaPods.
+  config:
+    enable-swift-package-manager: false
+
   assets:
     - assets/images/
     - assets/lottie/

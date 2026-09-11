@@ -198,12 +198,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   // Native riêng cho từng trang onboarding.
-                  NativeAdView(
-                    placement: _placementForPage(_page),
-                    margin: EdgeInsets.symmetric(
-                      horizontal: AppDimens.sdp(12),
-                    ),
-                  ),
+                  NativeAdView(placement: _placementForPage(_page)),
                   // `btnNext`: 44dp, marginH 20sdp, marginV 6sdp,
                   // `bg_btn_12sdp_ff783e`, chữ 15ssp semi_bold trắng.
                   Padding(

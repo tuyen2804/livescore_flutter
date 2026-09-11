@@ -96,7 +96,6 @@ class HomeScreen extends StatelessWidget {
             // một lần khi đang hiện.
             NativeAdView(
               placement: NativePlacements.inApp,
-              margin: EdgeInsets.symmetric(horizontal: AppDimens.sdp(12)),
             ),
             Expanded(
               child: RefreshIndicator(

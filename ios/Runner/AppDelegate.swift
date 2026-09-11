@@ -27,11 +27,15 @@ import google_mobile_ads
       "bannerIconMediaInfo": .bannerIconMediaInfo,
       "fullscreenMediaInfoCta": .fullscreenMediaInfoCta,
     ]
+    // Kênh báo chiều cao thật của từng ad lên Dart (`NativeAdHeights`).
+    let heightChannel = registry.registrar(forPlugin: "LiveScoreNativeAdHeights").map {
+      FlutterMethodChannel(name: "live_score/native_ad_height", binaryMessenger: $0.messenger())
+    }
     for (id, layout) in factories {
       FLTGoogleMobileAdsPlugin.registerNativeAdFactory(
         registry,
         factoryId: id,
-        nativeAdFactory: LiveScoreNativeAdFactory(layout: layout)
+        nativeAdFactory: LiveScoreNativeAdFactory(layout: layout, heightChannel: heightChannel)
       )
     }
   }

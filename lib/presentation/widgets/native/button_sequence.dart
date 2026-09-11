@@ -45,12 +45,19 @@ class ButtonSequenceRunner extends StatefulWidget {
 }
 
 class _ButtonSequenceRunnerState extends State<ButtonSequenceRunner> {
-  /// Chỉ số các step đang hiển thị. Thường chỉ có một, trừ khi step sau khai
-  /// `with_previous`.
-  final List<int> _visible = [];
+  /// Nút đóng dự phòng khi chuỗi đã hết mà chưa có CLOSE.
+  static const ButtonStep _fallbackClose = ButtonStep(
+    type: ButtonStepType.close,
+  );
+
   Timer? _timer;
   int _countdownRemainingMs = 0;
+
+  /// Nhóm đang hiện: bước [_current] cùng các bước ngay sau nó khai
+  /// `with_previous: true`, tới [_end] (tài liệu 8.1 — hiện CÙNG LÚC, user
+  /// chọn một).
   int _current = -1;
+  int _end = -1;
 
   @override
   void initState() {
@@ -64,26 +71,33 @@ class _ButtonSequenceRunnerState extends State<ButtonSequenceRunner> {
     super.dispose();
   }
 
+  int _groupEnd(int index) {
+    var end = index;
+    while (end + 1 < widget.steps.length &&
+        widget.steps[end + 1].withPrevious) {
+      end++;
+    }
+    return end;
+  }
+
   void _advanceTo(int index) {
     _timer?.cancel();
     if (index >= widget.steps.length) {
-      // Hết chuỗi mà chưa có CLOSE thì để user tự đóng bằng nút hệ thống.
-      setState(() {
-        _current = widget.steps.length;
-        _visible.clear();
-      });
+      // Hết chuỗi mà chưa đóng: build() hiện nút đóng dự phòng, nếu không
+      // user kẹt lại — fullscreen chặn nút back, iOS thì không có nút back.
+      setState(() => _current = _end = widget.steps.length);
       return;
     }
 
     final step = widget.steps[index];
+    final end = _groupEnd(index);
     setState(() {
       _current = index;
-      if (!step.withPrevious) _visible.clear();
-      if (!_visible.contains(index)) _visible.add(index);
+      _end = end;
       _countdownRemainingMs = step.durationMs;
     });
 
-    // COUNTDOWN và mọi step có `duration_ms` đều tự sang step kế khi hết giờ.
+    // COUNTDOWN và mọi step có `duration_ms` đều tự sang nhóm kế khi hết giờ.
     if (step.durationMs > 0) {
       const tick = Duration(milliseconds: 100);
       _timer = Timer.periodic(tick, (timer) {
@@ -91,7 +105,7 @@ class _ButtonSequenceRunnerState extends State<ButtonSequenceRunner> {
         setState(() => _countdownRemainingMs -= tick.inMilliseconds);
         if (_countdownRemainingMs <= 0) {
           timer.cancel();
-          _advanceTo(index + 1);
+          _advanceTo(end + 1);
         }
       });
     }
@@ -112,11 +126,12 @@ class _ButtonSequenceRunnerState extends State<ButtonSequenceRunner> {
         (widget.onCollapse ?? widget.onClose)();
       case ButtonStepType.next:
       case ButtonStepType.redirect:
-        // Nút close giả (NEXT + symbol CLOSE_X) và REDIRECT đều chỉ đi tiếp.
-        if (index + 1 >= widget.steps.length && widget.onNextUnion != null) {
+        // Nút close giả (NEXT + symbol CLOSE_X) và REDIRECT đều chỉ đi tiếp,
+        // qua hết nhóm đang hiện.
+        if (_end + 1 >= widget.steps.length && widget.onNextUnion != null) {
           widget.onNextUnion!();
         } else {
-          _advanceTo(index + 1);
+          _advanceTo(_end + 1);
         }
       case ButtonStepType.countdown:
       case ButtonStepType.none:
@@ -124,23 +139,33 @@ class _ButtonSequenceRunnerState extends State<ButtonSequenceRunner> {
     }
   }
 
+  Widget _place(ButtonStep step, Widget button) => Align(
+    alignment: step.position.alignment,
+    child: Padding(padding: const EdgeInsets.all(12), child: button),
+  );
+
   @override
   Widget build(BuildContext context) {
-    if (_current >= widget.steps.length) return const SizedBox.shrink();
+    if (_current >= widget.steps.length) {
+      return _place(
+        _fallbackClose,
+        _StepButton(
+          step: _fallbackClose,
+          remainingMs: 0,
+          onTap: widget.onClose,
+        ),
+      );
+    }
 
     return Stack(
       children: [
-        for (final index in _visible)
-          Align(
-            alignment: widget.steps[index].position.alignment,
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: _StepButton(
-                step: widget.steps[index],
-                remainingMs:
-                    index == _current ? _countdownRemainingMs : 0,
-                onTap: () => _onTap(index),
-              ),
+        for (var index = _current; index <= _end; index++)
+          _place(
+            widget.steps[index],
+            _StepButton(
+              step: widget.steps[index],
+              remainingMs: index == _current ? _countdownRemainingMs : 0,
+              onTap: () => _onTap(index),
             ),
           ),
       ],
@@ -176,6 +201,10 @@ class _StepButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final style = step.style;
     final size = style.sizeDp;
+    // NONE là placeholder: giữ chỗ, không vẽ gì, không bấm được.
+    if (step.type == ButtonStepType.none) {
+      return SizedBox.square(dimension: size);
+    }
     final hasLabel = _label != null;
 
     final radius = switch (style.shape) {
@@ -201,8 +230,8 @@ class _StepButton extends StatelessWidget {
             ],
           )
         : _isCountdown
-            ? _Countdown(step: step, remainingMs: remainingMs)
-            : _Symbol(step: step, size: size * style.symbolScale);
+        ? _Countdown(step: step, remainingMs: remainingMs)
+        : _Symbol(step: step, size: size * style.symbolScale);
 
     return GestureDetector(
       onTap: _isCountdown ? null : onTap,
@@ -255,22 +284,19 @@ class _Symbol extends StatelessWidget {
       'REDIRECT_STORE' => Icons.open_in_new,
       // Không khai symbol thì suy từ loại step.
       _ => switch (step.type) {
-          ButtonStepType.close => Icons.close,
-          ButtonStepType.next => Icons.chevron_right,
-          ButtonStepType.back => Icons.chevron_left,
-          ButtonStepType.collapse => Icons.keyboard_arrow_down,
-          ButtonStepType.redirect => Icons.open_in_new,
-          _ => Icons.circle,
-        },
+        ButtonStepType.close => Icons.close,
+        ButtonStepType.next => Icons.chevron_right,
+        ButtonStepType.back => Icons.chevron_left,
+        ButtonStepType.collapse => Icons.keyboard_arrow_down,
+        ButtonStepType.redirect => Icons.open_in_new,
+        _ => Icons.circle,
+      },
     };
   }
 
   @override
-  Widget build(BuildContext context) => Icon(
-        _icon,
-        size: math.max(size, 12),
-        color: step.style.iconColor,
-      );
+  Widget build(BuildContext context) =>
+      Icon(_icon, size: math.max(size, 12), color: step.style.iconColor);
 }
 
 /// Vòng đếm ngược + số giây còn lại.

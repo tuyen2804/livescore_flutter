@@ -24,17 +24,17 @@ String? _str(Object? v) {
 }
 
 int? _int(Object? v) => switch (v) {
-      int() => v,
-      num() => v.toInt(),
-      String() => int.tryParse(v.trim()),
-      _ => null,
-    };
+  int() => v,
+  num() => v.toInt(),
+  String() => int.tryParse(v.trim()),
+  _ => null,
+};
 
 double? _double(Object? v) => switch (v) {
-      num() => v.toDouble(),
-      String() => double.tryParse(v.trim()),
-      _ => null,
-    };
+  num() => v.toDouble(),
+  String() => double.tryParse(v.trim()),
+  _ => null,
+};
 
 /// `"#FFA600"` hoặc `"#B3000000"` (có alpha) hoặc số nguyên.
 Color? parseAdColor(Object? v) {
@@ -73,23 +73,25 @@ class AdStyle {
   static const AdStyle empty = AdStyle();
 
   factory AdStyle.fromJson(Map<String, dynamic> json) => AdStyle(
-        bgColor: parseAdColor(_pick(json, ['bg_color', 'layoutBackgroundColor'])),
-        headlineColor:
-            parseAdColor(_pick(json, ['headline_color', 'headlineColor'])),
-        bodyColor: parseAdColor(_pick(json, ['body_color', 'bodyColor'])),
-        headlineTextSizeSp: _double(
-            _pick(json, ['headline_text_size_sp', 'headlineTextSizeSp'])),
-        ctaShape: _str(_pick(json, ['cta_shape', 'ctaShape'])),
-      );
+    bgColor: parseAdColor(_pick(json, ['bg_color', 'layoutBackgroundColor'])),
+    headlineColor: parseAdColor(
+      _pick(json, ['headline_color', 'headlineColor']),
+    ),
+    bodyColor: parseAdColor(_pick(json, ['body_color', 'bodyColor'])),
+    headlineTextSizeSp: _double(
+      _pick(json, ['headline_text_size_sp', 'headlineTextSizeSp']),
+    ),
+    ctaShape: _str(_pick(json, ['cta_shape', 'ctaShape'])),
+  );
 
   /// Style của slot đè lên style của union.
   AdStyle mergeOver(AdStyle? base) => AdStyle(
-        bgColor: bgColor ?? base?.bgColor,
-        headlineColor: headlineColor ?? base?.headlineColor,
-        bodyColor: bodyColor ?? base?.bodyColor,
-        headlineTextSizeSp: headlineTextSizeSp ?? base?.headlineTextSizeSp,
-        ctaShape: ctaShape ?? base?.ctaShape,
-      );
+    bgColor: bgColor ?? base?.bgColor,
+    headlineColor: headlineColor ?? base?.headlineColor,
+    bodyColor: bodyColor ?? base?.bodyColor,
+    headlineTextSizeSp: headlineTextSizeSp ?? base?.headlineTextSizeSp,
+    ctaShape: ctaShape ?? base?.ctaShape,
+  );
 
   /// Truyền xuống `NativeAdFactory` của Android/iOS qua `customOptions`.
   Map<String, Object> toCustomOptions() {
@@ -116,10 +118,8 @@ enum ReloadMode {
   autoInterval,
   autoOnCloseAndInterval;
 
-  bool get onClose =>
-      this == autoOnClose || this == autoOnCloseAndInterval;
-  bool get onInterval =>
-      this == autoInterval || this == autoOnCloseAndInterval;
+  bool get onClose => this == autoOnClose || this == autoOnCloseAndInterval;
+  bool get onInterval => this == autoInterval || this == autoOnCloseAndInterval;
 
   /// `LiveScore_native_fullscreen` khai `"ON_DEMAND"` — không nằm trong 4 giá
   /// trị hợp lệ, có lẽ lẫn với `load_prepare_mode`. Hiểu là [manual].
@@ -147,10 +147,10 @@ class LoadPolicy {
   static const LoadPolicy none = LoadPolicy();
 
   factory LoadPolicy.fromJson(Map<String, dynamic> json) => LoadPolicy(
-        reloadMode: ReloadMode.parse(_pick(json, ['reload_mode', 'reloadMode'])),
-        reloadIntervalSec:
-            _int(_pick(json, ['reload_interval_sec', 'reloadIntervalSec'])) ?? 0,
-      );
+    reloadMode: ReloadMode.parse(_pick(json, ['reload_mode', 'reloadMode'])),
+    reloadIntervalSec:
+        _int(_pick(json, ['reload_interval_sec', 'reloadIntervalSec'])) ?? 0,
+  );
 }
 
 // ---------------------------------------------------------------- button seq
@@ -180,22 +180,25 @@ enum ButtonPosition {
   topStart,
   topEnd,
   bottomStart,
+  bottomCenter,
   bottomEnd;
 
   static ButtonPosition parse(Object? raw) =>
       switch (_str(raw)?.toUpperCase()) {
         'TOP_START' => topStart,
         'BOTTOM_START' => bottomStart,
+        'BOTTOM_CENTER' => bottomCenter,
         'BOTTOM_END' => bottomEnd,
         _ => topEnd, // mặc định của SDK
       };
 
   Alignment get alignment => switch (this) {
-        topStart => Alignment.topLeft,
-        topEnd => Alignment.topRight,
-        bottomStart => Alignment.bottomLeft,
-        bottomEnd => Alignment.bottomRight,
-      };
+    topStart => Alignment.topLeft,
+    topEnd => Alignment.topRight,
+    bottomStart => Alignment.bottomLeft,
+    bottomCenter => Alignment.bottomCenter,
+    bottomEnd => Alignment.bottomRight,
+  };
 }
 
 /// `shape` của một nút trong chuỗi.
@@ -204,68 +207,90 @@ enum StepShape {
   roundedRect,
   none;
 
-  static StepShape parse(Object? raw) => switch (_str(raw)?.toUpperCase()) {
+  /// Không khai hoặc khai sai thì dùng [fallback] — mặc định khác nhau theo
+  /// loại nút, xem [StepStyle.fromJson].
+  static StepShape parse(Object? raw, {required StepShape fallback}) =>
+      switch (_str(raw)?.toUpperCase()) {
         'CIRCLE' => circle,
+        'ROUNDED_RECT' => roundedRect,
         'NONE' => none,
-        _ => roundedRect,
+        _ => fallback,
       };
 }
 
 @immutable
 class StepStyle {
   const StepStyle({
-    this.shape = StepShape.roundedRect,
+    this.shape = StepShape.circle,
     this.sizeDp = 36,
-    this.bgColor,
-    this.iconColor,
+    this.bgColor = _defaultBg,
+    this.iconColor = _defaultIcon,
     this.symbolScale = 0.4,
     this.iconTextSizeSp = 14,
     this.strokeWidthDp = 0,
     this.strokeColor,
     this.cornerRadiusDp = 8,
-    this.progressColor,
+    this.progressColor = _defaultProgress,
     this.progressStrokeDp = 2.5,
   });
 
+  /// Mặc định của SDK: nút tròn nền #B3000000; riêng REDIRECT là viên bo góc
+  /// nền #A0000000 (mục 7.6 của tài liệu).
+  static const Color _defaultBg = Color(0xB3000000);
+  static const Color _redirectBg = Color(0xA0000000);
+  static const Color _defaultIcon = Color(0xFFFFFFFF);
+  static const Color _defaultProgress = Color(0xCCFFFFFF);
+
   final StepShape shape;
   final double sizeDp;
-  final Color? bgColor;
-  final Color? iconColor;
+  final Color bgColor;
+  final Color iconColor;
   final double symbolScale;
   final double iconTextSizeSp;
   final double strokeWidthDp;
   final Color? strokeColor;
   final double cornerRadiusDp;
-  final Color? progressColor;
+  final Color progressColor;
   final double progressStrokeDp;
 
   static const StepStyle fallback = StepStyle();
 
   /// Config dùng lẫn `size_dp` và `sizeDp`, `corner_radius_dp` và
-  /// `cornerRadiusDp`… nên khoá nào cũng phải thử cả hai.
-  factory StepStyle.fromJson(Map<String, dynamic> json) => StepStyle(
-        shape: StepShape.parse(_pick(json, ['shape'])),
-        sizeDp: _double(_pick(json, ['size_dp', 'sizeDp'])) ?? 36,
-        bgColor: parseAdColor(_pick(json, ['bg_color', 'bgColor'])) ??
-            const Color(0xB3000000),
-        iconColor: parseAdColor(_pick(json, ['icon_color', 'iconColor'])) ??
-            const Color(0xFFFFFFFF),
-        symbolScale:
-            _double(_pick(json, ['symbol_scale', 'symbolScale'])) ?? 0.4,
-        iconTextSizeSp:
-            _double(_pick(json, ['icon_text_size_sp', 'iconTextSizeSp'])) ?? 14,
-        strokeWidthDp:
-            _double(_pick(json, ['stroke_width_dp', 'strokeWidthDp'])) ?? 0,
-        strokeColor: parseAdColor(_pick(json, ['stroke_color', 'strokeColor'])),
-        cornerRadiusDp:
-            _double(_pick(json, ['corner_radius_dp', 'cornerRadiusDp'])) ?? 8,
-        progressColor:
-            parseAdColor(_pick(json, ['progress_color', 'progressColor'])) ??
-                const Color(0xCCFFFFFF),
-        progressStrokeDp:
-            _double(_pick(json, ['progress_stroke_dp', 'progressStrokeDp'])) ??
-                2.5,
-      );
+  /// `cornerRadiusDp`… nên khoá nào cũng phải thử cả hai. Khoá không khai
+  /// thì lấy mặc định theo [type].
+  factory StepStyle.fromJson(
+    Map<String, dynamic> json, {
+    ButtonStepType type = ButtonStepType.none,
+  }) {
+    final redirect = type == ButtonStepType.redirect;
+    return StepStyle(
+      shape: StepShape.parse(
+        _pick(json, ['shape']),
+        fallback: redirect ? StepShape.roundedRect : StepShape.circle,
+      ),
+      sizeDp: _double(_pick(json, ['size_dp', 'sizeDp'])) ?? 36,
+      bgColor:
+          parseAdColor(_pick(json, ['bg_color', 'bgColor'])) ??
+          (redirect ? _redirectBg : _defaultBg),
+      iconColor:
+          parseAdColor(_pick(json, ['icon_color', 'iconColor'])) ??
+          _defaultIcon,
+      symbolScale: _double(_pick(json, ['symbol_scale', 'symbolScale'])) ?? 0.4,
+      iconTextSizeSp:
+          _double(_pick(json, ['icon_text_size_sp', 'iconTextSizeSp'])) ?? 14,
+      strokeWidthDp:
+          _double(_pick(json, ['stroke_width_dp', 'strokeWidthDp'])) ?? 0,
+      strokeColor: parseAdColor(_pick(json, ['stroke_color', 'strokeColor'])),
+      cornerRadiusDp:
+          _double(_pick(json, ['corner_radius_dp', 'cornerRadiusDp'])) ?? 8,
+      progressColor:
+          parseAdColor(_pick(json, ['progress_color', 'progressColor'])) ??
+          _defaultProgress,
+      progressStrokeDp:
+          _double(_pick(json, ['progress_stroke_dp', 'progressStrokeDp'])) ??
+          2.5,
+    );
+  }
 }
 
 @immutable
@@ -295,19 +320,23 @@ class ButtonStep {
   final StepStyle style;
 
   factory ButtonStep.fromJson(Map<String, dynamic> json) {
+    final type = ButtonStepType.parse(json['type']);
     final rawStyle = json['style'];
     return ButtonStep(
-      type: ButtonStepType.parse(json['type']),
+      type: type,
       position: ButtonPosition.parse(json['position']),
       symbol: _str(json['symbol']),
       // Phân biệt "không khai" với "khai chuỗi rỗng" — chuỗi rỗng có nghĩa.
       text: json.containsKey('text') ? '${json['text']}' : null,
       durationMs: _int(_pick(json, ['duration_ms', 'durationMs'])) ?? 0,
-      withPrevious:
-          _pick(json, ['with_previous', 'withPrevious']) == true,
-      style: rawStyle is Map
-          ? StepStyle.fromJson(Map<String, dynamic>.from(rawStyle))
-          : StepStyle.fallback,
+      withPrevious: _pick(json, ['with_previous', 'withPrevious']) == true,
+      // Không khai style thì vẫn đủ mặc định (shape, màu) theo loại nút.
+      style: StepStyle.fromJson(
+        rawStyle is Map
+            ? Map<String, dynamic>.from(rawStyle)
+            : const <String, dynamic>{},
+        type: type,
+      ),
     );
   }
 }
@@ -359,15 +388,15 @@ class AdUnion {
     return AdUnion(
       slots: rawSlots is List
           ? rawSlots
-              .whereType<Map>()
-              .map((e) => AdSlot.fromJson(Map<String, dynamic>.from(e)))
-              .toList()
+                .whereType<Map>()
+                .map((e) => AdSlot.fromJson(Map<String, dynamic>.from(e)))
+                .toList()
           : const [],
       buttonSequence: rawSeq is List
           ? rawSeq
-              .whereType<Map>()
-              .map((e) => ButtonStep.fromJson(Map<String, dynamic>.from(e)))
-              .toList()
+                .whereType<Map>()
+                .map((e) => ButtonStep.fromJson(Map<String, dynamic>.from(e)))
+                .toList()
           : const [],
       style: rawStyle is Map
           ? AdStyle.fromJson(Map<String, dynamic>.from(rawStyle))
@@ -424,14 +453,15 @@ class NativePlacement {
       type: PlacementType.parse(json['type']),
       unions: rawUnions is List
           ? rawUnions
-              .whereType<Map>()
-              .map((e) => AdUnion.fromJson(Map<String, dynamic>.from(e)))
-              .toList()
+                .whereType<Map>()
+                .map((e) => AdUnion.fromJson(Map<String, dynamic>.from(e)))
+                .toList()
           : const [],
       loadPolicy: rawPolicy is Map
           ? LoadPolicy.fromJson(Map<String, dynamic>.from(rawPolicy))
           : LoadPolicy.none,
-      gravity: _str(json['gravity']) ??
+      gravity:
+          _str(json['gravity']) ??
           (rawPosition is Map ? _str(rawPosition['gravity']) : null),
       bgAlpha: _double(_pick(json, ['bg_alpha', 'bgAlpha'])),
     );
@@ -452,8 +482,9 @@ class NativePlacementConfig {
 
   final Map<String, NativePlacement> placements;
 
-  static const NativePlacementConfig empty =
-      NativePlacementConfig(<String, NativePlacement>{});
+  static const NativePlacementConfig empty = NativePlacementConfig(
+    <String, NativePlacement>{},
+  );
 
   bool get isEmpty => placements.isEmpty;
 

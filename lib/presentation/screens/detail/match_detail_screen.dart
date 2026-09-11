@@ -75,7 +75,6 @@ class _MatchDetailViewState extends State<_MatchDetailView> {
           // Home, chi tiết trận và danh sách trận live.
           NativeAdView(
             placement: NativePlacements.inApp,
-            margin: EdgeInsets.symmetric(horizontal: AppDimens.sdp(12)),
           ),
           Expanded(
             child: provider.isLoading && provider.match == null

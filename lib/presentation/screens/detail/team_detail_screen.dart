@@ -6,12 +6,11 @@ import '../../../core/l10n/gen/app_localizations.dart';
 import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_dimens.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../../../core/widgets/app_image.dart';
 import '../../../core/widgets/earth_loading_view.dart';
 import '../../../core/widgets/state_views.dart';
 import '../../../domain/entities/match_entities.dart';
 import '../../providers/detail_providers.dart';
+import '../../widgets/collapsible_section.dart';
 import '../../widgets/detail_widgets.dart';
 import 'widgets/fixture_card.dart';
 
@@ -88,10 +87,21 @@ String _centerText(dynamic f) {
   return live && hasScore ? '$home - $away' : f.time as String;
 }
 
-class _FixtureList extends StatelessWidget {
+class _FixtureList extends StatefulWidget {
   const _FixtureList({required this.provider});
 
   final TeamDetailProvider provider;
+
+  @override
+  State<_FixtureList> createState() => _FixtureListState();
+}
+
+class _FixtureListState extends State<_FixtureList> {
+  /// Nhớ nhóm bị đóng chứ không nhớ nhóm mở: mặc định mở hết, và giải mới xuất
+  /// hiện sau khi tải lại vẫn mở sẵn.
+  final Set<String> _closed = <String>{};
+
+  TeamDetailProvider get provider => widget.provider;
 
   @override
   Widget build(BuildContext context) {
@@ -100,61 +110,73 @@ class _FixtureList extends StatelessWidget {
       return AppEmptyView(message: s.theFieldIsQuiteEmpty);
     }
 
-    return ListView.builder(
+    // `provider.items` là danh sách phẳng xen kẽ header giải và trận. Gom lại
+    // thành từng nhóm để gập được — một đội đá 4–5 giải song song nên danh sách
+    // phẳng dài và khó tìm.
+    final groups = <_LeagueGroup>[];
+    for (final item in provider.items) {
+      switch (item) {
+        case FixtureHeaderItem():
+          groups.add(_LeagueGroup(item.leagueName, item.leagueLogo));
+        case FixtureRowItem():
+          if (groups.isEmpty) {
+            groups.add(_LeagueGroup(s.fixtures, null));
+          }
+          groups.last.fixtures.add(item.fixture);
+      }
+    }
+
+    return ListView(
       padding: EdgeInsets.only(bottom: AppDimens.sdp(10)),
-      itemCount: provider.items.length,
-      itemBuilder: (context, index) {
-        final item = provider.items[index];
-        return switch (item) {
-          FixtureHeaderItem() => Padding(
-              padding: EdgeInsets.only(
-                top: AppDimens.sdp(12),
-                bottom: AppDimens.sdp(8),
+      children: [
+        for (final group in groups) ...[
+          CollapsibleSectionHeader(
+            title: group.name,
+            logoUrl: group.logo,
+            logoAsset: 'assets/icons/ic_league.svg',
+            count: group.fixtures.length,
+            expanded: _isOpen(group.name),
+            onTap: () => setState(() {
+              if (_closed.contains(group.name)) {
+                _closed.remove(group.name);
+              } else {
+                _closed.add(group.name);
+              }
+            }),
+          ),
+          if (_isOpen(group.name))
+            for (final fixture in group.fixtures)
+              FixtureCard(
+                homeName: fixture.homeTeamName,
+                homeLogo: fixture.homeTeamLogo,
+                awayName: fixture.awayTeamName,
+                awayLogo: fixture.awayTeamLogo,
+                // Port `ItemViewHolder.bind`: live/finished/ft mới hiện tỉ số.
+                centerText: _centerText(fixture),
+                dateState: '${fixture.date} • ${fixture.matchState}',
+                isNotified: fixture.isNotified,
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.matchDetail,
+                  arguments: {'matchId': int.tryParse(fixture.id) ?? 0},
+                ),
               ),
-              child: Row(
-                children: [
-                  AppImage(
-                    source: item.leagueLogo,
-                    width: AppDimens.sdp(18),
-                    height: AppDimens.sdp(18),
-                    placeholderAsset: 'assets/icons/ic_league.svg',
-                  ),
-                  SizedBox(width: AppDimens.sdp(8)),
-                  Expanded(
-                    child: Text(
-                      item.leagueName,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.medium(
-                        size: AppDimens.ssp(12),
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          FixtureRowItem() => FixtureCard(
-              homeName: item.fixture.homeTeamName,
-              homeLogo: item.fixture.homeTeamLogo,
-              awayName: item.fixture.awayTeamName,
-              awayLogo: item.fixture.awayTeamLogo,
-              // Port `ItemViewHolder.bind`: live/finished/ft mới hiện tỉ số.
-              centerText: _centerText(item.fixture),
-              dateState: '${item.fixture.date} • ${item.fixture.matchState}',
-              isNotified: item.fixture.isNotified,
-              onTap: () => Navigator.of(context).pushNamed(
-                AppRoutes.matchDetail,
-                arguments: {'matchId': int.tryParse(item.fixture.id) ?? 0},
-              ),
-            ),
-        };
-      },
+        ],
+      ],
     );
   }
+
+  /// Mặc định mở hết; chỉ nhớ nhóm nào người dùng đã đóng.
+  bool _isOpen(String name) => !_closed.contains(name);
 }
 
-/// Tab Squad: danh sách `item_player.xml` lấy từ `/live-score/list-player`.
+class _LeagueGroup {
+  _LeagueGroup(this.name, this.logo);
+
+  final String name;
+  final String? logo;
+  final List<Fixture> fixtures = <Fixture>[];
+}
+
 class _SquadList extends StatelessWidget {
   const _SquadList({required this.provider});
 
@@ -188,6 +210,9 @@ class _SquadList extends StatelessWidget {
               'playerAge': player.ageText,
               'playerNumber': player.numberText,
               'playerNationality': player.nationality,
+              // Có id thì màn chi tiết tự gọi Sofascore lấy thêm chân thuận,
+              // giá trị chuyển nhượng, hạn hợp đồng.
+              'playerId': player.playerId,
             },
           ),
         );

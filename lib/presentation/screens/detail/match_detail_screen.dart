@@ -31,7 +31,7 @@ class MatchDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (_) =>
-            MatchDetailProvider(sl(), sl(), sl())..loadMatchDetail(matchId),
+            MatchDetailProvider(sl(), sl(), sl(), sl())..loadMatchDetail(matchId),
         child: _MatchDetailView(matchId: matchId),
       );
 }
@@ -59,7 +59,9 @@ class _MatchDetailViewState extends State<_MatchDetailView> {
       const MatchLineupTab(),
       const MatchStatsTab(),
       const MatchH2HTab(),
-      const MatchTableTab(),
+      // Bản gốc không có hàng tiêu đề ở màn trận, nhưng 6 cột số thì không
+      // đoán được cột nào là cột nào nếu thiếu nó.
+      const MatchTableTab(showHeader: true),
     ];
 
     return Scaffold(

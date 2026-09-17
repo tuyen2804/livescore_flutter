@@ -2,6 +2,7 @@ import 'dart:developer' as dev;
 import 'dart:io' show Platform;
 
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart' show debugPrint, kIsWeb;
 import 'package:native_dio_adapter/native_dio_adapter.dart';
 
@@ -57,7 +58,25 @@ class DioClient {
           );
           handler.next(response);
         },
-        onError: (e, handler) {
+        onError: (e, handler) async {
+          // Cronet hỏng ở tầng nạp thư viện thì MỌI request chết, kể cả host
+          // không cần Cronet. Hạ xuống adapter mặc định rồi thử lại một lần —
+          // Sofascore sẽ trả 403 vì dấu vân tay TLS, nhưng các host khác chạy
+          // bình thường thay vì trắng sạch.
+          if (_shouldFallBackToDefaultAdapter(e)) {
+            _nativeAdapterBroken = true;
+            _dio.httpClientAdapter = IOHttpClientAdapter();
+            dev.log(
+              'Cronet không nạp được (${e.error}); chuyển sang dart:io',
+              name: _tag,
+            );
+            try {
+              final retry = await _dio.fetch<dynamic>(e.requestOptions);
+              return handler.resolve(retry);
+            } catch (_) {
+              // Thử lại cũng hỏng thì để lỗi gốc đi tiếp.
+            }
+          }
           debugPrint(
             '[$_tag] <-- FAILED ${e.response?.statusCode} '
             '${e.requestOptions.uri}: ${e.message} | ${e.error}',
@@ -66,6 +85,17 @@ class DioClient {
         },
       ),
     );
+  }
+
+  /// Đặt một lần cho cả tiến trình: hỏng ở client này thì client kia cũng hỏng.
+  static bool _nativeAdapterBroken = false;
+
+  bool _shouldFallBackToDefaultAdapter(DioException e) {
+    if (_nativeAdapterBroken) return false;
+    if (!useNativeAdapter || !_supportsNativeAdapter) return false;
+    final text = '${e.error}${e.message}';
+    return text.contains('libdartjni') ||
+        text.contains('Failed to load dynamic library');
   }
 
   /// Client cho API bóng đá riêng của app.

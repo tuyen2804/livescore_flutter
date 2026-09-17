@@ -23,14 +23,19 @@ class SofascoreMapper {
       scoreAway: started ? event.awayScore?.current : null,
       matchTime: DateTimeUtils.formatEpochToLocalTime(event.startTimestamp),
       status: _statusLabel(phase, event),
+      kickoffEpoch: event.startTimestamp,
       homeLogoUrl: _competitorImage(event.homeTeam, sportSlug),
       awayLogoUrl: _competitorImage(event.awayTeam, sportSlug),
       matchDate: DateTimeUtils.formatEpochToLocalDate(event.startTimestamp),
       leagueName: leagueName ?? event.tournament?.name,
       kickoffUtc: '${event.startTimestamp}',
-      state: 0,
       categoryName: event.tournament?.category?.name,
-      isFootball: false,
+      state: _stateCode(phase, event),
+      playingTime: _playingMinute(event),
+      // Quyết định màn chi tiết nào được mở và cách đọc `isLive`. Để cứng
+      // `false` là bóng đá bị đẩy sang màn Sofascore đa môn, khác hẳn màn
+      // bóng đá quen thuộc.
+      isFootball: sportSlug == 'football',
       sportSlug: sportSlug,
       homeSubScore: _subScore(event.homeScore, sportSlug),
       awaySubScore: _subScore(event.awayScore, sportSlug),
@@ -38,6 +43,41 @@ class SofascoreMapper {
       awayPeriods: event.awayScore?.periods ?? const [],
       winnerCode: event.winnerCode,
     );
+  }
+
+  /// Quy đổi trạng thái Sofascore về **mã `state` của app**.
+  ///
+  /// Bắt buộc phải có: `MatchFixture.isLive`, thứ tự sắp xếp trong một giải, và
+  /// bộ lọc ba tab của màn Prediction đều đọc `state`. Để mặc định `0` thì
+  /// `MatchStatus.fromState(0)` ra `TBD` — cả ba tab Prediction rỗng sạch.
+  ///
+  /// Bảng mã ở `core/utils/match_status.dart`.
+  static int _stateCode(EventPhase phase, SofascoreEvent event) {
+    if (phase == EventPhase.live) {
+      // Nghỉ giữa hiệp có mã riêng để hiện chữ "HT" thay vì số phút.
+      final desc = event.status?.description?.toLowerCase() ?? '';
+      if (desc.contains('halftime') || desc.contains('half time')) return 3;
+      return 2;
+    }
+    return switch (phase) {
+      EventPhase.prematch => 1,
+      EventPhase.finished => 5,
+      EventPhase.interrupted => 10,
+      EventPhase.canceled => 12,
+      EventPhase.live || EventPhase.unknown => 13,
+    };
+  }
+
+  /// Phút thi đấu, suy từ giờ bóng lăn — Sofascore không trả sẵn số phút.
+  static int _playingMinute(SofascoreEvent event) {
+    if (SportPresentation.eventPhase(event.statusType) != EventPhase.live) {
+      return 0;
+    }
+    final start = event.startTimestamp;
+    if (start <= 0) return 0;
+    final now = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+    final minutes = (now - start) ~/ 60 + 1;
+    return minutes.clamp(1, 130);
   }
 
   static String _statusLabel(EventPhase phase, SofascoreEvent event) =>
@@ -93,7 +133,7 @@ class SofascoreMapper {
         fixtures: List.unmodifiable(buffer),
         leagueId: header.uniqueTournamentId,
         categoryName: header.categoryName,
-        isFootball: false,
+        isFootball: sportSlug == 'football',
         sportSlug: sportSlug,
       ));
       buffer = <MatchFixture>[];

@@ -120,6 +120,30 @@ abstract class S {
     Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
+  /// No description provided for @goalsText.
+  ///
+  /// In en, this message translates to:
+  /// **'goals'**
+  String get goalsText;
+
+  /// No description provided for @cornersText.
+  ///
+  /// In en, this message translates to:
+  /// **'corners'**
+  String get cornersText;
+
+  /// No description provided for @cardsText.
+  ///
+  /// In en, this message translates to:
+  /// **'cards'**
+  String get cardsText;
+
+  /// No description provided for @firstHalfText.
+  ///
+  /// In en, this message translates to:
+  /// **'First half'**
+  String get firstHalfText;
+
   /// No description provided for @age.
   ///
   /// In en, this message translates to:
@@ -185,6 +209,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Blocked Shots'**
   String get blockedShots;
+
+  /// No description provided for @bookmakerOdds.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmaker odds'**
+  String get bookmakerOdds;
 
   /// No description provided for @bothTeamsToScore.
   ///
@@ -282,10 +312,16 @@ abstract class S {
   /// **'Club:'**
   String get club;
 
+  /// No description provided for @communityPrediction.
+  ///
+  /// In en, this message translates to:
+  /// **'Community prediction'**
+  String get communityPrediction;
+
   /// No description provided for @confidenceFormat.
   ///
   /// In en, this message translates to:
-  /// **'{arg1}%% Confidence'**
+  /// **'{arg1}% Confidence'**
   String confidenceFormat(int arg1);
 
   /// No description provided for @continueText.
@@ -414,17 +450,17 @@ abstract class S {
   /// **'Fixtures'**
   String get fixtures;
 
-  /// No description provided for @followFavoriteTeams.
-  ///
-  /// In en, this message translates to:
-  /// **'Follow Favorite Teams'**
-  String get followFavoriteTeams;
-
   /// No description provided for @followersCount.
   ///
   /// In en, this message translates to:
   /// **'{arg1} Người theo dõi'**
   String followersCount(String arg1);
+
+  /// No description provided for @followFavoriteTeams.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow Favorite Teams'**
+  String get followFavoriteTeams;
 
   /// No description provided for @fouls.
   ///
@@ -457,18 +493,6 @@ abstract class S {
   /// **'Get started'**
   String get getStarted;
 
-  /// No description provided for @goProVersion.
-  ///
-  /// In en, this message translates to:
-  /// **'GO PRO VERSION'**
-  String get goProVersion;
-
-  /// No description provided for @goToSetting.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to setting'**
-  String get goToSetting;
-
   /// No description provided for @goallessAtTheBreakSeeMatchStats.
   ///
   /// In en, this message translates to:
@@ -480,6 +504,18 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Goals in the first half.'**
   String get goalsInTheFirstHalf;
+
+  /// No description provided for @goProVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'GO PRO VERSION'**
+  String get goProVersion;
+
+  /// No description provided for @goToSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to setting'**
+  String get goToSetting;
 
   /// No description provided for @h2h.
   ///
@@ -553,12 +589,6 @@ abstract class S {
   /// **'In-depth AI analysis'**
   String get inDepthAiAnalysis;
 
-  /// No description provided for @inProgress.
-  ///
-  /// In en, this message translates to:
-  /// **'In progress'**
-  String get inProgress;
-
   /// No description provided for @indeterminate.
   ///
   /// In en, this message translates to:
@@ -613,6 +643,12 @@ abstract class S {
   /// **'Chủ sở hữu'**
   String get infoOwner;
 
+  /// No description provided for @infor.
+  ///
+  /// In en, this message translates to:
+  /// **'Infor'**
+  String get infor;
+
   /// No description provided for @infoReferee.
   ///
   /// In en, this message translates to:
@@ -649,11 +685,11 @@ abstract class S {
   /// **'Thành lập'**
   String get infoYearFoundation;
 
-  /// No description provided for @infor.
+  /// No description provided for @inProgress.
   ///
   /// In en, this message translates to:
-  /// **'Infor'**
-  String get infor;
+  /// **'In progress'**
+  String get inProgress;
 
   /// No description provided for @internationalTournaments.
   ///
@@ -685,17 +721,17 @@ abstract class S {
   /// **'Language'**
   String get language;
 
-  /// No description provided for @languageScreenNotReachable.
-  ///
-  /// In en, this message translates to:
-  /// **'Language screen not reachable from here'**
-  String get languageScreenNotReachable;
-
   /// No description provided for @languages.
   ///
   /// In en, this message translates to:
   /// **'Languages'**
   String get languages;
+
+  /// No description provided for @languageScreenNotReachable.
+  ///
+  /// In en, this message translates to:
+  /// **'Language screen not reachable from here'**
+  String get languageScreenNotReachable;
 
   /// No description provided for @last5Games.
   ///
@@ -751,17 +787,17 @@ abstract class S {
   /// **'Lives'**
   String get liveS;
 
-  /// No description provided for @liveScore.
-  ///
-  /// In en, this message translates to:
-  /// **'LIVE SCORE'**
-  String get liveScore;
-
   /// No description provided for @lives.
   ///
   /// In en, this message translates to:
   /// **'lives'**
   String get lives;
+
+  /// No description provided for @liveScore.
+  ///
+  /// In en, this message translates to:
+  /// **'LIVE SCORE'**
+  String get liveScore;
 
   /// No description provided for @loading.
   ///
@@ -853,17 +889,17 @@ abstract class S {
   /// **'Match update'**
   String get matchUpdate;
 
-  /// No description provided for @nationalLeagues.
-  ///
-  /// In en, this message translates to:
-  /// **'National Leagues'**
-  String get nationalLeagues;
-
   /// No description provided for @nationality.
   ///
   /// In en, this message translates to:
   /// **'Nationality:'**
   String get nationality;
+
+  /// No description provided for @nationalLeagues.
+  ///
+  /// In en, this message translates to:
+  /// **'National Leagues'**
+  String get nationalLeagues;
 
   /// No description provided for @nativeBody.
   ///
@@ -883,6 +919,12 @@ abstract class S {
   /// **'Media View'**
   String get nativeMediaView;
 
+  /// No description provided for @navigationMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigation menu'**
+  String get navigationMenu;
+
   /// No description provided for @navRailCollapsedA11yLabel.
   ///
   /// In en, this message translates to:
@@ -894,12 +936,6 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Expanded'**
   String get navRailExpandedA11yLabel;
-
-  /// No description provided for @navigationMenu.
-  ///
-  /// In en, this message translates to:
-  /// **'Navigation menu'**
-  String get navigationMenu;
 
   /// No description provided for @next.
   ///
@@ -986,18 +1022,6 @@ abstract class S {
   /// **'No'**
   String get noText;
 
-  /// No description provided for @noUpcomingMatches.
-  ///
-  /// In en, this message translates to:
-  /// **'No upcoming matches'**
-  String get noUpcomingMatches;
-
-  /// No description provided for @notSelected.
-  ///
-  /// In en, this message translates to:
-  /// **'Not selected'**
-  String get notSelected;
-
   /// No description provided for @notificationChannelDesc.
   ///
   /// In en, this message translates to:
@@ -1080,6 +1104,18 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Allow app to send you notifications?'**
   String get notificationsPermissionTitle;
+
+  /// No description provided for @notSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'Not selected'**
+  String get notSelected;
+
+  /// No description provided for @noUpcomingMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No upcoming matches'**
+  String get noUpcomingMatches;
 
   /// No description provided for @ob1Des.
   ///
@@ -1267,17 +1303,17 @@ abstract class S {
   /// **'BUY NOW'**
   String get premiumGo;
 
-  /// No description provided for @premiumNotReady.
-  ///
-  /// In en, this message translates to:
-  /// **'Store is not ready yet. Please try again.'**
-  String get premiumNotReady;
-
   /// No description provided for @premiumNoteOneTime.
   ///
   /// In en, this message translates to:
   /// **'One-time payment. No subscription.'**
   String get premiumNoteOneTime;
+
+  /// No description provided for @premiumNotReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Store is not ready yet. Please try again.'**
+  String get premiumNotReady;
 
   /// No description provided for @premiumSubtitle.
   ///
@@ -1423,6 +1459,24 @@ abstract class S {
   /// **'Restore Purchase'**
   String get restorePurchase;
 
+  /// No description provided for @restorePurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore Purchases'**
+  String get restorePurchases;
+
+  /// No description provided for @restorePurchasesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No previous purchase found for this account.'**
+  String get restorePurchasesEmpty;
+
+  /// No description provided for @restorePurchasesSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase has been restored.'**
+  String get restorePurchasesSuccess;
+
   /// No description provided for @result.
   ///
   /// In en, this message translates to:
@@ -1459,29 +1513,23 @@ abstract class S {
   /// **'{arg1} confidence'**
   String sConfidence(String arg1);
 
+  /// No description provided for @scoreS1S2.
+  ///
+  /// In en, this message translates to:
+  /// **'Score ({arg1}1 - {arg2}2)'**
+  String scoreS1S2(String arg1, String arg2);
+
   /// No description provided for @sCorrectPredictions.
   ///
   /// In en, this message translates to:
   /// **'{arg1} correct predictions'**
   String sCorrectPredictions(String arg1);
 
-  /// No description provided for @sGoal.
+  /// No description provided for @searchbarScrollingViewBehavior.
   ///
   /// In en, this message translates to:
-  /// **'{arg1} goal'**
-  String sGoal(String arg1);
-
-  /// No description provided for @sSaleOff.
-  ///
-  /// In en, this message translates to:
-  /// **'{arg1}\nOff'**
-  String sSaleOff(String arg1);
-
-  /// No description provided for @scoreS1S2.
-  ///
-  /// In en, this message translates to:
-  /// **'Score ({arg1}1 - {arg2}2)'**
-  String scoreS1S2(String arg1, String arg2);
+  /// **'com.google.android.material.search.SearchBar\$ScrollingViewBehavior'**
+  String get searchbarScrollingViewBehavior;
 
   /// No description provided for @searchHintPick.
   ///
@@ -1513,12 +1561,6 @@ abstract class S {
   /// **'Search team or league'**
   String get searchTeamOrLeague;
 
-  /// No description provided for @searchbarScrollingViewBehavior.
-  ///
-  /// In en, this message translates to:
-  /// **'com.google.android.material.search.SearchBar\$ScrollingViewBehavior'**
-  String get searchbarScrollingViewBehavior;
-
   /// No description provided for @secondHalfIsUnderway.
   ///
   /// In en, this message translates to:
@@ -1549,6 +1591,12 @@ abstract class S {
   /// **'See all'**
   String get seeAll;
 
+  /// No description provided for @selected.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected'**
+  String get selected;
+
   /// No description provided for @selectLeaguesSubtitle.
   ///
   /// In en, this message translates to:
@@ -1561,12 +1609,6 @@ abstract class S {
   /// **'Select your favorite teams to get instant alerts.'**
   String get selectTeamsSubtitle;
 
-  /// No description provided for @selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Selected'**
-  String get selected;
-
   /// No description provided for @sentOff.
   ///
   /// In en, this message translates to:
@@ -1578,6 +1620,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
+
+  /// No description provided for @sGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'{arg1} goal'**
+  String sGoal(String arg1);
 
   /// No description provided for @share.
   ///
@@ -1795,6 +1843,12 @@ abstract class S {
   /// **'Squad'**
   String get squad;
 
+  /// No description provided for @sSaleOff.
+  ///
+  /// In en, this message translates to:
+  /// **'{arg1}\nOff'**
+  String sSaleOff(String arg1);
+
   /// No description provided for @startOfSecondHalf.
   ///
   /// In en, this message translates to:
@@ -1957,30 +2011,6 @@ abstract class S {
   /// **'INFO'**
   String get tabInfo;
 
-  /// No description provided for @tabLineups.
-  ///
-  /// In en, this message translates to:
-  /// **'LINEUPS'**
-  String get tabLineups;
-
-  /// No description provided for @tabOdds.
-  ///
-  /// In en, this message translates to:
-  /// **'ODDS'**
-  String get tabOdds;
-
-  /// No description provided for @tabStandings.
-  ///
-  /// In en, this message translates to:
-  /// **'STANDINGS'**
-  String get tabStandings;
-
-  /// No description provided for @tabStatistics.
-  ///
-  /// In en, this message translates to:
-  /// **'STATISTICS'**
-  String get tabStatistics;
-
   /// No description provided for @table.
   ///
   /// In en, this message translates to:
@@ -2004,6 +2034,30 @@ abstract class S {
   /// In en, this message translates to:
   /// **'# Team'**
   String get tableTeamHeader;
+
+  /// No description provided for @tabLineups.
+  ///
+  /// In en, this message translates to:
+  /// **'LINEUPS'**
+  String get tabLineups;
+
+  /// No description provided for @tabOdds.
+  ///
+  /// In en, this message translates to:
+  /// **'ODDS'**
+  String get tabOdds;
+
+  /// No description provided for @tabStandings.
+  ///
+  /// In en, this message translates to:
+  /// **'STANDINGS'**
+  String get tabStandings;
+
+  /// No description provided for @tabStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'STATISTICS'**
+  String get tabStatistics;
 
   /// No description provided for @team.
   ///
@@ -2384,6 +2438,12 @@ abstract class S {
   /// **'View details match.'**
   String get viewDetailsMatch;
 
+  /// No description provided for @votesCountFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'{arg1} votes'**
+  String votesCountFormat(String arg1);
+
   /// No description provided for @vs.
   ///
   /// In en, this message translates to:
@@ -2414,12 +2474,6 @@ abstract class S {
   /// **'AdMob -'**
   String get watermarkLabelPrefix;
 
-  /// No description provided for @weReDelightedThatYouEnjoyUsingOurApp.
-  ///
-  /// In en, this message translates to:
-  /// **'We’re delighted that you enjoy using our app'**
-  String get weReDelightedThatYouEnjoyUsingOurApp;
-
   /// No description provided for @weekly.
   ///
   /// In en, this message translates to:
@@ -2431,6 +2485,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Weight:'**
   String get weight;
+
+  /// No description provided for @weReDelightedThatYouEnjoyUsingOurApp.
+  ///
+  /// In en, this message translates to:
+  /// **'We’re delighted that you enjoy using our app'**
+  String get weReDelightedThatYouEnjoyUsingOurApp;
 
   /// No description provided for @whatAHalf.
   ///
@@ -2468,17 +2528,17 @@ abstract class S {
   /// **'Yes'**
   String get yes;
 
-  /// No description provided for @yesText.
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yesText;
-
   /// No description provided for @yesterday.
   ///
   /// In en, this message translates to:
   /// **'Yesterday'**
   String get yesterday;
+
+  /// No description provided for @yesText.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yesText;
 
   /// No description provided for @youRePremiumUser.
   ///
@@ -2486,35 +2546,17 @@ abstract class S {
   /// **'You\'re Premium User'**
   String get youRePremiumUser;
 
-  /// No description provided for @youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn.
-  ///
-  /// In en, this message translates to:
-  /// **'You won’t receive any alerts or updates until you turn them back on.'**
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn;
-
   /// No description provided for @yourFilesIsEmpty.
   ///
   /// In en, this message translates to:
   /// **'Your files is empty'**
   String get yourFilesIsEmpty;
 
-  /// No description provided for @restorePurchases.
+  /// No description provided for @youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn.
   ///
   /// In en, this message translates to:
-  /// **'Restore Purchases'**
-  String get restorePurchases;
-
-  /// No description provided for @restorePurchasesSuccess.
-  ///
-  /// In en, this message translates to:
-  /// **'Your purchase has been restored.'**
-  String get restorePurchasesSuccess;
-
-  /// No description provided for @restorePurchasesEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'No previous purchase found for this account.'**
-  String get restorePurchasesEmpty;
+  /// **'You won’t receive any alerts or updates until you turn them back on.'**
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

@@ -67,6 +67,10 @@ class _PredictionScreenState extends State<PredictionScreen> {
           'awayTeamName': fixture.teamAway,
           'homeTeamLogo': fixture.homeLogoUrl,
           'awayTeamLogo': fixture.awayLogoUrl,
+          // Hai thứ này để dò đúng trận bên Sofascore: giờ bóng lăn và quốc
+          // gia của giải. Không có id chung nên phải khớp bằng tên + thời gian.
+          'kickoffEpoch': fixture.kickoffEpoch,
+          'countryName': fixture.categoryName,
         },
       );
     }

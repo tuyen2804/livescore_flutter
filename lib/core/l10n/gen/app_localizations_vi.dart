@@ -10,6 +10,18 @@ class SVi extends S {
   SVi([String locale = 'vi']) : super(locale);
 
   @override
+  String get goalsText => 'bàn';
+
+  @override
+  String get cornersText => 'phạt góc';
+
+  @override
+  String get cardsText => 'thẻ';
+
+  @override
+  String get firstHalfText => 'Hiệp một';
+
+  @override
   String get age => 'Tuổi:';
 
   @override
@@ -42,6 +54,9 @@ class SVi extends S {
 
   @override
   String get blockedShots => 'Cú đánh bị chặn';
+
+  @override
+  String get bookmakerOdds => 'Tỷ lệ theo nhà cái';
 
   @override
   String get bothTeamsToScore => 'Cả hai đội ghi bàn';
@@ -93,8 +108,11 @@ class SVi extends S {
   String get club => 'Câu lạc bộ:';
 
   @override
+  String get communityPrediction => 'Cộng đồng dự đoán';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% Độ tin cậy';
+    return '$arg1% Độ tin cậy';
   }
 
   @override
@@ -164,12 +182,12 @@ class SVi extends S {
   String get fixtures => 'Lịch thi đấu';
 
   @override
-  String get followFavoriteTeams => 'Theo dõi các đội yêu thích';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Theo dõi các đội yêu thích';
 
   @override
   String get fouls => 'Phạm lỗi';
@@ -189,17 +207,17 @@ class SVi extends S {
   String get getStarted => 'Bắt đầu';
 
   @override
-  String get goProVersion => 'PHIÊN BẢN GO PRO';
-
-  @override
-  String get goToSetting => 'Đi tới cài đặt';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'Không bàn thắng khi nghỉ giải lao. Xem số liệu thống kê trận đấu.';
 
   @override
   String get goalsInTheFirstHalf => 'Bàn thắng trong hiệp một.';
+
+  @override
+  String get goProVersion => 'PHIÊN BẢN GO PRO';
+
+  @override
+  String get goToSetting => 'Đi tới cài đặt';
 
   @override
   String get h2h => 'H2H';
@@ -244,9 +262,6 @@ class SVi extends S {
   String get inDepthAiAnalysis => 'Phân tích AI chuyên sâu';
 
   @override
-  String get inProgress => 'Đang tiến hành';
-
-  @override
   String get indeterminate => 'Đã kiểm tra một phần';
 
   @override
@@ -274,6 +289,9 @@ class SVi extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Thông tin';
+
+  @override
   String get infoReferee => 'Trọng tài';
 
   @override
@@ -292,7 +310,7 @@ class SVi extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Thông tin';
+  String get inProgress => 'Đang tiến hành';
 
   @override
   String get internationalTournaments => 'Giải đấu quốc tế';
@@ -312,11 +330,11 @@ class SVi extends S {
   String get language => 'Ngôn ngữ';
 
   @override
-  String get languageScreenNotReachable =>
-      'Không thể truy cập màn hình ngôn ngữ từ đây';
+  String get languages => 'Ngôn ngữ';
 
   @override
-  String get languages => 'Ngôn ngữ';
+  String get languageScreenNotReachable =>
+      'Không thể truy cập màn hình ngôn ngữ từ đây';
 
   @override
   String get last5Games => '5 trận gần nhất';
@@ -346,10 +364,10 @@ class SVi extends S {
   String get liveS => 'Cuộc sống';
 
   @override
-  String get liveScore => 'TỶ SỐ TRỰC TIẾP';
+  String get lives => 'cuộc sống';
 
   @override
-  String get lives => 'cuộc sống';
+  String get liveScore => 'TỶ SỐ TRỰC TIẾP';
 
   @override
   String get loading => 'Đang tải...';
@@ -400,10 +418,10 @@ class SVi extends S {
   String get matchUpdate => 'Cập nhật trận đấu';
 
   @override
-  String get nationalLeagues => 'Giải vô địch quốc gia';
+  String get nationality => 'Quốc tịch:';
 
   @override
-  String get nationality => 'Quốc tịch:';
+  String get nationalLeagues => 'Giải vô địch quốc gia';
 
   @override
   String get nativeBody => 'Cơ thể';
@@ -415,13 +433,13 @@ class SVi extends S {
   String get nativeMediaView => 'Chế độ xem phương tiện';
 
   @override
+  String get navigationMenu => 'Menu điều hướng';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Thu gọn';
 
   @override
   String get navRailExpandedA11yLabel => 'Mở rộng';
-
-  @override
-  String get navigationMenu => 'Menu điều hướng';
 
   @override
   String get next => 'Kế tiếp';
@@ -466,12 +484,6 @@ class SVi extends S {
 
   @override
   String get noText => 'Không';
-
-  @override
-  String get noUpcomingMatches => 'Chưa có trận đấu sắp tới';
-
-  @override
-  String get notSelected => 'Không được chọn';
 
   @override
   String get notificationChannelDesc =>
@@ -525,6 +537,12 @@ class SVi extends S {
   @override
   String get notificationsPermissionTitle =>
       'Cho phép ứng dụng gửi thông báo cho bạn?';
+
+  @override
+  String get notSelected => 'Không được chọn';
+
+  @override
+  String get noUpcomingMatches => 'Chưa có trận đấu sắp tới';
 
   @override
   String get ob1Des =>
@@ -625,10 +643,10 @@ class SVi extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -714,6 +732,16 @@ class SVi extends S {
   String get restorePurchase => 'Khôi phục giao dịch mua';
 
   @override
+  String get restorePurchases => 'Khôi phục giao dịch';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Không tìm thấy giao dịch nào trước đây cho tài khoản này.';
+
+  @override
+  String get restorePurchasesSuccess => 'Đã khôi phục gói bạn đã mua.';
+
+  @override
   String get result => 'Kết quả';
 
   @override
@@ -737,24 +765,18 @@ class SVi extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Điểm (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 dự đoán chính xác';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 mục tiêu';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\ntắt';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Điểm (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Tìm kiếm các giải đấu hoặc đội...';
@@ -770,10 +792,6 @@ class SVi extends S {
 
   @override
   String get searchTeamOrLeague => 'Tìm kiếm đội hoặc giải đấu';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -793,6 +811,9 @@ class SVi extends S {
   String get seeAll => 'Xem tất cả';
 
   @override
+  String get selected => 'Đã chọn';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Chọn các giải đấu bạn muốn theo dõi chặt chẽ.';
 
@@ -801,15 +822,17 @@ class SVi extends S {
       'Chọn các đội yêu thích của bạn để nhận thông báo tức thì.';
 
   @override
-  String get selected => 'Đã chọn';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '$arg1 đã gửi đi ($arg2\')';
   }
 
   @override
   String get settings => 'Cài đặt';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 mục tiêu';
+  }
 
   @override
   String get share => 'Chia sẻ';
@@ -922,6 +945,11 @@ class SVi extends S {
   String get squad => 'Đội hình';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\ntắt';
+  }
+
+  @override
   String get startOfSecondHalf => 'Bắt đầu hiệp hai';
 
   @override
@@ -1004,18 +1032,6 @@ class SVi extends S {
   String get tabInfo => 'THÔNG TIN';
 
   @override
-  String get tabLineups => 'ĐỘI HÌNH';
-
-  @override
-  String get tabOdds => 'TỶ LỆ';
-
-  @override
-  String get tabStandings => 'BẢNG XẾP HẠNG';
-
-  @override
-  String get tabStatistics => 'THỐNG KÊ';
-
-  @override
   String get table => 'Bảng';
 
   @override
@@ -1026,6 +1042,18 @@ class SVi extends S {
 
   @override
   String get tableTeamHeader => '# Tên Đội';
+
+  @override
+  String get tabLineups => 'ĐỘI HÌNH';
+
+  @override
+  String get tabOdds => 'TỶ LỆ';
+
+  @override
+  String get tabStandings => 'BẢNG XẾP HẠNG';
+
+  @override
+  String get tabStatistics => 'THỐNG KÊ';
 
   @override
   String get team => 'Đội ngũ';
@@ -1238,6 +1266,11 @@ class SVi extends S {
   String get viewDetailsMatch => 'Xem chi tiết phù hợp.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 lượt bình chọn';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1256,14 +1289,14 @@ class SVi extends S {
   String get watermarkLabelPrefix => 'Quảng cáo -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'Chúng tôi rất vui vì bạn thích sử dụng ứng dụng của chúng tôi';
-
-  @override
   String get weekly => 'Hàng tuần';
 
   @override
   String get weight => 'Trọng lượng:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'Chúng tôi rất vui vì bạn thích sử dụng ứng dụng của chúng tôi';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1286,28 +1319,18 @@ class SVi extends S {
   String get yes => 'Có';
 
   @override
-  String get yesText => 'Có';
+  String get yesterday => 'Hôm qua';
 
   @override
-  String get yesterday => 'Hôm qua';
+  String get yesText => 'Có';
 
   @override
   String get youRePremiumUser => 'Bạn là người dùng cao cấp';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'Bạn sẽ không nhận được bất kỳ cảnh báo hoặc cập nhật nào cho đến khi bật lại.';
-
-  @override
   String get yourFilesIsEmpty => 'Tệp của bạn trống';
 
   @override
-  String get restorePurchases => 'Khôi phục giao dịch';
-
-  @override
-  String get restorePurchasesSuccess => 'Đã khôi phục gói bạn đã mua.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'Không tìm thấy giao dịch nào trước đây cho tài khoản này.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'Bạn sẽ không nhận được bất kỳ cảnh báo hoặc cập nhật nào cho đến khi bật lại.';
 }

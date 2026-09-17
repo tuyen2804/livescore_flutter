@@ -10,6 +10,18 @@ class SKo extends S {
   SKo([String locale = 'ko']) : super(locale);
 
   @override
+  String get goalsText => '골';
+
+  @override
+  String get cornersText => '코너킥';
+
+  @override
+  String get cardsText => '카드';
+
+  @override
+  String get firstHalfText => '전반전';
+
+  @override
   String get age => '나이:';
 
   @override
@@ -41,6 +53,9 @@ class SKo extends S {
 
   @override
   String get blockedShots => '블록슛';
+
+  @override
+  String get bookmakerOdds => '북메이커 배당률';
 
   @override
   String get bothTeamsToScore => '양 팀 모두 득점할 수 있습니다';
@@ -92,8 +107,11 @@ class SKo extends S {
   String get club => '클럽:';
 
   @override
+  String get communityPrediction => '커뮤니티 예측';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% 신뢰';
+    return '$arg1% 신뢰';
   }
 
   @override
@@ -163,12 +181,12 @@ class SKo extends S {
   String get fixtures => '비품';
 
   @override
-  String get followFavoriteTeams => '좋아하는 팀 팔로우';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => '좋아하는 팀 팔로우';
 
   @override
   String get fouls => '파울';
@@ -188,16 +206,16 @@ class SKo extends S {
   String get getStarted => '시작하기';
 
   @override
-  String get goProVersion => '고 프로 버전';
-
-  @override
-  String get goToSetting => '설정으로 이동';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats => '전반을 무득점으로 마쳤다. 경기 통계를 참조하세요.';
 
   @override
   String get goalsInTheFirstHalf => '전반에 골을 넣었다.';
+
+  @override
+  String get goProVersion => '고 프로 버전';
+
+  @override
+  String get goToSetting => '설정으로 이동';
 
   @override
   String get h2h => 'H2H';
@@ -242,9 +260,6 @@ class SKo extends S {
   String get inDepthAiAnalysis => '심층 AI 분석';
 
   @override
-  String get inProgress => '진행 중입니다';
-
-  @override
   String get indeterminate => '부분적으로 확인됨';
 
   @override
@@ -272,6 +287,9 @@ class SKo extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => '인포';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -290,7 +308,7 @@ class SKo extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => '인포';
+  String get inProgress => '진행 중입니다';
 
   @override
   String get internationalTournaments => '국제 토너먼트';
@@ -308,10 +326,10 @@ class SKo extends S {
   String get language => '언어';
 
   @override
-  String get languageScreenNotReachable => '여기서 언어 화면에 접근할 수 없음';
+  String get languages => '언어';
 
   @override
-  String get languages => '언어';
+  String get languageScreenNotReachable => '여기서 언어 화면에 접근할 수 없음';
 
   @override
   String get last5Games => '최근 5경기';
@@ -341,10 +359,10 @@ class SKo extends S {
   String get liveS => '생애';
 
   @override
-  String get liveScore => '라이브 스코어';
+  String get lives => '생애';
 
   @override
-  String get lives => '생애';
+  String get liveScore => '라이브 스코어';
 
   @override
   String get loading => '로딩 중...';
@@ -394,10 +412,10 @@ class SKo extends S {
   String get matchUpdate => '경기 업데이트';
 
   @override
-  String get nationalLeagues => '내셔널 리그';
+  String get nationality => '국적:';
 
   @override
-  String get nationality => '국적:';
+  String get nationalLeagues => '내셔널 리그';
 
   @override
   String get nativeBody => '본문';
@@ -409,13 +427,13 @@ class SKo extends S {
   String get nativeMediaView => '미디어 뷰';
 
   @override
+  String get navigationMenu => '내비게이션 메뉴';
+
+  @override
   String get navRailCollapsedA11yLabel => '붕괴됨';
 
   @override
   String get navRailExpandedA11yLabel => '확장';
-
-  @override
-  String get navigationMenu => '내비게이션 메뉴';
 
   @override
   String get next => '다음';
@@ -460,12 +478,6 @@ class SKo extends S {
 
   @override
   String get noText => '아니';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => '선발되지 않았다';
 
   @override
   String get notificationChannelDesc => '다가오는 축구 경기 알림';
@@ -515,6 +527,12 @@ class SKo extends S {
 
   @override
   String get notificationsPermissionTitle => '앱이 알림을 보내도록 허용하나요?';
+
+  @override
+  String get notSelected => '선발되지 않았다';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des => '실시간 업데이트를 받아보세요.\n모든 메이저 리그\n그리고 그 주변에서 열리는 토너먼트\n세계';
@@ -613,10 +631,10 @@ class SKo extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -699,6 +717,15 @@ class SKo extends S {
   String get restorePurchase => '구매 복원';
 
   @override
+  String get restorePurchases => '구매 복원';
+
+  @override
+  String get restorePurchasesEmpty => '이 계정에서 이전 구매를 찾을 수 없습니다.';
+
+  @override
+  String get restorePurchasesSuccess => '구매가 복원되었습니다.';
+
+  @override
   String get result => '결과';
 
   @override
@@ -722,24 +749,18 @@ class SKo extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return '점수 (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 정확 예측';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '%의 목표';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\n꺼';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return '점수 (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$스크롤뷰Behavior';
 
   @override
   String get searchHintPick => '리그나 팀을 검색해보세요...';
@@ -755,10 +776,6 @@ class SKo extends S {
 
   @override
   String get searchTeamOrLeague => '서치 팀 또는 리그';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$스크롤뷰Behavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -778,13 +795,13 @@ class SKo extends S {
   String get seeAll => '모두 보기';
 
   @override
+  String get selected => '선정된';
+
+  @override
   String get selectLeaguesSubtitle => '가까이 지켜보고 싶은 리그를 선택하세요.';
 
   @override
   String get selectTeamsSubtitle => '좋아하는 팀을 선택해 즉시 알림을 받으세요.';
-
-  @override
-  String get selected => '선정된';
 
   @override
   String sentOff(String arg1, int arg2) {
@@ -793,6 +810,11 @@ class SKo extends S {
 
   @override
   String get settings => '설정';
+
+  @override
+  String sGoal(String arg1) {
+    return '%의 목표';
+  }
 
   @override
   String get share => '공유하기';
@@ -905,6 +927,11 @@ class SKo extends S {
   String get squad => '선수단';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\n꺼';
+  }
+
+  @override
   String get startOfSecondHalf => '후반전 시작';
 
   @override
@@ -986,18 +1013,6 @@ class SKo extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => '표';
 
   @override
@@ -1008,6 +1023,18 @@ class SKo extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => '팀';
@@ -1212,6 +1239,11 @@ class SKo extends S {
   String get viewDetailsMatch => '상세 정보 보기.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1표';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1230,13 +1262,13 @@ class SKo extends S {
   String get watermarkLabelPrefix => '애드몹 -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp => '저희 앱을 즐겁게 사용해 주셔서 기쁩니다';
-
-  @override
   String get weekly => '주간';
 
   @override
   String get weight => '무게:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp => '저희 앱을 즐겁게 사용해 주셔서 기쁩니다';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1259,27 +1291,18 @@ class SKo extends S {
   String get yes => '네';
 
   @override
-  String get yesText => '네';
+  String get yesterday => '어제';
 
   @override
-  String get yesterday => '어제';
+  String get yesText => '네';
 
   @override
   String get youRePremiumUser => '당신은 프리미엄 사용자입니다';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      '알림이나 업데이트를 다시 켜기 전까지는 받지 못합니다.';
-
-  @override
   String get yourFilesIsEmpty => '네 파일은 비어 있어';
 
   @override
-  String get restorePurchases => '구매 복원';
-
-  @override
-  String get restorePurchasesSuccess => '구매가 복원되었습니다.';
-
-  @override
-  String get restorePurchasesEmpty => '이 계정에서 이전 구매를 찾을 수 없습니다.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      '알림이나 업데이트를 다시 켜기 전까지는 받지 못합니다.';
 }

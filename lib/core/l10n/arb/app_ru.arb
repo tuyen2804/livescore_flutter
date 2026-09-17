@@ -1,5 +1,8 @@
 {
-  "@@locale": "ru",
+  "goalsText": "голов",
+  "cornersText": "угловых",
+  "cardsText": "карточек",
+  "firstHalfText": "Первый тайм",
   "age": "Возраст:",
   "aiMainPick": "Основной выбор ИИ",
   "allLeagues": "Все лиги",
@@ -11,6 +14,7 @@
   "awayWin": "Выездная победа",
   "bestPrice": "Лучшая цена",
   "blockedShots": "Блок-шоты",
+  "bookmakerOdds": "Коэффициенты букмекеров",
   "bothTeamsToScore": "Обе команды забивали",
   "bottomsheetActionCollapse": "Скрутите нижнюю часть",
   "bottomsheetActionExpand": "Расширите нижний лист",
@@ -27,7 +31,8 @@
   "closeDrawer": "Закрыть меню навигации",
   "closeSheet": "Закрыть лист",
   "club": "Клуб:",
-  "confidenceFormat": "{arg1}%% Уверенность",
+  "communityPrediction": "Прогноз сообщества",
+  "confidenceFormat": "{arg1}% Уверенность",
   "@confidenceFormat": {
     "placeholders": {
       "arg1": {
@@ -66,7 +71,6 @@
     }
   },
   "fixtures": "Матчи",
-  "followFavoriteTeams": "Следите за любимыми командами",
   "followersCount": "{arg1} Người theo dõi",
   "@followersCount": {
     "placeholders": {
@@ -75,15 +79,16 @@
       }
     }
   },
+  "followFavoriteTeams": "Следите за любимыми командами",
   "fouls": "Фолы",
   "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "Из перечисленных ниже языков выберите свой родной язык. Позже можно сменить язык в настройках.",
   "fullTime": "Полный рабочий день",
   "getReadyMatchStartsSoon": "Приготовьтесь! Матч начнётся скоро",
   "getStarted": "Начинайте",
-  "goProVersion": "ВЕРСИЯ GO PRO",
-  "goToSetting": "Перейти к сеттингу",
   "goallessAtTheBreakSeeMatchStats": "На перерыв — 0 голов. Смотрите статистику матчей.",
   "goalsInTheFirstHalf": "Голы в первом тайме.",
+  "goProVersion": "ВЕРСИЯ GO PRO",
+  "goToSetting": "Перейти к сеттингу",
   "h2h": "H2H",
   "halftimeScore": "Счёт к перерыву",
   "height": "Высота:",
@@ -135,7 +140,6 @@
     }
   },
   "inDepthAiAnalysis": "Глубокий анализ ИИ",
-  "inProgress": "В процессе",
   "indeterminate": "Частично проверено",
   "infoAwayManager": "Away Manager",
   "infoChairman": "Chủ tịch hiện tại",
@@ -145,20 +149,21 @@
   "infoHomeManager": "Home Manager",
   "infoLeague": "League",
   "infoOwner": "Chủ sở hữu",
+  "infor": "Infor",
   "infoReferee": "Referee",
   "infoRound": "Round",
   "infoTime": "Time",
   "infoVenue": "Venue",
   "infoWeightDivisions": "Hạng cân",
   "infoYearFoundation": "Thành lập",
-  "infor": "Infor",
+  "inProgress": "В процессе",
   "internationalTournaments": "Международные турниры",
   "introTitle1": "Живые результаты, видеообзоры и срочные новости.",
   "introTitle2": "Получайте живые оповещения о голах, карточках и начальных ударах",
   "kickOff": "Старт!",
   "language": "Язык",
-  "languageScreenNotReachable": "Языковой экран недоступен отсюда",
   "languages": "Языки",
+  "languageScreenNotReachable": "Языковой экран недоступен отсюда",
   "last5Games": "Последние 5 игр",
   "league": "Лига",
   "leagues": "Лиги",
@@ -168,11 +173,12 @@
   "live": "Живой эфир",
   "liveMatches": "ЖИВЫЕ МАТЧИ",
   "liveS": "Биографии",
-  "liveScore": "ЖИВОЙ САУНДТРЕК",
   "lives": "Биография",
+  "liveScore": "ЖИВОЙ САУНДТРЕК",
   "loading": "Загрузка...",
   "loadingRewardAd": "Loading reward ad",
   "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "@@locale": "ru",
   "looksLikeYouHavenTAddedAnythingYet": "Похоже, ты ещё ничего не добавил.",
   "makeSureToTurnOnTheInternetToUseFeatures": "Обязательно включите интернет, чтобы использовать функции",
   "matchAlarmBeforeMatch": "Тревога матча (перед матчем)",
@@ -185,14 +191,14 @@
   "matchStart": "Начало матча",
   "matchTimeline": "Хронология матчей",
   "matchUpdate": "Обновление матча",
-  "nationalLeagues": "Национальные лиги",
   "nationality": "Национальность:",
+  "nationalLeagues": "Национальные лиги",
   "nativeBody": "Кузов",
   "nativeHeadline": "Заголовок",
   "nativeMediaView": "Медиа-обзор",
+  "navigationMenu": "Навигационное меню",
   "navRailCollapsedA11yLabel": "Обрушился",
   "navRailExpandedA11yLabel": "Расширение",
-  "navigationMenu": "Навигационное меню",
   "next": "Далее",
   "no": "Нет",
   "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "Сравнительных данных для этого матча нет. Сделайте прогноз до конца матча, чтобы увидеть результаты в следующий раз.",
@@ -207,8 +213,6 @@
   "noRecentMatches": "No recent matches",
   "noSubstitutionsYet": "Пока нет замен",
   "noText": "Нет",
-  "noUpcomingMatches": "No upcoming matches",
-  "notSelected": "Не выбран",
   "notificationChannelDesc": "Уведомления о предстоящих футбольных матчах",
   "notificationChannelName": "Уведомления о матчах",
   "notificationFailedMaybeTooManyPendingNotification": "Уведомление НЕ получилось (возможно, слишком много ожидающих уведомлений)",
@@ -251,6 +255,8 @@
   "notificationsPermissionConfirm": "Разрешить",
   "notificationsPermissionDecline": "Не позволяйте",
   "notificationsPermissionTitle": "Разрешить приложению отправлять уведомления?",
+  "notSelected": "Не выбран",
+  "noUpcomingMatches": "No upcoming matches",
   "ob1Des": "Получайте обновления в реальном времени от\nВсе главные лиги\nи турниры вокруг\nМир",
   "ob1Title": "Прямой эфир футбола",
   "ob3Title": "Никогда не пропускай ни минуты",
@@ -289,8 +295,8 @@
   "premiumFeatureNoAds": "No banners, no interstitials",
   "premiumFeatureSupport": "Support future updates",
   "premiumGo": "BUY NOW",
-  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumSubtitle": "Enjoy live scores without interruptions",
   "premiumThanks": "Thank you! Ads are now removed.",
   "premiumTitle": "Remove all ads",
@@ -335,6 +341,9 @@
   "redCards": "Красные карточки",
   "removeAllAds": "Удалить все объявления",
   "restorePurchase": "Восстановление покупки",
+  "restorePurchases": "Восстановить покупки",
+  "restorePurchasesEmpty": "Для этого аккаунта прошлых покупок не найдено.",
+  "restorePurchasesSuccess": "Ваша покупка восстановлена.",
   "result": "Результат",
   "retry": "Retry",
   "rewardAdNotAvailable": "Reward ad not available",
@@ -355,30 +364,6 @@
       }
     }
   },
-  "sCorrectPredictions": "{arg1} правильных прогнозов",
-  "@sCorrectPredictions": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sGoal": "{arg1} цель",
-  "@sGoal": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sSaleOff": "{arg1}\nВыключение",
-  "@sSaleOff": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
   "scoreS1S2": "Оценка ({arg1}1 - {arg2}2)",
   "@scoreS1S2": {
     "placeholders": {
@@ -390,12 +375,20 @@
       }
     }
   },
+  "sCorrectPredictions": "{arg1} правильных прогнозов",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "searchHintPick": "Ищите лиги или команды...",
   "searchHistory": "История поиска",
   "searchLeague": "Поисковая лига",
   "searchTeam": "Поисковая команда",
   "searchTeamOrLeague": "Поисковая команда или лига",
-  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "secondHalfIsUnderway": "Вторая половина уже в начале. {arg1} {arg2} - {arg3} {arg4}.",
   "@secondHalfIsUnderway": {
     "placeholders": {
@@ -417,9 +410,9 @@
   "sectionFeatured": "Tiêu biểu",
   "sectionInfo": "Thông tin",
   "seeAll": "Смотреть все",
+  "selected": "Избранные",
   "selectLeaguesSubtitle": "Выбирайте лиги, за которыми хотите следить внимательно.",
   "selectTeamsSubtitle": "Выберите любимые команды, чтобы получать мгновенные оповещения.",
-  "selected": "Избранные",
   "sentOff": "%1$ удалено ({arg2}')",
   "@sentOff": {
     "placeholders": {
@@ -429,6 +422,14 @@
     }
   },
   "settings": "Места действия",
+  "sGoal": "{arg1} цель",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "share": "Поделиться",
   "shareAppText": "Посмотрите это потрясающее футбольное приложение: https://play.google.com/store/apps/details?id={arg1}",
   "@shareAppText": {
@@ -472,6 +473,14 @@
   "sportVolleyball": "Volleyball",
   "sportWaterpolo": "Water Polo",
   "squad": "Состав",
+  "sSaleOff": "{arg1}\nВыключение",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "startOfSecondHalf": "Начало второй половины",
   "stateEmpty": "Пусто",
   "stateOff": "Выключение",
@@ -499,14 +508,14 @@
   "tabEvents": "Các sự kiện",
   "tabH2h": "H2H",
   "tabInfo": "INFO",
-  "tabLineups": "LINEUPS",
-  "tabOdds": "ODDS",
-  "tabStandings": "STANDINGS",
-  "tabStatistics": "STATISTICS",
   "table": "Таблица",
   "tableMatchesPlayed": "P",
   "tablePoints": "Pts",
   "tableTeamHeader": "# Team",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
   "team": "Команда",
   "teams": "Команды",
   "templatePercent": "1$d процент.",
@@ -591,6 +600,14 @@
   "upgradeForUnlimitedAccessNoAds": "ОБНОВЛЕНИЕ ДЛЯ НЕОГРАНИЧЕННОГО ДОСТУПА И ОТСУТСТВИЯ РЕКЛАМЫ",
   "viewAll": "Посмотреть всё",
   "viewDetailsMatch": "Посмотреть совпадение деталей.",
+  "votesCountFormat": "{arg1} голосов",
+  "@votesCountFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "vs": "VS",
   "vsHasStartedFollowTheMatchLive": "{arg1} vs {arg2} началось. Следите за матчем в прямом эфире!",
   "@vsHasStartedFollowTheMatchLive": {
@@ -606,9 +623,9 @@
   "watchAShortAdToSubmitYourDrawPrediction": "Посмотрите короткую рекламу, чтобы отправить прогноз ничьей.",
   "watchNow": "Смотрите сейчас",
   "watermarkLabelPrefix": "AdMob -",
-  "weReDelightedThatYouEnjoyUsingOurApp": "Мы рады, что вам нравится пользоваться нашим приложением",
   "weekly": "Еженедельник",
   "weight": "Вес:",
+  "weReDelightedThatYouEnjoyUsingOurApp": "Мы рады, что вам нравится пользоваться нашим приложением",
   "whatAHalf": "Вот это половина! {arg1} {arg2} - {arg3} {arg4}",
   "@whatAHalf": {
     "placeholders": {
@@ -631,12 +648,9 @@
   "years": "Годы",
   "yellowCards": "Жёлтые карточки",
   "yes": "Да",
-  "yesText": "Да",
   "yesterday": "Вчера",
+  "yesText": "Да",
   "youRePremiumUser": "Вы — премиум-пользователь",
-  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Вы не получите никаких оповещений или обновлений, пока не включите их снова.",
   "yourFilesIsEmpty": "Ваши файлы пусты",
-  "restorePurchases": "Восстановить покупки",
-  "restorePurchasesSuccess": "Ваша покупка восстановлена.",
-  "restorePurchasesEmpty": "Для этого аккаунта прошлых покупок не найдено."
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Вы не получите никаких оповещений или обновлений, пока не включите их снова."
 }

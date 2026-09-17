@@ -1,5 +1,8 @@
 {
-  "@@locale": "fr",
+  "goalsText": "buts",
+  "cornersText": "corners",
+  "cardsText": "cartons",
+  "firstHalfText": "Première mi-temps",
   "age": "Âge :",
   "aiMainPick": "Choix principal IA",
   "allLeagues": "Toutes les ligues",
@@ -11,6 +14,7 @@
   "awayWin": "Victoire à l’extérieur",
   "bestPrice": "Meilleur prix",
   "blockedShots": "Tirs bloqués",
+  "bookmakerOdds": "Cotes des bookmakers",
   "bothTeamsToScore": "Les deux équipes à marquer",
   "bottomsheetActionCollapse": "Effondre la feuille du bas",
   "bottomsheetActionExpand": "Élargissez la feuille du bas",
@@ -27,7 +31,8 @@
   "closeDrawer": "Fermer le menu de navigation",
   "closeSheet": "Feuille fermée",
   "club": "Club :",
-  "confidenceFormat": "{arg1} %% Confiance",
+  "communityPrediction": "Prédiction de la communauté",
+  "confidenceFormat": "{arg1} % Confiance",
   "@confidenceFormat": {
     "placeholders": {
       "arg1": {
@@ -66,7 +71,6 @@
     }
   },
   "fixtures": "Rencontres",
-  "followFavoriteTeams": "Suivez vos équipes favorites",
   "followersCount": "{arg1} Người theo dõi",
   "@followersCount": {
     "placeholders": {
@@ -75,15 +79,16 @@
       }
     }
   },
+  "followFavoriteTeams": "Suivez vos équipes favorites",
   "fouls": "Fautes",
   "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "Parmi les langues ci-dessous, veuillez choisir votre langue maternelle. Plus tard, vous pourrez changer la langue depuis les paramètres.",
   "fullTime": "Temps plein",
   "getReadyMatchStartsSoon": "Préparez-vous ! Le match commence bientôt",
   "getStarted": "Commencez",
-  "goProVersion": "GO PRO VERSION",
-  "goToSetting": "Aller au réglage",
   "goallessAtTheBreakSeeMatchStats": "Sans but à la pause. Voir les statistiques du match.",
   "goalsInTheFirstHalf": "Des buts en première mi-temps.",
+  "goProVersion": "GO PRO VERSION",
+  "goToSetting": "Aller au réglage",
   "h2h": "H2H",
   "halftimeScore": "Score à la mi-temps",
   "height": "Taille :",
@@ -135,7 +140,6 @@
     }
   },
   "inDepthAiAnalysis": "Analyse approfondie de l’IA",
-  "inProgress": "En cours",
   "indeterminate": "Partiellement vérifié",
   "infoAwayManager": "Away Manager",
   "infoChairman": "Chủ tịch hiện tại",
@@ -145,20 +149,21 @@
   "infoHomeManager": "Home Manager",
   "infoLeague": "League",
   "infoOwner": "Chủ sở hữu",
+  "infor": "Infor",
   "infoReferee": "Referee",
   "infoRound": "Round",
   "infoTime": "Time",
   "infoVenue": "Venue",
   "infoWeightDivisions": "Hạng cân",
   "infoYearFoundation": "Thành lập",
-  "infor": "Infor",
+  "inProgress": "En cours",
   "internationalTournaments": "Tournois internationaux",
   "introTitle1": "Scores en direct, résumés vidéo, et actualités de dernière minute.",
   "introTitle2": "Recevez des alertes en direct pour les buts, cartons et coups d’envoi",
   "kickOff": "Coup d’envoi !",
   "language": "Langue",
-  "languageScreenNotReachable": "Écran de langue inaccessible depuis ici",
   "languages": "Langues",
+  "languageScreenNotReachable": "Écran de langue inaccessible depuis ici",
   "last5Games": "Derniers 5 matchs",
   "league": "Ligue",
   "leagues": "Ligues",
@@ -168,11 +173,12 @@
   "live": "En direct",
   "liveMatches": "MATCHS EN DIRECT",
   "liveS": "Vies",
-  "liveScore": "LIVE SCORE",
   "lives": "Vies",
+  "liveScore": "LIVE SCORE",
   "loading": "Chargement...",
   "loadingRewardAd": "Loading reward ad",
   "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "@@locale": "fr",
   "looksLikeYouHavenTAddedAnythingYet": "On dirait que tu n’as encore rien ajouté.",
   "makeSureToTurnOnTheInternetToUseFeatures": "Assurez-vous d’activer Internet pour utiliser les fonctionnalités",
   "matchAlarmBeforeMatch": "Alarme de match (avant le match)",
@@ -185,14 +191,14 @@
   "matchStart": "Début du match",
   "matchTimeline": "Chronologie des matchs",
   "matchUpdate": "Mise à jour du match",
-  "nationalLeagues": "Ligues nationales",
   "nationality": "Nationalité :",
+  "nationalLeagues": "Ligues nationales",
   "nativeBody": "Carrosserie",
   "nativeHeadline": "Titre",
   "nativeMediaView": "Vue média",
+  "navigationMenu": "Menu de navigation",
   "navRailCollapsedA11yLabel": "Effondré",
   "navRailExpandedA11yLabel": "Étendu",
-  "navigationMenu": "Menu de navigation",
   "next": "Suivant",
   "no": "Non",
   "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "Aucune donnée comparative disponible pour ce match. Fais ta prédiction avant la fin du match pour voir les résultats la prochaine fois.",
@@ -207,8 +213,6 @@
   "noRecentMatches": "No recent matches",
   "noSubstitutionsYet": "Pas encore de remplacements",
   "noText": "Non",
-  "noUpcomingMatches": "No upcoming matches",
-  "notSelected": "Non sélectionné",
   "notificationChannelDesc": "Notifications pour les prochains matchs de football",
   "notificationChannelName": "Notifications de matchs",
   "notificationFailedMaybeTooManyPendingNotification": "Notification ÉCHOUÉE (peut-être trop de notifications en attente)",
@@ -251,6 +255,8 @@
   "notificationsPermissionConfirm": "Permettre",
   "notificationsPermissionDecline": "Ne le permets pas",
   "notificationsPermissionTitle": "Permettre à l’application de vous envoyer des notifications ?",
+  "notSelected": "Non sélectionné",
+  "noUpcomingMatches": "No upcoming matches",
   "ob1Des": "Recevez des mises à jour en temps réel depuis\ntoutes les ligues majeures\net des tournois autour de\nMonde",
   "ob1Title": "Football en direct",
   "ob3Title": "Ne manquez jamais un instant",
@@ -289,8 +295,8 @@
   "premiumFeatureNoAds": "No banners, no interstitials",
   "premiumFeatureSupport": "Support future updates",
   "premiumGo": "BUY NOW",
-  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumSubtitle": "Enjoy live scores without interruptions",
   "premiumThanks": "Thank you! Ads are now removed.",
   "premiumTitle": "Remove all ads",
@@ -335,6 +341,9 @@
   "redCards": "Cartons rouges",
   "removeAllAds": "Supprimer toutes les publicités",
   "restorePurchase": "Restaurer l’achat",
+  "restorePurchases": "Restaurer les achats",
+  "restorePurchasesEmpty": "Aucun achat antérieur trouvé pour ce compte.",
+  "restorePurchasesSuccess": "Votre achat a été restauré.",
   "result": "Résultat",
   "retry": "Retry",
   "rewardAdNotAvailable": "Publicité de récompense non disponible",
@@ -348,30 +357,6 @@
     }
   },
   "sConfidence": "Confiance en %",
-  "sCorrectPredictions": "Prédictions correctes {arg1}",
-  "@sCorrectPredictions": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sGoal": "Objectif {arg1}",
-  "@sGoal": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sSaleOff": "{arg1}\nOff",
-  "@sSaleOff": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
   "scoreS1S2": "Score ( {arg1}1 - {arg2}2)",
   "@scoreS1S2": {
     "placeholders": {
@@ -383,12 +368,20 @@
       }
     }
   },
+  "sCorrectPredictions": "Prédictions correctes {arg1}",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "searchHintPick": "Cherchez des ligues ou des équipes...",
   "searchHistory": "Historique des recherches",
   "searchLeague": "Ligue de recherche",
   "searchTeam": "Équipe de recherche",
   "searchTeamOrLeague": "Équipe ou ligue de recherche",
-  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "secondHalfIsUnderway": "La seconde moitié est en cours. {arg1} {arg2} - {arg3} {arg4}.",
   "@secondHalfIsUnderway": {
     "placeholders": {
@@ -410,9 +403,9 @@
   "sectionFeatured": "Tiêu biểu",
   "sectionInfo": "Thông tin",
   "seeAll": "Voir tout",
+  "selected": "Sélectionné",
   "selectLeaguesSubtitle": "Sélectionnez attentivement les ligues que vous souhaitez suivre.",
   "selectTeamsSubtitle": "Sélectionnez vos équipes préférées pour recevoir des alertes instantanées.",
-  "selected": "Sélectionné",
   "sentOff": "{arg1} expulsés ( {arg2}')",
   "@sentOff": {
     "placeholders": {
@@ -425,6 +418,14 @@
     }
   },
   "settings": "Décors",
+  "sGoal": "Objectif {arg1}",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "share": "Partager",
   "shareAppText": "Découvrez cette incroyable application de football : https://play.google.com/store/apps/details?id={arg1}",
   "@shareAppText": {
@@ -468,6 +469,14 @@
   "sportVolleyball": "Volleyball",
   "sportWaterpolo": "Water Polo",
   "squad": "Effectif",
+  "sSaleOff": "{arg1}\nOff",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "startOfSecondHalf": "Début de la seconde moitié",
   "stateEmpty": "Vide",
   "stateOff": "Off",
@@ -495,14 +504,14 @@
   "tabEvents": "Các sự kiện",
   "tabH2h": "H2H",
   "tabInfo": "INFO",
-  "tabLineups": "LINEUPS",
-  "tabOdds": "ODDS",
-  "tabStandings": "STANDINGS",
-  "tabStatistics": "STATISTICS",
   "table": "Tableau",
   "tableMatchesPlayed": "P",
   "tablePoints": "Pts",
   "tableTeamHeader": "# Team",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
   "team": "Équipe",
   "teams": "Équipes",
   "templatePercent": "1 % de 1 %.",
@@ -580,6 +589,14 @@
   "upgradeForUnlimitedAccessNoAds": "MISE À NIVEAU POUR UN ACCÈS ILLIMITÉ ET SANS PUBLICITÉ",
   "viewAll": "Voir tout",
   "viewDetailsMatch": "Voir la correspondance des détails.",
+  "votesCountFormat": "{arg1} votes",
+  "@votesCountFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "vs": "VS",
   "vsHasStartedFollowTheMatchLive": "{arg1} contre {arg2} a commencé. Suivez le match en direct !",
   "@vsHasStartedFollowTheMatchLive": {
@@ -595,9 +612,9 @@
   "watchAShortAdToSubmitYourDrawPrediction": "Regardez une courte publicité pour soumettre votre prédiction au tirage.",
   "watchNow": "Regardez maintenant",
   "watermarkLabelPrefix": "AdMob -",
-  "weReDelightedThatYouEnjoyUsingOurApp": "Nous sommes ravis que vous appréciiez l’utilisation de notre application",
   "weekly": "Hebdomadaire",
   "weight": "Poids :",
+  "weReDelightedThatYouEnjoyUsingOurApp": "Nous sommes ravis que vous appréciiez l’utilisation de notre application",
   "whatAHalf": "Quelle demi-heure ! {arg1} {arg2} - {arg3} {arg4}",
   "@whatAHalf": {
     "placeholders": {
@@ -620,12 +637,9 @@
   "years": "Années",
   "yellowCards": "Cartons jaunes",
   "yes": "Oui",
-  "yesText": "Oui",
   "yesterday": "Hier",
+  "yesText": "Oui",
   "youRePremiumUser": "Vous êtes Utilisateur Premium",
-  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Vous ne recevrez aucune alerte ni mise à jour tant que vous ne les aurez pas réactivés.",
   "yourFilesIsEmpty": "Vos fichiers sont vides",
-  "restorePurchases": "Restaurer les achats",
-  "restorePurchasesSuccess": "Votre achat a été restauré.",
-  "restorePurchasesEmpty": "Aucun achat antérieur trouvé pour ce compte."
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Vous ne recevrez aucune alerte ni mise à jour tant que vous ne les aurez pas réactivés."
 }

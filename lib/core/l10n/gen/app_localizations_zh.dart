@@ -10,6 +10,18 @@ class SZh extends S {
   SZh([String locale = 'zh']) : super(locale);
 
   @override
+  String get goalsText => '球';
+
+  @override
+  String get cornersText => '角球';
+
+  @override
+  String get cardsText => '张牌';
+
+  @override
+  String get firstHalfText => '上半场';
+
+  @override
   String get age => '年龄：';
 
   @override
@@ -41,6 +53,9 @@ class SZh extends S {
 
   @override
   String get blockedShots => '盖帽';
+
+  @override
+  String get bookmakerOdds => '博彩赔率';
 
   @override
   String get bothTeamsToScore => '双方都得分';
@@ -92,8 +107,11 @@ class SZh extends S {
   String get club => '俱乐部：';
 
   @override
+  String get communityPrediction => '社区预测';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% 信心';
+    return '$arg1% 信心';
   }
 
   @override
@@ -163,12 +181,12 @@ class SZh extends S {
   String get fixtures => '设施';
 
   @override
-  String get followFavoriteTeams => '关注最爱球队';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => '关注最爱球队';
 
   @override
   String get fouls => '犯规';
@@ -188,16 +206,16 @@ class SZh extends S {
   String get getStarted => '开始';
 
   @override
-  String get goProVersion => 'GO PRO版本';
-
-  @override
-  String get goToSetting => '前往设置';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats => '半场结束时0比0。参见比赛统计。';
 
   @override
   String get goalsInTheFirstHalf => '上半场进球。';
+
+  @override
+  String get goProVersion => 'GO PRO版本';
+
+  @override
+  String get goToSetting => '前往设置';
 
   @override
   String get h2h => '对面';
@@ -242,9 +260,6 @@ class SZh extends S {
   String get inDepthAiAnalysis => '深入的人工智能分析';
 
   @override
-  String get inProgress => '进行中';
-
-  @override
   String get indeterminate => '部分核对';
 
   @override
@@ -272,6 +287,9 @@ class SZh extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -290,7 +308,7 @@ class SZh extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => '进行中';
 
   @override
   String get internationalTournaments => '国际锦标赛';
@@ -308,10 +326,10 @@ class SZh extends S {
   String get language => '语言';
 
   @override
-  String get languageScreenNotReachable => '语言界面无法从这里访问';
+  String get languages => '语言';
 
   @override
-  String get languages => '语言';
+  String get languageScreenNotReachable => '语言界面无法从这里访问';
 
   @override
   String get last5Games => '最近五场比赛';
@@ -341,10 +359,10 @@ class SZh extends S {
   String get liveS => '生平';
 
   @override
-  String get liveScore => '现场比分';
+  String get lives => '生平';
 
   @override
-  String get lives => '生平';
+  String get liveScore => '现场比分';
 
   @override
   String get loading => '加载中......';
@@ -393,10 +411,10 @@ class SZh extends S {
   String get matchUpdate => '比赛更新';
 
   @override
-  String get nationalLeagues => '国家联赛';
+  String get nationality => '国籍：';
 
   @override
-  String get nationality => '国籍：';
+  String get nationalLeagues => '国家联赛';
 
   @override
   String get nativeBody => '正体';
@@ -408,13 +426,13 @@ class SZh extends S {
   String get nativeMediaView => '媒体视图';
 
   @override
+  String get navigationMenu => '导航菜单';
+
+  @override
   String get navRailCollapsedA11yLabel => '倒塌';
 
   @override
   String get navRailExpandedA11yLabel => '扩展版';
-
-  @override
-  String get navigationMenu => '导航菜单';
 
   @override
   String get next => '下一个';
@@ -459,12 +477,6 @@ class SZh extends S {
 
   @override
   String get noText => '不';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => '未被选中';
 
   @override
   String get notificationChannelDesc => '即将举行的足球比赛通知';
@@ -514,6 +526,12 @@ class SZh extends S {
 
   @override
   String get notificationsPermissionTitle => '允许应用给你发送通知？';
+
+  @override
+  String get notSelected => '未被选中';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des => '获取实时更新\n所有大联盟\n以及\n世界';
@@ -611,10 +629,10 @@ class SZh extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -697,6 +715,15 @@ class SZh extends S {
   String get restorePurchase => '恢复购买权';
 
   @override
+  String get restorePurchases => '恢复购买';
+
+  @override
+  String get restorePurchasesEmpty => '未找到该账号的历史购买记录。';
+
+  @override
+  String get restorePurchasesSuccess => '您的购买已恢复。';
+
+  @override
   String get result => '结果';
 
   @override
@@ -720,24 +747,18 @@ class SZh extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return '评分（${arg1}1 - ${arg2}2）';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '%的正确预测';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '%的目标';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\n关掉';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return '评分（${arg1}1 - ${arg2}2）';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$滚动视图行为';
 
   @override
   String get searchHintPick => '搜索联赛或球队......';
@@ -753,10 +774,6 @@ class SZh extends S {
 
   @override
   String get searchTeamOrLeague => '搜寻队或联赛';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$滚动视图行为';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -776,13 +793,13 @@ class SZh extends S {
   String get seeAll => '查看全部';
 
   @override
+  String get selected => '精选';
+
+  @override
   String get selectLeaguesSubtitle => '选择你想密切关注的联赛。';
 
   @override
   String get selectTeamsSubtitle => '选择你喜欢的球队，即可获得即时提醒。';
-
-  @override
-  String get selected => '精选';
 
   @override
   String sentOff(String arg1, int arg2) {
@@ -791,6 +808,11 @@ class SZh extends S {
 
   @override
   String get settings => '背景设定';
+
+  @override
+  String sGoal(String arg1) {
+    return '%的目标';
+  }
 
   @override
   String get share => '分享';
@@ -903,6 +925,11 @@ class SZh extends S {
   String get squad => '阵容';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\n关掉';
+  }
+
+  @override
   String get startOfSecondHalf => '下半场开始';
 
   @override
@@ -984,18 +1011,6 @@ class SZh extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => '表格';
 
   @override
@@ -1006,6 +1021,18 @@ class SZh extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => '团队';
@@ -1209,6 +1236,11 @@ class SZh extends S {
   String get viewDetailsMatch => '查看详情匹配。';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 票';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1226,13 +1258,13 @@ class SZh extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp => '我们很高兴你喜欢使用我们的应用';
-
-  @override
   String get weekly => '每周刊';
 
   @override
   String get weight => '重量：';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp => '我们很高兴你喜欢使用我们的应用';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1255,34 +1287,37 @@ class SZh extends S {
   String get yes => '是的';
 
   @override
-  String get yesText => '是的';
+  String get yesterday => '昨天';
 
   @override
-  String get yesterday => '昨天';
+  String get yesText => '是的';
 
   @override
   String get youRePremiumUser => '你是高级用户';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      '在重新开启之前，你不会收到任何提醒或更新。';
-
-  @override
   String get yourFilesIsEmpty => '你的档案是空的';
 
   @override
-  String get restorePurchases => '恢复购买';
-
-  @override
-  String get restorePurchasesSuccess => '您的购买已恢复。';
-
-  @override
-  String get restorePurchasesEmpty => '未找到该账号的历史购买记录。';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      '在重新开启之前，你不会收到任何提醒或更新。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
 class SZhHant extends SZh {
   SZhHant() : super('zh_Hant');
+
+  @override
+  String get goalsText => '球';
+
+  @override
+  String get cornersText => '角球';
+
+  @override
+  String get cardsText => '張牌';
+
+  @override
+  String get firstHalfText => '上半場';
 
   @override
   String get age => '年齡：';
@@ -1316,6 +1351,9 @@ class SZhHant extends SZh {
 
   @override
   String get blockedShots => '阻攻';
+
+  @override
+  String get bookmakerOdds => '博彩賠率';
 
   @override
   String get bothTeamsToScore => '雙方都得分';
@@ -1367,8 +1405,11 @@ class SZhHant extends SZh {
   String get club => '俱樂部：';
 
   @override
+  String get communityPrediction => '社群預測';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% 信心';
+    return '$arg1% 信心';
   }
 
   @override
@@ -1438,12 +1479,12 @@ class SZhHant extends SZh {
   String get fixtures => '設施';
 
   @override
-  String get followFavoriteTeams => '追蹤最愛球隊';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => '追蹤最愛球隊';
 
   @override
   String get fouls => '犯規';
@@ -1463,16 +1504,16 @@ class SZhHant extends SZh {
   String get getStarted => '開始吧';
 
   @override
-  String get goProVersion => 'GO PRO 版本';
-
-  @override
-  String get goToSetting => '前往設定';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats => '半場結束時雙方零比零。請參閱比賽數據。';
 
   @override
   String get goalsInTheFirstHalf => '上半場進球。';
+
+  @override
+  String get goProVersion => 'GO PRO 版本';
+
+  @override
+  String get goToSetting => '前往設定';
 
   @override
   String get h2h => '對面';
@@ -1517,9 +1558,6 @@ class SZhHant extends SZh {
   String get inDepthAiAnalysis => '深入的人工智慧分析';
 
   @override
-  String get inProgress => '進行中';
-
-  @override
   String get indeterminate => '部分檢查';
 
   @override
@@ -1547,6 +1585,9 @@ class SZhHant extends SZh {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -1565,7 +1606,7 @@ class SZhHant extends SZh {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => '進行中';
 
   @override
   String get internationalTournaments => '國際賽事';
@@ -1583,10 +1624,10 @@ class SZhHant extends SZh {
   String get language => '語言';
 
   @override
-  String get languageScreenNotReachable => '語言畫面無法從這裡進入';
+  String get languages => '語言';
 
   @override
-  String get languages => '語言';
+  String get languageScreenNotReachable => '語言畫面無法從這裡進入';
 
   @override
   String get last5Games => '最近五場比賽';
@@ -1616,10 +1657,10 @@ class SZhHant extends SZh {
   String get liveS => '生平';
 
   @override
-  String get liveScore => '現場比分';
+  String get lives => '生平';
 
   @override
-  String get lives => '生平';
+  String get liveScore => '現場比分';
 
   @override
   String get loading => '載入中......';
@@ -1668,10 +1709,10 @@ class SZhHant extends SZh {
   String get matchUpdate => '比賽更新';
 
   @override
-  String get nationalLeagues => '國家聯盟';
+  String get nationality => '國籍：';
 
   @override
-  String get nationality => '國籍：';
+  String get nationalLeagues => '國家聯盟';
 
   @override
   String get nativeBody => '車身';
@@ -1683,13 +1724,13 @@ class SZhHant extends SZh {
   String get nativeMediaView => '媒體視角';
 
   @override
+  String get navigationMenu => '導航選單';
+
+  @override
   String get navRailCollapsedA11yLabel => '倒塌';
 
   @override
   String get navRailExpandedA11yLabel => '擴展版';
-
-  @override
-  String get navigationMenu => '導航選單';
 
   @override
   String get next => '下一篇';
@@ -1734,12 +1775,6 @@ class SZhHant extends SZh {
 
   @override
   String get noText => '不';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => '未被選中';
 
   @override
   String get notificationChannelDesc => '即將舉行的足球比賽通知';
@@ -1789,6 +1824,12 @@ class SZhHant extends SZh {
 
   @override
   String get notificationsPermissionTitle => '允許應用程式發送通知給你？';
+
+  @override
+  String get notSelected => '未被選中';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des => '即時更新來自\n所有大聯盟\n以及\n世界觀';
@@ -1886,10 +1927,10 @@ class SZhHant extends SZh {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -1972,6 +2013,15 @@ class SZhHant extends SZh {
   String get restorePurchase => '恢復購買';
 
   @override
+  String get restorePurchases => '恢復購買';
+
+  @override
+  String get restorePurchasesEmpty => '找不到此帳號的歷史購買紀錄。';
+
+  @override
+  String get restorePurchasesSuccess => '您的購買已恢復。';
+
+  @override
   String get result => '結果';
 
   @override
@@ -1995,24 +2045,18 @@ class SZhHant extends SZh {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return '分數（${arg1}1 - ${arg2}2）';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 正確預測';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 目標';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\n關掉';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return '分數（${arg1}1 - ${arg2}2）';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => '搜尋聯盟或球隊......';
@@ -2028,10 +2072,6 @@ class SZhHant extends SZh {
 
   @override
   String get searchTeamOrLeague => '搜尋隊或聯盟';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -2051,13 +2091,13 @@ class SZhHant extends SZh {
   String get seeAll => '全部查看';
 
   @override
+  String get selected => '精選';
+
+  @override
   String get selectLeaguesSubtitle => '選擇你想密切關注的聯盟。';
 
   @override
   String get selectTeamsSubtitle => '選擇你最喜愛的球隊，即可即時收到通知。';
-
-  @override
-  String get selected => '精選';
 
   @override
   String sentOff(String arg1, int arg2) {
@@ -2066,6 +2106,11 @@ class SZhHant extends SZh {
 
   @override
   String get settings => '場景設定';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 目標';
+  }
 
   @override
   String get share => '分享';
@@ -2178,6 +2223,11 @@ class SZhHant extends SZh {
   String get squad => '陣容';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\n關掉';
+  }
+
+  @override
   String get startOfSecondHalf => '下半場開始';
 
   @override
@@ -2259,18 +2309,6 @@ class SZhHant extends SZh {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => '表格';
 
   @override
@@ -2281,6 +2319,18 @@ class SZhHant extends SZh {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => '球隊';
@@ -2484,6 +2534,11 @@ class SZhHant extends SZh {
   String get viewDetailsMatch => '查看詳情。';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 票';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -2501,13 +2556,13 @@ class SZhHant extends SZh {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp => '我們很高興您喜歡使用我們的應用程式';
-
-  @override
   String get weekly => '每週刊';
 
   @override
   String get weight => '重量：';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp => '我們很高興您喜歡使用我們的應用程式';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -2530,27 +2585,18 @@ class SZhHant extends SZh {
   String get yes => '是的';
 
   @override
-  String get yesText => '是的';
+  String get yesterday => '昨天';
 
   @override
-  String get yesterday => '昨天';
+  String get yesText => '是的';
 
   @override
   String get youRePremiumUser => '你是高級用戶';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      '在你重新開啟這些通知之前，你不會收到任何通知或更新。';
-
-  @override
   String get yourFilesIsEmpty => '你的檔案是空的';
 
   @override
-  String get restorePurchases => '恢復購買';
-
-  @override
-  String get restorePurchasesSuccess => '您的購買已恢復。';
-
-  @override
-  String get restorePurchasesEmpty => '找不到此帳號的歷史購買紀錄。';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      '在你重新開啟這些通知之前，你不會收到任何通知或更新。';
 }

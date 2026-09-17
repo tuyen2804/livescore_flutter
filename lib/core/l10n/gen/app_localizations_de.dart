@@ -10,6 +10,18 @@ class SDe extends S {
   SDe([String locale = 'de']) : super(locale);
 
   @override
+  String get goalsText => 'Tore';
+
+  @override
+  String get cornersText => 'Ecken';
+
+  @override
+  String get cardsText => 'Karten';
+
+  @override
+  String get firstHalfText => 'Erste Halbzeit';
+
+  @override
   String get age => 'Alter:';
 
   @override
@@ -42,6 +54,9 @@ class SDe extends S {
 
   @override
   String get blockedShots => 'Geblockte Schüsse';
+
+  @override
+  String get bookmakerOdds => 'Buchmacherquoten';
 
   @override
   String get bothTeamsToScore => 'Beide Teams werden punkten';
@@ -95,8 +110,11 @@ class SDe extends S {
   String get club => 'Club:';
 
   @override
+  String get communityPrediction => 'Community-Prognose';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% Vertrauen';
+    return '$arg1% Vertrauen';
   }
 
   @override
@@ -166,12 +184,12 @@ class SDe extends S {
   String get fixtures => 'Spielpläne';
 
   @override
-  String get followFavoriteTeams => 'Folgen Sie den Lieblingsteams';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Folgen Sie den Lieblingsteams';
 
   @override
   String get fouls => 'Fouls';
@@ -192,17 +210,17 @@ class SDe extends S {
   String get getStarted => 'Leg los.';
 
   @override
-  String get goProVersion => 'GO-PRO-VERSION';
-
-  @override
-  String get goToSetting => 'Gehe zur Einstellung';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'Torlos zur Pause. Siehe Spielstatistiken.';
 
   @override
   String get goalsInTheFirstHalf => 'Tore in der ersten Halbzeit.';
+
+  @override
+  String get goProVersion => 'GO-PRO-VERSION';
+
+  @override
+  String get goToSetting => 'Gehe zur Einstellung';
 
   @override
   String get h2h => 'H2H';
@@ -247,9 +265,6 @@ class SDe extends S {
   String get inDepthAiAnalysis => 'Tiefgehende KI-Analyse';
 
   @override
-  String get inProgress => 'In Arbeit';
-
-  @override
   String get indeterminate => 'Teilweise überprüft';
 
   @override
@@ -277,6 +292,9 @@ class SDe extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -295,7 +313,7 @@ class SDe extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => 'In Arbeit';
 
   @override
   String get internationalTournaments => 'Internationale Turniere';
@@ -315,11 +333,11 @@ class SDe extends S {
   String get language => 'Sprache';
 
   @override
-  String get languageScreenNotReachable =>
-      'Sprachbildschirm von hier aus nicht erreichbar';
+  String get languages => 'Sprachen';
 
   @override
-  String get languages => 'Sprachen';
+  String get languageScreenNotReachable =>
+      'Sprachbildschirm von hier aus nicht erreichbar';
 
   @override
   String get last5Games => 'Letzte 5 Spiele';
@@ -349,10 +367,10 @@ class SDe extends S {
   String get liveS => 'Leben';
 
   @override
-  String get liveScore => 'LIVE-ERGEBNIS';
+  String get lives => 'Leben';
 
   @override
-  String get lives => 'Leben';
+  String get liveScore => 'LIVE-ERGEBNIS';
 
   @override
   String get loading => 'Lädt...';
@@ -403,10 +421,10 @@ class SDe extends S {
   String get matchUpdate => 'Spiel-Update';
 
   @override
-  String get nationalLeagues => 'Nationale Ligen';
+  String get nationality => 'Nationalität:';
 
   @override
-  String get nationality => 'Nationalität:';
+  String get nationalLeagues => 'Nationale Ligen';
 
   @override
   String get nativeBody => 'Karosserie';
@@ -418,13 +436,13 @@ class SDe extends S {
   String get nativeMediaView => 'Medienansicht';
 
   @override
+  String get navigationMenu => 'Navigationsmenü';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Eingestürzt';
 
   @override
   String get navRailExpandedA11yLabel => 'Erweitert';
-
-  @override
-  String get navigationMenu => 'Navigationsmenü';
 
   @override
   String get next => 'Als Nächstes';
@@ -469,12 +487,6 @@ class SDe extends S {
 
   @override
   String get noText => 'Nein';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'Nicht ausgewählt';
 
   @override
   String get notificationChannelDesc =>
@@ -528,6 +540,12 @@ class SDe extends S {
   @override
   String get notificationsPermissionTitle =>
       'Erlauben Sie der App, Ihnen Benachrichtigungen zu senden?';
+
+  @override
+  String get notSelected => 'Nicht ausgewählt';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -629,10 +647,10 @@ class SDe extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -718,6 +736,16 @@ class SDe extends S {
   String get restorePurchase => 'Wiederherstellen des Kaufs';
 
   @override
+  String get restorePurchases => 'Käufe wiederherstellen';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Für dieses Konto wurde kein früherer Kauf gefunden.';
+
+  @override
+  String get restorePurchasesSuccess => 'Dein Kauf wurde wiederhergestellt.';
+
+  @override
   String get result => 'Ergebnis';
 
   @override
@@ -741,24 +769,18 @@ class SDe extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Punktzahl (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 korrekte Vorhersagen';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 Ziel';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nOff';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Punktzahl (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Suche nach Ligen oder Teams...';
@@ -774,10 +796,6 @@ class SDe extends S {
 
   @override
   String get searchTeamOrLeague => 'Suchteam oder Liga';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -797,6 +815,9 @@ class SDe extends S {
   String get seeAll => 'Alles ansehen';
 
   @override
+  String get selected => 'Auswahl';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Wähle die Ligen aus, denen du genau folgen möchtest.';
 
@@ -805,15 +826,17 @@ class SDe extends S {
       'Wählen Sie Ihre Lieblingsteams aus, um sofortige Benachrichtigungen zu erhalten.';
 
   @override
-  String get selected => 'Auswahl';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '1\$s abgeschickt ($arg2\')';
   }
 
   @override
   String get settings => 'Einstellungen';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 Ziel';
+  }
 
   @override
   String get share => 'Teilen';
@@ -926,6 +949,11 @@ class SDe extends S {
   String get squad => 'Kader';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nOff';
+  }
+
+  @override
   String get startOfSecondHalf => 'Beginn der zweiten Halbzeit';
 
   @override
@@ -1008,18 +1036,6 @@ class SDe extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'Tabelle';
 
   @override
@@ -1030,6 +1046,18 @@ class SDe extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'Team';
@@ -1241,6 +1269,11 @@ class SDe extends S {
   String get viewDetailsMatch => 'Details des Spiels ansehen.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 Stimmen';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1259,14 +1292,14 @@ class SDe extends S {
   String get watermarkLabelPrefix => 'AdMob –';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'Wir freuen uns, dass Sie unsere App gerne nutzen';
-
-  @override
   String get weekly => 'Wöchentlich';
 
   @override
   String get weight => 'Gewicht:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'Wir freuen uns, dass Sie unsere App gerne nutzen';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1289,28 +1322,18 @@ class SDe extends S {
   String get yes => 'Ja';
 
   @override
-  String get yesText => 'Ja';
+  String get yesterday => 'Gestern';
 
   @override
-  String get yesterday => 'Gestern';
+  String get yesText => 'Ja';
 
   @override
   String get youRePremiumUser => 'Du bist Premium-Nutzer';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'Du bekommst keine Benachrichtigungen oder Updates, bis du sie wieder einschaltest.';
-
-  @override
   String get yourFilesIsEmpty => 'Deine Dateien sind leer';
 
   @override
-  String get restorePurchases => 'Käufe wiederherstellen';
-
-  @override
-  String get restorePurchasesSuccess => 'Dein Kauf wurde wiederhergestellt.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'Für dieses Konto wurde kein früherer Kauf gefunden.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'Du bekommst keine Benachrichtigungen oder Updates, bis du sie wieder einschaltest.';
 }

@@ -29,6 +29,52 @@ android {
         // flag during build.
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // Chỉ dùng khi chạy trên máy ảo:
+        //
+        //     flutter run -Pemu=true
+        //     flutter build apk --debug -Pemu=true
+        //
+        // `abiFilters.clear()` là bắt buộc — plugin Flutter đã điền sẵn cả ba
+        // ABI vào đó, chỉ `+=` thì chúng vẫn còn nguyên và lọc thành vô nghĩa.
+        //
+        // Vì sao cần: các SDK quảng cáo (Vungle `libnms.so`, Pangle
+        // `libtt_ugen_layout.so`, `libapminsight*`, `libpglarmor.so`…) **không
+        // có bản x86_64** — chỉ arm64-v8a và armeabi-v7a. Nên APK gộp có 10 thư
+        // viện cho arm64 nhưng chỉ 4 cho x86_64.
+        //
+        // PackageManager chọn ABI theo số thư viện khớp được nhiều nhất, nên
+        // LDPlayer (hỗ trợ cả x86_64 lẫn arm64 qua lớp dịch) chọn **arm64** rồi
+        // chạy toàn bộ tiến trình dưới lớp dịch ARM. Ở đó `libdartjni.so` không
+        // `dlopen` được → Cronet chết → Sofascore trả 403 vì request rơi xuống
+        // `dart:io`, và `path_provider` cũng hỏng kéo theo mất ảnh.
+        //
+        // `--target-platform android-x64` không cứu được vì nó chỉ giới hạn
+        // engine Flutter, thư viện của SDK quảng cáo vẫn còn nguyên. Phải lọc ở
+        // tầng NDK thì mới bỏ hẳn nhánh arm.
+        if (project.hasProperty("emu")) {
+            ndk {
+                abiFilters.clear()
+                abiFilters += "x86_64"
+            }
+        }
+    }
+
+    // Từ AGP 3.6 mặc định là `false`: file .so nằm nguyên trong APK, không giải
+    // nén ra `/data/app/.../lib/arm64`. Java `System.loadLibrary` đọc được kiểu
+    // đó, nhưng `DynamicLibrary.open("libdartjni.so")` của Dart FFI thì không —
+    // nó gọi `dlopen` và `dlopen` chỉ tìm trong thư mục lib đã giải nén.
+    //
+    // Hệ quả khi để mặc định: gói `jni` (đi kèm cronet qua native_dio_adapter)
+    // không nạp được, và MỌI request HTTP chết với
+    // "Failed to load dynamic library at path: libdartjni.so".
+    //
+    // Bật lại kiểu đóng gói cũ để .so được giải nén lúc cài. Đổi lại APK to hơn
+    // một chút, nhưng đó là cái giá để mạng chạy.
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
     }
 
     buildTypes {

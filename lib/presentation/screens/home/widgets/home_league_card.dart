@@ -82,8 +82,11 @@ class _HomeLeagueCardState extends State<HomeLeagueCard> {
                               color: AppColors.text500,
                             ),
                           ),
-                          if (!section.isFootball &&
-                              (section.categoryName?.isNotEmpty ?? false))
+                          // Bóng đá cũng cần dòng quốc gia: nhiều giải trùng
+                          // tên nhau ("Premier League" có ở Anh, Kenya,
+                          // Azerbaijan, Nga), giờ tách đúng nhóm rồi thì phải
+                          // nhìn được nhóm nào là nhóm nào.
+                          if (section.categoryName?.isNotEmpty ?? false)
                             Text(
                               section.categoryName!,
                               maxLines: 1,

@@ -176,6 +176,7 @@ class FootballRepositoryImpl implements FootballRepository {
           leagueName: cleanLeagueName,
           isNotified: notifiedIds.contains(match.id),
           kickoffUtc: match.kickoffUtc,
+          kickoffEpoch: match.kickoffEpoch,
           state: match.state,
           categoryName: categoryName,
           isFootball: !isOtherSport,

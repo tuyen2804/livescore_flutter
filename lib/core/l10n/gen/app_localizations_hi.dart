@@ -10,6 +10,18 @@ class SHi extends S {
   SHi([String locale = 'hi']) : super(locale);
 
   @override
+  String get goalsText => 'गोल';
+
+  @override
+  String get cornersText => 'कॉर्नर';
+
+  @override
+  String get cardsText => 'कार्ड';
+
+  @override
+  String get firstHalfText => 'पहला हाफ';
+
+  @override
   String get age => 'आयु:';
 
   @override
@@ -42,6 +54,9 @@ class SHi extends S {
 
   @override
   String get blockedShots => 'अवरुद्ध शॉट्स';
+
+  @override
+  String get bookmakerOdds => 'सट्टेबाज ऑड्स';
 
   @override
   String get bothTeamsToScore => 'दोनों टीमें स्कोर करने के लिए';
@@ -93,8 +108,11 @@ class SHi extends S {
   String get club => 'क्लब:';
 
   @override
+  String get communityPrediction => 'समुदाय की भविष्यवाणी';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% विश्वास';
+    return '$arg1% विश्वास';
   }
 
   @override
@@ -164,12 +182,12 @@ class SHi extends S {
   String get fixtures => 'फिक्स्चर';
 
   @override
-  String get followFavoriteTeams => 'पसंदीदा टीमों का अनुसरण करें';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'पसंदीदा टीमों का अनुसरण करें';
 
   @override
   String get fouls => 'बेईमानी';
@@ -189,17 +207,17 @@ class SHi extends S {
   String get getStarted => 'शुरू हो जाओ';
 
   @override
-  String get goProVersion => 'गो प्रो संस्करण';
-
-  @override
-  String get goToSetting => 'सेटिंग पर जाएं';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'ब्रेक पर गोलरहित। मैच के आँकड़े देखें।';
 
   @override
   String get goalsInTheFirstHalf => 'पहले हाफ में गोल।';
+
+  @override
+  String get goProVersion => 'गो प्रो संस्करण';
+
+  @override
+  String get goToSetting => 'सेटिंग पर जाएं';
 
   @override
   String get h2h => 'एच 2 एच';
@@ -244,9 +262,6 @@ class SHi extends S {
   String get inDepthAiAnalysis => 'गहन एआई विश्लेषण';
 
   @override
-  String get inProgress => 'प्रगति पर है';
-
-  @override
   String get indeterminate => 'आंशिक रूप से जाँच की गई';
 
   @override
@@ -274,6 +289,9 @@ class SHi extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'मेंके लिए';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -292,7 +310,7 @@ class SHi extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'मेंके लिए';
+  String get inProgress => 'प्रगति पर है';
 
   @override
   String get internationalTournaments => 'अंतर्राष्ट्रीय टूर्नामेंट';
@@ -311,11 +329,11 @@ class SHi extends S {
   String get language => 'भाषा';
 
   @override
-  String get languageScreenNotReachable =>
-      'भाषा स्क्रीन यहां से उपलब्ध नहीं है';
+  String get languages => 'भाषाओं';
 
   @override
-  String get languages => 'भाषाओं';
+  String get languageScreenNotReachable =>
+      'भाषा स्क्रीन यहां से उपलब्ध नहीं है';
 
   @override
   String get last5Games => 'पिछले 5 खेल';
@@ -345,10 +363,10 @@ class SHi extends S {
   String get liveS => 'रूप';
 
   @override
-  String get liveScore => 'लाइव स्कोर';
+  String get lives => 'रूप';
 
   @override
-  String get lives => 'रूप';
+  String get liveScore => 'लाइव स्कोर';
 
   @override
   String get loading => 'लोड हो रहा है...';
@@ -399,10 +417,10 @@ class SHi extends S {
   String get matchUpdate => 'मैच अपडेट';
 
   @override
-  String get nationalLeagues => 'राष्ट्रीय लीग';
+  String get nationality => 'राष्ट्रीयता:';
 
   @override
-  String get nationality => 'राष्ट्रीयता:';
+  String get nationalLeagues => 'राष्ट्रीय लीग';
 
   @override
   String get nativeBody => 'द्रव्‍य';
@@ -414,13 +432,13 @@ class SHi extends S {
   String get nativeMediaView => 'मीडिया दृश्य';
 
   @override
+  String get navigationMenu => 'नेविगेशन मेनू';
+
+  @override
   String get navRailCollapsedA11yLabel => 'ढह गया';
 
   @override
   String get navRailExpandedA11yLabel => 'विस्तारित';
-
-  @override
-  String get navigationMenu => 'नेविगेशन मेनू';
 
   @override
   String get next => 'अगला';
@@ -465,12 +483,6 @@ class SHi extends S {
 
   @override
   String get noText => 'नहीं';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'चयनित नहीं';
 
   @override
   String get notificationChannelDesc => 'आगामी फुटबॉल मैचों के लिए सूचनाएं';
@@ -523,6 +535,12 @@ class SHi extends S {
   @override
   String get notificationsPermissionTitle =>
       'ऐप को आपको सूचनाएं भेजने की अनुमति दें?';
+
+  @override
+  String get notSelected => 'चयनित नहीं';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -623,10 +641,10 @@ class SHi extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -710,6 +728,17 @@ class SHi extends S {
   String get restorePurchase => 'खरीद पुनर्स्थापित करें';
 
   @override
+  String get restorePurchases => 'खरीदारी पुनर्स्थापित करें';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'इस खाते के लिए कोई पिछली खरीदारी नहीं मिली।';
+
+  @override
+  String get restorePurchasesSuccess =>
+      'आपकी खरीदारी पुनर्स्थापित कर दी गई है।';
+
+  @override
   String get result => 'परिणाम';
 
   @override
@@ -733,24 +762,18 @@ class SHi extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'स्कोर (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 सही भविष्यवाणियां';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 लक्ष्य';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nबंद';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'स्कोर (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'लीग या टीमों के लिए खोजें ...';
@@ -766,10 +789,6 @@ class SHi extends S {
 
   @override
   String get searchTeamOrLeague => 'खोज टीम या लीग';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -789,6 +808,9 @@ class SHi extends S {
   String get seeAll => 'सभी देखें';
 
   @override
+  String get selected => 'चयनित';
+
+  @override
   String get selectLeaguesSubtitle =>
       'उन लीगों का चयन करें जिनका आप बारीकी से पालन करना चाहते हैं।';
 
@@ -797,15 +819,17 @@ class SHi extends S {
       'तत्काल अलर्ट प्राप्त करने के लिए अपनी पसंदीदा टीमों का चयन करें।';
 
   @override
-  String get selected => 'चयनित';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '$arg1 भेज दिया गया ($arg2\')';
   }
 
   @override
   String get settings => 'सेटिंग';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 लक्ष्य';
+  }
 
   @override
   String get share => 'पत्ती';
@@ -918,6 +942,11 @@ class SHi extends S {
   String get squad => 'दस्‍ता';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nबंद';
+  }
+
+  @override
   String get startOfSecondHalf => 'दूसरे हाफ की शुरुआत';
 
   @override
@@ -1000,18 +1029,6 @@ class SHi extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'सारणी';
 
   @override
@@ -1022,6 +1039,18 @@ class SHi extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'टीम';
@@ -1232,6 +1261,11 @@ class SHi extends S {
   String get viewDetailsMatch => 'विवरण देखें मिलान।';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 वोट';
+  }
+
+  @override
   String get vs => 'वी.एस.';
 
   @override
@@ -1250,14 +1284,14 @@ class SHi extends S {
   String get watermarkLabelPrefix => 'एडमॉब -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'हमें खुशी है कि आप हमारे ऐप का उपयोग करने का आनंद ले रहे हैं';
-
-  @override
   String get weekly => 'साप्ताहिक';
 
   @override
   String get weight => 'वजन:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'हमें खुशी है कि आप हमारे ऐप का उपयोग करने का आनंद ले रहे हैं';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1280,29 +1314,18 @@ class SHi extends S {
   String get yes => 'हाँ';
 
   @override
-  String get yesText => 'हाँ';
+  String get yesterday => 'कल';
 
   @override
-  String get yesterday => 'कल';
+  String get yesText => 'हाँ';
 
   @override
   String get youRePremiumUser => 'आप प्रीमियम उपयोगकर्ता हैं';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'जब तक आप उन्हें वापस चालू नहीं कर देते, तब तक आपको कोई अलर्ट या अपडेट नहीं मिलेगा.';
-
-  @override
   String get yourFilesIsEmpty => 'आपकी फ़ाइलें खाली हैं';
 
   @override
-  String get restorePurchases => 'खरीदारी पुनर्स्थापित करें';
-
-  @override
-  String get restorePurchasesSuccess =>
-      'आपकी खरीदारी पुनर्स्थापित कर दी गई है।';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'इस खाते के लिए कोई पिछली खरीदारी नहीं मिली।';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'जब तक आप उन्हें वापस चालू नहीं कर देते, तब तक आपको कोई अलर्ट या अपडेट नहीं मिलेगा.';
 }

@@ -10,6 +10,18 @@ class SEn extends S {
   SEn([String locale = 'en']) : super(locale);
 
   @override
+  String get goalsText => 'goals';
+
+  @override
+  String get cornersText => 'corners';
+
+  @override
+  String get cardsText => 'cards';
+
+  @override
+  String get firstHalfText => 'First half';
+
+  @override
   String get age => 'Age:';
 
   @override
@@ -41,6 +53,9 @@ class SEn extends S {
 
   @override
   String get blockedShots => 'Blocked Shots';
+
+  @override
+  String get bookmakerOdds => 'Bookmaker odds';
 
   @override
   String get bothTeamsToScore => 'Both Teams To score';
@@ -92,8 +107,11 @@ class SEn extends S {
   String get club => 'Club:';
 
   @override
+  String get communityPrediction => 'Community prediction';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% Confidence';
+    return '$arg1% Confidence';
   }
 
   @override
@@ -163,12 +181,12 @@ class SEn extends S {
   String get fixtures => 'Fixtures';
 
   @override
-  String get followFavoriteTeams => 'Follow Favorite Teams';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Follow Favorite Teams';
 
   @override
   String get fouls => 'Fouls';
@@ -188,17 +206,17 @@ class SEn extends S {
   String get getStarted => 'Get started';
 
   @override
-  String get goProVersion => 'GO PRO VERSION';
-
-  @override
-  String get goToSetting => 'Go to setting';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'Goalless at the break. See match stats.';
 
   @override
   String get goalsInTheFirstHalf => 'Goals in the first half.';
+
+  @override
+  String get goProVersion => 'GO PRO VERSION';
+
+  @override
+  String get goToSetting => 'Go to setting';
 
   @override
   String get h2h => 'H2H';
@@ -243,9 +261,6 @@ class SEn extends S {
   String get inDepthAiAnalysis => 'In-depth AI analysis';
 
   @override
-  String get inProgress => 'In progress';
-
-  @override
   String get indeterminate => 'Partially checked';
 
   @override
@@ -273,6 +288,9 @@ class SEn extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -291,7 +309,7 @@ class SEn extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => 'In progress';
 
   @override
   String get internationalTournaments => 'International Tournaments';
@@ -309,11 +327,11 @@ class SEn extends S {
   String get language => 'Language';
 
   @override
-  String get languageScreenNotReachable =>
-      'Language screen not reachable from here';
+  String get languages => 'Languages';
 
   @override
-  String get languages => 'Languages';
+  String get languageScreenNotReachable =>
+      'Language screen not reachable from here';
 
   @override
   String get last5Games => 'Last 5 games';
@@ -343,10 +361,10 @@ class SEn extends S {
   String get liveS => 'Lives';
 
   @override
-  String get liveScore => 'LIVE SCORE';
+  String get lives => 'lives';
 
   @override
-  String get lives => 'lives';
+  String get liveScore => 'LIVE SCORE';
 
   @override
   String get loading => 'Loading...';
@@ -397,10 +415,10 @@ class SEn extends S {
   String get matchUpdate => 'Match update';
 
   @override
-  String get nationalLeagues => 'National Leagues';
+  String get nationality => 'Nationality:';
 
   @override
-  String get nationality => 'Nationality:';
+  String get nationalLeagues => 'National Leagues';
 
   @override
   String get nativeBody => 'Body';
@@ -412,13 +430,13 @@ class SEn extends S {
   String get nativeMediaView => 'Media View';
 
   @override
+  String get navigationMenu => 'Navigation menu';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Collapsed';
 
   @override
   String get navRailExpandedA11yLabel => 'Expanded';
-
-  @override
-  String get navigationMenu => 'Navigation menu';
 
   @override
   String get next => 'Next';
@@ -463,12 +481,6 @@ class SEn extends S {
 
   @override
   String get noText => 'No';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'Not selected';
 
   @override
   String get notificationChannelDesc =>
@@ -522,6 +534,12 @@ class SEn extends S {
   @override
   String get notificationsPermissionTitle =>
       'Allow app to send you notifications?';
+
+  @override
+  String get notSelected => 'Not selected';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -622,10 +640,10 @@ class SEn extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -710,6 +728,16 @@ class SEn extends S {
   String get restorePurchase => 'Restore Purchase';
 
   @override
+  String get restorePurchases => 'Restore Purchases';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'No previous purchase found for this account.';
+
+  @override
+  String get restorePurchasesSuccess => 'Your purchase has been restored.';
+
+  @override
   String get result => 'Result';
 
   @override
@@ -733,24 +761,18 @@ class SEn extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Score (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 correct predictions';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 goal';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nOff';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Score (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Search for leagues or teams...';
@@ -766,10 +788,6 @@ class SEn extends S {
 
   @override
   String get searchTeamOrLeague => 'Search team or league';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -789,6 +807,9 @@ class SEn extends S {
   String get seeAll => 'See all';
 
   @override
+  String get selected => 'Selected';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Select the leagues you want to follow closely.';
 
@@ -797,15 +818,17 @@ class SEn extends S {
       'Select your favorite teams to get instant alerts.';
 
   @override
-  String get selected => 'Selected';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '�� $arg1 sent off ($arg2\')';
   }
 
   @override
   String get settings => 'Settings';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 goal';
+  }
 
   @override
   String get share => 'Share';
@@ -918,6 +941,11 @@ class SEn extends S {
   String get squad => 'Squad';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nOff';
+  }
+
+  @override
   String get startOfSecondHalf => 'Start of second half';
 
   @override
@@ -1000,18 +1028,6 @@ class SEn extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'Table';
 
   @override
@@ -1022,6 +1038,18 @@ class SEn extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'Team';
@@ -1229,6 +1257,11 @@ class SEn extends S {
   String get viewDetailsMatch => 'View details match.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 votes';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1247,14 +1280,14 @@ class SEn extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'We’re delighted that you enjoy using our app';
-
-  @override
   String get weekly => 'Weekly';
 
   @override
   String get weight => 'Weight:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'We’re delighted that you enjoy using our app';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1277,28 +1310,18 @@ class SEn extends S {
   String get yes => 'Yes';
 
   @override
-  String get yesText => 'Yes';
+  String get yesterday => 'Yesterday';
 
   @override
-  String get yesterday => 'Yesterday';
+  String get yesText => 'Yes';
 
   @override
   String get youRePremiumUser => 'You\'re Premium User';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'You won’t receive any alerts or updates until you turn them back on.';
-
-  @override
   String get yourFilesIsEmpty => 'Your files is empty';
 
   @override
-  String get restorePurchases => 'Restore Purchases';
-
-  @override
-  String get restorePurchasesSuccess => 'Your purchase has been restored.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'No previous purchase found for this account.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'You won’t receive any alerts or updates until you turn them back on.';
 }

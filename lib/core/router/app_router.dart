@@ -105,6 +105,8 @@ class AppRouter {
               awayTeamName: _arg<String>(args, 'awayTeamName') ?? '',
               homeTeamLogo: _arg<String>(args, 'homeTeamLogo'),
               awayTeamLogo: _arg<String>(args, 'awayTeamLogo'),
+              kickoffEpoch: _arg<int>(args, 'kickoffEpoch') ?? 0,
+              countryName: _arg<String>(args, 'countryName'),
             ),
           AppRoutes.leagueDetail => LeagueDetailScreen(
               leagueId: _arg<int>(args, 'leagueId') ?? 0,
@@ -125,6 +127,7 @@ class AppRouter {
               playerAge: _arg<String>(args, 'playerAge'),
               playerNumber: _arg<String>(args, 'playerNumber'),
               playerNationality: _arg<String>(args, 'playerNationality'),
+              playerId: _arg<int>(args, 'playerId'),
             ),
           AppRoutes.highlightDetail => HighlightDetailScreen(
               url: _arg<String>(args, 'url') ?? '',

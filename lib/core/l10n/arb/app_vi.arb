@@ -1,5 +1,8 @@
 {
-  "@@locale": "vi",
+  "goalsText": "bàn",
+  "cornersText": "phạt góc",
+  "cardsText": "thẻ",
+  "firstHalfText": "Hiệp một",
   "age": "Tuổi:",
   "aiMainPick": "Lựa chọn chính của AI",
   "allLeagues": "Tất cả các giải đấu",
@@ -11,6 +14,7 @@
   "awayWin": "Đội khách thắng",
   "bestPrice": "Giá tốt nhất",
   "blockedShots": "Cú đánh bị chặn",
+  "bookmakerOdds": "Tỷ lệ theo nhà cái",
   "bothTeamsToScore": "Cả hai đội ghi bàn",
   "bottomsheetActionCollapse": "Thu gọn trang tính dưới cùng",
   "bottomsheetActionExpand": "Mở rộng trang dưới cùng",
@@ -27,7 +31,8 @@
   "closeDrawer": "Đóng menu điều hướng",
   "closeSheet": "Đóng trang tính",
   "club": "Câu lạc bộ:",
-  "confidenceFormat": "{arg1}%% Độ tin cậy",
+  "communityPrediction": "Cộng đồng dự đoán",
+  "confidenceFormat": "{arg1}% Độ tin cậy",
   "@confidenceFormat": {
     "placeholders": {
       "arg1": {
@@ -66,7 +71,6 @@
     }
   },
   "fixtures": "Lịch thi đấu",
-  "followFavoriteTeams": "Theo dõi các đội yêu thích",
   "followersCount": "{arg1} Người theo dõi",
   "@followersCount": {
     "placeholders": {
@@ -75,15 +79,16 @@
       }
     }
   },
+  "followFavoriteTeams": "Theo dõi các đội yêu thích",
   "fouls": "Phạm lỗi",
   "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "Từ các ngôn ngữ dưới đây, vui lòng chọn ngôn ngữ mẹ đẻ của bạn. Sau đó, bạn có thể thay đổi ngôn ngữ từ cài đặt.",
   "fullTime": "Toàn thời gian",
   "getReadyMatchStartsSoon": "Hãy sẵn sàng! Trận đấu sẽ sớm bắt đầu",
   "getStarted": "Bắt đầu",
-  "goProVersion": "PHIÊN BẢN GO PRO",
-  "goToSetting": "Đi tới cài đặt",
   "goallessAtTheBreakSeeMatchStats": "Không bàn thắng khi nghỉ giải lao. Xem số liệu thống kê trận đấu.",
   "goalsInTheFirstHalf": "Bàn thắng trong hiệp một.",
+  "goProVersion": "PHIÊN BẢN GO PRO",
+  "goToSetting": "Đi tới cài đặt",
   "h2h": "H2H",
   "halftimeScore": "Tỷ số hiệp một",
   "height": "Chiều cao:",
@@ -135,7 +140,6 @@
     }
   },
   "inDepthAiAnalysis": "Phân tích AI chuyên sâu",
-  "inProgress": "Đang tiến hành",
   "indeterminate": "Đã kiểm tra một phần",
   "infoAwayManager": "HLV Đội khách",
   "infoChairman": "Chủ tịch hiện tại",
@@ -145,20 +149,21 @@
   "infoHomeManager": "HLV Đội nhà",
   "infoLeague": "Giải đấu",
   "infoOwner": "Chủ sở hữu",
+  "infor": "Thông tin",
   "infoReferee": "Trọng tài",
   "infoRound": "Vòng đấu",
   "infoTime": "Thời gian",
   "infoVenue": "Sân thi đấu",
   "infoWeightDivisions": "Hạng cân",
   "infoYearFoundation": "Thành lập",
-  "infor": "Thông tin",
+  "inProgress": "Đang tiến hành",
   "internationalTournaments": "Giải đấu quốc tế",
   "introTitle1": "Tỷ số trực tiếp, video nổi bật và tin tức nóng hổi.",
   "introTitle2": "Nhận thông báo trực tiếp về bàn thắng, thẻ và đá phạt",
   "kickOff": "Khởi động!",
   "language": "Ngôn ngữ",
-  "languageScreenNotReachable": "Không thể truy cập màn hình ngôn ngữ từ đây",
   "languages": "Ngôn ngữ",
+  "languageScreenNotReachable": "Không thể truy cập màn hình ngôn ngữ từ đây",
   "last5Games": "5 trận gần nhất",
   "league": "Giải đấu",
   "leagues": "Giải đấu",
@@ -168,11 +173,12 @@
   "live": "Trực tiếp",
   "liveMatches": "CÁC TRẬN ĐẤU TRỰC TIẾP",
   "liveS": "Cuộc sống",
-  "liveScore": "TỶ SỐ TRỰC TIẾP",
   "lives": "cuộc sống",
+  "liveScore": "TỶ SỐ TRỰC TIẾP",
   "loading": "Đang tải...",
   "loadingRewardAd": "Loading reward ad",
   "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "@@locale": "vi",
   "looksLikeYouHavenTAddedAnythingYet": "Có vẻ như bạn chưa thêm bất cứ điều gì.",
   "makeSureToTurnOnTheInternetToUseFeatures": "Đảm bảo bật internet để sử dụng các tính năng",
   "matchAlarmBeforeMatch": "Báo động trận đấu (Trước trận đấu)",
@@ -185,14 +191,14 @@
   "matchStart": "Bắt đầu trận đấu",
   "matchTimeline": "Lịch trình trận đấu",
   "matchUpdate": "Cập nhật trận đấu",
-  "nationalLeagues": "Giải vô địch quốc gia",
   "nationality": "Quốc tịch:",
+  "nationalLeagues": "Giải vô địch quốc gia",
   "nativeBody": "Cơ thể",
   "nativeHeadline": "Tiêu đề",
   "nativeMediaView": "Chế độ xem phương tiện",
+  "navigationMenu": "Menu điều hướng",
   "navRailCollapsedA11yLabel": "Thu gọn",
   "navRailExpandedA11yLabel": "Mở rộng",
-  "navigationMenu": "Menu điều hướng",
   "next": "Kế tiếp",
   "no": "Không",
   "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "Không có dữ liệu so sánh cho trận đấu này. Hãy đưa ra dự đoán của bạn trước khi trận đấu kết thúc để xem kết quả vào lần sau.",
@@ -207,8 +213,6 @@
   "noRecentMatches": "Chưa có trận đấu vừa qua",
   "noSubstitutionsYet": "Chưa có sự thay thế nào",
   "noText": "Không",
-  "noUpcomingMatches": "Chưa có trận đấu sắp tới",
-  "notSelected": "Không được chọn",
   "notificationChannelDesc": "Thông báo cho các trận đấu bóng đá sắp tới",
   "notificationChannelName": "Thông báo trận đấu",
   "notificationFailedMaybeTooManyPendingNotification": "Thông báo KHÔNG THÀNH công (có thể có quá nhiều thông báo đang chờ xử lý)",
@@ -251,6 +255,8 @@
   "notificationsPermissionConfirm": "Cho phép",
   "notificationsPermissionDecline": "Không cho phép",
   "notificationsPermissionTitle": "Cho phép ứng dụng gửi thông báo cho bạn?",
+  "notSelected": "Không được chọn",
+  "noUpcomingMatches": "Chưa có trận đấu sắp tới",
   "ob1Des": "Nhận thông tin cập nhật theo thời gian thực từ\nTất cả các giải đấu lớn\nvà các giải đấu xung quanh\nThế giới",
   "ob1Title": "Bóng đá trực tiếp",
   "ob3Title": "Không bao giờ bỏ lỡ một khoảnh khắc nào",
@@ -289,8 +295,8 @@
   "premiumFeatureNoAds": "No banners, no interstitials",
   "premiumFeatureSupport": "Support future updates",
   "premiumGo": "BUY NOW",
-  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumSubtitle": "Enjoy live scores without interruptions",
   "premiumThanks": "Thank you! Ads are now removed.",
   "premiumTitle": "Remove all ads",
@@ -349,6 +355,9 @@
   "redCards": "Thẻ đỏ",
   "removeAllAds": "Xóa tất cả quảng cáo",
   "restorePurchase": "Khôi phục giao dịch mua",
+  "restorePurchases": "Khôi phục giao dịch",
+  "restorePurchasesEmpty": "Không tìm thấy giao dịch nào trước đây cho tài khoản này.",
+  "restorePurchasesSuccess": "Đã khôi phục gói bạn đã mua.",
   "result": "Kết quả",
   "retry": "Retry",
   "rewardAdNotAvailable": "Quảng cáo phần thưởng không có sẵn",
@@ -369,30 +378,6 @@
       }
     }
   },
-  "sCorrectPredictions": "{arg1} dự đoán chính xác",
-  "@sCorrectPredictions": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sGoal": "{arg1} mục tiêu",
-  "@sGoal": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sSaleOff": "{arg1}\ntắt",
-  "@sSaleOff": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
   "scoreS1S2": "Điểm ({arg1}1 - {arg2}2)",
   "@scoreS1S2": {
     "placeholders": {
@@ -404,12 +389,20 @@
       }
     }
   },
+  "sCorrectPredictions": "{arg1} dự đoán chính xác",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "searchHintPick": "Tìm kiếm các giải đấu hoặc đội...",
   "searchHistory": "Lịch sử tìm kiếm",
   "searchLeague": "Tìm giải đấu",
   "searchTeam": "Tìm đội bóng",
   "searchTeamOrLeague": "Tìm kiếm đội hoặc giải đấu",
-  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "secondHalfIsUnderway": "Hiệp hai đang được tiến hành. {arg1} {arg2} - {arg3} {arg4}.",
   "@secondHalfIsUnderway": {
     "placeholders": {
@@ -431,9 +424,9 @@
   "sectionFeatured": "Tiêu biểu",
   "sectionInfo": "Thông tin",
   "seeAll": "Xem tất cả",
+  "selected": "Đã chọn",
   "selectLeaguesSubtitle": "Chọn các giải đấu bạn muốn theo dõi chặt chẽ.",
   "selectTeamsSubtitle": "Chọn các đội yêu thích của bạn để nhận thông báo tức thì.",
-  "selected": "Đã chọn",
   "sentOff": "{arg1} đã gửi đi ({arg2}')",
   "@sentOff": {
     "placeholders": {
@@ -446,6 +439,14 @@
     }
   },
   "settings": "Cài đặt",
+  "sGoal": "{arg1} mục tiêu",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "share": "Chia sẻ",
   "shareAppText": "Kiểm tra ứng dụng bóng đá tuyệt vời này: https://play.google.com/store/apps/details?id={arg1}",
   "@shareAppText": {
@@ -489,6 +490,14 @@
   "sportVolleyball": "Bóng chuyền",
   "sportWaterpolo": "Bóng nước",
   "squad": "Đội hình",
+  "sSaleOff": "{arg1}\ntắt",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "startOfSecondHalf": "Bắt đầu hiệp hai",
   "stateEmpty": "Trống",
   "stateOff": "tắt",
@@ -516,14 +525,14 @@
   "tabEvents": "Các sự kiện",
   "tabH2h": "ĐỐI ĐẦU",
   "tabInfo": "THÔNG TIN",
-  "tabLineups": "ĐỘI HÌNH",
-  "tabOdds": "TỶ LỆ",
-  "tabStandings": "BẢNG XẾP HẠNG",
-  "tabStatistics": "THỐNG KÊ",
   "table": "Bảng",
   "tableMatchesPlayed": "Trận",
   "tablePoints": "Điểm",
   "tableTeamHeader": "# Tên Đội",
+  "tabLineups": "ĐỘI HÌNH",
+  "tabOdds": "TỶ LỆ",
+  "tabStandings": "BẢNG XẾP HẠNG",
+  "tabStatistics": "THỐNG KÊ",
   "team": "Đội ngũ",
   "teams": "Đội",
   "templatePercent": "{arg1} phần trăm.",
@@ -621,6 +630,14 @@
   "upgradeForUnlimitedAccessNoAds": "NÂNG CẤP ĐỂ TRUY CẬP KHÔNG GIỚI HẠN VÀ KHÔNG CÓ QUẢNG CÁO",
   "viewAll": "Xem tất cả",
   "viewDetailsMatch": "Xem chi tiết phù hợp.",
+  "votesCountFormat": "{arg1} lượt bình chọn",
+  "@votesCountFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "vs": "VS",
   "vsHasStartedFollowTheMatchLive": "{arg1} so với {arg2} đã bắt đầu. Theo dõi trận đấu trực tiếp!",
   "@vsHasStartedFollowTheMatchLive": {
@@ -636,9 +653,9 @@
   "watchAShortAdToSubmitYourDrawPrediction": "Xem một quảng cáo ngắn để gửi dự đoán rút thăm của bạn.",
   "watchNow": "Xem ngay",
   "watermarkLabelPrefix": "Quảng cáo -",
-  "weReDelightedThatYouEnjoyUsingOurApp": "Chúng tôi rất vui vì bạn thích sử dụng ứng dụng của chúng tôi",
   "weekly": "Hàng tuần",
   "weight": "Trọng lượng:",
+  "weReDelightedThatYouEnjoyUsingOurApp": "Chúng tôi rất vui vì bạn thích sử dụng ứng dụng của chúng tôi",
   "whatAHalf": "Thật là một nửa! {arg1} {arg2} - {arg3} {arg4}",
   "@whatAHalf": {
     "placeholders": {
@@ -661,12 +678,9 @@
   "years": "năm",
   "yellowCards": "Thẻ vàng",
   "yes": "Có",
-  "yesText": "Có",
   "yesterday": "Hôm qua",
+  "yesText": "Có",
   "youRePremiumUser": "Bạn là người dùng cao cấp",
-  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Bạn sẽ không nhận được bất kỳ cảnh báo hoặc cập nhật nào cho đến khi bật lại.",
   "yourFilesIsEmpty": "Tệp của bạn trống",
-  "restorePurchases": "Khôi phục giao dịch",
-  "restorePurchasesSuccess": "Đã khôi phục gói bạn đã mua.",
-  "restorePurchasesEmpty": "Không tìm thấy giao dịch nào trước đây cho tài khoản này."
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "Bạn sẽ không nhận được bất kỳ cảnh báo hoặc cập nhật nào cho đến khi bật lại."
 }

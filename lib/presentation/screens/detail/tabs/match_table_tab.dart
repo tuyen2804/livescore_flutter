@@ -71,12 +71,13 @@ class StandingTableHeader extends StatelessWidget {
     final s = S.of(context);
     return Padding(
       padding: EdgeInsets.only(
-        left: AppDimens.sdp(14),
         top: AppDimens.sdp(6),
         bottom: AppDimens.sdp(6),
       ),
       child: Row(
         children: [
+          // Chừa đúng bề rộng dải màu khu vực ở hàng dữ liệu.
+          SizedBox(width: AppDimens.sdp(3 + 11)),
           SizedBox(
             width: AppDimens.sdp(25),
             child: Text(
@@ -88,7 +89,9 @@ class StandingTableHeader extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: AppDimens.sdp(6)),
+          // 4 + 22 + 6: chừa chỗ logo đội, không thì chữ "Team" lệch hẳn sang
+          // trái so với tên đội bên dưới.
+          SizedBox(width: AppDimens.sdp(4 + 22 + 6)),
           Expanded(
             child: Text(
               s.team,
@@ -99,6 +102,9 @@ class StandingTableHeader extends StatelessWidget {
             ),
           ),
           _HeaderCell(label: s.tableMatchesPlayed),
+          const _HeaderCell(label: 'W'),
+          const _HeaderCell(label: 'D'),
+          const _HeaderCell(label: 'L'),
           const _HeaderCell(label: 'GD'),
           _HeaderCell(label: s.tablePoints, marginEnd: true),
         ],
@@ -115,7 +121,7 @@ class _HeaderCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        width: AppDimens.sdp(40),
+        width: AppDimens.sdp(_cellWidth),
         margin: EdgeInsets.only(right: marginEnd ? AppDimens.sdp(5) : 0),
         alignment: Alignment.center,
         child: Text(
@@ -146,7 +152,6 @@ class StandingTableRow extends StatelessWidget {
             ? AppColors.brandAccent.withValues(alpha: 0.12)
             : Colors.transparent,
         padding: EdgeInsets.only(
-          left: AppDimens.sdp(14),
           top: AppDimens.sdp(6),
           bottom: AppDimens.sdp(6),
         ),
@@ -154,6 +159,15 @@ class StandingTableRow extends StatelessWidget {
           children: [
             Row(
               children: [
+                // Dải màu khu vực cuối bảng: xanh lá dự cúp lớn, cam cúp hạng
+                // dưới, đỏ xuống hạng. Giải không khai `promotion` thì dải
+                // trong suốt, bảng nhìn y như cũ.
+                Container(
+                  width: AppDimens.sdp(3),
+                  height: AppDimens.sdp(22),
+                  color: _zoneColor(team.promotionGroup),
+                ),
+                SizedBox(width: AppDimens.sdp(11)),
                 SizedBox(
                   width: AppDimens.sdp(25),
                   child: Text(
@@ -190,8 +204,18 @@ class StandingTableRow extends StatelessWidget {
                   ),
                 ),
                 _ValueCell(text: '${team.overallMatches ?? 0}'),
-                _ValueCell(text: '${team.goalDifference ?? 0}'),
-                _ValueCell(text: '${team.points}', marginEnd: true),
+                _ValueCell(text: '${team.won ?? 0}'),
+                _ValueCell(text: '${team.draw ?? 0}'),
+                _ValueCell(text: '${team.lost ?? 0}'),
+                _ValueCell(
+                  text: _signed(team.goalDifference),
+                  color: _diffColor(team.goalDifference),
+                ),
+                _ValueCell(
+                  text: '${team.points}',
+                  marginEnd: true,
+                  bold: true,
+                ),
               ],
             ),
             SizedBox(height: AppDimens.sdp(6)),
@@ -202,23 +226,58 @@ class StandingTableRow extends StatelessWidget {
 }
 
 class _ValueCell extends StatelessWidget {
-  const _ValueCell({required this.text, this.marginEnd = false});
+  const _ValueCell({
+    required this.text,
+    this.marginEnd = false,
+    this.color,
+    this.bold = false,
+  });
 
   final String text;
   final bool marginEnd;
+  final Color? color;
+  final bool bold;
 
   @override
   Widget build(BuildContext context) => Container(
-        width: AppDimens.sdp(40),
+        width: AppDimens.sdp(_cellWidth),
         margin: EdgeInsets.only(right: marginEnd ? AppDimens.sdp(5) : 0),
         alignment: Alignment.center,
         child: Text(
           text,
           maxLines: 1,
-          style: AppTextStyles.regular(
-            size: AppDimens.ssp(12),
-            color: AppColors.text500,
-          ),
+          style: bold
+              ? AppTextStyles.semiBold(
+                  size: AppDimens.ssp(12),
+                  color: color ?? AppColors.textPrimary,
+                )
+              : AppTextStyles.regular(
+                  size: AppDimens.ssp(12),
+                  color: color ?? AppColors.text500,
+                ),
         ),
       );
 }
+
+/// Sáu cột số phải vừa một dòng cùng tên đội, nên hẹp hơn mức 40sdp của bản
+/// gốc vốn chỉ có ba cột.
+const double _cellWidth = 26;
+
+String _signed(int? value) {
+  final v = value ?? 0;
+  return v > 0 ? '+$v' : '$v';
+}
+
+Color _diffColor(int? value) {
+  final v = value ?? 0;
+  if (v > 0) return AppColors.homeColor;
+  if (v < 0) return AppColors.awayColor;
+  return AppColors.text500;
+}
+
+Color _zoneColor(int group) => switch (group) {
+      1 => AppColors.homeColor,
+      2 => AppColors.drawColor,
+      3 => AppColors.awayColor,
+      _ => Colors.transparent,
+    };

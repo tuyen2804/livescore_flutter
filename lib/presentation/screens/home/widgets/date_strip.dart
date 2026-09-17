@@ -10,7 +10,7 @@ import '../../../../core/utils/date_time_utils.dart';
 
 /// Port `layout_date_strip_item.xml` + `HomeDateAdapter`:
 /// mỗi ô rộng đúng 1/5 bề ngang màn hình, gồm thứ — gạch chân — ngày.
-class DateStrip extends StatelessWidget {
+class DateStrip extends StatefulWidget {
   const DateStrip({
     super.key,
     required this.dates,
@@ -25,6 +25,62 @@ class DateStrip extends StatelessWidget {
   final VoidCallback onPickDate;
 
   @override
+  State<DateStrip> createState() => _DateStripState();
+}
+
+class _DateStripState extends State<DateStrip> {
+  final ScrollController _controller = ScrollController();
+
+  /// Dải giờ dài 61 ngày, ngày đang chọn nằm giữa. Không tự cuộn thì mở app ra
+  /// là thấy ngày cách đây một tháng.
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _centerSelected(false));
+  }
+
+  @override
+  void didUpdateWidget(covariant DateStrip oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!DateTimeUtils.isSameDay(oldWidget.selected, widget.selected)) {
+      _centerSelected(true);
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _centerSelected(bool animate) {
+    if (!_controller.hasClients) return;
+    final index = widget.dates.indexWhere(
+      (d) => DateTimeUtils.isSameDay(d, widget.selected),
+    );
+    if (index < 0) return;
+
+    final itemWidth = MediaQuery.sizeOf(context).width / 5;
+    // Đưa ô đang chọn về giữa vùng nhìn thấy, rồi kẹp trong khoảng cuộn hợp lệ.
+    final target = (index * itemWidth) -
+        (_controller.position.viewportDimension - itemWidth) / 2;
+    final offset = target.clamp(
+      _controller.position.minScrollExtent,
+      _controller.position.maxScrollExtent,
+    );
+
+    if (animate) {
+      _controller.animateTo(
+        offset,
+        duration: const Duration(milliseconds: 240),
+        curve: Curves.easeOut,
+      );
+    } else {
+      _controller.jumpTo(offset);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final locale = Localizations.localeOf(context).toString();
@@ -37,7 +93,7 @@ class DateStrip extends StatelessWidget {
       children: [
         SizedBox(width: AppDimens.sdp(16)),
         GestureDetector(
-          onTap: onPickDate,
+          onTap: widget.onPickDate,
           child: SizedBox(
             width: AppDimens.sdp(24),
             height: AppDimens.sdp(24),
@@ -58,18 +114,19 @@ class DateStrip extends StatelessWidget {
           child: SizedBox(
             height: AppDimens.sdp(56),
             child: ListView.builder(
+              controller: _controller,
               scrollDirection: Axis.horizontal,
-              itemCount: dates.length,
+              itemCount: widget.dates.length,
               itemBuilder: (context, index) {
-                final date = dates[index];
+                final date = widget.dates[index];
                 return _DateCell(
                   width: itemWidth,
                   dayLabel: DateTimeUtils.isToday(date)
                       ? s.today
                       : dayFormat.format(date),
                   dateLabel: valueFormat.format(date),
-                  selected: DateTimeUtils.isSameDay(date, selected),
-                  onTap: () => onSelect(date),
+                  selected: DateTimeUtils.isSameDay(date, widget.selected),
+                  onTap: () => widget.onSelect(date),
                 );
               },
             ),

@@ -2,15 +2,21 @@ import '../../core/error/failures.dart';
 import '../../core/utils/date_time_utils.dart';
 import '../../data/datasources/local/league_db_helper.dart';
 import '../../data/models/football/football_models.dart';
+import '../../data/models/sofascore/match_prediction.dart';
+import '../../data/repositories/football_sofascore_repository.dart';
 import '../../domain/entities/match_entities.dart';
-import '../../domain/repositories/football_repository.dart';
 import 'base_provider.dart';
 
-/// Port `presentation/leagues/LeagueDetailFragment.kt` — BXH + lịch thi đấu.
+/// BXH + lịch thi đấu của một giải.
+///
+/// **Nguồn đã đổi sang Sofascore.** Backend cũ nhận `league_id` hệ Sportmonks;
+/// Sofascore không biết hệ đó nên phải dò theo **tên giải + quốc gia** —
+/// xem [SofascoreIdResolver]. Quốc gia là bắt buộc khi có, vì "Serie B" tồn
+/// tại ở cả Brazil lẫn Ý.
 class LeagueDetailProvider extends BaseProvider {
-  LeagueDetailProvider(this._football);
+  LeagueDetailProvider(this._sofa);
 
-  final FootballRepository _football;
+  final FootballSofascoreRepository _sofa;
 
   List<StandingTeamDto> _standings = const [];
   List<UpcomingFixtureDto> _fixtures = const [];
@@ -22,27 +28,37 @@ class LeagueDetailProvider extends BaseProvider {
   bool get isLoading => _isLoading;
   Failure? get failure => _failure;
 
-  Future<void> load(int leagueId) async {
+  Future<void> load(String leagueName, {String? countryName}) async {
     setState(() {
       _isLoading = true;
       _failure = null;
     });
 
-    final standings = await _football.getStandings(leagueId);
-    standings.fold((f) => _failure = f, (list) => _standings = list);
-
-    final fixtures = await _football.getLeagueFixtures(leagueId);
-    fixtures.fold((f) => _failure ??= f, (list) => _fixtures = list);
+    final result = await _sofa.getLeagueDetail(
+      leagueName: leagueName,
+      country: countryName,
+    );
+    result.fold(
+      (f) => _failure = f,
+      (bundle) {
+        _standings = bundle.standings;
+        _fixtures = bundle.fixtures;
+      },
+    );
 
     setState(() => _isLoading = false);
   }
 }
 
-/// Port `presentation/detail/DetailTeamViewModel.kt` — lịch thi đấu của đội.
+/// Lịch thi đấu + đội hình của một đội.
+///
+/// **Nguồn đã đổi sang Sofascore.** Được thêm `playerId` thật trong đội hình —
+/// thứ `list-player` của backend cũ không trả, nên trước đây màn chi tiết cầu
+/// thủ chỉ là thẻ tĩnh. Mất `weight` vì Sofascore không có cân nặng.
 class TeamDetailProvider extends BaseProvider {
-  TeamDetailProvider(this._football, this._db);
+  TeamDetailProvider(this._sofa, this._db);
 
-  final FootballRepository _football;
+  final FootballSofascoreRepository _sofa;
   final LeagueDbHelper _db;
 
   List<FixtureListItem> _items = const [];
@@ -67,6 +83,8 @@ class TeamDetailProvider extends BaseProvider {
       _failure = null;
     });
 
+    // Tên đội vẫn lấy từ SQLite đóng gói (hệ Sportmonks) — đó là thứ duy nhất
+    // nối được `teamId` của app với Sofascore, vì hai hệ ID không chung nhau.
     final team = await _db.getTeamById(teamId);
     if (team != null) {
       _teamName = team.name;
@@ -74,17 +92,23 @@ class TeamDetailProvider extends BaseProvider {
       _isFavorite = team.isFavourite;
     }
 
-    // Bản gốc gọi song song lịch thi đấu và đội hình.
-    final fixturesFuture = _football.getTeamFixtures(teamId);
-    final squadFuture = _football.getSquad(teamId);
+    if (_teamName.isEmpty) {
+      setState(() {
+        _isLoading = false;
+        _failure = const ServerFailure('Không tìm thấy đội trong dữ liệu app');
+      });
+      return;
+    }
 
-    (await fixturesFuture).fold(
+    final result = await _sofa.getTeamDetail(teamName: _teamName);
+    result.fold(
       (f) => _failure = f,
-      (list) => _items = _group(list),
-    );
-    (await squadFuture).fold(
-      (_) {},
-      (list) => _squad = list,
+      (bundle) {
+        _items = _group(bundle.fixtures);
+        _squad = bundle.squad;
+        // Logo Sofascore nét hơn và luôn có; giữ logo cũ làm dự phòng.
+        _teamLogo = bundle.logoUrl;
+      },
     );
 
     setState(() => _isLoading = false);
@@ -125,29 +149,75 @@ class TeamDetailProvider extends BaseProvider {
   }
 }
 
-/// Port `presentation/detail/MatchForecastFragment.kt`.
+/// Màn dự đoán trận.
+///
+/// **Nguồn đã đổi sang Sofascore.** `match-forecast-new` của backend cũ hỏng
+/// 100% (xem `docs/API_dang_su_dung.md` §1.6), thay bằng ba nguồn tách bạch:
+/// bình chọn cộng đồng, xác suất suy từ kèo, và phân tích AI sau trận.
 class MatchForecastProvider extends BaseProvider {
-  MatchForecastProvider(this._football);
+  MatchForecastProvider(this._sofa);
 
-  final FootballRepository _football;
+  final FootballSofascoreRepository _sofa;
 
-  ForecastData? _forecast;
+  MatchPrediction? _prediction;
   bool _isLoading = false;
   Failure? _failure;
 
-  ForecastData? get forecast => _forecast;
+  MatchPrediction? get prediction => _prediction;
   bool get isLoading => _isLoading;
   Failure? get failure => _failure;
 
-  Future<void> load(int matchId) async {
+  /// [matchId] chính là `eventId` Sofascore — feed Home đã đổi nguồn nên
+  /// không còn phải dò theo tên đội.
+  Future<void> load({
+    required int matchId,
+    String languageCode = 'en',
+  }) async {
     setState(() {
       _isLoading = true;
       _failure = null;
     });
-    final result = await _football.getMatchForecast(matchId);
+
+    final result = await _sofa.getMatchBundleByEvent(
+      matchId,
+      languageCode: languageCode,
+      withStandings: false,
+    );
     result.fold(
-      (f) => setState(() => _failure = f),
-      (data) => setState(() => _forecast = data),
+      (f) => _failure = f,
+      (bundle) => _prediction = bundle.prediction,
+    );
+
+    setState(() => _isLoading = false);
+  }
+}
+
+/// Hồ sơ cầu thủ từ Sofascore.
+///
+/// Màn cũ chỉ dựng thẻ tĩnh từ arguments vì `list-player` của backend cũ không
+/// trả id cầu thủ — dòng "Prefer foot" vì thế luôn là "-". Có `playerId` rồi
+/// thì lấy được chân thuận, giá trị chuyển nhượng, hạn hợp đồng, CLB hiện tại.
+///
+/// Không có `playerId` (đội hình đến từ nguồn cũ) thì provider im lặng không
+/// gọi gì, màn hình vẫn hiện đúng như trước.
+class PlayerDetailProvider extends BaseProvider {
+  PlayerDetailProvider(this._sofa);
+
+  final FootballSofascoreRepository _sofa;
+
+  PlayerProfile? _profile;
+  bool _isLoading = false;
+
+  PlayerProfile? get profile => _profile;
+  bool get isLoading => _isLoading;
+
+  Future<void> load(int? playerId) async {
+    if (playerId == null || playerId <= 0) return;
+    setState(() => _isLoading = true);
+    final result = await _sofa.getPlayerProfile(playerId);
+    result.fold(
+      (_) {},
+      (data) => _profile = data,
     );
     setState(() => _isLoading = false);
   }

@@ -10,6 +10,18 @@ class SPt extends S {
   SPt([String locale = 'pt']) : super(locale);
 
   @override
+  String get goalsText => 'gols';
+
+  @override
+  String get cornersText => 'escanteios';
+
+  @override
+  String get cardsText => 'cartões';
+
+  @override
+  String get firstHalfText => 'Primeiro tempo';
+
+  @override
   String get age => 'Idade:';
 
   @override
@@ -42,6 +54,9 @@ class SPt extends S {
 
   @override
   String get blockedShots => 'Arremessos Bloqueados';
+
+  @override
+  String get bookmakerOdds => 'Odds das casas de apostas';
 
   @override
   String get bothTeamsToScore => 'Ambos os Times a Pontuar';
@@ -93,8 +108,11 @@ class SPt extends S {
   String get club => 'Clube:';
 
   @override
+  String get communityPrediction => 'Previsão da comunidade';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% Confiança';
+    return '$arg1% Confiança';
   }
 
   @override
@@ -164,12 +182,12 @@ class SPt extends S {
   String get fixtures => 'Jogos';
 
   @override
-  String get followFavoriteTeams => 'Siga os Times Favoritos';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Siga os Times Favoritos';
 
   @override
   String get fouls => 'Faltas';
@@ -190,17 +208,17 @@ class SPt extends S {
   String get getStarted => 'Comece';
 
   @override
-  String get goProVersion => 'VERSÃO GO PRO';
-
-  @override
-  String get goToSetting => 'Vá para o cenário';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'Sem gols no intervalo. Veja as estatísticas da partida.';
 
   @override
   String get goalsInTheFirstHalf => 'Gols no primeiro tempo.';
+
+  @override
+  String get goProVersion => 'VERSÃO GO PRO';
+
+  @override
+  String get goToSetting => 'Vá para o cenário';
 
   @override
   String get h2h => 'H2H';
@@ -245,9 +263,6 @@ class SPt extends S {
   String get inDepthAiAnalysis => 'Análise aprofundada de IA';
 
   @override
-  String get inProgress => 'Em andamento';
-
-  @override
   String get indeterminate => 'Parcialmente conferido';
 
   @override
@@ -275,6 +290,9 @@ class SPt extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -293,7 +311,7 @@ class SPt extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => 'Em andamento';
 
   @override
   String get internationalTournaments => 'Torneios Internacionais';
@@ -313,10 +331,10 @@ class SPt extends S {
   String get language => 'Idioma';
 
   @override
-  String get languageScreenNotReachable => 'Tela de idioma não acessível daqui';
+  String get languages => 'Idiomas';
 
   @override
-  String get languages => 'Idiomas';
+  String get languageScreenNotReachable => 'Tela de idioma não acessível daqui';
 
   @override
   String get last5Games => 'Últimos 5 jogos';
@@ -346,10 +364,10 @@ class SPt extends S {
   String get liveS => 'Vidas';
 
   @override
-  String get liveScore => 'PLACAR AO VIVO';
+  String get lives => 'Vidas';
 
   @override
-  String get lives => 'Vidas';
+  String get liveScore => 'PLACAR AO VIVO';
 
   @override
   String get loading => 'Carregando...';
@@ -400,10 +418,10 @@ class SPt extends S {
   String get matchUpdate => 'Atualização da partida';
 
   @override
-  String get nationalLeagues => 'Ligas Nacionais';
+  String get nationality => 'Nacionalidade:';
 
   @override
-  String get nationality => 'Nacionalidade:';
+  String get nationalLeagues => 'Ligas Nacionais';
 
   @override
   String get nativeBody => 'Carroceria';
@@ -415,13 +433,13 @@ class SPt extends S {
   String get nativeMediaView => 'Visualização de mídia';
 
   @override
+  String get navigationMenu => 'Menu de navegação';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Desmoronado';
 
   @override
   String get navRailExpandedA11yLabel => 'Expandido';
-
-  @override
-  String get navigationMenu => 'Menu de navegação';
 
   @override
   String get next => 'Próximo';
@@ -466,12 +484,6 @@ class SPt extends S {
 
   @override
   String get noText => 'Não';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'Não selecionado';
 
   @override
   String get notificationChannelDesc =>
@@ -525,6 +537,12 @@ class SPt extends S {
   @override
   String get notificationsPermissionTitle =>
       'Permitir que o aplicativo envie notificações?';
+
+  @override
+  String get notSelected => 'Não selecionado';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -625,10 +643,10 @@ class SPt extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -713,6 +731,16 @@ class SPt extends S {
   String get restorePurchase => 'Restaurar Compra';
 
   @override
+  String get restorePurchases => 'Restaurar compras';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Nenhuma compra anterior encontrada para esta conta.';
+
+  @override
+  String get restorePurchasesSuccess => 'Sua compra foi restaurada.';
+
+  @override
   String get result => 'Resultado';
 
   @override
@@ -736,24 +764,18 @@ class SPt extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Pontuação (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return 'Previsões corretas $arg1';
   }
 
   @override
-  String sGoal(String arg1) {
-    return 'Meta de $arg1';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nDesliga';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Pontuação (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Procure por ligas ou times...';
@@ -769,10 +791,6 @@ class SPt extends S {
 
   @override
   String get searchTeamOrLeague => 'Equipe de busca ou liga';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -792,6 +810,9 @@ class SPt extends S {
   String get seeAll => 'Veja tudo';
 
   @override
+  String get selected => 'Selecionado';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Selecione as ligas que você quer acompanhar com atenção.';
 
@@ -800,15 +821,17 @@ class SPt extends S {
       'Selecione seus times favoritos para receber alertas instantâneos.';
 
   @override
-  String get selected => 'Selecionado';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '$arg1 enviados ($arg2\')';
   }
 
   @override
   String get settings => 'Configurações';
+
+  @override
+  String sGoal(String arg1) {
+    return 'Meta de $arg1';
+  }
 
   @override
   String get share => 'Compartilhe';
@@ -921,6 +944,11 @@ class SPt extends S {
   String get squad => 'Elenco';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nDesliga';
+  }
+
+  @override
   String get startOfSecondHalf => 'Início do segundo tempo';
 
   @override
@@ -1003,18 +1031,6 @@ class SPt extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'Tabela';
 
   @override
@@ -1025,6 +1041,18 @@ class SPt extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'Equipe';
@@ -1236,6 +1264,11 @@ class SPt extends S {
   String get viewDetailsMatch => 'Ver detalhes coincidem.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 votos';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1254,14 +1287,14 @@ class SPt extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'Estamos muito felizes que você goste de usar nosso aplicativo';
-
-  @override
   String get weekly => 'Semanal';
 
   @override
   String get weight => 'Peso:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'Estamos muito felizes que você goste de usar nosso aplicativo';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1284,28 +1317,18 @@ class SPt extends S {
   String get yes => 'Sim';
 
   @override
-  String get yesText => 'Sim';
+  String get yesterday => 'Ontem';
 
   @override
-  String get yesterday => 'Ontem';
+  String get yesText => 'Sim';
 
   @override
   String get youRePremiumUser => 'Você é Usuário Premium';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'Você não receberá nenhum alerta ou atualização até religá-los.';
-
-  @override
   String get yourFilesIsEmpty => 'Seus arquivos estão vazios';
 
   @override
-  String get restorePurchases => 'Restaurar compras';
-
-  @override
-  String get restorePurchasesSuccess => 'Sua compra foi restaurada.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'Nenhuma compra anterior encontrada para esta conta.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'Você não receberá nenhum alerta ou atualização até religá-los.';
 }

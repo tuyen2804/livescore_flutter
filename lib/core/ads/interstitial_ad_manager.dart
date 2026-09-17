@@ -71,6 +71,7 @@ class InterstitialAdManager {
   // ================== PUBLIC API ==================
 
   static void preload(String placement) {
+    return;
     if (AdsGate.isBlocked) return;
 
     final highId = AdsUnitIds.interHighFloor(placement);
@@ -290,8 +291,10 @@ class InterstitialAdManager {
     _setReady(adUnitId, false);
 
     AdsAnalytics.logRequest(adUnitId, AdFormat.interstitial);
-    dev.log('request[$tag] adUnitId=$adUnitId (placement=$placement)',
-        name: 'InterAd');
+    dev.log(
+      'request[$tag] adUnitId=$adUnitId (placement=$placement)',
+      name: 'InterAd',
+    );
 
     InterstitialAd.load(
       adUnitId: adUnitId,
@@ -316,13 +319,17 @@ class InterstitialAdManager {
             );
           };
 
-          dev.log('loaded[$tag] adUnitId=$adUnitId (placement=$placement)',
-              name: 'InterAd');
+          dev.log(
+            'loaded[$tag] adUnitId=$adUnitId (placement=$placement)',
+            name: 'InterAd',
+          );
         },
         onAdFailedToLoad: (error) {
           _clearByUnitId(adUnitId);
-          dev.log('load fail[$tag] adUnitId=$adUnitId: ${error.message}',
-              name: 'InterAd');
+          dev.log(
+            'load fail[$tag] adUnitId=$adUnitId: ${error.message}',
+            name: 'InterAd',
+          );
           onFail?.call();
         },
       ),

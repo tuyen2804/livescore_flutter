@@ -10,6 +10,18 @@ class SFr extends S {
   SFr([String locale = 'fr']) : super(locale);
 
   @override
+  String get goalsText => 'buts';
+
+  @override
+  String get cornersText => 'corners';
+
+  @override
+  String get cardsText => 'cartons';
+
+  @override
+  String get firstHalfText => 'Première mi-temps';
+
+  @override
   String get age => 'Âge :';
 
   @override
@@ -42,6 +54,9 @@ class SFr extends S {
 
   @override
   String get blockedShots => 'Tirs bloqués';
+
+  @override
+  String get bookmakerOdds => 'Cotes des bookmakers';
 
   @override
   String get bothTeamsToScore => 'Les deux équipes à marquer';
@@ -93,8 +108,11 @@ class SFr extends S {
   String get club => 'Club :';
 
   @override
+  String get communityPrediction => 'Prédiction de la communauté';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1 %% Confiance';
+    return '$arg1 % Confiance';
   }
 
   @override
@@ -164,12 +182,12 @@ class SFr extends S {
   String get fixtures => 'Rencontres';
 
   @override
-  String get followFavoriteTeams => 'Suivez vos équipes favorites';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Suivez vos équipes favorites';
 
   @override
   String get fouls => 'Fautes';
@@ -190,17 +208,17 @@ class SFr extends S {
   String get getStarted => 'Commencez';
 
   @override
-  String get goProVersion => 'GO PRO VERSION';
-
-  @override
-  String get goToSetting => 'Aller au réglage';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'Sans but à la pause. Voir les statistiques du match.';
 
   @override
   String get goalsInTheFirstHalf => 'Des buts en première mi-temps.';
+
+  @override
+  String get goProVersion => 'GO PRO VERSION';
+
+  @override
+  String get goToSetting => 'Aller au réglage';
 
   @override
   String get h2h => 'H2H';
@@ -245,9 +263,6 @@ class SFr extends S {
   String get inDepthAiAnalysis => 'Analyse approfondie de l’IA';
 
   @override
-  String get inProgress => 'En cours';
-
-  @override
   String get indeterminate => 'Partiellement vérifié';
 
   @override
@@ -275,6 +290,9 @@ class SFr extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -293,7 +311,7 @@ class SFr extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => 'En cours';
 
   @override
   String get internationalTournaments => 'Tournois internationaux';
@@ -313,11 +331,11 @@ class SFr extends S {
   String get language => 'Langue';
 
   @override
-  String get languageScreenNotReachable =>
-      'Écran de langue inaccessible depuis ici';
+  String get languages => 'Langues';
 
   @override
-  String get languages => 'Langues';
+  String get languageScreenNotReachable =>
+      'Écran de langue inaccessible depuis ici';
 
   @override
   String get last5Games => 'Derniers 5 matchs';
@@ -347,10 +365,10 @@ class SFr extends S {
   String get liveS => 'Vies';
 
   @override
-  String get liveScore => 'LIVE SCORE';
+  String get lives => 'Vies';
 
   @override
-  String get lives => 'Vies';
+  String get liveScore => 'LIVE SCORE';
 
   @override
   String get loading => 'Chargement...';
@@ -401,10 +419,10 @@ class SFr extends S {
   String get matchUpdate => 'Mise à jour du match';
 
   @override
-  String get nationalLeagues => 'Ligues nationales';
+  String get nationality => 'Nationalité :';
 
   @override
-  String get nationality => 'Nationalité :';
+  String get nationalLeagues => 'Ligues nationales';
 
   @override
   String get nativeBody => 'Carrosserie';
@@ -416,13 +434,13 @@ class SFr extends S {
   String get nativeMediaView => 'Vue média';
 
   @override
+  String get navigationMenu => 'Menu de navigation';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Effondré';
 
   @override
   String get navRailExpandedA11yLabel => 'Étendu';
-
-  @override
-  String get navigationMenu => 'Menu de navigation';
 
   @override
   String get next => 'Suivant';
@@ -467,12 +485,6 @@ class SFr extends S {
 
   @override
   String get noText => 'Non';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'Non sélectionné';
 
   @override
   String get notificationChannelDesc =>
@@ -526,6 +538,12 @@ class SFr extends S {
   @override
   String get notificationsPermissionTitle =>
       'Permettre à l’application de vous envoyer des notifications ?';
+
+  @override
+  String get notSelected => 'Non sélectionné';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -627,10 +645,10 @@ class SFr extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -715,6 +733,16 @@ class SFr extends S {
   String get restorePurchase => 'Restaurer l’achat';
 
   @override
+  String get restorePurchases => 'Restaurer les achats';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Aucun achat antérieur trouvé pour ce compte.';
+
+  @override
+  String get restorePurchasesSuccess => 'Votre achat a été restauré.';
+
+  @override
   String get result => 'Résultat';
 
   @override
@@ -738,24 +766,18 @@ class SFr extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Score ( ${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return 'Prédictions correctes $arg1';
   }
 
   @override
-  String sGoal(String arg1) {
-    return 'Objectif $arg1';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nOff';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Score ( ${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Cherchez des ligues ou des équipes...';
@@ -771,10 +793,6 @@ class SFr extends S {
 
   @override
   String get searchTeamOrLeague => 'Équipe ou ligue de recherche';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -794,6 +812,9 @@ class SFr extends S {
   String get seeAll => 'Voir tout';
 
   @override
+  String get selected => 'Sélectionné';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Sélectionnez attentivement les ligues que vous souhaitez suivre.';
 
@@ -802,15 +823,17 @@ class SFr extends S {
       'Sélectionnez vos équipes préférées pour recevoir des alertes instantanées.';
 
   @override
-  String get selected => 'Sélectionné';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '$arg1 expulsés ( $arg2\')';
   }
 
   @override
   String get settings => 'Décors';
+
+  @override
+  String sGoal(String arg1) {
+    return 'Objectif $arg1';
+  }
 
   @override
   String get share => 'Partager';
@@ -923,6 +946,11 @@ class SFr extends S {
   String get squad => 'Effectif';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nOff';
+  }
+
+  @override
   String get startOfSecondHalf => 'Début de la seconde moitié';
 
   @override
@@ -1005,18 +1033,6 @@ class SFr extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'Tableau';
 
   @override
@@ -1027,6 +1043,18 @@ class SFr extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'Équipe';
@@ -1239,6 +1267,11 @@ class SFr extends S {
   String get viewDetailsMatch => 'Voir la correspondance des détails.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 votes';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1257,14 +1290,14 @@ class SFr extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'Nous sommes ravis que vous appréciiez l’utilisation de notre application';
-
-  @override
   String get weekly => 'Hebdomadaire';
 
   @override
   String get weight => 'Poids :';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'Nous sommes ravis que vous appréciiez l’utilisation de notre application';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1287,28 +1320,18 @@ class SFr extends S {
   String get yes => 'Oui';
 
   @override
-  String get yesText => 'Oui';
+  String get yesterday => 'Hier';
 
   @override
-  String get yesterday => 'Hier';
+  String get yesText => 'Oui';
 
   @override
   String get youRePremiumUser => 'Vous êtes Utilisateur Premium';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'Vous ne recevrez aucune alerte ni mise à jour tant que vous ne les aurez pas réactivés.';
-
-  @override
   String get yourFilesIsEmpty => 'Vos fichiers sont vides';
 
   @override
-  String get restorePurchases => 'Restaurer les achats';
-
-  @override
-  String get restorePurchasesSuccess => 'Votre achat a été restauré.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'Aucun achat antérieur trouvé pour ce compte.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'Vous ne recevrez aucune alerte ni mise à jour tant que vous ne les aurez pas réactivés.';
 }

@@ -1,5 +1,8 @@
 {
-  "@@locale": "en",
+  "goalsText": "goals",
+  "cornersText": "corners",
+  "cardsText": "cards",
+  "firstHalfText": "First half",
   "age": "Age:",
   "aiMainPick": "AI Main Pick",
   "allLeagues": "All leagues",
@@ -11,6 +14,7 @@
   "awayWin": "Away Win",
   "bestPrice": "Best Price",
   "blockedShots": "Blocked Shots",
+  "bookmakerOdds": "Bookmaker odds",
   "bothTeamsToScore": "Both Teams To score",
   "bottomsheetActionCollapse": "Collapse the bottom sheet",
   "bottomsheetActionExpand": "Expand the bottom sheet",
@@ -27,7 +31,8 @@
   "closeDrawer": "Close navigation menu",
   "closeSheet": "Close sheet",
   "club": "Club:",
-  "confidenceFormat": "{arg1}%% Confidence",
+  "communityPrediction": "Community prediction",
+  "confidenceFormat": "{arg1}% Confidence",
   "@confidenceFormat": {
     "placeholders": {
       "arg1": {
@@ -66,7 +71,6 @@
     }
   },
   "fixtures": "Fixtures",
-  "followFavoriteTeams": "Follow Favorite Teams",
   "followersCount": "{arg1} Người theo dõi",
   "@followersCount": {
     "placeholders": {
@@ -75,15 +79,16 @@
       }
     }
   },
+  "followFavoriteTeams": "Follow Favorite Teams",
   "fouls": "Fouls",
   "fromTheBelowLanguagesPleaseChooseYourNativeLanguageLaterYouCanChangeLanguageFromSettings": "From the below languages, please choose your native language. Later you can change language from settings.",
   "fullTime": "Full time",
   "getReadyMatchStartsSoon": "�� Get Ready! Match starts soon",
   "getStarted": "Get started",
-  "goProVersion": "GO PRO VERSION",
-  "goToSetting": "Go to setting",
   "goallessAtTheBreakSeeMatchStats": "Goalless at the break. See match stats.",
   "goalsInTheFirstHalf": "Goals in the first half.",
+  "goProVersion": "GO PRO VERSION",
+  "goToSetting": "Go to setting",
   "h2h": "H2H",
   "halftimeScore": "Halftime score",
   "height": "Height:",
@@ -135,7 +140,6 @@
     }
   },
   "inDepthAiAnalysis": "In-depth AI analysis",
-  "inProgress": "In progress",
   "indeterminate": "Partially checked",
   "infoAwayManager": "Away Manager",
   "infoChairman": "Chủ tịch hiện tại",
@@ -145,20 +149,21 @@
   "infoHomeManager": "Home Manager",
   "infoLeague": "League",
   "infoOwner": "Chủ sở hữu",
+  "infor": "Infor",
   "infoReferee": "Referee",
   "infoRound": "Round",
   "infoTime": "Time",
   "infoVenue": "Venue",
   "infoWeightDivisions": "Hạng cân",
   "infoYearFoundation": "Thành lập",
-  "infor": "Infor",
+  "inProgress": "In progress",
   "internationalTournaments": "International Tournaments",
   "introTitle1": "Live scores, video highlights, and breaking news.",
   "introTitle2": "Get live alerts for goals, cards, and kick-offs",
   "kickOff": "�� Kick-off!",
   "language": "Language",
-  "languageScreenNotReachable": "Language screen not reachable from here",
   "languages": "Languages",
+  "languageScreenNotReachable": "Language screen not reachable from here",
   "last5Games": "Last 5 games",
   "league": "League",
   "leagues": "Leagues",
@@ -168,11 +173,12 @@
   "live": "Live",
   "liveMatches": "LIVE MATCHES",
   "liveS": "Lives",
-  "liveScore": "LIVE SCORE",
   "lives": "lives",
+  "liveScore": "LIVE SCORE",
   "loading": "Loading...",
   "loadingRewardAd": "Loading reward ad",
   "loadingRewardAdMessage": "Please wait while we prepare your reward.",
+  "@@locale": "en",
   "looksLikeYouHavenTAddedAnythingYet": "Looks like you haven’t added anything yet.",
   "makeSureToTurnOnTheInternetToUseFeatures": "Make sure to turn on the internet to use features",
   "matchAlarmBeforeMatch": "Match Alarm (Before Match)",
@@ -185,14 +191,14 @@
   "matchStart": "Match start",
   "matchTimeline": "Match timeline",
   "matchUpdate": "Match update",
-  "nationalLeagues": "National Leagues",
   "nationality": "Nationality:",
+  "nationalLeagues": "National Leagues",
   "nativeBody": "Body",
   "nativeHeadline": "Headline",
   "nativeMediaView": "Media View",
+  "navigationMenu": "Navigation menu",
   "navRailCollapsedA11yLabel": "Collapsed",
   "navRailExpandedA11yLabel": "Expanded",
-  "navigationMenu": "Navigation menu",
   "next": "Next",
   "no": "No",
   "noComparisonDataAvailableForThisMatchMakeYourPredictionBeforeTheMatchEndsToSeeResultsNextTime": "No comparison data available for this match. Make your prediction before the match ends to see results next time.",
@@ -207,8 +213,6 @@
   "noRecentMatches": "No recent matches",
   "noSubstitutionsYet": "No substitutions yet",
   "noText": "No",
-  "noUpcomingMatches": "No upcoming matches",
-  "notSelected": "Not selected",
   "notificationChannelDesc": "Notifications for upcoming football matches",
   "notificationChannelName": "Match Notifications",
   "notificationFailedMaybeTooManyPendingNotification": "Notification FAILED (maybe too many pending notification)",
@@ -251,6 +255,8 @@
   "notificationsPermissionConfirm": "Allow",
   "notificationsPermissionDecline": "Don't allow",
   "notificationsPermissionTitle": "Allow app to send you notifications?",
+  "notSelected": "Not selected",
+  "noUpcomingMatches": "No upcoming matches",
   "ob1Des": "Get real-time updates from\nall major leagues\nand tournaments around the\nworld",
   "ob1Title": "Live Soccer",
   "ob3Title": "Never Miss a Moment",
@@ -289,8 +295,8 @@
   "premiumFeatureNoAds": "No banners, no interstitials",
   "premiumFeatureSupport": "Support future updates",
   "premiumGo": "BUY NOW",
-  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumNoteOneTime": "One-time payment. No subscription.",
+  "premiumNotReady": "Store is not ready yet. Please try again.",
   "premiumSubtitle": "Enjoy live scores without interruptions",
   "premiumThanks": "Thank you! Ads are now removed.",
   "premiumTitle": "Remove all ads",
@@ -349,6 +355,9 @@
   "redCards": "Red Cards",
   "removeAllAds": "Remove All Ads",
   "restorePurchase": "Restore Purchase",
+  "restorePurchases": "Restore Purchases",
+  "restorePurchasesEmpty": "No previous purchase found for this account.",
+  "restorePurchasesSuccess": "Your purchase has been restored.",
   "result": "Result",
   "retry": "Retry",
   "rewardAdNotAvailable": "Reward ad not available",
@@ -369,30 +378,6 @@
       }
     }
   },
-  "sCorrectPredictions": "{arg1} correct predictions",
-  "@sCorrectPredictions": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sGoal": "{arg1} goal",
-  "@sGoal": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
-  "sSaleOff": "{arg1}\nOff",
-  "@sSaleOff": {
-    "placeholders": {
-      "arg1": {
-        "type": "String"
-      }
-    }
-  },
   "scoreS1S2": "Score ({arg1}1 - {arg2}2)",
   "@scoreS1S2": {
     "placeholders": {
@@ -404,12 +389,20 @@
       }
     }
   },
+  "sCorrectPredictions": "{arg1} correct predictions",
+  "@sCorrectPredictions": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
+  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "searchHintPick": "Search for leagues or teams...",
   "searchHistory": "Search history",
   "searchLeague": "Search league",
   "searchTeam": "Search team",
   "searchTeamOrLeague": "Search team or league",
-  "searchbarScrollingViewBehavior": "com.google.android.material.search.SearchBar$ScrollingViewBehavior",
   "secondHalfIsUnderway": "Second half is underway. {arg1} {arg2} - {arg3} {arg4}.",
   "@secondHalfIsUnderway": {
     "placeholders": {
@@ -431,9 +424,9 @@
   "sectionFeatured": "Tiêu biểu",
   "sectionInfo": "Thông tin",
   "seeAll": "See all",
+  "selected": "Selected",
   "selectLeaguesSubtitle": "Select the leagues you want to follow closely.",
   "selectTeamsSubtitle": "Select your favorite teams to get instant alerts.",
-  "selected": "Selected",
   "sentOff": "�� {arg1} sent off ({arg2}')",
   "@sentOff": {
     "placeholders": {
@@ -446,6 +439,14 @@
     }
   },
   "settings": "Settings",
+  "sGoal": "{arg1} goal",
+  "@sGoal": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "share": "Share",
   "shareAppText": "Check out this amazing football app: https://play.google.com/store/apps/details?id={arg1}",
   "@shareAppText": {
@@ -489,6 +490,14 @@
   "sportVolleyball": "Volleyball",
   "sportWaterpolo": "Water Polo",
   "squad": "Squad",
+  "sSaleOff": "{arg1}\nOff",
+  "@sSaleOff": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "startOfSecondHalf": "Start of second half",
   "stateEmpty": "Empty",
   "stateOff": "Off",
@@ -516,14 +525,14 @@
   "tabEvents": "Các sự kiện",
   "tabH2h": "H2H",
   "tabInfo": "INFO",
-  "tabLineups": "LINEUPS",
-  "tabOdds": "ODDS",
-  "tabStandings": "STANDINGS",
-  "tabStatistics": "STATISTICS",
   "table": "Table",
   "tableMatchesPlayed": "P",
   "tablePoints": "Pts",
   "tableTeamHeader": "# Team",
+  "tabLineups": "LINEUPS",
+  "tabOdds": "ODDS",
+  "tabStandings": "STANDINGS",
+  "tabStatistics": "STATISTICS",
   "team": "Team",
   "teams": "Teams",
   "templatePercent": "{arg1} percent.",
@@ -621,6 +630,14 @@
   "upgradeForUnlimitedAccessNoAds": "UPGRADE FOR UNLIMITED ACCESS & NO ADS",
   "viewAll": "View all",
   "viewDetailsMatch": "View details match.",
+  "votesCountFormat": "{arg1} votes",
+  "@votesCountFormat": {
+    "placeholders": {
+      "arg1": {
+        "type": "String"
+      }
+    }
+  },
   "vs": "VS",
   "vsHasStartedFollowTheMatchLive": "{arg1} vs {arg2} has started. Follow the match live!",
   "@vsHasStartedFollowTheMatchLive": {
@@ -636,9 +653,9 @@
   "watchAShortAdToSubmitYourDrawPrediction": "Watch a short ad to submit your draw prediction.",
   "watchNow": "Watch Now",
   "watermarkLabelPrefix": "AdMob -",
-  "weReDelightedThatYouEnjoyUsingOurApp": "We’re delighted that you enjoy using our app",
   "weekly": "Weekly",
   "weight": "Weight:",
+  "weReDelightedThatYouEnjoyUsingOurApp": "We’re delighted that you enjoy using our app",
   "whatAHalf": "�� What a half! {arg1} {arg2} - {arg3} {arg4}",
   "@whatAHalf": {
     "placeholders": {
@@ -661,12 +678,9 @@
   "years": "years",
   "yellowCards": "Yellow Cards",
   "yes": "Yes",
-  "yesText": "Yes",
   "yesterday": "Yesterday",
+  "yesText": "Yes",
   "youRePremiumUser": "You're Premium User",
-  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "You won’t receive any alerts or updates until you turn them back on.",
   "yourFilesIsEmpty": "Your files is empty",
-  "restorePurchases": "Restore Purchases",
-  "restorePurchasesSuccess": "Your purchase has been restored.",
-  "restorePurchasesEmpty": "No previous purchase found for this account."
+  "youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn": "You won’t receive any alerts or updates until you turn them back on."
 }

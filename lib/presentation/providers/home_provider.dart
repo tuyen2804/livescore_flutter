@@ -2,7 +2,6 @@ import 'dart:async';
 
 import '../../core/error/failures.dart';
 import '../../core/services/notification_service.dart';
-import '../../core/utils/match_status.dart';
 import '../../core/utils/date_time_utils.dart';
 import '../../core/utils/sport_presentation.dart';
 import '../../data/datasources/local/app_prefs.dart';
@@ -20,19 +19,38 @@ import 'base_provider.dart';
 /// Bóng đá đi qua [FootballRepository] (API riêng), mọi môn khác đi qua
 /// [SofascoreRepositoryImpl] — đúng như bản gốc.
 class HomeProvider extends BaseProvider {
-  HomeProvider(this._football, this._sofascore, this._prefs, this._db) {
+  HomeProvider(this._sofascore, this._prefs, this._db) {
     _selectedSport = _prefs.selectedSport;
     unawaited(loadSportCounts());
     unawaited(fetchDataForSelectedDate());
   }
 
-  final FootballRepository _football;
   final SofascoreRepositoryImpl _sofascore;
   final AppPrefs _prefs;
   final LeagueDbHelper _db;
 
   /// Cache feed theo (môn, ngày) — port `HomeFeedMemoryCache`.
   final Map<String, List<EventListItem>> _feedCache = {};
+
+  /// Thời điểm nạp của từng khoá cache, để biết còn dùng lại được không.
+  final Map<String, DateTime> _feedFetchedAt = {};
+
+  /// Đánh số mỗi lần nạp; phản hồi về sau khi người dùng đã đổi ngày thì bỏ.
+  int _loadToken = 0;
+
+  Timer? _dateDebounce;
+
+  /// Giữ tối đa 12 ngày trong RAM.
+  ///
+  /// Dải ngày dài 61 ngày mà mỗi ngày là ~800 trận, giữ hết là phình bộ nhớ vô
+  /// ích. Quẹt qua quẹt lại vài ngày quanh hôm nay vẫn trúng cache.
+  static const int _maxCachedDays = 12;
+
+  /// Ngày **đã qua** thì kết quả không đổi nữa, cache dùng được lâu.
+  static const Duration _pastDayTtl = Duration(hours: 12);
+
+  /// Hôm nay và ngày mai còn thay đổi (tỷ số, giờ đá) nên làm mới nhanh.
+  static const Duration _liveDayTtl = Duration(seconds: 60);
 
   DateTime _selectedDate = DateTime.now();
   String _selectedSport = AppPrefs.defaultSport;
@@ -62,12 +80,24 @@ class HomeProvider extends BaseProvider {
   bool get isFootball => _selectedSport.toLowerCase() == 'football';
   bool get isEmpty => _leagueSections.isEmpty && _feedItems.isEmpty;
 
-  /// Dải 7 ngày quanh ngày đang chọn cho thanh chọn ngày.
+  /// Dải ngày cho thanh chọn ngày: **một tháng trước → một tháng sau**.
+  ///
+  /// Bản gốc chỉ có 7 ngày (−3…+3). Lịch bóng đá thì cần xa hơn nhiều: vòng
+  /// bảng cúp châu Âu cách nhau vài tuần, và người dùng hay dò ngược lại kết
+  /// quả vòng trước.
+  ///
+  /// `DateStrip` tự cuộn tới ngày đang chọn nên danh sách dài không gây phiền.
   List<DateTime> get dateStrip {
     final today = DateTime.now();
     final base = DateTime(today.year, today.month, today.day);
-    return [for (var i = -3; i <= 3; i++) base.add(Duration(days: i))];
+    return [
+      for (var i = -_dateStripDays; i <= _dateStripDays; i++)
+        base.add(Duration(days: i)),
+    ];
   }
+
+  /// Số ngày mỗi phía quanh hôm nay.
+  static const int _dateStripDays = 30;
 
   Future<void> loadSportCounts() async {
     final result = await _sofascore.getSportEventCounts();
@@ -78,16 +108,30 @@ class HomeProvider extends BaseProvider {
   }
 
   void changeDateByAmount(int amount) {
-    _selectedDate = _selectedDate.add(Duration(days: amount));
-    notifyListeners();
-    unawaited(fetchDataForSelectedDate());
+    setDate(_selectedDate.add(Duration(days: amount)));
   }
 
   void setDate(DateTime date) {
     if (DateTimeUtils.isSameDay(date, _selectedDate)) return;
     _selectedDate = date;
     notifyListeners();
-    unawaited(fetchDataForSelectedDate());
+    _scheduleFetch();
+  }
+
+  /// Hoãn 250 ms rồi mới gọi mạng.
+  ///
+  /// Dải ngày dài 61 ô nên người dùng hay bấm liên tiếp vài ngày. Gọi ngay thì
+  /// mỗi lần bấm là ~27 request, bấm 5 ô là hơn 130 request mà 4 ngày đầu chỉ
+  /// lướt qua. Hoãn một nhịp là chỉ ngày dừng lại mới thật sự nạp.
+  ///
+  /// Cache vẫn hiện **ngay lập tức** ở `_fetchSofascore`, nên màn hình không
+  /// đứng chờ — độ trễ này chỉ áp cho phần gọi mạng.
+  void _scheduleFetch() {
+    _dateDebounce?.cancel();
+    _dateDebounce = Timer(
+      const Duration(milliseconds: 250),
+      () => unawaited(fetchDataForSelectedDate()),
+    );
   }
 
   Future<void> setSport(String sportSlug) async {
@@ -108,65 +152,16 @@ class HomeProvider extends BaseProvider {
 
     _notifiedIds = await _db.getNotifiedFixtureIds();
 
-    if (isFootball) {
-      await _fetchFootball();
-    } else {
-      await _fetchSofascore();
-    }
+    // Mọi môn, kể cả bóng đá, đều đi qua Sofascore. Bóng đá có nhánh riêng
+    // trong `HomeFeedLoader` dùng feed ngày phân trang nên vẫn lấy đủ trận.
+    await _fetchSofascore();
 
     setState(() => _isLoading = false);
   }
 
-  Future<void> _fetchFootball() async {
-    final result = await _football.getLeagueLive(_selectedDate);
-    result.fold(
-      (failure) => setState(() {
-        _failure = failure;
-        _leagueSections = const [];
-        _liveMatches = const [];
-        _allLiveMatches = const [];
-        _feedItems = const [];
-      }),
-      (sections) {
-        final live = _extractFootballLive(sections);
-        setState(() {
-          _leagueSections = sections;
-          _allLiveMatches = live;
-          _liveMatches = live.take(5).toList(growable: false);
-          _feedItems = const [];
-        });
-      },
-    );
-  }
-
-  /// Port đoạn dựng `allLiveList` trong `processMatches`:
-  /// nhãn thời gian là HT/AET/PEN, còn lại là `playingTime` kèm dấu phẩy trên.
-  List<LiveMatch> _extractFootballLive(List<LeagueSection> sections) {
-    final result = <LiveMatch>[];
-    for (final section in sections) {
-      for (final f in section.fixtures) {
-        if (!f.isLive) continue;
-        result.add(LiveMatch(
-          id: f.id,
-          teamHome: f.teamHome,
-          teamAway: f.teamAway,
-          scoreHome: f.scoreHome ?? 0,
-          scoreAway: f.scoreAway ?? 0,
-          matchTime: MatchStatus.liveLabel(f.state, f.playingTime),
-          leagueName: section.leagueName,
-          homeLogoUrl: f.homeLogoUrl,
-          awayLogoUrl: f.awayLogoUrl,
-          leagueLogoUrl: section.leagueLogoUrl,
-          venue: null,
-          region: f.categoryName,
-        ));
-      }
-    }
-    return result;
-  }
-
   Future<void> _fetchSofascore() async {
     final key = '$_selectedSport@${DateTimeUtils.apiDate(_selectedDate)}';
+    final token = ++_loadToken;
 
     // Hiện cache trước cho khỏi trắng màn, đúng như HomeFeedMemoryCache.
     final cached = _feedCache[key];
@@ -178,12 +173,23 @@ class HomeProvider extends BaseProvider {
         _liveMatches = _allLiveMatches.take(5).toList(growable: false);
         _isLoading = false;
       });
+
+      // Cache còn hạn thì **không gọi mạng lại**.
+      //
+      // Một lần nạp ngày là 1 + 4 trang + 21 giải nổi bật + 1 live ≈ 27 request.
+      // Không có bước này thì quẹt qua 5 ngày rồi quẹt về là hơn 250 request,
+      // trong khi ngày đã qua thì dữ liệu không đổi nữa.
+      if (_isCacheFresh(key)) return;
     }
 
     final result = await _sofascore.loadFeed(
       sportSlug: _selectedSport,
       date: _selectedDate,
     );
+
+    // Người dùng đã đổi sang ngày khác trong lúc chờ — bỏ kết quả này, không
+    // thì màn hình nhảy về ngày cũ.
+    if (token != _loadToken) return;
 
     result.fold(
       (failure) {
@@ -198,6 +204,8 @@ class HomeProvider extends BaseProvider {
       },
       (items) {
         _feedCache[key] = items;
+        _feedFetchedAt[key] = DateTime.now();
+        _trimCache();
         final live = SofascoreMapper.toLiveMatches(items);
         setState(() {
           _feedItems = items;
@@ -208,6 +216,34 @@ class HomeProvider extends BaseProvider {
         });
       },
     );
+  }
+
+  /// Cache của một ngày còn dùng được không.
+  bool _isCacheFresh(String key) {
+    final at = _feedFetchedAt[key];
+    if (at == null) return false;
+    final today = DateTime.now();
+    final isPast = _selectedDate.isBefore(
+      DateTime(today.year, today.month, today.day),
+    );
+    return DateTime.now().difference(at) < (isPast ? _pastDayTtl : _liveDayTtl);
+  }
+
+  /// Bỏ bớt ngày cũ nhất khi cache vượt [_maxCachedDays].
+  void _trimCache() {
+    if (_feedCache.length <= _maxCachedDays) return;
+    final byAge = _feedFetchedAt.entries.toList()
+      ..sort((a, b) => a.value.compareTo(b.value));
+    for (final entry in byAge.take(_feedCache.length - _maxCachedDays)) {
+      _feedCache.remove(entry.key);
+      _feedFetchedAt.remove(entry.key);
+    }
+  }
+
+  @override
+  void dispose() {
+    _dateDebounce?.cancel();
+    super.dispose();
   }
 
   bool isNotificationEnabled(String fixtureId) =>

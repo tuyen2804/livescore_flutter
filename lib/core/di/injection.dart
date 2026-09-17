@@ -7,8 +7,10 @@ import '../../data/datasources/local/app_prefs.dart';
 import '../../data/datasources/local/league_db_helper.dart';
 import '../../data/datasources/remote/football_remote_data_source.dart';
 import '../../data/datasources/remote/home_feed_loader.dart';
+import '../../data/datasources/remote/sofascore_id_resolver.dart';
 import '../../data/datasources/remote/sofascore_remote_data_source.dart';
 import '../../data/repositories/football_repository_impl.dart';
+import '../../data/repositories/football_sofascore_repository.dart';
 import '../../data/repositories/sofascore_repository_impl.dart';
 import '../../domain/repositories/football_repository.dart';
 import '../../domain/repositories/sofascore_repository.dart';
@@ -80,6 +82,10 @@ Future<void> initDependencies() async {
   sl.registerLazySingleton<HomeFeedLoader>(
     () => HomeFeedLoader(sl(), sl()),
   );
+  // Dịch tên đội/giải hệ Sportmonks sang id Sofascore, nhớ kết quả lại.
+  sl.registerLazySingleton<SofascoreIdResolver>(
+    () => SofascoreIdResolver(sl()),
+  );
 
   // ---- Repository ----
   sl.registerLazySingleton<FootballRepository>(
@@ -90,5 +96,9 @@ Future<void> initDependencies() async {
   );
   sl.registerLazySingleton<SofascoreRepository>(
     () => sl<SofascoreRepositoryImpl>(),
+  );
+  // Bóng đá lấy từ Sofascore: dự đoán, chi tiết giải / đội / cầu thủ.
+  sl.registerLazySingleton<FootballSofascoreRepository>(
+    () => FootballSofascoreRepository(sl(), sl()),
   );
 }

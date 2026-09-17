@@ -10,6 +10,18 @@ class SRu extends S {
   SRu([String locale = 'ru']) : super(locale);
 
   @override
+  String get goalsText => 'голов';
+
+  @override
+  String get cornersText => 'угловых';
+
+  @override
+  String get cardsText => 'карточек';
+
+  @override
+  String get firstHalfText => 'Первый тайм';
+
+  @override
   String get age => 'Возраст:';
 
   @override
@@ -42,6 +54,9 @@ class SRu extends S {
 
   @override
   String get blockedShots => 'Блок-шоты';
+
+  @override
+  String get bookmakerOdds => 'Коэффициенты букмекеров';
 
   @override
   String get bothTeamsToScore => 'Обе команды забивали';
@@ -93,8 +108,11 @@ class SRu extends S {
   String get club => 'Клуб:';
 
   @override
+  String get communityPrediction => 'Прогноз сообщества';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% Уверенность';
+    return '$arg1% Уверенность';
   }
 
   @override
@@ -164,12 +182,12 @@ class SRu extends S {
   String get fixtures => 'Матчи';
 
   @override
-  String get followFavoriteTeams => 'Следите за любимыми командами';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'Следите за любимыми командами';
 
   @override
   String get fouls => 'Фолы';
@@ -189,17 +207,17 @@ class SRu extends S {
   String get getStarted => 'Начинайте';
 
   @override
-  String get goProVersion => 'ВЕРСИЯ GO PRO';
-
-  @override
-  String get goToSetting => 'Перейти к сеттингу';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'На перерыв — 0 голов. Смотрите статистику матчей.';
 
   @override
   String get goalsInTheFirstHalf => 'Голы в первом тайме.';
+
+  @override
+  String get goProVersion => 'ВЕРСИЯ GO PRO';
+
+  @override
+  String get goToSetting => 'Перейти к сеттингу';
 
   @override
   String get h2h => 'H2H';
@@ -244,9 +262,6 @@ class SRu extends S {
   String get inDepthAiAnalysis => 'Глубокий анализ ИИ';
 
   @override
-  String get inProgress => 'В процессе';
-
-  @override
   String get indeterminate => 'Частично проверено';
 
   @override
@@ -274,6 +289,9 @@ class SRu extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'Infor';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -292,7 +310,7 @@ class SRu extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'Infor';
+  String get inProgress => 'В процессе';
 
   @override
   String get internationalTournaments => 'Международные турниры';
@@ -311,10 +329,10 @@ class SRu extends S {
   String get language => 'Язык';
 
   @override
-  String get languageScreenNotReachable => 'Языковой экран недоступен отсюда';
+  String get languages => 'Языки';
 
   @override
-  String get languages => 'Языки';
+  String get languageScreenNotReachable => 'Языковой экран недоступен отсюда';
 
   @override
   String get last5Games => 'Последние 5 игр';
@@ -344,10 +362,10 @@ class SRu extends S {
   String get liveS => 'Биографии';
 
   @override
-  String get liveScore => 'ЖИВОЙ САУНДТРЕК';
+  String get lives => 'Биография';
 
   @override
-  String get lives => 'Биография';
+  String get liveScore => 'ЖИВОЙ САУНДТРЕК';
 
   @override
   String get loading => 'Загрузка...';
@@ -398,10 +416,10 @@ class SRu extends S {
   String get matchUpdate => 'Обновление матча';
 
   @override
-  String get nationalLeagues => 'Национальные лиги';
+  String get nationality => 'Национальность:';
 
   @override
-  String get nationality => 'Национальность:';
+  String get nationalLeagues => 'Национальные лиги';
 
   @override
   String get nativeBody => 'Кузов';
@@ -413,13 +431,13 @@ class SRu extends S {
   String get nativeMediaView => 'Медиа-обзор';
 
   @override
+  String get navigationMenu => 'Навигационное меню';
+
+  @override
   String get navRailCollapsedA11yLabel => 'Обрушился';
 
   @override
   String get navRailExpandedA11yLabel => 'Расширение';
-
-  @override
-  String get navigationMenu => 'Навигационное меню';
 
   @override
   String get next => 'Далее';
@@ -464,12 +482,6 @@ class SRu extends S {
 
   @override
   String get noText => 'Нет';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'Не выбран';
 
   @override
   String get notificationChannelDesc =>
@@ -523,6 +535,12 @@ class SRu extends S {
   @override
   String get notificationsPermissionTitle =>
       'Разрешить приложению отправлять уведомления?';
+
+  @override
+  String get notSelected => 'Не выбран';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -624,10 +642,10 @@ class SRu extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -711,6 +729,16 @@ class SRu extends S {
   String get restorePurchase => 'Восстановление покупки';
 
   @override
+  String get restorePurchases => 'Восстановить покупки';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'Для этого аккаунта прошлых покупок не найдено.';
+
+  @override
+  String get restorePurchasesSuccess => 'Ваша покупка восстановлена.';
+
+  @override
   String get result => 'Результат';
 
   @override
@@ -734,24 +762,18 @@ class SRu extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'Оценка (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 правильных прогнозов';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 цель';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nВыключение';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'Оценка (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'Ищите лиги или команды...';
@@ -767,10 +789,6 @@ class SRu extends S {
 
   @override
   String get searchTeamOrLeague => 'Поисковая команда или лига';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -790,6 +808,9 @@ class SRu extends S {
   String get seeAll => 'Смотреть все';
 
   @override
+  String get selected => 'Избранные';
+
+  @override
   String get selectLeaguesSubtitle =>
       'Выбирайте лиги, за которыми хотите следить внимательно.';
 
@@ -798,15 +819,17 @@ class SRu extends S {
       'Выберите любимые команды, чтобы получать мгновенные оповещения.';
 
   @override
-  String get selected => 'Избранные';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '%1\$ удалено ($arg2\')';
   }
 
   @override
   String get settings => 'Места действия';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 цель';
+  }
 
   @override
   String get share => 'Поделиться';
@@ -919,6 +942,11 @@ class SRu extends S {
   String get squad => 'Состав';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nВыключение';
+  }
+
+  @override
   String get startOfSecondHalf => 'Начало второй половины';
 
   @override
@@ -1001,18 +1029,6 @@ class SRu extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'Таблица';
 
   @override
@@ -1023,6 +1039,18 @@ class SRu extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'Команда';
@@ -1237,6 +1265,11 @@ class SRu extends S {
   String get viewDetailsMatch => 'Посмотреть совпадение деталей.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 голосов';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1255,14 +1288,14 @@ class SRu extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'Мы рады, что вам нравится пользоваться нашим приложением';
-
-  @override
   String get weekly => 'Еженедельник';
 
   @override
   String get weight => 'Вес:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'Мы рады, что вам нравится пользоваться нашим приложением';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1285,28 +1318,18 @@ class SRu extends S {
   String get yes => 'Да';
 
   @override
-  String get yesText => 'Да';
+  String get yesterday => 'Вчера';
 
   @override
-  String get yesterday => 'Вчера';
+  String get yesText => 'Да';
 
   @override
   String get youRePremiumUser => 'Вы — премиум-пользователь';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'Вы не получите никаких оповещений или обновлений, пока не включите их снова.';
-
-  @override
   String get yourFilesIsEmpty => 'Ваши файлы пусты';
 
   @override
-  String get restorePurchases => 'Восстановить покупки';
-
-  @override
-  String get restorePurchasesSuccess => 'Ваша покупка восстановлена.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'Для этого аккаунта прошлых покупок не найдено.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'Вы не получите никаких оповещений или обновлений, пока не включите их снова.';
 }

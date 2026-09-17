@@ -39,6 +39,34 @@ class SofascoreRemoteDataSource {
   Future<List<SofascoreEvent>> getSportEvents(String sportSlug, String date) async =>
       SofascoreResponses.events(await _json('sport/$sportSlug/$date/events'));
 
+  /// Số trang của feed một ngày.
+  ///
+  /// Sofascore cắt một ngày thành vài trang theo khung giờ. Bóng đá ngày
+  /// 17/09/2026 có 4 trang × ~200 trận = 784 trận. Đây là cách **duy nhất** lấy
+  /// trọn một ngày: `sport/{slug}/scheduled-events/{date}` trả 404 với bóng đá.
+  Future<int> getSportDayPageCount(String sportSlug, String date) async {
+    final body = await _json('sport/$sportSlug/$date/events/index');
+    final total = body['totalPages'];
+    if (total is int && total > 0) return total;
+    final pages = body['pages'];
+    return pages is List && pages.isNotEmpty ? pages.length : 1;
+  }
+
+  Future<List<SofascoreEvent>> getSportDayEventsPage(
+    String sportSlug,
+    String date,
+    int page,
+  ) async =>
+      SofascoreResponses.events(
+        await _json('sport/$sportSlug/$date/events/$page'),
+      );
+
+  /// Toàn bộ trận đang diễn ra của một môn, một lần gọi.
+  ///
+  /// Đo 16/09/2026: bóng đá trả 351 trận trong 1,5 MB.
+  Future<List<SofascoreEvent>> getSportLiveEvents(String sportSlug) async =>
+      SofascoreResponses.events(await _json('sport/$sportSlug/events/live'));
+
   Future<List<CategoryItem>> getCategoriesForDate(
     String sportSlug,
     String date, [
@@ -301,6 +329,11 @@ class SofascoreRemoteDataSource {
   Future<Map<String, dynamic>> getEventVotes(int eventId) =>
       _json('event/$eventId/votes');
 
+  /// Đối đầu tổng hợp (`teamDuel`), khác `event/{customId}/h2h/events` vốn trả
+  /// danh sách trận.
+  Future<Map<String, dynamic>> getEventH2H(int eventId) =>
+      _json('event/$eventId/h2h');
+
   Future<Map<String, dynamic>> getEventPregameForm(int eventId) =>
       _json('event/$eventId/pregame-form');
 
@@ -327,6 +360,55 @@ class SofascoreRemoteDataSource {
 
   Future<Map<String, dynamic>> getEventTennisPower(int eventId) =>
       _json('event/$eventId/tennis-power');
+
+  /// Phân tích AI **sau trận**, đa ngôn ngữ — trận chưa đá trả 404.
+  ///
+  /// Bản trước trận (`event/{id}/ai-insights/{lang}`) đòi JWT tài khoản
+  /// Sofascore nên không dùng được; xem `docs/API_dang_su_dung.md`.
+  Future<Map<String, dynamic>> getEventAiInsightsPostmatchLang(
+    int eventId,
+    String language,
+  ) =>
+      _json('event/$eventId/ai-insights-postmatch/$language');
+
+  Future<Map<String, dynamic>> getPlayerDetails(int playerId) =>
+      _json('player/$playerId');
+
+  /// Danh sách giải/mùa mà cầu thủ có số liệu.
+  /// Giải bóng đá Sofascore gợi ý cho **một quốc gia**.
+  ///
+  /// Đây là thứ mang tính khu vực: bản VN có V-League 1 và ASEAN Championship
+  /// nằm cùng danh sách với Ngoại hạng Anh và Champions League, dù số người
+  /// theo dõi chênh nhau vài trăm lần.
+  Future<List<UniqueTournament>> getFollowSuggestedTournaments(
+    String countryCode,
+    String sportSlug,
+  ) async {
+    final body = await _json(
+      'config/follow-suggestions/unique-tournaments/$countryCode/sport/$sportSlug',
+    );
+    final list = body['uniqueTournaments'];
+    if (list is! List) return const [];
+    return list
+        .whereType<Map>()
+        .map((e) => UniqueTournament.fromJson(Map<String, dynamic>.from(e)))
+        .toList(growable: false);
+  }
+
+  Future<Map<String, dynamic>> getPlayerSeasons(int playerId) =>
+      _json('player/$playerId/statistics/seasons');
+
+  Future<Map<String, dynamic>> getPlayerSeasonStatistics(
+    int playerId,
+    int tournamentId,
+    int seasonId,
+  ) =>
+      _json(
+        'player/$playerId/unique-tournament/$tournamentId/season/$seasonId/statistics/overall',
+      );
+
+  Future<Map<String, dynamic>> getPlayerLastEvents(int playerId, [int page = 0]) =>
+      _json('player/$playerId/events/last/$page');
 
   Future<Map<String, dynamic>> getEventAiInsightsPostmatch(int eventId) =>
       _json('event/$eventId/ai-insights-postmatch/en');

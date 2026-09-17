@@ -10,6 +10,18 @@ class SJa extends S {
   SJa([String locale = 'ja']) : super(locale);
 
   @override
+  String get goalsText => 'ゴール';
+
+  @override
+  String get cornersText => 'CK';
+
+  @override
+  String get cardsText => 'カード';
+
+  @override
+  String get firstHalfText => '前半';
+
+  @override
   String get age => '年齢:';
 
   @override
@@ -41,6 +53,9 @@ class SJa extends S {
 
   @override
   String get blockedShots => 'ブロックショット';
+
+  @override
+  String get bookmakerOdds => 'ブックメーカーオッズ';
 
   @override
   String get bothTeamsToScore => '両チーム 得点';
@@ -92,8 +107,11 @@ class SJa extends S {
   String get club => 'クラブ:';
 
   @override
+  String get communityPrediction => 'コミュニティ予想';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% 信頼度';
+    return '$arg1% 信頼度';
   }
 
   @override
@@ -163,12 +181,12 @@ class SJa extends S {
   String get fixtures => '備品';
 
   @override
-  String get followFavoriteTeams => 'お気に入りのチームをフォロー';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'お気に入りのチームをフォロー';
 
   @override
   String get fouls => 'ファウル';
@@ -188,16 +206,16 @@ class SJa extends S {
   String get getStarted => '始めましょう';
 
   @override
-  String get goProVersion => 'GO PROバージョン';
-
-  @override
-  String get goToSetting => '設定へ';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats => 'ハーフタイムは無得点だった。試合統計をご覧ください。';
 
   @override
   String get goalsInTheFirstHalf => '前半のゴール。';
+
+  @override
+  String get goProVersion => 'GO PROバージョン';
+
+  @override
+  String get goToSetting => '設定へ';
 
   @override
   String get h2h => 'H2H';
@@ -242,9 +260,6 @@ class SJa extends S {
   String get inDepthAiAnalysis => '詳細なAI分析';
 
   @override
-  String get inProgress => '進行中';
-
-  @override
   String get indeterminate => '部分的にチェック済み';
 
   @override
@@ -272,6 +287,9 @@ class SJa extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'インフォー';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -290,7 +308,7 @@ class SJa extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'インフォー';
+  String get inProgress => '進行中';
 
   @override
   String get internationalTournaments => '国際大会';
@@ -308,10 +326,10 @@ class SJa extends S {
   String get language => '言語';
 
   @override
-  String get languageScreenNotReachable => 'ここから言語画面にアクセスできません';
+  String get languages => '言語';
 
   @override
-  String get languages => '言語';
+  String get languageScreenNotReachable => 'ここから言語画面にアクセスできません';
 
   @override
   String get last5Games => '直近5試合';
@@ -341,10 +359,10 @@ class SJa extends S {
   String get liveS => '生涯';
 
   @override
-  String get liveScore => 'ライブスコア';
+  String get lives => '生涯';
 
   @override
-  String get lives => '生涯';
+  String get liveScore => 'ライブスコア';
 
   @override
   String get loading => '読み込み中...';
@@ -394,10 +412,10 @@ class SJa extends S {
   String get matchUpdate => '試合の最新情報';
 
   @override
-  String get nationalLeagues => 'ナショナルリーグ';
+  String get nationality => '国籍:';
 
   @override
-  String get nationality => '国籍:';
+  String get nationalLeagues => 'ナショナルリーグ';
 
   @override
   String get nativeBody => '本文';
@@ -409,13 +427,13 @@ class SJa extends S {
   String get nativeMediaView => 'メディア';
 
   @override
+  String get navigationMenu => 'ナビゲーションメニュー';
+
+  @override
   String get navRailCollapsedA11yLabel => '崩壊';
 
   @override
   String get navRailExpandedA11yLabel => '拡張版';
-
-  @override
-  String get navigationMenu => 'ナビゲーションメニュー';
 
   @override
   String get next => '次';
@@ -460,12 +478,6 @@ class SJa extends S {
 
   @override
   String get noText => 'いいえ';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => '選ばれませんでした';
 
   @override
   String get notificationChannelDesc => '今後のサッカー試合の通知';
@@ -515,6 +527,12 @@ class SJa extends S {
 
   @override
   String get notificationsPermissionTitle => 'アプリに通知を送らせる?';
+
+  @override
+  String get notSelected => '選ばれませんでした';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des => 'リアルタイムの更新を受け取る\n全メジャーリーグ\nおよび\n世界';
@@ -612,10 +630,10 @@ class SJa extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -698,6 +716,15 @@ class SJa extends S {
   String get restorePurchase => '購入の回復';
 
   @override
+  String get restorePurchases => '購入を復元';
+
+  @override
+  String get restorePurchasesEmpty => 'このアカウントで過去の購入は見つかりませんでした。';
+
+  @override
+  String get restorePurchasesSuccess => '購入が復元されました。';
+
+  @override
   String get result => '結果';
 
   @override
@@ -721,24 +748,18 @@ class SJa extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'スコア(${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1の正確予測';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '%の目標';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\n消えろ';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'スコア(${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String get searchHintPick => 'リーグやチームを検索してください...';
@@ -754,10 +775,6 @@ class SJa extends S {
 
   @override
   String get searchTeamOrLeague => 'サーチチームまたはリーグ';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehavior';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -777,13 +794,13 @@ class SJa extends S {
   String get seeAll => '全てを見る';
 
   @override
+  String get selected => '選ばれました';
+
+  @override
   String get selectLeaguesSubtitle => 'フォローしたいリーグを選びましょう。';
 
   @override
   String get selectTeamsSubtitle => 'お気に入りのチームを選択して即時通知を受け取りましょう。';
-
-  @override
-  String get selected => '選ばれました';
 
   @override
   String sentOff(String arg1, int arg2) {
@@ -792,6 +809,11 @@ class SJa extends S {
 
   @override
   String get settings => '舞台設定';
+
+  @override
+  String sGoal(String arg1) {
+    return '%の目標';
+  }
 
   @override
   String get share => 'シェア';
@@ -904,6 +926,11 @@ class SJa extends S {
   String get squad => '選手団';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\n消えろ';
+  }
+
+  @override
   String get startOfSecondHalf => '後半開始';
 
   @override
@@ -985,18 +1012,6 @@ class SJa extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => '表';
 
   @override
@@ -1007,6 +1022,18 @@ class SJa extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'チーム';
@@ -1211,6 +1238,11 @@ class SJa extends S {
   String get viewDetailsMatch => '詳細を見る。';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1票';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1229,14 +1261,14 @@ class SJa extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      '私たちのアプリを楽しんでいただけていただけていただけることを嬉しく思います';
-
-  @override
   String get weekly => '週刊';
 
   @override
   String get weight => '重量:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      '私たちのアプリを楽しんでいただけていただけていただけることを嬉しく思います';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1259,27 +1291,18 @@ class SJa extends S {
   String get yes => 'はい';
 
   @override
-  String get yesText => 'はい';
+  String get yesterday => '昨日';
 
   @override
-  String get yesterday => '昨日';
+  String get yesText => 'はい';
 
   @override
   String get youRePremiumUser => 'あなたはプレミアムユーザーです';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      '再度オンにするまでは、アラートやアップデートは一切届きません。';
-
-  @override
   String get yourFilesIsEmpty => 'あなたのファイルは空です';
 
   @override
-  String get restorePurchases => '購入を復元';
-
-  @override
-  String get restorePurchasesSuccess => '購入が復元されました。';
-
-  @override
-  String get restorePurchasesEmpty => 'このアカウントで過去の購入は見つかりませんでした。';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      '再度オンにするまでは、アラートやアップデートは一切届きません。';
 }

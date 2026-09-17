@@ -52,6 +52,7 @@ class MatchFixture extends Equatable {
     this.leagueName,
     this.isNotified = false,
     this.kickoffUtc,
+    this.kickoffEpoch = 0,
     this.state = 0,
     this.subHeader,
     this.subHeaderLogoUrl,
@@ -79,6 +80,10 @@ class MatchFixture extends Equatable {
   final String? leagueName;
   final bool isNotified;
   final String? kickoffUtc;
+
+  /// Giờ bóng lăn dạng epoch **giây**. Cần để dò trận tương ứng bên Sofascore
+  /// (màn Prediction) — `kickoffUtc` là chuỗi nên so sánh thời gian bất tiện.
+  final int kickoffEpoch;
   final int state;
   final String? subHeader;
   final String? subHeaderLogoUrl;
@@ -117,6 +122,7 @@ class MatchFixture extends Equatable {
         leagueName: leagueName ?? this.leagueName,
         isNotified: isNotified ?? this.isNotified,
         kickoffUtc: kickoffUtc,
+        kickoffEpoch: kickoffEpoch,
         state: state,
         subHeader: subHeader ?? this.subHeader,
         subHeaderLogoUrl: subHeaderLogoUrl ?? this.subHeaderLogoUrl,

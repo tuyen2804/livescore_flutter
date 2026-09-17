@@ -8,6 +8,7 @@ import 'core/l10n/gen/app_localizations.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_dimens.dart';
 import 'core/theme/app_theme.dart';
+import 'domain/repositories/sofascore_repository.dart';
 import 'presentation/providers/app_provider.dart';
 import 'presentation/providers/highlight_provider.dart';
 import 'presentation/providers/home_provider.dart';
@@ -43,11 +44,11 @@ class _LiveScoreAppState extends State<LiveScoreApp> {
         ChangeNotifierProvider(create: (_) => AppProvider(sl(), sl())),
         // Các tab của MainScreen giữ state khi chuyển qua lại, giống
         // ViewModel gắn với NavHost của bản Android.
-        ChangeNotifierProvider(create: (_) => HomeProvider(sl(), sl(), sl(), sl())),
+        ChangeNotifierProvider(create: (_) => HomeProvider(sl(), sl(), sl())),
         ChangeNotifierProvider(create: (_) => LeaguesProvider(sl(), sl(), sl())),
         ChangeNotifierProvider(create: (_) => HighlightProvider(sl())),
         ChangeNotifierProvider(create: (_) => TeamsProvider(sl(), sl(), sl())),
-        ChangeNotifierProvider(create: (_) => PredictionProvider(sl(), sl())),
+        ChangeNotifierProvider(create: (_) => PredictionProvider(sl<SofascoreRepository>())),
         ChangeNotifierProvider(create: (_) => NotificationProvider(sl(), sl())),
       ],
       child: Consumer<AppProvider>(

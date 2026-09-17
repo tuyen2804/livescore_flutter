@@ -392,6 +392,7 @@ class StandingTeamDto {
     this.goalsAgainst,
     this.overallMatches,
     this.goalDifference,
+    this.promotionText,
   });
 
   final int id;
@@ -408,6 +409,11 @@ class StandingTeamDto {
   final int? overallMatches;
   final int? goalDifference;
 
+  /// Khu vực cuối bảng, lấy từ `promotion.text` của Sofascore — ví dụ
+  /// "Champions League", "Europa League", "Relegation". Backend cũ không có
+  /// trường này nên luôn `null`, bảng chỉ mất dải màu chứ không hỏng.
+  final String? promotionText;
+
   factory StandingTeamDto.fromJson(Map<String, dynamic> j) => StandingTeamDto(
         id: _int(j['id']) ?? 0,
         position: _int(j['position']) ?? 0,
@@ -423,6 +429,17 @@ class StandingTeamDto {
         overallMatches: _int(j['overall_matches']),
         goalDifference: _int(j['goal_difference']),
       );
+
+  /// Nhóm màu cho dải bên trái: 0 không có · 1 dự cúp châu lục hạng nhất ·
+  /// 2 cúp hạng dưới · 3 xuống hạng / play-off.
+  int get promotionGroup {
+    final t = promotionText?.toLowerCase();
+    if (t == null || t.isEmpty) return 0;
+    if (t.contains('relegation') || t.contains('play-out')) return 3;
+    if (t.contains('champions')) return 1;
+    if (t.contains('promotion')) return 1;
+    return 2;
+  }
 
   static List<StandingTeamDto> listFrom(Map<String, dynamic> j) =>
       _list(j['data'], StandingTeamDto.fromJson);
@@ -810,6 +827,7 @@ class SquadPlayerDto {
     this.dateOfBirth,
     this.jerseyNumber,
     this.nationality,
+    this.playerId,
   });
 
   final String name;
@@ -820,6 +838,11 @@ class SquadPlayerDto {
   final String? dateOfBirth;
   final int? jerseyNumber;
   final String? nationality;
+
+  /// Chỉ có khi đội hình lấy từ Sofascore. `list-player` của backend cũ
+  /// **không trả id cầu thủ**, nên nguồn đó luôn để null và màn chi tiết cầu
+  /// thủ chỉ hiện được thẻ tĩnh.
+  final int? playerId;
 
   factory SquadPlayerDto.fromJson(Map<String, dynamic> j) => SquadPlayerDto(
         name: _str(j['name'])?.trim() ?? 'Unknown',

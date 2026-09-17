@@ -10,6 +10,18 @@ class SAr extends S {
   SAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get goalsText => 'أهداف';
+
+  @override
+  String get cornersText => 'ركنيات';
+
+  @override
+  String get cardsText => 'بطاقات';
+
+  @override
+  String get firstHalfText => 'الشوط الأول';
+
+  @override
   String get age => 'العمر:';
 
   @override
@@ -42,6 +54,9 @@ class SAr extends S {
 
   @override
   String get blockedShots => 'التسديدات المحجوبة';
+
+  @override
+  String get bookmakerOdds => 'احتمالات المراهنات';
 
   @override
   String get bothTeamsToScore => 'كلا الفريقين يسجلون';
@@ -93,8 +108,11 @@ class SAr extends S {
   String get club => 'النادي:';
 
   @override
+  String get communityPrediction => 'توقعات المجتمع';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% الثقة';
+    return '$arg1% الثقة';
   }
 
   @override
@@ -164,12 +182,12 @@ class SAr extends S {
   String get fixtures => 'التركيبات';
 
   @override
-  String get followFavoriteTeams => 'تابع الفرق المفضلة';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'تابع الفرق المفضلة';
 
   @override
   String get fouls => 'الأخطاء';
@@ -189,17 +207,17 @@ class SAr extends S {
   String get getStarted => 'ابدأ';
 
   @override
-  String get goProVersion => 'نسخة GO PRO';
-
-  @override
-  String get goToSetting => 'اذهب إلى الإعداد';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'بدون أهداف عند الاستراحة. انظر إحصائيات المباريات.';
 
   @override
   String get goalsInTheFirstHalf => 'أهداف في الشوط الأول.';
+
+  @override
+  String get goProVersion => 'نسخة GO PRO';
+
+  @override
+  String get goToSetting => 'اذهب إلى الإعداد';
 
   @override
   String get h2h => 'H2H';
@@ -244,9 +262,6 @@ class SAr extends S {
   String get inDepthAiAnalysis => 'تحليل متعمق للذكاء الاصطناعي';
 
   @override
-  String get inProgress => 'قيد التنفيذ';
-
-  @override
   String get indeterminate => 'تم التحقق جزئيا';
 
   @override
@@ -274,6 +289,9 @@ class SAr extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'إنفور';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -292,7 +310,7 @@ class SAr extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'إنفور';
+  String get inProgress => 'قيد التنفيذ';
 
   @override
   String get internationalTournaments => 'البطولات الدولية';
@@ -312,10 +330,10 @@ class SAr extends S {
   String get language => 'اللغة';
 
   @override
-  String get languageScreenNotReachable => 'شاشة اللغة غير قابلة للوصول من هنا';
+  String get languages => 'اللغات';
 
   @override
-  String get languages => 'اللغات';
+  String get languageScreenNotReachable => 'شاشة اللغة غير قابلة للوصول من هنا';
 
   @override
   String get last5Games => 'آخر 5 مباريات';
@@ -345,10 +363,10 @@ class SAr extends S {
   String get liveS => 'الحياة';
 
   @override
-  String get liveScore => 'الموسيقى الحية';
+  String get lives => 'الحياة';
 
   @override
-  String get lives => 'الحياة';
+  String get liveScore => 'الموسيقى الحية';
 
   @override
   String get loading => 'جار التحميل...';
@@ -399,10 +417,10 @@ class SAr extends S {
   String get matchUpdate => 'تحديث المباراة';
 
   @override
-  String get nationalLeagues => 'الدوريات الوطنية';
+  String get nationality => 'الجنسية:';
 
   @override
-  String get nationality => 'الجنسية:';
+  String get nationalLeagues => 'الدوريات الوطنية';
 
   @override
   String get nativeBody => 'الجسم';
@@ -414,13 +432,13 @@ class SAr extends S {
   String get nativeMediaView => 'وجهة نظر الإعلام';
 
   @override
+  String get navigationMenu => 'قائمة التنقل';
+
+  @override
   String get navRailCollapsedA11yLabel => 'انهيار';
 
   @override
   String get navRailExpandedA11yLabel => 'التوسع';
-
-  @override
-  String get navigationMenu => 'قائمة التنقل';
 
   @override
   String get next => 'التالي';
@@ -465,12 +483,6 @@ class SAr extends S {
 
   @override
   String get noText => 'لا';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'لم يتم اختياره';
 
   @override
   String get notificationChannelDesc => 'إشعارات لمباريات كرة القدم القادمة';
@@ -522,6 +534,12 @@ class SAr extends S {
   @override
   String get notificationsPermissionTitle =>
       'هل يسمح للتطبيق بإرسال إشعارات لك؟';
+
+  @override
+  String get notSelected => 'لم يتم اختياره';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -621,10 +639,10 @@ class SAr extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -707,6 +725,16 @@ class SAr extends S {
   String get restorePurchase => 'استعادة الشراء';
 
   @override
+  String get restorePurchases => 'استعادة المشتريات';
+
+  @override
+  String get restorePurchasesEmpty =>
+      'لم يتم العثور على عملية شراء سابقة لهذا الحساب.';
+
+  @override
+  String get restorePurchasesSuccess => 'تمت استعادة عملية الشراء.';
+
+  @override
   String get result => 'النتيجة';
 
   @override
@@ -730,24 +758,18 @@ class SAr extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'النتيجة (٪s1 - ٪s2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return 'التوقعات الصحيحة ٪s';
   }
 
   @override
-  String sGoal(String arg1) {
-    return 'هدف ٪s';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '٪1\$s\nانطلق';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'النتيجة (٪s1 - ٪s2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingViewBehaviour';
 
   @override
   String get searchHintPick => 'ابحث عن الدوريات أو الفرق...';
@@ -763,10 +785,6 @@ class SAr extends S {
 
   @override
   String get searchTeamOrLeague => 'فريق أو دوري بحث';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingViewBehaviour';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -786,6 +804,9 @@ class SAr extends S {
   String get seeAll => 'شاهد الجميع';
 
   @override
+  String get selected => 'المختار';
+
+  @override
   String get selectLeaguesSubtitle =>
       'اختر الدوريات التي ترغب في متابعتها عن كثب.';
 
@@ -794,15 +815,17 @@ class SAr extends S {
       'اختر فرقك المفضلة للحصول على تنبيهات فورية.';
 
   @override
-  String get selected => 'المختار';
-
-  @override
   String sentOff(String arg1, int arg2) {
     return '٪1\$s تم إرساله (٪2\$d\')';
   }
 
   @override
   String get settings => 'الإعدادات';
+
+  @override
+  String sGoal(String arg1) {
+    return 'هدف ٪s';
+  }
 
   @override
   String get share => 'شارك';
@@ -915,6 +938,11 @@ class SAr extends S {
   String get squad => 'الفريق';
 
   @override
+  String sSaleOff(String arg1) {
+    return '٪1\$s\nانطلق';
+  }
+
+  @override
   String get startOfSecondHalf => 'بداية الشوط الثاني';
 
   @override
@@ -997,18 +1025,6 @@ class SAr extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'الجدول';
 
   @override
@@ -1019,6 +1035,18 @@ class SAr extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'الفريق';
@@ -1224,6 +1252,11 @@ class SAr extends S {
   String get viewDetailsMatch => 'عرض التفاصيل تطابق.';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 صوت';
+  }
+
+  @override
   String get vs => 'VS';
 
   @override
@@ -1242,14 +1275,14 @@ class SAr extends S {
   String get watermarkLabelPrefix => 'AdMob -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'نحن سعداء بأنك تستمتع باستخدام تطبيقنا';
-
-  @override
   String get weekly => 'الأسبوعي';
 
   @override
   String get weight => 'الوزن:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'نحن سعداء بأنك تستمتع باستخدام تطبيقنا';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1272,28 +1305,18 @@ class SAr extends S {
   String get yes => 'نعم';
 
   @override
-  String get yesText => 'نعم';
+  String get yesterday => 'أمس';
 
   @override
-  String get yesterday => 'أمس';
+  String get yesText => 'نعم';
 
   @override
   String get youRePremiumUser => 'أنت مستخدم بريميوم';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'لن تتلقى أي تنبيهات أو تحديثات حتى تعيد تشغيلها.';
-
-  @override
   String get yourFilesIsEmpty => 'ملفاتك فارغة';
 
   @override
-  String get restorePurchases => 'استعادة المشتريات';
-
-  @override
-  String get restorePurchasesSuccess => 'تمت استعادة عملية الشراء.';
-
-  @override
-  String get restorePurchasesEmpty =>
-      'لم يتم العثور على عملية شراء سابقة لهذا الحساب.';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'لن تتلقى أي تنبيهات أو تحديثات حتى تعيد تشغيلها.';
 }

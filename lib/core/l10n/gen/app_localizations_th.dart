@@ -10,6 +10,18 @@ class STh extends S {
   STh([String locale = 'th']) : super(locale);
 
   @override
+  String get goalsText => 'ประตู';
+
+  @override
+  String get cornersText => 'เตะมุม';
+
+  @override
+  String get cardsText => 'ใบ';
+
+  @override
+  String get firstHalfText => 'ครึ่งแรก';
+
+  @override
   String get age => 'อายุ:';
 
   @override
@@ -42,6 +54,9 @@ class STh extends S {
 
   @override
   String get blockedShots => 'การยิงที่ถูกบล็อก';
+
+  @override
+  String get bookmakerOdds => 'อัตราต่อรองเจ้ามือ';
 
   @override
   String get bothTeamsToScore => 'ทั้งสองทีมทําคะแนน';
@@ -93,8 +108,11 @@ class STh extends S {
   String get club => 'สโมสร:';
 
   @override
+  String get communityPrediction => 'การทำนายของชุมชน';
+
+  @override
   String confidenceFormat(int arg1) {
-    return '$arg1%% ความเชื่อมั่น';
+    return '$arg1% ความเชื่อมั่น';
   }
 
   @override
@@ -164,12 +182,12 @@ class STh extends S {
   String get fixtures => 'การแข่งขัน';
 
   @override
-  String get followFavoriteTeams => 'ติดตามทีมโปรด';
-
-  @override
   String followersCount(String arg1) {
     return '$arg1 Người theo dõi';
   }
+
+  @override
+  String get followFavoriteTeams => 'ติดตามทีมโปรด';
 
   @override
   String get fouls => 'ฟาวล์';
@@ -190,17 +208,17 @@ class STh extends S {
   String get getStarted => 'เริ่มต้นใช้งาน';
 
   @override
-  String get goProVersion => 'รุ่น GO PRO';
-
-  @override
-  String get goToSetting => 'ไปที่การตั้งค่า';
-
-  @override
   String get goallessAtTheBreakSeeMatchStats =>
       'ไร้สกอร์ในช่วงพักครึ่ง ดูสถิติการแข่งขัน';
 
   @override
   String get goalsInTheFirstHalf => 'ประตูในครึ่งแรก';
+
+  @override
+  String get goProVersion => 'รุ่น GO PRO';
+
+  @override
+  String get goToSetting => 'ไปที่การตั้งค่า';
 
   @override
   String get h2h => 'เอชทูเอช';
@@ -245,9 +263,6 @@ class STh extends S {
   String get inDepthAiAnalysis => 'การวิเคราะห์ AI เชิงลึก';
 
   @override
-  String get inProgress => 'กําลังดําเนินการ';
-
-  @override
   String get indeterminate => 'ตรวจสอบบางส่วนแล้ว';
 
   @override
@@ -275,6 +290,9 @@ class STh extends S {
   String get infoOwner => 'Chủ sở hữu';
 
   @override
+  String get infor => 'อินฟอร์';
+
+  @override
   String get infoReferee => 'Referee';
 
   @override
@@ -293,7 +311,7 @@ class STh extends S {
   String get infoYearFoundation => 'Thành lập';
 
   @override
-  String get infor => 'อินฟอร์';
+  String get inProgress => 'กําลังดําเนินการ';
 
   @override
   String get internationalTournaments => 'ทัวร์นาเมนต์ระดับนานาชาติ';
@@ -312,11 +330,11 @@ class STh extends S {
   String get language => 'ภาษา';
 
   @override
-  String get languageScreenNotReachable =>
-      'ไม่สามารถเข้าถึงหน้าจอภาษาได้จากที่นี่';
+  String get languages => 'ภาษา';
 
   @override
-  String get languages => 'ภาษา';
+  String get languageScreenNotReachable =>
+      'ไม่สามารถเข้าถึงหน้าจอภาษาได้จากที่นี่';
 
   @override
   String get last5Games => '5 เกมล่าสุด';
@@ -346,10 +364,10 @@ class STh extends S {
   String get liveS => 'ชีวิต';
 
   @override
-  String get liveScore => 'ผลบอลสด';
+  String get lives => 'ชีวิต';
 
   @override
-  String get lives => 'ชีวิต';
+  String get liveScore => 'ผลบอลสด';
 
   @override
   String get loading => 'กําลังโหลด...';
@@ -400,10 +418,10 @@ class STh extends S {
   String get matchUpdate => 'อัพเดทแมตช์';
 
   @override
-  String get nationalLeagues => 'ลีกแห่งชาติ';
+  String get nationality => 'สัญชาติ:';
 
   @override
-  String get nationality => 'สัญชาติ:';
+  String get nationalLeagues => 'ลีกแห่งชาติ';
 
   @override
   String get nativeBody => 'ร่างกาย';
@@ -415,13 +433,13 @@ class STh extends S {
   String get nativeMediaView => 'มุมมองสื่อ';
 
   @override
+  String get navigationMenu => 'เมนูการนําทาง';
+
+  @override
   String get navRailCollapsedA11yLabel => 'ยุบ';
 
   @override
   String get navRailExpandedA11yLabel => 'ขยาย';
-
-  @override
-  String get navigationMenu => 'เมนูการนําทาง';
 
   @override
   String get next => 'ต่อไป';
@@ -466,12 +484,6 @@ class STh extends S {
 
   @override
   String get noText => 'ไม่';
-
-  @override
-  String get noUpcomingMatches => 'No upcoming matches';
-
-  @override
-  String get notSelected => 'ไม่ได้เลือก';
 
   @override
   String get notificationChannelDesc =>
@@ -525,6 +537,12 @@ class STh extends S {
   @override
   String get notificationsPermissionTitle =>
       'อนุญาตให้แอปส่งการแจ้งเตือนถึงคุณ?';
+
+  @override
+  String get notSelected => 'ไม่ได้เลือก';
+
+  @override
+  String get noUpcomingMatches => 'No upcoming matches';
 
   @override
   String get ob1Des =>
@@ -625,10 +643,10 @@ class STh extends S {
   String get premiumGo => 'BUY NOW';
 
   @override
-  String get premiumNotReady => 'Store is not ready yet. Please try again.';
+  String get premiumNoteOneTime => 'One-time payment. No subscription.';
 
   @override
-  String get premiumNoteOneTime => 'One-time payment. No subscription.';
+  String get premiumNotReady => 'Store is not ready yet. Please try again.';
 
   @override
   String get premiumSubtitle => 'Enjoy live scores without interruptions';
@@ -713,6 +731,15 @@ class STh extends S {
   String get restorePurchase => 'กู้คืนการซื้อ';
 
   @override
+  String get restorePurchases => 'กู้คืนการซื้อ';
+
+  @override
+  String get restorePurchasesEmpty => 'ไม่พบการซื้อก่อนหน้านี้สำหรับบัญชีนี้';
+
+  @override
+  String get restorePurchasesSuccess => 'กู้คืนการซื้อของคุณแล้ว';
+
+  @override
   String get result => 'ผลลัพธ์';
 
   @override
@@ -736,24 +763,18 @@ class STh extends S {
   }
 
   @override
+  String scoreS1S2(String arg1, String arg2) {
+    return 'คะแนน (${arg1}1 - ${arg2}2)';
+  }
+
+  @override
   String sCorrectPredictions(String arg1) {
     return '$arg1 การคาดคะเนที่ถูกต้อง';
   }
 
   @override
-  String sGoal(String arg1) {
-    return '$arg1 เป้าหมาย';
-  }
-
-  @override
-  String sSaleOff(String arg1) {
-    return '$arg1\nปิด';
-  }
-
-  @override
-  String scoreS1S2(String arg1, String arg2) {
-    return 'คะแนน (${arg1}1 - ${arg2}2)';
-  }
+  String get searchbarScrollingViewBehavior =>
+      'com.google.android.material.search.SearchBar\$ScrollingView พฤติกรรม';
 
   @override
   String get searchHintPick => 'ค้นหาลีกหรือทีม...';
@@ -769,10 +790,6 @@ class STh extends S {
 
   @override
   String get searchTeamOrLeague => 'ค้นหาทีมหรือลีก';
-
-  @override
-  String get searchbarScrollingViewBehavior =>
-      'com.google.android.material.search.SearchBar\$ScrollingView พฤติกรรม';
 
   @override
   String secondHalfIsUnderway(String arg1, int arg2, int arg3, String arg4) {
@@ -792,14 +809,14 @@ class STh extends S {
   String get seeAll => 'ดูทั้งหมด';
 
   @override
+  String get selected => 'เลือกแล้ว';
+
+  @override
   String get selectLeaguesSubtitle => 'เลือกลีกที่คุณต้องการติดตามอย่างใกล้ชิด';
 
   @override
   String get selectTeamsSubtitle =>
       'เลือกทีมโปรดของคุณเพื่อรับการแจ้งเตือนทันที';
-
-  @override
-  String get selected => 'เลือกแล้ว';
 
   @override
   String sentOff(String arg1, int arg2) {
@@ -808,6 +825,11 @@ class STh extends S {
 
   @override
   String get settings => 'การตั้งค่า';
+
+  @override
+  String sGoal(String arg1) {
+    return '$arg1 เป้าหมาย';
+  }
 
   @override
   String get share => 'ใช้ร่วมกัน';
@@ -920,6 +942,11 @@ class STh extends S {
   String get squad => 'ทีม';
 
   @override
+  String sSaleOff(String arg1) {
+    return '$arg1\nปิด';
+  }
+
+  @override
   String get startOfSecondHalf => 'เริ่มครึ่งหลัง';
 
   @override
@@ -1002,18 +1029,6 @@ class STh extends S {
   String get tabInfo => 'INFO';
 
   @override
-  String get tabLineups => 'LINEUPS';
-
-  @override
-  String get tabOdds => 'ODDS';
-
-  @override
-  String get tabStandings => 'STANDINGS';
-
-  @override
-  String get tabStatistics => 'STATISTICS';
-
-  @override
   String get table => 'ตาราง';
 
   @override
@@ -1024,6 +1039,18 @@ class STh extends S {
 
   @override
   String get tableTeamHeader => '# Team';
+
+  @override
+  String get tabLineups => 'LINEUPS';
+
+  @override
+  String get tabOdds => 'ODDS';
+
+  @override
+  String get tabStandings => 'STANDINGS';
+
+  @override
+  String get tabStatistics => 'STATISTICS';
 
   @override
   String get team => 'ทีมงาน';
@@ -1230,6 +1257,11 @@ class STh extends S {
   String get viewDetailsMatch => 'ดูรายละเอียดที่ตรงกัน';
 
   @override
+  String votesCountFormat(String arg1) {
+    return '$arg1 โหวต';
+  }
+
+  @override
   String get vs => 'ปะทะ';
 
   @override
@@ -1248,14 +1280,14 @@ class STh extends S {
   String get watermarkLabelPrefix => 'แอดม็อบ -';
 
   @override
-  String get weReDelightedThatYouEnjoyUsingOurApp =>
-      'เรายินดีที่คุณสนุกกับการใช้แอพของเรา';
-
-  @override
   String get weekly => 'รายสัปดาห์';
 
   @override
   String get weight => 'น้ําหนัก:';
+
+  @override
+  String get weReDelightedThatYouEnjoyUsingOurApp =>
+      'เรายินดีที่คุณสนุกกับการใช้แอพของเรา';
 
   @override
   String whatAHalf(String arg1, int arg2, int arg3, String arg4) {
@@ -1278,27 +1310,18 @@ class STh extends S {
   String get yes => 'ใช่';
 
   @override
-  String get yesText => 'ใช่';
+  String get yesterday => 'เมื่อวาน';
 
   @override
-  String get yesterday => 'เมื่อวาน';
+  String get yesText => 'ใช่';
 
   @override
   String get youRePremiumUser => 'คุณเป็นผู้ใช้ระดับพรีเมียม';
 
   @override
-  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
-      'คุณจะไม่ได้รับการแจ้งเตือนหรือการอัปเดตใดๆ จนกว่าจะเปิดอีกครั้ง';
-
-  @override
   String get yourFilesIsEmpty => 'ไฟล์ของคุณว่างเปล่า';
 
   @override
-  String get restorePurchases => 'กู้คืนการซื้อ';
-
-  @override
-  String get restorePurchasesSuccess => 'กู้คืนการซื้อของคุณแล้ว';
-
-  @override
-  String get restorePurchasesEmpty => 'ไม่พบการซื้อก่อนหน้านี้สำหรับบัญชีนี้';
+  String get youWonTReceiveAnyAlertsOrUpdatesUntilYouTurnThemBackOn =>
+      'คุณจะไม่ได้รับการแจ้งเตือนหรือการอัปเดตใดๆ จนกว่าจะเปิดอีกครั้ง';
 }

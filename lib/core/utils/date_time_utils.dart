@@ -49,6 +49,20 @@ class DateTimeUtils {
   static DateTime _fromEpoch(int epochSeconds) =>
       DateTime.fromMillisecondsSinceEpoch(epochSeconds * 1000);
 
+  /// Epoch giây → `"YYYY-MM-DD HH:mm:ss"` UTC.
+  ///
+  /// Đúng định dạng `starting_at` / `kickoffUtc` của backend bóng đá, để dữ
+  /// liệu Sofascore đổ vào cùng DTO mà các hàm parse sẵn có vẫn đọc được.
+  static String epochToUtcString(int epochSeconds) {
+    final d = DateTime.fromMillisecondsSinceEpoch(
+      epochSeconds * 1000,
+      isUtc: true,
+    );
+    String two(int v) => v.toString().padLeft(2, '0');
+    return '${d.year}-${two(d.month)}-${two(d.day)} '
+        '${two(d.hour)}:${two(d.minute)}:${two(d.second)}';
+  }
+
   // ---- Bổ sung cho tầng UI ----
 
   static String apiDate(DateTime date) => _yyyyMMdd.format(date);
